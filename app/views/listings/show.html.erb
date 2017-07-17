@@ -1,0 +1,181 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <% if @listing.images.first.image %>
+          <div id="carouselExampleIndicators" class="carousel " data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active item-image">
+                <img class="d-block img-fluid " src="<%= @listing.images.first.image.url %>" alt="First slide" style="filter:blur(0)">
+              </div>
+              <div class="carousel-item item-image">
+                <img class="d-block img-fluid" src="<%= @listing.images.first.image.url %>" alt="Second slide">
+              </div>
+              <div class="carousel-item item-image">
+                <img class="d-block img-fluid" src="http://via.placeholder.com/350x150" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+      <% end %>
+    </div>
+    <div class="col-md-5 offset-md-1">
+      <div class="display-5" style="margin-bottom:1.5rem;">Item Title</div>
+      <p class="display-6 text-muted">$ 39.95</p>
+      <hr>
+      <br>
+      <p><i class="fa fa-star " style="color: #FF6080;"></i>
+        <i class="fa fa-star " style="color: #FF6080;"></i>
+        <i class="fa fa-star " style="color: #FF6080;"></i>
+        <i class="fa fa-star " style="color: #95A5A6"></i>
+        <i class="fa fa-star " style="color: #95A5A6"></i>
+        &nbsp; &nbsp;
+        <strong>41 Reviews</strong>
+        &nbsp; &nbsp;
+        <a href="#">show all</a></p>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
+        enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+        qui ratione voluptatem sequi nesciunt. </p>
+      <p><a href="#"><i class="fa fa-minus cart-icon"></i></a>
+        &nbsp;
+        <input type="text" name="" value="1" class="input form-control" style="width: 40px; display:inline-block">
+        &nbsp;
+        <a href="#"><i class="fa fa-plus cart-icon"></i></a>
+        &nbsp; &nbsp; &nbsp;
+        <button class="btn btn-info">Add to cart</button>
+      </p>
+      <table class="table table-hover">
+        <tbody>
+        <tr>
+          <td class="has-text-right"><strong>Item ID</strong></td>
+          <td>1234</td>
+        </tr>
+        <tr>
+          <td class="has-text-right"><strong>Seller</strong></td>
+          <td>jsmith</td>
+        </tr>
+        <tr>
+          <td class="has-text-right"><strong>Added</strong></td>
+          <td>3 days ago</td>
+        </tr>
+        <tr>
+          <td class="has-text-right"><strong>Views</strong></td>
+          <td>3</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="nav nav-tabs " id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#overview" role="tab" aria-controls="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#reviews" role="tab" aria-controls="profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#shipping" role="tab" aria-controls="messages">Messages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#settings" role="tab" aria-controls="settings">Settings</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="overview" role="tabpanel">
+          <div class="card mt-3 pa-4">
+            <div class="card-block">
+              <div class="card-title">Overview</div>
+              <div class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ligula magna, tempus sed nisi in,
+                convallis porttitor quam. Quisque auctor nisl metus, quis rhoncus mi molestie non. Phasellus ornare nisi
+                et lobortis lacinia. Mauris quis dolor vulputate, malesuada lacus at, gravida ipsum. Nam a viverra mi.
+                Aenean at consequat libero, in porta diam. In id ipsum nec purus mattis blandit quis sed nisi.
+                Suspendisse nulla tellus, viverra eu urna ut, mollis pulvinar sem. Pellentesque habitant morbi tristique
+                senectus et netus et malesuada fames ac turpis egestas. Proin non magna sagittis, facilisis augue sed,
+                ultricies felis. Mauris at neque sed nisl mollis aliquet. Etiam lacinia auctor dolor, sed condimentum
+                odio efficitur a.
+
+                Sed at risus enim. Nunc aliquet tellus a purus blandit lobortis. Duis condimentum sapien sed orci ornare
+                mollis. Praesent eleifend ante magna, quis commodo risus pellentesque in. Donec eget porta leo. Sed vel
+                dictum est. Ut dui lorem, volutpat vel risus in, dictum euismod ex. Aenean laoreet dapibus nulla, nec
+                viverra massa feugiat vitae. Vestibulum elementum nec nisi dictum rhoncus. Nam placerat mi eu tortor
+                tincidunt commodo. Duis posuere, sapien a laoreet dapibus, elit tortor laoreet est, eget dapibus dui
+                justo vitae ipsum. Praesent sed augue nec leo hendrerit iaculis sit amet efficitur ante. Nunc ac maximus
+                mauris. Sed luctus erat id elit tempor, a aliquam lacus sodales.
+
+                Suspendisse sodales metus justo, ullamcorper iaculis purus interdum in. Sed ultricies enim felis, in
+                interdum urna malesuada a. Morbi id ligula vel leo elementum dignissim quis vel purus. Donec iaculis,
+                est ac maximus vestibulum, sapien mi lacinia urna, at laoreet felis lectus nec urna. Fusce egestas,
+                neque vitae blandit scelerisque, leo arcu pellentesque risus, et volutpat neque nunc id massa. Aenean
+                dapibus leo vel purus malesuada, eu ultrices nulla consequat. Duis erat orci, lobortis sed dictum id,
+                pretium a nibh. Mauris pharetra ligula consequat gravida ornare.
+
+                Sed a gravida sapien. Nam malesuada feugiat nunc, eu varius risus suscipit non. Nulla vitae odio
+                fermentum, varius ligula et, iaculis enim. Mauris tempor in dolor non aliquet. Pellentesque ac mauris a
+                augue tempus pharetra. Nulla facilisi. Vivamus sit amet lacus sagittis, ullamcorper nisi sit amet,
+                consequat eros. Sed faucibus nulla vitae erat tristique ornare.
+
+                Nullam sit amet magna ipsum. In tincidunt tincidunt tellus. Duis maximus vulputate elit sit amet auctor.
+                Vestibulum a nunc consectetur, accumsan arcu eu, dapibus est. Class aptent taciti sociosqu ad litora
+                torquent per conubia nostra, per inceptos himenaeos. Donec vitae massa eget nulla gravida porta eu et
+                sem. Sed in lorem id lectus auctor lobortis sed vel libero. Nam dapibus risus eu sodales consectetur.
+                Fusce luctus sollicitudin ante et sodales. Curabitur eget justo turpis. Vestibulum vel nunc tellus.
+                Morbi accumsan urna nibh, at malesuada odio faucibus accumsan.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane " id="reviews" role="tabpanel">
+          <div class="card mt-3">
+            <div class="card-block">
+              <div class="card-title">Reviews</div>
+              <div class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at consectetur consequatur
+                corporis
+                distinctio eaque eveniet facilis id ipsa ipsum iusto nesciunt odio, quas quos ratione tempora velit
+                veritatis?
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane " id="shipping" role="tabpanel">
+          <div class="card mt-3">
+            <div class="card-block">
+              <div class="card-title">Shipping</div>
+              <div class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at consectetur consequatur
+                corporis
+                distinctio eaque eveniet facilis id ipsa ipsum iusto nesciunt odio, quas quos ratione tempora velit
+                veritatis?
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
+

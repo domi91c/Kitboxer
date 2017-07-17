@@ -1,0 +1,27 @@
+@import "custom";
+
+.nav-tabs {
+  .nav-link.active {
+    color: $teal;
+    border-bottom: 1px solid $teal;
+    margin-bottom: 0px;
+    &:hover {
+
+      color: $teal;
+      border-bottom: 1px solid $teal;
+      margin-bottom: 0px;
+    }
+  }
+  .nav-link.active:hover {
+  }
+  .nav-link {
+    color: $black;
+    border: none;
+    margin-bottom: -1px;
+  }
+  .nav-link:hover {
+    color: $black;
+    border: none;
+    border-bottom: 1px solid $black;
+  }
+}

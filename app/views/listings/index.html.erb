@@ -1,0 +1,24 @@
+<section class="container-fluid">
+  <div class="row">
+
+  <% @listings.each do |listing| %>
+        <div class="col-md-4 col-lg-3 mb-4 card-deck">
+          <div class="card">
+            <% if listing.images.first.image %>
+                <div class="item-image">
+                  <img src=" <%= listing.images.first.image.url %>" class="card-img-top">
+                </div>
+            <% end %>
+            <div class="card-block">
+              <%= link_to listing.title, listing_path(listing) , class: 'card-text'%>
+            </div>
+          </div>
+
+        </div>
+  <% end %>
+
+  </div>
+  <%= link_to "New Product", new_listing_path %>
+</section>
+
+

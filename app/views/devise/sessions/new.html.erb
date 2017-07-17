@@ -1,28 +1,23 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <h3>Sign in</h3>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%- if devise_mapping.registerable? %>
-        <%= link_to 'Sign up', new_registration_path(resource_name), class: 'right'  %>
-      <% end -%>
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%- if devise_mapping.recoverable? %>
-        <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
-      <% end -%>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-      <%= f.submit 'Sign in', :class => 'button right' %>
-      <% if devise_mapping.rememberable? -%>
-        <div class="checkbox" style="width:150px">
-          <label>
-            <%= f.check_box :remember_me %> Remember me
-          </label>
+<div class="card push-xs-3 col-xs-6 push-lg-4 col-lg-4 text-center">
+  <div class="card-block">
+    <!--<h4 class="display-5"><#%= t('.sign_in', :default => "#{current_tenant ? current_tenant.name : "Loanerr"} Login") %></h4>-->
+    <% if resource.class.name == 'User' %>
+        <h1 class="display-5">Login</h1>
+    <% elsif resource.class.name == 'Client' %>
+        <h1 class="display-5">Borrower Login</h1>
+    <% end %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {role: "form"}) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
         </div>
-      <% end -%>
-  <% end %>
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+        <%= f.submit t('.sign_in', :default => "Sign In"), class: "btn btn-secondary" %>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

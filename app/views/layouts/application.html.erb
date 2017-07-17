@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Bstemp" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Bstemp" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
-  </body>
+<head>
+  <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/application.css.scss"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Bstemp" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Bstemp" %>">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <%= render 'layouts/navigation' %>
+  <div class="jumbotron jumbotron-fluid" style="padding: 40px 0;">
+    <div class="container-fluid">
+      <div class="container-fluid">
+        <h1 class="display-6"> Product Name
+          <span class="display-6 text-muted"> |</span>
+          <span class="display-7 text-muted"> Category</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+
+</header>
+<div role="main" class="container-fluid" style="min-height: calc(100vh - 70px);
+">
+  <%= render 'layouts/messages' %>
+  <%= yield %>
+</div>
+<footer class="footer mt-5">
+  <div class="container">
+    <div class="text-center">
+      <p>
+        <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+      </p>
+      <p>
+        <a class="icon" href="https://github.com/jgthms/bulma">
+          <i class="fa fa-github"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
 </html>

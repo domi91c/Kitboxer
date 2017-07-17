@@ -15,6 +15,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 group :development do
+
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
@@ -32,6 +33,8 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'binding_of_caller'
   gem 'hub', :require=>nil
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
@@ -45,9 +48,20 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'rubocop'
 end
 group :test do
   gem 'database_cleaner'
   gem 'launchy'
 end
+gem "font-awesome-rails"
+
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'carrierwave', '~> 1.0'
+
+
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+gem 'rename'
+
