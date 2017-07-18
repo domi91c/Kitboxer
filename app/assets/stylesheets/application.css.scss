@@ -21,7 +21,6 @@
 @import "tables";
 @import "type";
 @import "cards";
-
 @import "font-awesome";
 
 .navbar {
@@ -49,7 +48,6 @@
 
 @media (max-width: 61.9em) {
   .dropdown-menu {
-    border: none;
   }
   .nav-search .input-group-addon {
     padding: 1rem 0.5rem 0.5rem 0;
@@ -73,7 +71,6 @@ body, button, input, select, textarea {
 }
 
 .nav-item {
-  height: 100%;
   margin: 0;
 }
 
@@ -97,7 +94,6 @@ body, button, input, select, textarea {
 }
 
 .dropdown-menu {
-  border: none;
   box-shadow: 0px 0px 5px rgba(98, 98, 98, 0.2);
 }
 
@@ -110,10 +106,8 @@ a:hover {
 }
 
 .nav-icon {
+  color: $gray;
   font-size: 1.3em;
-  padding-bottom: 2px;
-  position: relative;
-  top: 2px;
 }
 
 .nav-search-form-control {
@@ -184,6 +178,27 @@ a:hover {
   padding: 40px 20px 80px;
 }
 
+.item-image {
+  position: relative;
+  top: 0;
+  height: 100%;
+  padding-bottom: 90%;
+  background-color: $gray-lightest;
+}
+
+.img-container {
+  height: 350px;
+  border: 1px solid $gray-lighter;
+  object-position: 50% 50%; /* default value: image is centered*/
+  object-position: 50% 50%;
+  object-fit: cover;
+}
+
+.bs-reset{
+  padding: 0;
+  margin: 0;
+}
+
 
 .item-image {
   position: relative;
@@ -203,4 +218,3 @@ a:hover {
   width:auto;
   object-fit: contain;
 }
-

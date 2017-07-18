@@ -13,10 +13,9 @@
 //= require jquery
 //= require rails-ujs
 //= require turbolinks
+//= require tether/dist/js/tether
 //= require bootstrap-sprockets
 //= require_tree .
-
-// j
 
 //// slide out search
 var sliBtn = '.nav-search-icon',
@@ -35,4 +34,9 @@ $(sliDis).click(function() {
   $(sliCont).animate(
       { 'width': 0 }, sliSpd
   );
+});
+
+$('.pull-down').each(function() {
+  var $this = $(this);
+  $this.css('margin-top', $this.parent().height() - $this.height())
 });

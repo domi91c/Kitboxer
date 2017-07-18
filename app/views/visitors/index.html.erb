@@ -1,25 +1,54 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
-<button class=" btn btn-lg btn-info text-center">Sign Up</button>
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-primary">Primary</button>
+<style>
+  .image-scroll-outer {
+    width: 800px;
+    height: 200px;
+    border: 1px solid #1d1e1f;
+  }
 
-<!-- Secondary, outline button -->
-<button type="button" class="btn btn-secondary">Secondary</button>
+  .image-scroll-inner {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
 
-<!-- Indicates a successful or positive action -->
-<button type="button" class="btn btn-success">Success</button>
+    border: 1px solid #912D2B;
+  }
 
-<!-- Contextual button for informational alert messages -->
-<button type="button" class="btn btn-info">Info</button>
+  .cover-container {
+    height: 180px;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .cover-item {
+    position: relative;
+    display: inline-block;
+    margin: 8px 8px;
+    box-shadow: 2px 2px 4px #bbb;
+    border-top-right-radius: 4px;
+    width: 216px;
+    height: 58px;
+    vertical-align: bottom;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
 
-<!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">Warning</button>
-
-<!-- Indicates a dangerous or potentially negative action -->
-
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-<div class="">
-  <button type="button" class="btn btn-danger float-left">Link</button>
-  <button type="button" class="btn btn-danger float-right">Danger</button>
+<div class="cover-container">
+  <div class="cover-item">
+    <%= image_tag "kitboxer_bog_logo_helvetica.png" %>
+  </div>
+  <div class="cover-item">
+    <%= image_tag "kitboxer_bog_logo_helvetica.png" %>
+  </div>
+  <div class="cover-item">
+    <%= image_tag "kitboxer_bog_logo_helvetica.png" %>
+  </div>
+  <div class="cover-item">
+    <%= image_tag "kitboxer_bog_logo_helvetica.png" %>
+  </div>
+  <div class="cover-item">
+    <%= image_tag "kitboxer_bog_logo_helvetica.png" %>
+  </div>
 </div>

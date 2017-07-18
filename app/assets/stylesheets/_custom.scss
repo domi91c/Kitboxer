@@ -93,8 +93,10 @@
 
 // Start with assigning color names to specific hex values.
 $white:  #fff !default;
+
+// bulma colours
 $black:  #0a0a0a !default;
-$red:    #DB2828 !default;
+$red:    #ff3860 !default;
 $orange: #f0ad4e !default;
 $yellow: #ffdd57 !default;
 $green:  #23d160 !default;
@@ -103,6 +105,28 @@ $teal:   #00B5AD !default;
 $pink:   #ff5b77 !default;
 $purple: #613d7c !default;
 $neon: #613d7c !default;
+
+// semantic ui colours
+//$black:  #0a0a0a !default;
+//$red:    #db2828 !default;
+//$orange: #f2711c !default;
+//$yellow: #fbbd08 !default;
+//$green:  #21ba45 !default;
+//$blue:   #2185d0 !default;
+//$teal:   #00b5ad !default;
+//$pink:   #e03997 !default;
+//$purple: #a333c8 !default;
+//$neon: #613d7c !default;
+
+$light-red:    #ffe8e6 !default;
+$light-orange: #ffedde !default;
+$light-yellow: #fff8db !default;
+$light-green:  #e5f9e7 !default;
+$light-blue:   #dff0ff !default;
+$light-teal:   #e1f7f7 !default;
+$light-pink:   #ffe3fb !default;
+$light-purple: #613d7c !default;
+$light-neon: #613d7c !default;
 
 // Create grayscale
 $gray-dark:                 #292b2c !default;
@@ -115,7 +139,7 @@ $gray-lightest:             #f7f7f9 !default;
 $brand-primary:             $blue !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
-$brand-warning:             $orange !default;
+$brand-warning:             $yellow !default;
 $brand-danger:              $red !default;
 $brand-inverse:             $gray-dark !default;
 
@@ -694,22 +718,22 @@ $jumbotron-bg:                   $gray-lighter !default;
 //
 // Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             whitesmoke !default;
-$state-success-bg:               $brand-success !default;
-$state-success-border:           darken($state-success-bg, 5%) !default;
+$state-success-text:             #1A531B !default;
+$state-success-bg:               $light-green !default;
+$state-success-border:           darken($state-success-bg, 10%) !default;
 
-$state-info-text:                whitesmoke !default;
-$state-info-bg:                  $brand-info !default;
-$state-info-border:              darken($state-info-bg, 7%) !default;
+$state-info-text:                #0E566C !default;
+$state-info-bg:                  $light-blue !default;
+$state-info-border:              darken($state-info-bg, 12%) !default;
 
 $state-warning-text:             #8a6d3b !default;
-$state-warning-bg:               $brand-warning !default;
+$state-warning-bg:               $light-yellow !default;
 $mark-bg:                        $state-warning-bg !default;
-$state-warning-border:           darken($state-warning-bg, 5%) !default;
+$state-warning-border:           darken($state-warning-bg, 10%) !default;
 
-$state-danger-text:              whitesmoke !default;
-$state-danger-bg:                $brand-danger !default;
-$state-danger-border:            darken($state-danger-bg, 5%) !default;
+$state-danger-text:              #912D2B !default;
+$state-danger-bg:                $light-red !default;
+$state-danger-border:            darken($state-danger-bg, 10%) !default;
 
 
 // Cards
