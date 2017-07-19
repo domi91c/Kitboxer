@@ -4,7 +4,7 @@ const BASE_URL = 'http://localhost:3008';
 
 function uploadImage(image, listingId) {
   x.post(
-      BASE_URL + `listings/${listingId}/images`,
+      BASE_URL + `/listings/${listingId}/images`,
       image,
   ).
       then(function(response) {
