@@ -17,10 +17,12 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
+    @test_listing = Listing.last
   end
 
   # GET /listings/1/edit
   def edit
+    @test_listing = Listing.last
   end
 
   # POST /listings

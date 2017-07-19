@@ -60,12 +60,12 @@
   <br>
   <br>
   <div id='root'>
+    <% placeholder = image_url('placeholder_img.jpg') %>
     <%= content_tag :app,
                     id: "image_upload",
                     data: {
-                        message: t("hello"),
-                        name: current_user.email
-                    } do %>
+                        listing_id: @test_listing.id,
+                    }.to_json do %>
     <% end %>
   </div>
 </section>

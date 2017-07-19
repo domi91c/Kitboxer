@@ -28,6 +28,8 @@ function vueStyleLoader(loader) {
 
 module.exports = {
   test: /\.vue$/,
+  test: /\.vue(\.erb)?$/,
+
   loader: 'vue-loader',
   options: {
     loaders: {

@@ -1,24 +1,23 @@
 /* eslint no-console:0 */
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
-
 import Vue from 'vue/dist/vue.esm';
 import App from './app.vue';
+import TurbolinksAdapter from 'vue-turbolinks';
+import VueResource from 'vue-resource';
 
-document.addEventListener('DOMContentLoaded', () => {
-  var bus = new Vue();
-  const app = new Vue({
-    el: '#root',
-    data: {
-      message: 'Can you say hello?',
-    },
-    components: { App },
-  });
+Vue.use(VueResource);
+
+document.addEventListener('turbolinks:load', function() {
+  Vue.http.headers.common['X-CSRF-Token'] = document.querySelector(
+      'meta[name="csrf-token"]').getAttribute('content');
+  let imageUploadEl = document.getElementById('image_upload');
+  if (imageUploadEl !== null) {
+    console.log(imageUploadEl);
+    let props = JSON.parse(imageUploadEl.getAttribute('data'));
+    console.log('props:');
+    console.dir(props);
+    new Vue({
+      render: h => h(App, { props }),
+      mixins: [TurbolinksAdapter],
+    }).$mount(imageUploadEl);
+  }
 });
-
-

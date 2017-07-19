@@ -1,0 +1,18 @@
+<%
+imgs = {}
+sounds = {}
+Dir.chdir("#{Rails.root}/app/assets/images/") do
+  imgs = Dir["**"].inject({}) {|h,f| h.merge! f => image_path(f)}
+end
+Dir.chdir("#{Rails.root}/app/assets/sounds/") do
+  sounds = Dir["**"].inject({}) {|h,f| h.merge! f => audio_path(f)}
+end
+%>
+
+window.image_path = function(name) {
+  return <%= imgs.to_json %>[name]
+}
+
+window.audio_path = function(name) {
+  return <%= sounds.to_json %>[name]
+}

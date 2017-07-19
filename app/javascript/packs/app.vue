@@ -4,11 +4,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="image-scroller" style="">
-                        <image-card v-on:open-modal="openModal"></image-card>
-                        <image-card v-on:open-modal="openModal"></image-card>
-                        <image-card v-on:open-modal="openModal"></image-card>
-                        <image-card v-on:open-modal="openModal"></image-card>
-                        <image-card v-on:open-modal="openModal"></image-card>
+                        <image-card v-on:open-modal="openModal" :listing_id="listing_id"></image-card>
+                        <image-card v-on:open-modal="openModal" :listing_id="listing_id"></image-card>
+                        <image-card v-on:open-modal="openModal" :listing_id="listing_id"></image-card>
+                        <image-card v-on:open-modal="openModal" :listing_id="listing_id"></image-card>
+                        <image-card v-on:open-modal="openModal" :listing_id="listing_id"></image-card>
                     </div>
                 </div>
             </div>
@@ -22,6 +22,7 @@
   import ImageModal from './components/ImageModal.vue';
 
   export default {
+    props: ['placeholder_img', 'listing_id'],
     data: function() {
       return {
         message: 'hi',
@@ -35,7 +36,6 @@
       openModal() {
         console.log('opening modal');
         $('#image_modal').modal('show');
-
       },
     },
   };
@@ -44,7 +44,7 @@
 <style scoped>
 
     .image-scroller {
-        height: 230px;
+        height: 100%;
         width: 100%;
         white-space: nowrap;
         overflow-x: scroll;
