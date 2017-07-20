@@ -12,18 +12,18 @@
   <!--<%#= stylesheet_pack_tag 'application' %>-->
 </head>
 <body>
-  <%= render 'layouts/navigation' %>
-  <div class="jumbotron jumbotron-fluid" style="padding: 40px 0;">
+<%= render 'layouts/navigation' %>
+<div class="jumbotron jumbotron-fluid" style="padding: 40px 0;">
+  <div class="container-fluid">
     <div class="container-fluid">
-      <div class="container-fluid">
-        <h1 class="display-6"> Product Name
-          <span class="display-6 text-muted"> |</span>
-          <span class="display-7 text-muted"> Category</span>
-          <%= link_to "New Product", new_listing_path , class: 'btn btn-info float-right'%>
-        </h1>
-      </div>
+      <h1 class="display-6"> Product Name
+        <span class="display-6 text-muted"> |</span>
+        <span class="display-7 text-muted"> Category</span>
+        <%= link_to "New Product", new_listing_path, class: 'btn btn-info float-right' %>
+      </h1>
     </div>
   </div>
+</div>
 
 </header>
 <div role="main" class="container-fluid" style="min-height: calc(100vh - 70px);
@@ -47,5 +47,8 @@
     </div>
   </div>
 </footer>
+<input name="authenticity_token"
+       type="hidden"
+       value="<%= form_authenticity_token %>"/>
 </body>
 </html>

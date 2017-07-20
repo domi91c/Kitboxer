@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <image-modal></image-modal>
+        <image-modal :current_file="this.currentFile"></image-modal>
     </div>
 </template>
 
@@ -26,6 +26,7 @@
     data: function() {
       return {
         message: 'hi',
+        currentFile: '',
       };
     },
     components: {
@@ -33,8 +34,9 @@
       ImageModal,
     },
     methods: {
-      openModal() {
+      openModal(file) {
         console.log('opening modal');
+        this.currentFile = file;
         $('#image_modal').modal('show');
       },
     },

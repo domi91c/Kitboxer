@@ -3,7 +3,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src="" alt="">
+                    <img :src="this.current_file" alt="">
 
                 </div>
                 <div class="modal-footer">
@@ -23,6 +23,7 @@
 
     },
 
+    props: ['current_file'],
     data() {
       return {};
     },
@@ -33,7 +34,6 @@
 
 <style lang="scss" rel="stylesheet/scss" scoped>
     /*@import "./resources/assets/sass/variables";*/
-
 
 
 </style>

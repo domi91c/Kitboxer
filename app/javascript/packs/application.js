@@ -9,6 +9,7 @@ Vue.use(VueResource);
 document.addEventListener('turbolinks:load', function() {
   Vue.http.headers.common['X-CSRF-Token'] = document.querySelector(
       'meta[name="csrf-token"]').getAttribute('content');
+
   let imageUploadEl = document.getElementById('image_upload');
   if (imageUploadEl !== null) {
     console.log(imageUploadEl);
