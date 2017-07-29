@@ -1,43 +1,59 @@
-                  Prefix Verb   URI Pattern                        Controller#Action
-                listings GET    /listings(.:format)                listings#index
-                         POST   /listings(.:format)                listings#create
-             new_listing GET    /listings/new(.:format)            listings#new
-            edit_listing GET    /listings/:id/edit(.:format)       listings#edit
-                 listing GET    /listings/:id(.:format)            listings#show
-                         PATCH  /listings/:id(.:format)            listings#update
-                         PUT    /listings/:id(.:format)            listings#update
-                         DELETE /listings/:id(.:format)            listings#destroy
-                    root GET    /                                  visitors#index
-        new_user_session GET    /users/sign_in(.:format)           devise/sessions#new
-            user_session POST   /users/sign_in(.:format)           devise/sessions#create
-    destroy_user_session DELETE /users/sign_out(.:format)          devise/sessions#destroy
-       new_user_password GET    /users/password/new(.:format)      devise/passwords#new
-      edit_user_password GET    /users/password/edit(.:format)     devise/passwords#edit
-           user_password PATCH  /users/password(.:format)          devise/passwords#update
-                         PUT    /users/password(.:format)          devise/passwords#update
-                         POST   /users/password(.:format)          devise/passwords#create
-cancel_user_registration GET    /users/cancel(.:format)            devise_invitable/registrations#cancel
-   new_user_registration GET    /users/sign_up(.:format)           devise_invitable/registrations#new
-  edit_user_registration GET    /users/edit(.:format)              devise_invitable/registrations#edit
-       user_registration PATCH  /users(.:format)                   devise_invitable/registrations#update
-                         PUT    /users(.:format)                   devise_invitable/registrations#update
-                         DELETE /users(.:format)                   devise_invitable/registrations#destroy
-                         POST   /users(.:format)                   devise_invitable/registrations#create
-   new_user_confirmation GET    /users/confirmation/new(.:format)  devise/confirmations#new
-       user_confirmation GET    /users/confirmation(.:format)      devise/confirmations#show
-                         POST   /users/confirmation(.:format)      devise/confirmations#create
-  accept_user_invitation GET    /users/invitation/accept(.:format) devise/invitations#edit
-  remove_user_invitation GET    /users/invitation/remove(.:format) devise/invitations#destroy
-     new_user_invitation GET    /users/invitation/new(.:format)    devise/invitations#new
-         user_invitation PATCH  /users/invitation(.:format)        devise/invitations#update
-                         PUT    /users/invitation(.:format)        devise/invitations#update
-                         POST   /users/invitation(.:format)        devise/invitations#create
-                   users GET    /users(.:format)                   users#index
-                         POST   /users(.:format)                   users#create
-                new_user GET    /users/new(.:format)               users#new
-               edit_user GET    /users/:id/edit(.:format)          users#edit
-                    user GET    /users/:id(.:format)               users#show
-                         PATCH  /users/:id(.:format)               users#update
-                         PUT    /users/:id(.:format)               users#update
-                         DELETE /users/:id(.:format)               users#destroy
-                    page GET    /pages/*id                         high_voltage/pages#show
+                  Prefix Verb   URI Pattern                                     Controller#Action
+     listing_build_index GET    /listings/:listing_id/build(.:format)           listing/build#index
+                         POST   /listings/:listing_id/build(.:format)           listing/build#create
+       new_listing_build GET    /listings/:listing_id/build/new(.:format)       listing/build#new
+      edit_listing_build GET    /listings/:listing_id/build/:id/edit(.:format)  listing/build#edit
+           listing_build GET    /listings/:listing_id/build/:id(.:format)       listing/build#show
+                         PATCH  /listings/:listing_id/build/:id(.:format)       listing/build#update
+                         PUT    /listings/:listing_id/build/:id(.:format)       listing/build#update
+                         DELETE /listings/:listing_id/build/:id(.:format)       listing/build#destroy
+          listing_images GET    /listings/:listing_id/images(.:format)          listing/images#index
+                         POST   /listings/:listing_id/images(.:format)          listing/images#create
+       new_listing_image GET    /listings/:listing_id/images/new(.:format)      listing/images#new
+      edit_listing_image GET    /listings/:listing_id/images/:id/edit(.:format) listing/images#edit
+           listing_image GET    /listings/:listing_id/images/:id(.:format)      listing/images#show
+                         PATCH  /listings/:listing_id/images/:id(.:format)      listing/images#update
+                         PUT    /listings/:listing_id/images/:id(.:format)      listing/images#update
+                         DELETE /listings/:listing_id/images/:id(.:format)      listing/images#destroy
+                listings GET    /listings(.:format)                             listings#index
+                         POST   /listings(.:format)                             listings#create
+             new_listing GET    /listings/new(.:format)                         listings#new
+            edit_listing GET    /listings/:id/edit(.:format)                    listings#edit
+                 listing GET    /listings/:id(.:format)                         listings#show
+                         PATCH  /listings/:id(.:format)                         listings#update
+                         PUT    /listings/:id(.:format)                         listings#update
+                         DELETE /listings/:id(.:format)                         listings#destroy
+                    root GET    /                                               visitors#index
+        new_user_session GET    /users/sign_in(.:format)                        devise/sessions#new
+            user_session POST   /users/sign_in(.:format)                        devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)                       devise/sessions#destroy
+       new_user_password GET    /users/password/new(.:format)                   devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)                  devise/passwords#edit
+           user_password PATCH  /users/password(.:format)                       devise/passwords#update
+                         PUT    /users/password(.:format)                       devise/passwords#update
+                         POST   /users/password(.:format)                       devise/passwords#create
+cancel_user_registration GET    /users/cancel(.:format)                         devise_invitable/registrations#cancel
+   new_user_registration GET    /users/sign_up(.:format)                        devise_invitable/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                           devise_invitable/registrations#edit
+       user_registration PATCH  /users(.:format)                                devise_invitable/registrations#update
+                         PUT    /users(.:format)                                devise_invitable/registrations#update
+                         DELETE /users(.:format)                                devise_invitable/registrations#destroy
+                         POST   /users(.:format)                                devise_invitable/registrations#create
+   new_user_confirmation GET    /users/confirmation/new(.:format)               devise/confirmations#new
+       user_confirmation GET    /users/confirmation(.:format)                   devise/confirmations#show
+                         POST   /users/confirmation(.:format)                   devise/confirmations#create
+  accept_user_invitation GET    /users/invitation/accept(.:format)              devise/invitations#edit
+  remove_user_invitation GET    /users/invitation/remove(.:format)              devise/invitations#destroy
+     new_user_invitation GET    /users/invitation/new(.:format)                 devise/invitations#new
+         user_invitation PATCH  /users/invitation(.:format)                     devise/invitations#update
+                         PUT    /users/invitation(.:format)                     devise/invitations#update
+                         POST   /users/invitation(.:format)                     devise/invitations#create
+                   users GET    /users(.:format)                                users#index
+                         POST   /users(.:format)                                users#create
+                new_user GET    /users/new(.:format)                            users#new
+               edit_user GET    /users/:id/edit(.:format)                       users#edit
+                    user GET    /users/:id(.:format)                            users#show
+                         PATCH  /users/:id(.:format)                            users#update
+                         PUT    /users/:id(.:format)                            users#update
+                         DELETE /users/:id(.:format)                            users#destroy
+                    page GET    /pages/*id                                      high_voltage/pages#show

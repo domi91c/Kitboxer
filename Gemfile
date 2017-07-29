@@ -17,6 +17,7 @@ end
 group :development do
 
   gem 'web-console', '>= 3.3.0'
+  gem 'meta_request'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -35,11 +36,11 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'binding_of_caller'
-  gem 'hub', :require=>nil
+  gem 'hub', :require => nil
   gem 'rails_layout'
-  gem 'rb-fchange', :require=>false
-  gem 'rb-fsevent', :require=>false
-  gem 'rb-inotify', :require=>false
+  gem 'rb-fchange', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-inotify', :require => false
   gem 'spring-commands-rspec'
 end
 group :development, :test do
@@ -65,3 +66,10 @@ gem 'carrierwave', '~> 1.0'
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'rename'
 
+gem 'puts_debuggerer', '~> 0.7.1'
+
+
+gem 'wicked'
+
+
+gem 'colorize'

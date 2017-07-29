@@ -95,18 +95,30 @@
 $white:  #fff !default;
 
 // bulma colours
-$black:  #0a0a0a !default;
-$red:    #ff3860 !default;
-$orange: #f0ad4e !default;
-$yellow: #ffdd57 !default;
-$green:  #23d160 !default;
-$blue:   #2185D0 !default;
-$teal:   #00d1b2 !default;
-$pink:   #ff5b77 !default;
-$purple: #613d7c !default;
-$neon: #613d7c !default;
+//$black:  #0a0a0a !default;
+//$red:    #ff3860 !default;
+//$orange: #f0ad4e !default;
+//$yellow: #ffdd57 !default;
+//$green:  #23d160 !default;
+//$blue:   #2185D0 !default;
+//$teal:   #00d1b2 !default;
+//$pink:   #ff5b77 !default;
+//$purple: #613d7c !default;
+//$neon: #613d7c !default;
 
-// semantic ui colours
+// pages colours
+$black:  #282734 !default;
+$red:    #db2828 !default;
+$orange: #f2711c !default;
+$yellow: #F8DF62 !default;
+$green:  #00D9A8 !default;
+$blue:   #008BFE !default;
+$teal:   #393F58 !default;
+$pink:   #e03997 !default;
+$purple: #6C69E4 !default;
+$neon: #4F646B !default;
+
+//// semantic ui colours
 //$black:  #0a0a0a !default;
 //$red:    #db2828 !default;
 //$orange: #f2711c !default;
@@ -117,6 +129,8 @@ $neon: #613d7c !default;
 //$pink:   #e03997 !default;
 //$purple: #a333c8 !default;
 //$neon: #613d7c !default;
+
+
 
 $light-red:    #ffe8e6 !default;
 $light-orange: #ffedde !default;
@@ -136,7 +150,7 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue !default;
+$brand-primary:             $purple !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $yellow !default;

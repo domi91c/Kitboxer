@@ -1,23 +1,22 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-  before_action :verify_authorized!
+  # before_action :verify_authorized!
+
 
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.includes(:images).where.not(:images => {:image => nil})
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
-
   end
 
   # GET /listings/new
   def new
     @listing = Listing.new
-    @test_listing = Listing.last
   end
 
   # GET /listings/1/edit
@@ -27,19 +26,24 @@ class ListingsController < ApplicationController
 
   # POST /listings
   # POST /listings.json
-  def create
-    binding.pry
-    @listing = current_user.listings.build(listing_params)
+  # def create
+  #   @listing = current_user.listings.build(listing_params)
+  #
+  #   respond_to do |format|
+  #     if @listing.save
+  #       format.html {redirect_to @listing, notice: 'Listing was successfully created.'}
+  #       format.json {render :show, status: :created, location: @listing}
+  #     else
+  #       format.html {render :new}
+  #       format.json {render json: @listing.errors, status: :unprocessable_entity}
+  #     end
+  #   end
+  # end
 
-    respond_to do |format|
-      if @listing.save
-        format.html {redirect_to @listing, notice: 'Listing was successfully created.'}
-        format.json {render :show, status: :created, location: @listing}
-      else
-        format.html {render :new}
-        format.json {render json: @listing.errors, status: :unprocessable_entity}
-      end
-    end
+  def create
+    @listing = current_user.listings.new
+    @listing.save(validate: false)
+    redirect_to listing_build_path(@listing, Listing.form_steps.first)
   end
 
   # PATCH/PUT /listings/1
@@ -67,9 +71,6 @@ class ListingsController < ApplicationController
   end
 
   private
-  def verify_authorized!
-    # code here
-  end
 
   private
   # Use callbacks to share common setup or constraints between actions.

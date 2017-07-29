@@ -18,6 +18,7 @@ Bundler.require(*Rails.groups)
 
 module Kitboxer
   class Application < Rails::Application
+    Dir[File.join(Rails.root, "lib", "utils", "*.rb")].each {|l| require l}
 
     config.generators do |g|
       g.test_framework :rspec,

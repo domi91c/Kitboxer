@@ -3,8 +3,11 @@ import Vue from 'vue/dist/vue.esm';
 import App from './app.vue';
 import TurbolinksAdapter from 'vue-turbolinks';
 import VueResource from 'vue-resource';
+import Croppa from 'vue-croppa';
+import 'vue-croppa/dist/vue-croppa.css';
 
 Vue.use(VueResource);
+Vue.use(Croppa);
 
 document.addEventListener('turbolinks:load', function() {
   Vue.http.headers.common['X-CSRF-Token'] = document.querySelector(

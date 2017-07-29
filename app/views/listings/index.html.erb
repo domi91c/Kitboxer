@@ -1,15 +1,23 @@
-<section class="">
+<section class="container">
   <div class="card-deck">
     <% @listings.each do |listing| %>
-        <div class=" col-md-4 col-sm-6 ">
-          <div class="card mb-3 mt-3" style="">
-            <div class="img-responsive"><img src=" <%= listing.images.first.image.url %>" class="card-img-top img-container"></div>
-            <div class="card-block">
-              <h4 class="card-title"><%= link_to listing.title, listing_path(listing) %></h4>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's
-                content.</p>
-            </div>
+        <div class=" col-md-4 col-sm-6 bs-reset">
+          <div class="m-1" style="">
+            <% if listing.images.first %>
+                <%= link_to listing_path(listing.id) do %>
+                    <div class="ol-container">
+                      <img src=" <%= listing.images.first.image.url %>" class="ol-image img-container">
+                      <div class="ol-overlay">
+                        <div class="ol-price">
+                          <p class="">$39.99</p>
+                          <p><%= listing.title %></p>
+                        </div>
+                        <div class="ol-title">
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+            <% end %>
           </div>
         </div>
     <% end %>

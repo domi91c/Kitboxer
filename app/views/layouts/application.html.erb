@@ -11,27 +11,16 @@
   <%= javascript_pack_tag 'application' %>
   <!--<%#= stylesheet_pack_tag 'application' %>-->
 </head>
-<body>
+<body style="background-color: #F1F3F3;">
 <%= render 'layouts/navigation' %>
-<div class="jumbotron jumbotron-fluid" style="padding: 40px 0;">
-  <div class="container-fluid">
-    <div class="container-fluid">
-      <h1 class="display-6"> Product Name
-        <span class="display-6 text-muted"> |</span>
-        <span class="display-7 text-muted"> Category</span>
-        <%= link_to "New Product", new_listing_path, class: 'btn btn-info float-right' %>
-      </h1>
-    </div>
-  </div>
-</div>
+<%= content_for?(:header) ? yield(:header) : "" %>
 
-</header>
-<div role="main" class="container-fluid" style="min-height: calc(100vh - 70px);
-">
+<div role="main" class="container" style="min-height: calc(100vh - 70px);">
   <%= render 'layouts/messages' %>
   <%= yield %>
 </div>
-<footer class="footer mt-5">
+<footer class=" footer mt-5
+">
   <div class="container">
     <div class="text-center">
       <p>

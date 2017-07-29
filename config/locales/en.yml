@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  add_description: "Description"
+  add_images: "Images"
+  add_shipping: "Shipping"
+
+
