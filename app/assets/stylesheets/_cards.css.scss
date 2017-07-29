@@ -1,11 +1,10 @@
 @import "custom";
+
 .box {
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
+  //box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   display: block;
 }
 
-.product {
-  width:100%;
-}

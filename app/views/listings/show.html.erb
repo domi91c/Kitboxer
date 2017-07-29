@@ -21,6 +21,7 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
+            <br>
             <div class="img-carousel-indicators">
               <% @listing.images.each_with_index do |image, index| %>
                   <div data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="img-carousel-indicator <%= 'active' if image == @listing.images.first %>">

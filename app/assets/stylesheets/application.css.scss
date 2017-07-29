@@ -177,14 +177,6 @@ a:hover {
   padding: 40px 20px 80px;
 }
 
-.item-image {
-  position: relative;
-  top: 0;
-  height: 100%;
-  padding-bottom: 90%;
-  background-color: $gray-lightest;
-}
-
 .img-container {
   height: 350px;
   //border: 1px solid $gray-lighter;
@@ -203,7 +195,7 @@ a:hover {
   top: 0;
   width: 100%;
   padding-bottom: 90%;
-  background-color: $gray-lightest;
+  //background-color: $gray-lightest;
 }
 
 .item-image img {
