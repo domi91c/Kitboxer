@@ -30,13 +30,21 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <%= form.label :body, 'Description', class: 'control-label' %>
-                    <%= form.text_area :body, class: 'form-control', style: 'height: 300px' %>
+                    <%= form.label :tagline, 'Subtitle', class: 'control-label' %>
+                    <%= form.text_field :tagline, class: 'form-control' %>
                   </div>
                 </div>
-                <div class="col-md-6">
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <%= form.label :body, 'Description', class: 'control-label' %>
+                    <%= form.text_area :body, class: 'form-control', style: 'height: 200px' %>
+                  </div>
+                </div>
+                <div class="col-md-4">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -47,7 +55,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <%= form.label :quantity, 'Quantity', class: 'control-label' %>
-                        <%= form.text_field :quantity, class: 'form-control' %>
+                        <%= form.number_field :quantity, class: 'form-control' %>
                       </div>
                     </div>
                   </div>

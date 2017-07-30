@@ -21,6 +21,7 @@
 @import "tables";
 @import "type";
 @import "cards";
+@import "file-uploader";
 @import "font-awesome";
 
 .navbar {
@@ -154,7 +155,7 @@ a:hover {
 }
 
 .badge-cart {
-  background-color: $blue;
+  background-color: $red;
   color: $white;
   height: 16px;
   width: 16px;

@@ -1,16 +1,30 @@
 <template>
-    <div class="col-md-3 image-card mt-3 mb-3">
-        <div class="upload-btn-wrapper">
-
-            <div class="item-image">
-                <img class="" :src="currentFile"/>
+    <div class="">
+        <div class="row">
+            <div class="col-sm-4 image-card">
+                <div class="item-image">
+                    <img class="" :src="currentFile"/>
+                    <input type="file" name="file" class="" accept="image/*">
+                </div>
             </div>
-            <input v-if="currentFile" type="file" name="file" class="" accept="image/*" multiple
-                   @change="inputDidChange($event)">
-            <div class="progress ">
-                <div class="progress-bar bg-success " role="progressbar" style="width: 25%"
-                     aria-valuenow="0"
-                     aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="col-sm-8">
+                <div class="icons pull-right" style="position: absolute; bottom: 0;">
+                    <i class="fa fa-crop fa-2x" @click="$emit('crop-image', file)"></i>
+                    <i class="fa fa-eye fa-2x" @click="$emit('view-image', file)"></i>
+                    <i class="fa fa-times fa-2x" @click="$emit('delete-image', file)"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 ">
+                <div class="file-info mt-2 mb-4">
+                    <h5>filename_of_this_file.png</h5>
+                    <div class="progress align-bottom" style="">
+                        <div class="progress-bar bg-success " role="progressbar" style="width: 25%"
+                             aria-valuenow="0"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -18,17 +32,16 @@
 
 <script>
 
-  import placeholder from './placeholder_img.png';
+  import placeholder from '../images/placeholder_img.png';
   import { uploadImage } from './model';
 
   export default {
     mounted() {
     },
-    props: ['listing_id'],
+    props: ['listing_id', 'file'],
     data() {
       return {
         currentFile: placeholder,
-        imageFile: '',
       };
     },
 
@@ -44,16 +57,11 @@
               this.$emit('open-modal', this.currentFile);
             });
       },
-      handleCardClick() {
-//        console.log('clicked.');
-//        this.$emit('open-modal', r);
-      },
     },
   };
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>
-    /*@import "./resources/assets/sass/variables";*/
 
     .upload-btn-wrapper input[type=file] {
         font-size: 100px;
