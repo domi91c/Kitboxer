@@ -1,28 +1,47 @@
 <template>
     <div class="app">
         <hr>
-        <div v-for="file in list">
-            <ImageCard :file="file"  v-on:delete-image="deleteImage"></ImageCard>
+        <div v-for="file in files">
+            <image-card v-on:open-modal="openModal" :file="file" :progress="progress"
+                        v-on:delete-image="deleteImage"></image-card>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 ">
+                <div class="file-info mt-2 mb-4">
+                    <div class="progress align-bottom">
+                        <div class="progress-bar" :style="{width: progress + '%'}"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button type="button" class="btn btn-outline-info mt-4" @click="addImageCard">Add Another ...</button>
+                <label class="btn btn-outline-info">
+                    <input type="file" @change="inputDidChange"/>
+                    Add Another ...
+                </label>
             </div>
         </div>
         <hr>
+        <image-modal :file="previewFile"></image-modal>
     </div>
 </template>
 
 <script>
   import ImageCard from './components/ImageCard.vue';
   import ImageModal from './components/ImageModal.vue';
+  import placeholder from './images/placeholder_img.jpg';
+
+  import { uploadImage } from './model';
 
   export default {
-    props: ['listing_id'],
+    props: ['listingId'],
     data: function() {
       return {
-        list: ['dog', 'cat', 'moose'],
-        message: 'hi',
+        files: [],
+        newFile: [],
+        progress: 0,
+        previewFile: '',
       };
     },
     components: {
@@ -30,6 +49,25 @@
       ImageModal,
     },
     methods: {
+      inputDidChange(e) {
+        if (e.target.files[0]) {
+          let inputData = e.target.files[0];
+          var formData = new FormData();
+          formData.append('image', inputData);
+          this.files.push(placeholder);
+          uploadImage(formData, this.listingId, this.onProgress).
+              then((x) => {
+                var xParsed = JSON.parse(x);
+                this.newFile = xParsed.image.image.url;
+                let indexOfFile = this.files.indexOf(placeholder);
+                this.files.splice(indexOfFile, 1, this.newFile);
+                console.log('success');
+              });
+        }
+      },
+      onProgress(percent) {
+        this.progress = percent;
+      },
       previewImage() {
         console.log('preview image');
       },
@@ -37,16 +75,18 @@
         console.log('crop image');
       },
       deleteImage(file) {
+//        deleteImage(file, this.listingId).
+//            then()
         console.log('delete image');
-        let fileIndex = this.list.indexOf(file);
-        this.list.splice(fileIndex, 1);
+        let fileIndex = this.files.indexOf(file);
+        this.files.splice(fileIndex, 1);
       },
       addImageCard() {
         console.log('adding image card');
       },
       openModal(file) {
         console.log('opening modal');
-        this.currentFile = file;
+        this.previewFile = file;
         $('#image_modal').modal('show');
       },
     },
@@ -55,13 +95,8 @@
 
 <style scoped>
 
-
-    .item-image input[type=file] {
-        font-size: 200px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
+    input[type="file"] {
+        display: none;
     }
 
     .image-card {
@@ -85,7 +120,6 @@
     .progress-bar {
         bottom: 0;
     }
-
 </style>
 
 

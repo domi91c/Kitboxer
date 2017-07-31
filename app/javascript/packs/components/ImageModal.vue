@@ -1,24 +1,9 @@
 <template>
-    <div class="modal fade modal-lg" id="image_modal">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="image_modal">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <vue-cropper
-                            ref='cropper'
-                            :aspect-ratio="3/2"
-                            :guides="false"
-                            :view-mode="1"
-                            :drag-mode="'crop'"
-                            :auto-crop-area="0.5"
-                            :min-container-width="550"
-                            :min-container-height="500"
-                            :background="false"
-                            :rotatable="true"
-                            :src="imgSrc"
-                            alt="Source Image"
-                            :img-style="{  width: '500px', height: '500px'  }" >
-                    </vue-cropper>
-
+                    <img :src="file" alt="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary">Save changes</button>
@@ -40,7 +25,7 @@
 //      this.imgSrc = this.current_file;
     },
 
-    props: ['current_file'],
+    props: ['file'],
     data() {
       return {
         imgSrc: this.current_file,
