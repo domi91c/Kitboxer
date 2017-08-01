@@ -48,6 +48,7 @@ module.exports = {
     extensions: settings.extensions,
     modules: [
       resolve(settings.source_path),
+      resolve('app/assets'),
       'node_modules'
     ]
   },

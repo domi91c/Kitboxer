@@ -46,7 +46,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address: 'smtp.gmail.com',
       port: 587,
-      domain: 'localhost:3009',
+      domain: 'localhost:3002',
       user_name: ENV['GMAIL_EMAIL'],
       password: ENV['GMAIL_PASSWORD'],
 
@@ -55,7 +55,7 @@ Rails.application.configure do
   }
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3009' }
+  config.action_mailer.default_url_options = {host: 'localhost:3002'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
   # Send email in development mode?

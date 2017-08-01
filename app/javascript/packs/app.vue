@@ -1,23 +1,17 @@
 <template>
     <div class="app">
         <hr>
-        <div v-for="file in files">
-            <image-card v-on:open-modal="openModal" :file="file" :progress="progress"
-                        v-on:delete-image="deleteImage"></image-card>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 ">
-                <div class="file-info mt-2 mb-4">
-                    <div class="progress align-bottom">
-                        <div class="progress-bar" :style="{width: progress + '%'}"></div>
-                    </div>
-                </div>
-            </div>
+        <div v-for="file in uploading">
+            <image-card :cardData="file"
+                        v-on:open-modal="openModal"
+                        v-on:delete-image="deleteImage"
+                        v-on:cover-photo="makeCoverPhoto">
+            </image-card>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <label class="btn btn-outline-info">
-                    <input type="file" @change="inputDidChange"/>
+                    <input type="file" @change="inputDidChange" accept="image/*" multiple/>
                     Add Another ...
                 </label>
             </div>
@@ -38,10 +32,8 @@
     props: ['listingId'],
     data: function() {
       return {
-        files: [],
-        newFile: [],
-        progress: 0,
         previewFile: '',
+        uploading: [],
       };
     },
     components: {
@@ -51,22 +43,28 @@
     methods: {
       inputDidChange(e) {
         if (e.target.files[0]) {
-          let inputData = e.target.files[0];
-          var formData = new FormData();
-          formData.append('image', inputData);
-          this.files.push(placeholder);
-          uploadImage(formData, this.listingId, this.onProgress).
-              then((x) => {
-                var xParsed = JSON.parse(x);
-                this.newFile = xParsed.image.image.url;
-                let indexOfFile = this.files.indexOf(placeholder);
-                this.files.splice(indexOfFile, 1, this.newFile);
-                console.log('success');
-              });
+          for (let i = 0; i < e.target.files.length; i++) {
+
+            let cardData = {
+              file: e.target.files[i],
+              formData: {},
+              progress: 0,
+              url: '',
+            };
+            this.uploading.push(cardData);
+            uploadImage(cardData, this.listingId, this.onProgress).
+                then((x) => {
+                  let responseParsed = JSON.parse(x);
+                  cardData.url = responseParsed.image.image.url;
+                  console.log('success');
+                });
+          }
         }
       },
-      onProgress(percent) {
-        this.progress = percent;
+      onProgress(percent, card) {
+        console.log(this.files);
+        console.log(card);
+        this.uploading[this.uploading.indexOf(card)].progress = percent;
       },
       previewImage() {
         console.log('preview image');
@@ -74,20 +72,20 @@
       cropImage() {
         console.log('crop image');
       },
-      deleteImage(file) {
-//        deleteImage(file, this.listingId).
-//            then()
-        console.log('delete image');
-        let fileIndex = this.files.indexOf(file);
-        this.files.splice(fileIndex, 1);
+      deleteImage(cardData) {
+        let fileIndex = this.uploading.indexOf(cardData);
+        this.uploading.splice(fileIndex, 1);
       },
       addImageCard() {
         console.log('adding image card');
       },
       openModal(file) {
         console.log('opening modal');
-        this.previewFile = file;
+        this.previewFile = file.url;
         $('#image_modal').modal('show');
+      },
+      makeCoverPhoto() {
+
       },
     },
   };
