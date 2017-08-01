@@ -9,7 +9,6 @@
                     <button type="button" class="btn btn-primary">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
-
             </div>
         </div>
     </div>
@@ -44,6 +43,4 @@
 
 <style lang="scss" rel="stylesheet/scss" scoped>
     /*@import "./resources/assets/sass/variables";*/
-
-
 </style>

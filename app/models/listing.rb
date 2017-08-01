@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
   # belongs_to :user
-  has_many :images
+  has_many :images, dependent: :destroy
 
   cattr_accessor :form_steps do
     %w(add_description add_images add_shipping)

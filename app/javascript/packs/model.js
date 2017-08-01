@@ -5,6 +5,13 @@ axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector(
 
 const BASE_URL = 'http://localhost:3002';
 
+function loadImages(listingId) {
+  const url = `${BASE_URL}/listings/${listingId}/images`;
+  return axios.get(url).
+      then(x => x.request.response).
+      catch(error => error);
+}
+
 function uploadImage(cardData, listingId, onProgress) {
   var formData = new FormData();
   formData.append('image', cardData.file);
@@ -23,5 +30,20 @@ function uploadImage(cardData, listingId, onProgress) {
       catch(error => error);
 }
 
-export { uploadImage };
+function removeImage(cardData, listingId) {
+  const url = `${BASE_URL}/listings/${listingId}/images/${cardData.id}`;
+  console.dir(cardData)
+  return axios.delete(url).
+      then(x => x.request.response).
+      catch(error => error);
+}
+
+function setCover(cardData, listingId) {
+  const url = `${BASE_URL}/listings/${listingId}/images/${cardData.id}/set_cover_image`;
+  return axios.patch(url).
+      then(x => x.request.response).
+      catch(error => error);
+}
+
+export { loadImages, uploadImage, removeImage, setCover };
 

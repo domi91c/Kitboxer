@@ -1,34 +1,34 @@
 <template>
     <div class="mb-4">
         <div class="row">
-            <div class="col-sm-4 image-card .cover-photo">
-                <div class="item-image">
-                    <img class="" :src="cardData.url" @click="$emit('open-modal', cardData)"/>
+            <div class="col-sm-4 image-card ">
+                <div class="item-image " :class="card.coverImage ? 'cover-image' : ''">
+                    <img class="" :src="card.url" @click="$emit('open-modal', card)"/>
                 </div>
             </div>
             <div class="col-sm-8" style="">
                 <div class="actions hidden-md-down " style="">
-                    <h5>the_name_of_the_file.png</h5>
-                    <div class="btn btn-xl btn-success" @click="$emit('delete-image', cardData)">
+                    <h5>{{card.filename}}</h5>
+                    <div class="btn btn-xl btn-success" @click="$emit('delete-image', card)">
                         <i class="fa fa-crop "></i> Crop
                     </div>
-                    <div class="btn btn-xl btn-primary" @click="$emit('delete-image', cardData)">
+                    <div class="btn btn-xl btn-primary" @click="$emit('cover-image', card)">
                         <i class="fa fa-star "></i> Cover Photo
                     </div>
-                    <div class="btn btn-xl btn-danger" @click="$emit('delete-image', cardData)">
+                    <div class="btn btn-xl btn-danger" @click="$emit('delete-image', card)">
                         <i class="fa fa-times "></i> Delete
                     </div>
                 </div>
                 <div class="actions hidden-lg-up ">
-                    <h5>the_name_of_the_file.png</h5>
-                    <span @click="$emit('crop', cardData)"><i class="fa fa-crop "></i> Crop</span>
-                    <span @click="$emit('cover-photo', cardData)"><i class="fa fa-star "></i> Cover Photo</span>
-                    <span @click="$emit('delete-image', cardData)"><i class="fa fa-times "></i> Delete</span>
+                    <h5>{{card.filename}}</h5>
+                    <span @click="$emit('crop', card)"><i class="fa fa-crop "></i> Crop</span>
+                    <span @click="$emit('cover-image', card)"><i class="fa fa-star "></i> Cover Photo</span>
+                    <span @click="$emit('delete-image', card)"><i class="fa fa-times "></i> Delete</span>
                 </div>
                 <div class="progress mt-4 ">
                     <div class="progress-bar "
-                         :class="cardData.progress < 100 ? 'bg-primary' : 'bg-success'"
-                         :style="{width: cardData.progress + '%'}"></div>
+                         :class="card.progress < 100 ? 'bg-primary' : 'bg-success'"
+                         :style="{width: card.progress + '%'}"></div>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
   export default {
     mounted() {
     },
-    props: ['cardData'],
+    props: ['card'],
     data() {
       return {
         currentFile: placeholder,
@@ -79,8 +79,10 @@
         cursor: hand;
     }
 
-    .cover-photo {
-        border: 1px solid $brand-danger
+    .cover-image {
+        border-radius: 2%;
+        border: 5px solid $brand-primary;
+
     }
 
 </style>

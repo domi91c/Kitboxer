@@ -1,11 +1,11 @@
 <template>
     <div class="app">
         <hr>
-        <div v-for="file in uploading">
-            <image-card :cardData="file"
+        <div v-for="file in imageCards">
+            <image-card :card="file"
                         v-on:open-modal="openModal"
                         v-on:delete-image="deleteImage"
-                        v-on:cover-photo="makeCoverPhoto">
+                        v-on:cover-image="setCoverImage">
             </image-card>
         </div>
         <div class="row">
@@ -24,38 +24,54 @@
 <script>
   import ImageCard from './components/ImageCard.vue';
   import ImageModal from './components/ImageModal.vue';
-  import placeholder from './images/placeholder_img.jpg';
 
-  import { uploadImage } from './model';
+  import { loadImages, uploadImage, removeImage, setCover } from './model';
 
   export default {
     props: ['listingId'],
     data: function() {
       return {
         previewFile: '',
-        uploading: [],
+        imageCards: [],
       };
     },
     components: {
       ImageCard,
       ImageModal,
     },
+
+    mounted() {
+      loadImages(this.listingId).then(x => {
+        let respParsed = JSON.parse(x);
+        console.log('loading imageCards');
+        for (var i = 0; i < respParsed.images.length; i++) {
+          let card = {
+            progress: 100,
+            url: respParsed.images[i].image.url,
+            coverImage: respParsed.images[i].cover_image,
+            id: respParsed.images[i].id,
+          };
+          this.imageCards.push(card);
+        }
+      });
+    },
     methods: {
       inputDidChange(e) {
         if (e.target.files[0]) {
           for (let i = 0; i < e.target.files.length; i++) {
-
-            let cardData = {
+            let card = {
               file: e.target.files[i],
               formData: {},
               progress: 0,
               url: '',
+              coverImage: false,
             };
-            this.uploading.push(cardData);
-            uploadImage(cardData, this.listingId, this.onProgress).
+            this.imageCards.push(card);
+            uploadImage(card, this.listingId, this.onProgress).
                 then((x) => {
-                  let responseParsed = JSON.parse(x);
-                  cardData.url = responseParsed.image.image.url;
+                  let respParsed = JSON.parse(x);
+                  card.url = respParsed.image.image.url;
+                  card.id = respParsed.image.id;
                   console.log('success');
                 });
           }
@@ -64,7 +80,7 @@
       onProgress(percent, card) {
         console.log(this.files);
         console.log(card);
-        this.uploading[this.uploading.indexOf(card)].progress = percent;
+        this.imageCards[this.imageCards.indexOf(card)].progress = percent;
       },
       previewImage() {
         console.log('preview image');
@@ -73,8 +89,11 @@
         console.log('crop image');
       },
       deleteImage(cardData) {
-        let fileIndex = this.uploading.indexOf(cardData);
-        this.uploading.splice(fileIndex, 1);
+        let fileIndex = this.imageCards.indexOf(cardData);
+        this.imageCards.splice(fileIndex, 1);
+        removeImage(cardData, this.listingId).then(x => {
+          console.log('deleted image.');
+        });
       },
       addImageCard() {
         console.log('adding image card');
@@ -84,8 +103,15 @@
         this.previewFile = file.url;
         $('#image_modal').modal('show');
       },
-      makeCoverPhoto() {
-
+      setCoverImage(card) {
+        setCover(card, this.listingId).then(x => {
+          console.log('set cover image success');
+          for (let i = 0; i < this.imageCards.length; i++) {
+            let card = this.imageCards[i];
+            card.coverImage = false;
+          }
+          card.coverImage = true;
+        });
       },
     },
   };
@@ -116,6 +142,7 @@
     }
 
     .progress-bar {
+        border-radius: 50%;
         bottom: 0;
     }
 </style>
