@@ -74,3 +74,6 @@ gem 'wicked'
 gem 'colorize'
 gem 'client_side_validations'
 
+
+gem 'redis'
+gem 'hiredis'

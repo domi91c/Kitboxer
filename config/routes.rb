@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'carts/show'
+
   resources :listings do
     resources :build, controller: 'listing/build'
     resources :images, controller: 'listing/images' do
