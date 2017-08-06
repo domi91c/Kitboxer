@@ -1,5 +1,5 @@
-class AddListingIdToImages < ActiveRecord::Migration[5.1]
+class AddproductIdToImages < ActiveRecord::Migration[5.1]
   def change
-    add_column :images, :listing_id, :integer
+    add_column :images, :product_id, :integer
   end
 end

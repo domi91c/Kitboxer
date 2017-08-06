@@ -1,29 +1,29 @@
                        Prefix Verb   URI Pattern                                                Controller#Action
-          listing_build_index GET    /listings/:listing_id/build(.:format)                      listing/build#index
-                              POST   /listings/:listing_id/build(.:format)                      listing/build#create
-            new_listing_build GET    /listings/:listing_id/build/new(.:format)                  listing/build#new
-           edit_listing_build GET    /listings/:listing_id/build/:id/edit(.:format)             listing/build#edit
-                listing_build GET    /listings/:listing_id/build/:id(.:format)                  listing/build#show
-                              PATCH  /listings/:listing_id/build/:id(.:format)                  listing/build#update
-                              PUT    /listings/:listing_id/build/:id(.:format)                  listing/build#update
-                              DELETE /listings/:listing_id/build/:id(.:format)                  listing/build#destroy
-set_cover_image_listing_image PATCH  /listings/:listing_id/images/:id/set_cover_image(.:format) listing/images#set_cover_image
-               listing_images GET    /listings/:listing_id/images(.:format)                     listing/images#index
-                              POST   /listings/:listing_id/images(.:format)                     listing/images#create
-            new_listing_image GET    /listings/:listing_id/images/new(.:format)                 listing/images#new
-           edit_listing_image GET    /listings/:listing_id/images/:id/edit(.:format)            listing/images#edit
-                listing_image GET    /listings/:listing_id/images/:id(.:format)                 listing/images#show
-                              PATCH  /listings/:listing_id/images/:id(.:format)                 listing/images#update
-                              PUT    /listings/:listing_id/images/:id(.:format)                 listing/images#update
-                              DELETE /listings/:listing_id/images/:id(.:format)                 listing/images#destroy
-                     listings GET    /listings(.:format)                                        listings#index
-                              POST   /listings(.:format)                                        listings#create
-                  new_listing GET    /listings/new(.:format)                                    listings#new
-                 edit_listing GET    /listings/:id/edit(.:format)                               listings#edit
-                      listing GET    /listings/:id(.:format)                                    listings#show
-                              PATCH  /listings/:id(.:format)                                    listings#update
-                              PUT    /listings/:id(.:format)                                    listings#update
-                              DELETE /listings/:id(.:format)                                    listings#destroy
+          product_build_index GET    /products/:product_id/build(.:format)                      product/build#index
+                              POST   /products/:product_id/build(.:format)                      product/build#create
+            new_product_build GET    /products/:product_id/build/new(.:format)                  product/build#new
+           edit_product_build GET    /products/:product_id/build/:id/edit(.:format)             product/build#edit
+                product_build GET    /products/:product_id/build/:id(.:format)                  product/build#show
+                              PATCH  /products/:product_id/build/:id(.:format)                  product/build#update
+                              PUT    /products/:product_id/build/:id(.:format)                  product/build#update
+                              DELETE /products/:product_id/build/:id(.:format)                  product/build#destroy
+set_cover_image_product_image PATCH  /products/:product_id/images/:id/set_cover_image(.:format) product/images#set_cover_image
+               product_images GET    /products/:product_id/images(.:format)                     product/images#index
+                              POST   /products/:product_id/images(.:format)                     product/images#create
+            new_product_image GET    /products/:product_id/images/new(.:format)                 product/images#new
+           edit_product_image GET    /products/:product_id/images/:id/edit(.:format)            product/images#edit
+                product_image GET    /products/:product_id/images/:id(.:format)                 product/images#show
+                              PATCH  /products/:product_id/images/:id(.:format)                 product/images#update
+                              PUT    /products/:product_id/images/:id(.:format)                 product/images#update
+                              DELETE /products/:product_id/images/:id(.:format)                 product/images#destroy
+                     products GET    /products(.:format)                                        products#index
+                              POST   /products(.:format)                                        products#create
+                  new_product GET    /products/new(.:format)                                    products#new
+                 edit_product GET    /products/:id/edit(.:format)                               products#edit
+                      product GET    /products/:id(.:format)                                    products#show
+                              PATCH  /products/:id(.:format)                                    products#update
+                              PUT    /products/:id(.:format)                                    products#update
+                              DELETE /products/:id(.:format)                                    products#destroy
                          root GET    /                                                          visitors#index
              new_user_session GET    /users/sign_in(.:format)                                   devise/sessions#new
                  user_session POST   /users/sign_in(.:format)                                   devise/sessions#create

@@ -1,0 +1,76 @@
+<div class="wizard container">
+
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="list-group">
+        <li class="list-group-item active">Description</li>
+        <li class="list-group-item">Images</li>
+        <li class="list-group-item">Shipping</li>
+        <li class="list-group-item">Another Thin</li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="box">
+        <div class="card-block clearfix">
+          <h1>Description</h1>
+
+          <%= form_for @product, url: wizard_path, method: :put, validate: true do |form| %>
+              <%= render 'layouts/errors', resource: @product %>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <%= form.label :title, 'Title', class: 'control-label' %>
+                    <%= form.text_field :title, validate: true, class: 'form-control' %>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= form.label :category, 'Category', class: 'control-label' %>
+                    <%= form.text_field :category, validate: true, class: 'form-control' %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <%= form.label :tagline, 'Subtitle', class: 'control-label' %>
+                    <%= form.text_field :tagline, validate: true, class: 'form-control' %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <%= form.label :body, 'Description', class: 'control-label' %>
+                    <%= form.text_area :body, validate: true, class: 'form-control', style: 'height: 200px' %>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                        <%= form.label :price, 'Price', class: 'control-label' %>
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon">$</span>
+                          <%= form.text_field :price, validate: true, class: 'form-control' %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <%= form.label :quantity, 'Quantity', class: 'control-label' %>
+                        <%= form.number_field :quantity, validate: true, class: 'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <%= link_to "Previous", previous_wizard_path, class: 'btn btn-secondary' %>
+              <%= form.submit 'Next', class: 'btn btn-primary pull-right' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

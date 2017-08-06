@@ -1,5 +1,5 @@
-class AddCategoryToListing < ActiveRecord::Migration[5.1]
+class AddCategoryToproduct < ActiveRecord::Migration[5.1]
   def change
-    add_column :listings, :category, :string
+    add_column :products, :category, :string
   end
 end

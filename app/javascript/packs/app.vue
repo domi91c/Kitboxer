@@ -29,7 +29,7 @@
   import { loadImages, uploadImage, removeImage, setCover } from './model';
 
   export default {
-    props: ['listingId'],
+    props: ['productId'],
     data: function() {
       return {
         previewFile: '',
@@ -42,7 +42,7 @@
     },
 
     mounted() {
-      loadImages(this.listingId).then(x => {
+      loadImages(this.productId).then(x => {
         let respParsed = JSON.parse(x);
         console.log('loading imageCards');
         for (var i = 0; i < respParsed.images.length; i++) {
@@ -68,7 +68,7 @@
               coverImage: false,
             };
             this.imageCards.push(card);
-            uploadImage(card, this.listingId, this.onProgress).
+            uploadImage(card, this.productId, this.onProgress).
                 then((x) => {
                   let respParsed = JSON.parse(x);
                   card.url = respParsed.image.image.url;
@@ -92,7 +92,7 @@
       deleteImage(cardData) {
         let fileIndex = this.imageCards.indexOf(cardData);
         this.imageCards.splice(fileIndex, 1);
-        removeImage(cardData, this.listingId).then(x => {
+        removeImage(cardData, this.productId).then(x => {
           console.log('deleted image.');
         });
       },
@@ -105,7 +105,7 @@
         $('#image_modal').modal('show');
       },
       setCoverImage(card) {
-        setCover(card, this.listingId).then(x => {
+        setCover(card, this.productId).then(x => {
           console.log('set cover image success');
           for (let i = 0; i < this.imageCards.length; i++) {
             let card = this.imageCards[i];

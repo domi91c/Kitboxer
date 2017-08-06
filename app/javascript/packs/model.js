@@ -5,19 +5,19 @@ axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector(
 
 const BASE_URL = 'http://localhost:3002';
 
-function loadImages(listingId) {
-  const url = `${BASE_URL}/listings/${listingId}/images`;
+function loadImages(productId) {
+  const url = `${BASE_URL}/products/${productId}/images`;
   return axios.get(url).
       then(x => x.request.response).
       catch(error => error);
 }
 
-function uploadImage(cardData, listingId, onProgress) {
+function uploadImage(cardData, productId, onProgress) {
   var formData = new FormData();
   formData.append('image', cardData.file);
   console.log('in oup')
   console.log(cardData)
-  const url = `${BASE_URL}/listings/${listingId}/images`;
+  const url = `${BASE_URL}/products/${productId}/images`;
   let config = {
     onUploadProgress(progressEvent) {
       var percentCompleted = Math.round((progressEvent.loaded * 100) /
@@ -30,16 +30,16 @@ function uploadImage(cardData, listingId, onProgress) {
       catch(error => error);
 }
 
-function removeImage(cardData, listingId) {
-  const url = `${BASE_URL}/listings/${listingId}/images/${cardData.id}`;
+function removeImage(cardData, productId) {
+  const url = `${BASE_URL}/products/${productId}/images/${cardData.id}`;
   console.dir(cardData)
   return axios.delete(url).
       then(x => x.request.response).
       catch(error => error);
 }
 
-function setCover(cardData, listingId) {
-  const url = `${BASE_URL}/listings/${listingId}/images/${cardData.id}/set_cover_image`;
+function setCover(cardData, productId) {
+  const url = `${BASE_URL}/products/${productId}/images/${cardData.id}/set_cover_image`;
   return axios.patch(url).
       then(x => x.request.response).
       catch(error => error);

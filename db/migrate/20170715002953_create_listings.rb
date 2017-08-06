@@ -1,6 +1,6 @@
-class CreateListings < ActiveRecord::Migration[5.1]
+class Createproducts < ActiveRecord::Migration[5.1]
   def change
-    create_table :listings do |t|
+    create_table :products do |t|
       t.string :title
       t.text :body
       t.string :tagline
