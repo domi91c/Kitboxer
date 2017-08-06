@@ -1,0 +1,16 @@
+<div class=" col-md-3 col-sm-6 bs-reset">
+  <div class="listing-card card m-1" style="">
+    <div class="card-img-top">
+      <% if listing.images.first %>
+          <%= link_to listing_path(listing.id) do %>
+              <img src=" <%= listing.cover_image.image %>" class="listing-card-image img-container">
+          <% end %>
+      <% end %>
+    </div>
+    <div class="listing-card-footer card-footer">
+      <div class="listing-card-title _truncate"><%= listing.title %></div>
+      <div class=" text-muted float-left"><%= listing.user.email %></div>
+      <div class="float-right"><%= number_to_currency(listing.price) %></div>
+    </div>
+  </div>
+</div>

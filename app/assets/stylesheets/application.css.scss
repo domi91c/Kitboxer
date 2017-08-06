@@ -78,7 +78,7 @@ body, button, input, select, textarea {
 }
 
 .dropdown-toggle::after {
-  border: 1px solid #00d1b2;
+  border: 1px solid $brand-info;
   border-right: 0;
   border-top: 0;
   display: inline-block;
@@ -179,10 +179,8 @@ a:hover {
 }
 
 .img-container {
-  height: 350px;
-  //border: 1px solid $gray-lighter;
-  object-position: 50% 50%; /* default value: image is centered*/
-  object-position: 50% 50%;
+  height: 300px;
+  width:100%;
   object-fit: cover;
 }
 
@@ -276,4 +274,9 @@ a:hover {
 .img-carousel-indicator .active{
   display: inline-block;
   border: 3px solid $green;
+}
+
+
+.field_with_errors {
+  @extend .has-danger;
 }

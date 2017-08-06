@@ -25,3 +25,4 @@ document.addEventListener('turbolinks:load', function() {
     }).$mount(imageUploadEl);
   }
 });
+

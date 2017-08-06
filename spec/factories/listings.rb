@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :listing do
-    title "MyString"
-    body "MyText"
-    tagline "MyString"
-    user nil
-    price 1.5
-    quantity 1
+    title "Robot Bust Funk Destroyer Kit"
+    body "Hey everyone. This kit is the best thing you'll ever buy. It is a robot that busts funk and destroys shit."
+    tagline "The kit of a lifetime."
+    user 1
+    price 49.99
+    quantity 10
   end
 end

@@ -14,18 +14,20 @@
         <div class="card-block clearfix">
           <h1>Description</h1>
 
-          <%= form_for @listing, url: wizard_path, method: :put do |form| %>
+          <%= form_for @listing, url: wizard_path, method: :put, validate: true do |form| %>
+              <%= render 'layouts/errors', resource: @listing %>
+
               <div class="row">
                 <div class="col-md-8">
                   <div class="form-group">
                     <%= form.label :title, 'Title', class: 'control-label' %>
-                    <%= form.text_field :title, class: 'form-control' %>
+                    <%= form.text_field :title, validate: true, class: 'form-control' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <%= form.label :category, 'Category', class: 'control-label' %>
-                    <%= form.text_field :category, class: 'form-control' %>
+                    <%= form.text_field :category, validate: true, class: 'form-control' %>
                   </div>
                 </div>
               </div>
@@ -33,7 +35,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <%= form.label :tagline, 'Subtitle', class: 'control-label' %>
-                    <%= form.text_field :tagline, class: 'form-control' %>
+                    <%= form.text_field :tagline, validate: true, class: 'form-control' %>
                   </div>
                 </div>
               </div>
@@ -41,21 +43,24 @@
                 <div class="col-md-8">
                   <div class="form-group">
                     <%= form.label :body, 'Description', class: 'control-label' %>
-                    <%= form.text_area :body, class: 'form-control', style: 'height: 200px' %>
+                    <%= form.text_area :body, validate: true, class: 'form-control', style: 'height: 200px' %>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
+                    <div class="col-md-12">
                         <%= form.label :price, 'Price', class: 'control-label' %>
-                        <%= form.text_field :price, class: 'form-control' %>
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon">$</span>
+                          <%= form.text_field :price, validate: true, class: 'form-control' %>
+                        </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <%= form.label :quantity, 'Quantity', class: 'control-label' %>
-                        <%= form.number_field :quantity, class: 'form-control' %>
+                        <%= form.number_field :quantity, validate: true, class: 'form-control' %>
                       </div>
                     </div>
                   </div>

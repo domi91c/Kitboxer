@@ -72,3 +72,5 @@ gem 'wicked'
 
 
 gem 'colorize'
+gem 'client_side_validations'
+

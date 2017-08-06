@@ -1,4 +1,6 @@
 @import "custom";
+
+// Bootstrap
 .display-5 {
   font-size: $display5-size;
   font-weight: $display5-weight;
@@ -16,4 +18,10 @@
   font-weight: $display7-weight;
   line-height: $display-line-height;
 }
+//END Bootstrap
 
+._truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

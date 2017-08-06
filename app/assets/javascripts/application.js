@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require tether/dist/js/tether
 //= require bootstrap-sprockets
+//= require rails.validations
+
 //= require_tree .
 
 //// slide out search

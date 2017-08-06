@@ -12,7 +12,8 @@
             <div class="col-md-12">
                 <label class="btn btn-outline-info">
                     <input type="file" @change="inputDidChange" accept="image/*" multiple/>
-                    Add Another ...
+                    <span v-if="this.imageCards.length > 0">Add Another ...</span>
+                    <span v-else>Add An Image ...</span>
                 </label>
             </div>
         </div>

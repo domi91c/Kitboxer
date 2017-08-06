@@ -15,6 +15,7 @@
           <h1>Images</h1>
 
           <%= form_for @listing, url: wizard_path, method: :put do |form| %>
+              <%= render 'layouts/errors', resource: @listing %>
               <%= form.hidden_field :id %>
               <div id='root'>
                 <% placeholder = image_path('placeholder_img.jpg') %>
