@@ -3,16 +3,17 @@ class CartsController < ApplicationController
 
   def show
     cart_ids = $redis.smembers current_user_cart
-    @cart_movies = Movie.find(cart_ids)
+    @cart_products = Product.find(cart_ids)
   end
 
+
   def add
-    $redis.sadd current_user_cart, params[:movie_id]
+    $redis.sadd current_user_cart, params[:product_id]
     render json: current_user.cart_count, status: 200
   end
 
   def remove
-    $redis.srem current_user_cart, params[:movie_id]
+    $redis.srem current_user_cart, params[:product_id]
     render json: current_user.cart_count, status: 200
   end
 
@@ -21,4 +22,13 @@ class CartsController < ApplicationController
   def current_user_cart
     "cart#{current_user.id}"
   end
+
+  def cart_action(current_user_id)
+    if $redis.sismember "cart#{current_user_id}", id
+      "Remove from"
+    else
+      "Add to"
+    end
+  end
+
 end
