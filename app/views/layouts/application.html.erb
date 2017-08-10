@@ -15,7 +15,9 @@
 <%= content_for?(:header) ? yield(:header) : "" %>
 
 <div role="main" class="" style="min-height: calc(100vh - 70px);">
-  <%= render 'layouts/messages' %>
+  <div class="container">
+    <%= render 'layouts/messages' %>
+  </div>
   <%= yield %>
 </div>
 <footer class=" footer mt-5

@@ -1,4 +1,5 @@
                        Prefix Verb   URI Pattern                                                Controller#Action
+                   carts_show GET    /carts/show(.:format)                                      carts#show
           product_build_index GET    /products/:product_id/build(.:format)                      product/build#index
                               POST   /products/:product_id/build(.:format)                      product/build#create
             new_product_build GET    /products/:product_id/build/new(.:format)                  product/build#new
@@ -24,6 +25,9 @@ set_cover_image_product_image PATCH  /products/:product_id/images/:id/set_cover_
                               PATCH  /products/:id(.:format)                                    products#update
                               PUT    /products/:id(.:format)                                    products#update
                               DELETE /products/:id(.:format)                                    products#destroy
+                  add_to_cart PUT    /cart/add/:product_id(.:format)                            carts#add
+             remove_from_cart PUT    /cart/remove/:product_id(.:format)                         carts#remove
+                         cart GET    /cart(.:format)                                            carts#show
                          root GET    /                                                          visitors#index
              new_user_session GET    /users/sign_in(.:format)                                   devise/sessions#new
                  user_session POST   /users/sign_in(.:format)                                   devise/sessions#create

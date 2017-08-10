@@ -5,7 +5,7 @@
     <% @cart_products.each do |cart_product| %>
         <tr class="product-row">
           <td class="img-fluid"><%= image_tag cart_product.images.first.image, class: 'product-row-image' %></td>
-          <td><%= cart_product.title %>
+          <td><%= link_to cart_product.title, product_path(cart_product) %>
             <br>
             <br>
             <p class="display-7"><%= number_to_currency(cart_product.price) %></p>
