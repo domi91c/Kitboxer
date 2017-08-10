@@ -22,12 +22,10 @@
   <div class="img-carousel-indicators">
     <% images.each_with_index do |image, index| %>
         <div data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="img-carousel-indicator img-responsive <%= 'active' if image == images.first %>">
-          <%#= content_tag(:div, class: ["img-carousel-indicator", "img-responsive", "#{'active' if image == images.first}"", data: {target: '#carouselExampleIndicators', 'slide-to': index}) %>
           <%= image_tag image.image.url,
                         class: "img-container",
                         style: 'height: 50px; width: 60px' %>
         </div>
     <% end %>
   </div>
-
-  <!-- Button trigger modal --></div>
+</div>

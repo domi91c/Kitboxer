@@ -1,15 +1,15 @@
-class product::BuildController < ApplicationController
+class Product::BuildController < ApplicationController
   include Wicked::Wizard
-  steps *product.form_steps
+  steps *Product.form_steps
 
   def show
-    @product = product.find(params[:product_id])
+    @product = Product.find(params[:product_id])
     @image = @product.images.build
     render_wizard
   end
 
   def update
-    @product = product.find(params[:product_id])
+    @product = Product.find(params[:product_id])
     @product.update(product_params(step))
     render_wizard @product
   end

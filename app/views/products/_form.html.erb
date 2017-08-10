@@ -1,5 +1,5 @@
 <section class="container-fluid">
-  <%= form_with(model: product, local: true) do |form| %>
+  <%= form_with(model: Product, local: true) do |form| %>
       <% if product.errors.any? %>
           <div id="alert alert-danger">
             <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>

@@ -1,7 +1,7 @@
-class product::ImagesController < ApplicationController
+class Product::ImagesController < ApplicationController
 
   def index
-    @images = product.find(params[:product_id]).images
+    @images = Product.find(params[:product_id]).images
     render json: {images: @images.order(:updated_at).reverse}, status: :ok
   end
 
@@ -23,7 +23,7 @@ class product::ImagesController < ApplicationController
   def set_cover_image
 
     @image = Image.find(params[:id])
-    @product = product.find(params[:product_id])
+    @product = Product.find(params[:product_id])
     @images = @product.images
     @images.map {|image| image.cover_image = false; image.save}
     @image.cover_image = true

@@ -27,22 +27,6 @@
         </li>
 
       </ul>
-      <ul class="navbar-nav  ">
-
-
-        <li class="pr-3 nav-item " style="top: 10px; left: 10px; position: relative;">
-          <%= link_to cart_path class: 'nav-link ', style: '' do %>
-              <i href="#" class="fa fa-shopping-cart  nav-icon" style="">
-                <span class="badge badge-cart"><%= current_user.cart_count if current_user.cart_count > 0 %></span>
-              </i>
-          <% end %>
-          <!--          <div class="dropdown-menu dropdown-menu-right">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>-->
-        </li>
-      </ul>
       <ul class="navbar-nav">
         <li class="input-group nav-search  mr-2">
         <span class="input-group-addon" id="sizing-addon2">

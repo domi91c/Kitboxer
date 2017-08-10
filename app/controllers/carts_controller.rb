@@ -9,7 +9,8 @@ class CartsController < ApplicationController
 
   def add
     $redis.sadd current_user_cart, params[:product_id]
-    render json: current_user.cart_count, status: 200
+    redirect_to carts_show_path(current_user_cart)
+    # render json: current_user.cart_count, status: 200
   end
 
   def remove

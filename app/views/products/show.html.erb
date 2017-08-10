@@ -31,30 +31,30 @@
             qui ratione voluptatem sequi nesciunt. </p>
 
           <div class="product-actions">
-            <p>
-              <a href="#"><i class="fa fa-minus cart-icon"></i></a>
+            <div>
+              <span id="product-count-decrease" href="#"><i class="fa fa-minus cart-icon"></i></span>
               &nbsp;
-              <input type="text" name="" value="1" class="input form-control" style="width: 40px; display:inline-block">
+              <input id="product-count" type="text" name="" value="1" class="input form-control" style="width: 45px; display:inline-block">
               &nbsp;
-              <a href="#"><i class="fa fa-plus cart-icon"></i></a>
+              <span id="product-count-increase" href="#"><i class="fa fa-plus cart-icon"></i></span>
               &nbsp;
-              <span class="hidden-md-down">
-            <button class="btn btn-primary" style="display: inline-block;">
-              <i class="fa fa-shopping-cart"></i> Add to cart
-            </button>
-            <button class="btn btn-info" style="display: inline-block;">
-              <i class="fa fa-star"></i> Watch
-            </button>
-          </span>
-              <span class="hidden-lg-up">
-            <button class="btn btn-sm btn-primary" style="display: inline-block;">
-              <i class="fa fa-shopping-cart"></i> Add to cart
-            </button>
-            <button class="btn btn-sm btn-info" style="display: inline-block;">
-              <i class="fa fa-star"></i> Watch
-            </button>
-          </span>
-            </p>
+              <div class="hidden-md-down" style="display: inline-block;">
+                <%= link_to add_to_cart_path(@product), method: :put, class: "btn btn-primary" do %>
+                    <i class="fa fa-shopping-cart"></i> Add to cart
+                <% end %>
+                <button class="btn btn-info" style="display: inline-block;">
+                  <i class="fa fa-star"></i> Watch
+                </button>
+              </div>
+              <div class="hidden-lg-up" style="display: inline-block;">
+                <%= link_to add_to_cart_path(@product), method: :put, class: "btn btn-sm btn-primary" do %>
+                    <i class="fa fa-shopping-cart"></i> Add to cart
+                <% end %>
+                <button class="btn btn-sm btn-info" style="display: inline-block;">
+                  <i class="fa fa-star"></i> Watch
+                </button>
+              </div>
+            </div>
           </div>
           <table class="table table-hover">
             <tbody>

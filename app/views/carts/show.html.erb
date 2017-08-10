@@ -1,2 +1,18 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<section class="cart-show container">
+  <h1>Checkout</h1>
+  <table class="table table-striped">
+    <tbody>
+    <% @cart_products.each do |cart_product| %>
+        <tr class="product-row">
+          <td class="img-fluid"><%= image_tag cart_product.images.first.image, class: 'product-row-image' %></td>
+          <td><%= cart_product.title %>
+            <br>
+            <br>
+            <p class="display-7"><%= number_to_currency(cart_product.price) %></p>
+          </td>
+
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

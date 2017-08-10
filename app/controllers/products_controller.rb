@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
   def create
     @product = current_user.products.new
     @product.save(validate: false)
-    redirect_to product_build_path(@product, product.form_steps.first)
+    redirect_to product_build_path(@product, @product.form_steps.first)
   end
 
   # PATCH/PUT /products/1

@@ -1,28 +1,28 @@
 /* eslint no-console:0 */
 import Vue from 'vue/dist/vue.esm';
-import App from './app.vue';
+import ImageUploader from './ImageUploader.vue';
+// import Counter from 'Counter.vue';
 import TurbolinksAdapter from 'vue-turbolinks';
-import VueResource from 'vue-resource';
-import Croppa from 'vue-croppa';
-import 'vue-croppa/dist/vue-croppa.css';
-
-Vue.use(VueResource);
-Vue.use(Croppa);
 
 document.addEventListener('turbolinks:load', function() {
-  Vue.http.headers.common['X-CSRF-Token'] = document.querySelector(
-      'meta[name="csrf-token"]').getAttribute('content');
 
-  let imageUploadEl = document.getElementById('image_upload');
-  if (imageUploadEl !== null) {
-    console.log(imageUploadEl);
-    let props = JSON.parse(imageUploadEl.getAttribute('data'));
+  let imageUploaderEl = document.getElementById('image-uploader');
+  let counterEl = document.getElementById('counter');
+  // if (counterEl !== null) {
+  //   new Vue({
+  //     render: h => h(ImageUploader, { props }),
+  //     mixins: [TurbolinksAdapter],
+  //   }).$mount(imageUploaderEl);
+  // }
+  if (imageUploaderEl !== null) {
+    console.log(imageUploaderEl);
+    let props = JSON.parse(imageUploaderEl.getAttribute('data'));
     console.log('props:');
     console.dir(props);
     new Vue({
-      render: h => h(App, { props }),
+      render: h => h(ImageUploader, { props }),
       mixins: [TurbolinksAdapter],
-    }).$mount(imageUploadEl);
+    }).$mount(imageUploaderEl);
   }
 });
 
