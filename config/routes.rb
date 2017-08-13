@@ -6,8 +6,6 @@ Rails.application.routes.draw do
     resources :images, controller: 'product/images' do
       member do
         patch :set_cover_image
-
-
       end
     end
   end
