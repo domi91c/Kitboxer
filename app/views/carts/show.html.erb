@@ -8,14 +8,13 @@
           <td><%= link_to cart_product.title, product_path(cart_product) %>
             <br>
             <br>
-            <p class="display-7"><%= number_to_currency(cart_product.price) %></p>
-            <p class="display-7"><%= cart_quantity %></p>
+            <p class="display-7"><%= number_to_currency(cart_product.price) %> x <%= cart_quantity %></p>
           </td>
           <%= form_tag add_to_cart_path(cart_product), method: :put do %>
               <td>
                 <span id="product-count-decrease" href="#"><i class="fa fa-minus cart-icon"></i></span>
                 &nbsp;
-                <%= text_field_tag :product_quantity, nil, class: 'input form-control', style: 'width: 45px; display:inline-block', id: 'product-count', value: cart_quantity %>
+                <%= text_field_tag :product_quantity, nil, class: 'input form-control mb-2', style: 'width: 45px; display:inline-block', id: 'product-count', value: cart_quantity %>
                 <span id="product-count-increase" href="#"><i class="fa fa-plus cart-icon"></i></span>
                 &nbsp;
                 <div class="" style="display: inline-block;">
