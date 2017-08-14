@@ -3,9 +3,9 @@ class Product < ApplicationRecord
   has_many :images, dependent: :destroy
 
   validates_presence_of :title, if: -> {required_for_step?(:add_description)}
-  # validates_presence_of :category, if: -> {required_for_step?(:add_description)}
+  validates_presence_of :category, if: -> {required_for_step?(:add_description)}
   validates_presence_of :tagline, if: -> {required_for_step?(:add_description)}
-  # validates_presence_of :body, if: -> {required_for_step?(:add_description)}
+  validates_presence_of :body, if: -> {required_for_step?(:add_description)}
   validates_presence_of :price, if: -> {required_for_step?(:add_description)}
   # validates_presence_of :quantity, if: -> {required_for_step?(:add_description)}
   validates_presence_of :images, if: -> {required_for_step?(:add_images)}
@@ -28,6 +28,15 @@ class Product < ApplicationRecord
 
   def cover_image
     (ci = images.where(cover_image: true).last) ? ci : images.first
+  end
+
+  def self.search(search)
+    where("title ILIKE ?", "%#{search}%")
+    # where("body ILIKE ?", "%#{search}%")
+  end
+
+  def self.with_images
+    includes(:images).where.not(:images => {:image => nil})
   end
 
 end

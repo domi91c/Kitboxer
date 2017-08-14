@@ -6,7 +6,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.includes(:images).where.not(:images => {:image => nil})
+    if params[:search]
+      @products = Product.with_images.search(params[:search])
+    else
+      @products = Product.with_images
+    end
   end
 
   # GET /products/1

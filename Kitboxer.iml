@@ -109,6 +109,7 @@
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.21.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="powerpack (v0.1.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.10.4, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pry-byebug (v3.4.2, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry-rails (v0.3.6, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry-rescue (v1.4.5, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v2.0.5, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
@@ -152,6 +153,7 @@
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.4, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.6, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.7, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="trix (v0.10.2, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v5.0.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks-source (v5.0.3, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.3, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />

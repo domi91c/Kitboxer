@@ -17,6 +17,7 @@
 @import "custom";
 @import "bootstrap";
 //@import "containers";
+@import "trix";
 @import "tabs";
 @import "tables";
 @import "type";
@@ -180,7 +181,7 @@ a:hover {
 
 .img-container {
   height: 300px;
-  width:100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -262,20 +263,20 @@ a:hover {
   margin-top: 40px;
 }
 
-.img-carousel-indicator{
+.img-carousel-indicator {
   display: inline-block;
   border: 3px solid $neon;
 }
 
-.img-carousel-indicator:hover{
-  display: inline-block;
-  border: 3px solid $green;
-}
-.img-carousel-indicator .active{
+.img-carousel-indicator:hover {
   display: inline-block;
   border: 3px solid $green;
 }
 
+.img-carousel-indicator .active {
+  display: inline-block;
+  border: 3px solid $green;
+}
 
 .field_with_errors {
   @extend .has-danger;

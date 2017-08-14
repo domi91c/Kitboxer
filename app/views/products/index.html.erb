@@ -1,7 +1,15 @@
 <section class="product-index container-fluid">
-  <%= link_to 'New Product', products_path, method: :post %>
-  <div class="card-deck">
-    <%= render @products %>
+  <div class="container">
+    <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+        <div class="input-group input-group-lg mb-4">
+          <%= text_field_tag :search, params[:search], placeholder: "Search...", class: 'form-control' %>
+          <%= submit_tag "Search" , class: 'input-group-addon'%>
+        </div>
+    <% end %>
+    <div class="card-deck">
+      <%= render @products %>
+    </div>
+    <%= link_to 'New Product', products_path, method: :post %>
   </div>
 </section>
 

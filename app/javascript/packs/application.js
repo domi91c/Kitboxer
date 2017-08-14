@@ -8,12 +8,7 @@ document.addEventListener('turbolinks:load', function() {
 
   let imageUploaderEl = document.getElementById('image-uploader');
   let counterEl = document.getElementById('counter');
-  // if (counterEl !== null) {
-  //   new Vue({
-  //     render: h => h(ImageUploader, { props }),
-  //     mixins: [TurbolinksAdapter],
-  //   }).$mount(imageUploaderEl);
-  // }
+
   if (imageUploaderEl !== null) {
     console.log(imageUploaderEl);
     let props = JSON.parse(imageUploaderEl.getAttribute('data'));

@@ -105,7 +105,7 @@
               <div class="card mt-3 pa-4">
                 <div class="card-block">
                   <div class="card-title">Overview</div>
-                  <div class="card-text"><%= @product.body %></div>
+                  <div class="card-text"><%= @product.body.html_safe %></div>
                 </div>
               </div>
             </div>
@@ -141,5 +141,5 @@
     </div>
   </section>
 
-  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Edit', products_path, method: :put %>
   <%= link_to 'Back', products_path %></div>

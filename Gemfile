@@ -78,3 +78,8 @@ gem 'client_side_validations'
 
 gem 'redis'
 gem 'hiredis'
+
+gem 'trix'
+
+gem "capybara-webkit"
+

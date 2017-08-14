@@ -6,7 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   def cart_count
-    # $redis.scard "cart#{id}"
-    0
+    $redis.hlen "cart#{id}"
   end
 end
