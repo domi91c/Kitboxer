@@ -8,9 +8,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
   <%= javascript_pack_tag 'application' %>
-  <!--<%#= stylesheet_pack_tag 'application' %>-->
+  <%= stylesheet_pack_tag 'application' %>
 </head>
-<body style="background-color: #F1F3F3;">
+<body style="background-color: #F5F7FA;">
 <%= render 'layouts/navigation' %>
 <%= content_for?(:header) ? yield(:header) : "" %>
 
@@ -21,7 +21,7 @@
   <%= yield %>
 </div>
 <footer class=" footer mt-5
-">
+" style="background-color: #fff;">
   <div class="container">
     <div class="text-center">
       <p>

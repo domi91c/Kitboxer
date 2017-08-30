@@ -1,5 +1,26 @@
+@import "custom";
+
 .nav-container {
-  margin-bottom: 30px;
+  //margin-bottom: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
 }
+
+@media (min-width: 992px) {
+  .nav-search-form-control {
+    width: 500px;
+    border: none;
+    border-bottom: 1px solid $gray-lighter;
+  }
+  .navbar {
+    //margin-left: 65px;
+    //margin-right: 65px;
+  }
+}
+
+@media (max-width: 61.9em) {
+  .nav-search .input-group-addon {
+    padding: 1rem 0.5rem 0.5rem 0;
+  }
+}
+

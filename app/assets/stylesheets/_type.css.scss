@@ -1,5 +1,14 @@
 @import "custom";
 
+a {
+  color: $brand-primary;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 // Bootstrap
 .display-5 {
   font-size: $display5-size;
