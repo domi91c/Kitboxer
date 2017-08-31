@@ -5,7 +5,7 @@
 ###########################################
 if ClientSideValidations?
   errorClass = 'has-danger'
-  errorBlockClass = 'error-block'
+  errorBlockClass = 'error-group'
 
   getErrorFields = (element) ->
     if element.closest('.input-group')[0]?

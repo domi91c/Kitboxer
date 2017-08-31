@@ -7,7 +7,6 @@ class Product < ApplicationRecord
   validates_presence_of :tagline, if: -> { required_for_step?(:add_description) }
   validates_presence_of :body, if: -> { required_for_step?(:add_description) }
   validates_presence_of :price, if: -> { required_for_step?(:add_description) }
-  # validates :quantity, :numericality => true, :allow_nil => false, if: -> { required_for_step?(:add_description) }
   validates_presence_of :body, if: -> { required_for_step?(:add_description) }
   validates_presence_of :images, if: -> { required_for_step?(:add_images) }
 
@@ -39,5 +38,6 @@ class Product < ApplicationRecord
   def self.with_images
     includes(:images).where.not(:images => { :image => nil })
   end
+
 
 end

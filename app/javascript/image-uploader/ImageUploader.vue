@@ -42,19 +42,16 @@
     },
 
     mounted() {
-      loadImages(this.productId).then(x => {
-        let respParsed = JSON.parse(x);
-        console.log('loading imageCards');
-        for (var i = 0; i < respParsed.images.length; i++) {
-          let card = {
-            progress: 100,
-            url: respParsed.images[i].image.url,
-            coverImage: respParsed.images[i].cover_image,
-            id: respParsed.images[i].id,
-          };
-          this.imageCards.push(card);
-        }
-      });
+      for (var i = 0; i < this.images.length - 1; i++) {
+        let image = this.images[i];
+        let card = {
+          progress: 100,
+          url: image.image.url,
+          coverImage: image.cover_image,
+          id: image.image.id,
+        };
+        this.imageCards.push(card);
+      }
     },
     methods: {
       inputDidChange(e) {
