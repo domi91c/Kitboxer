@@ -19,7 +19,7 @@
             </div>
         </div>
         <hr>
-        <crop-modal :image="previewFile"></crop-modal>
+        <crop-modal :image="previewFile" :modalIsReady="modalIsReady"></crop-modal>
     </div>
 </template>
 
@@ -33,6 +33,7 @@
     data: function() {
       return {
         previewFile: '',
+        modalIsReady: false,
         imageCards: [],
       };
     },
@@ -85,6 +86,7 @@
       cropImage(file) {
         this.previewFile = file.url;
         $('.js-crop-modal').modal('show');
+        this.modalIsReady = true
       },
       deleteImage(cardData) {
         let fileIndex = this.imageCards.indexOf(cardData);

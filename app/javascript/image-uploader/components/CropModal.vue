@@ -3,7 +3,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="img-container text-center">
+                    <div v-if="modalIsReady" class="img-container text-center">
                         <img v-show="false" :src="image" alt="">
                         <vue-cropper
                                 ref='cropper'
@@ -39,7 +39,7 @@
     components: {
       VueCropper,
     },
-    props: ['image'],
+    props: ['image', 'modalIsReady'],
     data() {
       return {
         currentImage: {},
@@ -49,7 +49,7 @@
       };
     },
     mounted() {
-      this.$refs.cropper.destroy();
+      console.log('modal is ready')
       this.$refs.cropper.enable();
       this.$refs.cropper.replace(this.image);
     },

@@ -1,40 +1,55 @@
-// Run this example by adding <%= javascript_pack_tag 'hello_react' %> to the head of your layout file,
-// like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
-// of the page.
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import ReactImageCrop from 'react-image-crop-component';
-import 'react-image-crop-component/lib/style.css';
+import { TrixEditor } from 'react-trix';
 
-const Hello = props => (
-    <div>
-      <div style={{ width: '300px', height: '300px' }}>
-        <ReactImageCrop src="https://www.picmonkey.com/_/static/images/index/picmonkey_twitter_02.24fd38f81e59.jpg"
-                        setWidth={300}
-                        setHeight={300}
-                        square={false}
-                        resize={true}
-                        border={'dashed #ffffff 2px'}
-                        />
+// import GuideStep from './components/GuideStep.jsx';
+
+const GuideEditor = props => (
+    <div className="container mt-5">
+      <div className="card-block clearfix">
+        <h1>Guide Editor</h1>
+        <hr/>
+        <div className="box mt-4">
+          <div className="card-block"><h2> Step 1</h2>
+            <hr/>
+            <input type="text" placeholder="Enter step title..."
+                   className="form-control mb-4"/>
+            <TrixEditor className="form-control" onChange={this.handleChange}
+                        onEditorReady={this.handleReady}/></div>
+        </div>
+        <div className="box mt-4">
+          <div className="card-block"><h2> Step 1</h2>
+            <hr/>
+            <input type="text" placeholder="Enter step title..."
+                   className="form-control mb-4"/>
+            <TrixEditor onChange={this.handleChange}
+                        onEditorReady={this.handleReady}/></div>
+        </div>
+        <div className="box mt-4">
+          <div className="card-block"><h2> Step 1</h2>
+            <hr/>
+            <input type="text" placeholder="Enter step title..."
+                   className="form-control mb-4"/>
+            <TrixEditor onChange={this.handleChange}
+                        onEditorReady={this.handleReady}/></div>
+        </div>
       </div>
     </div>
 );
 
-Hello.defaultProps = {
+GuideEditor.defaultProps = {
   name: 'David',
 };
 
-Hello.propTypes = {
+GuideEditor.propTypes = {
   name: PropTypes.string,
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  let helloEl = document.querySelector('#hello_react');
+  let el = document.querySelector('.js-guide-editor--react');
   ReactDOM.render(
-      <Hello
-          imageSrc="http://react.rocks/images/converted/react-avatar-editor.jpg"/>,
-      helloEl.appendChild(document.createElement('div')),
+      <GuideEditor/>,
+      el.appendChild(document.createElement('div')),
   );
 });
