@@ -21,7 +21,6 @@ class Product::ImagesController < ApplicationController
   end
 
   def set_cover_image
-
     @image = Image.find(params[:id])
     @product = Product.find(params[:product_id])
     @images = @product.images

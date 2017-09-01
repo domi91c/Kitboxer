@@ -33,7 +33,6 @@
     data: function() {
       return {
         previewFile: '',
-        modalIsReady: false,
         imageCards: [],
       };
     },
@@ -82,7 +81,6 @@
       cropImage(file) {
         this.$root.$emit('show::modal', 'image-modal');
         this.previewFile = file.url;
-        this.modalIsReady = true;
       },
       deleteImage(cardData) {
         let fileIndex = this.imageCards.indexOf(cardData);
