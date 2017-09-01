@@ -49,11 +49,12 @@
       };
     },
     mounted() {
-      console.log('modal is ready')
+      console.log('modal is ready');
       this.$refs.cropper.enable();
       this.$refs.cropper.replace(this.image);
     },
     updated() {
+      console.log('updated');
       this.$refs.cropper.destroy();
       this.$refs.cropper.enable();
       this.$refs.cropper.replace(this.image);

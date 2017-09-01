@@ -19,13 +19,13 @@
             </div>
         </div>
         <hr>
-        <crop-modal :image="previewFile" :modalIsReady="modalIsReady"></crop-modal>
+        <image-modal :image="previewFile"></image-modal>
     </div>
 </template>
 
 <script>
   import ImageCard from './components/ImageCard.vue';
-  import CropModal from './components/CropModal.vue';
+  import ImageModal from './components/ImageModal.vue';
   import { loadImages, uploadImage, removeImage, setCover } from './model.js';
 
   export default {
@@ -39,7 +39,7 @@
     },
     components: {
       ImageCard,
-      CropModal,
+      ImageModal,
     },
 
     mounted() {
@@ -49,7 +49,7 @@
           progress: 100,
           url: image.image.url,
           coverImage: image.cover_image,
-          id: image.image.id,
+          id: image.id,
         };
         this.imageCards.push(card);
       }
@@ -70,7 +70,6 @@
               let respParsed = JSON.parse(x);
               card.url = respParsed.image.image.url;
               card.id = respParsed.image.id;
-              console.log('success');
             });
           }
         }
@@ -80,13 +79,10 @@
         console.log(card);
         this.imageCards[this.imageCards.indexOf(card)].progress = percent;
       },
-      previewImage() {
-        console.log('preview image');
-      },
       cropImage(file) {
+        this.$root.$emit('show::modal', 'image-modal');
         this.previewFile = file.url;
-        $('.js-crop-modal').modal('show');
-        this.modalIsReady = true
+        this.modalIsReady = true;
       },
       deleteImage(cardData) {
         let fileIndex = this.imageCards.indexOf(cardData);
@@ -99,9 +95,8 @@
         console.log('adding image card');
       },
       openModal(file) {
-        console.log('opening modal');
+        this.$root.$emit('show::modal', 'image-modal');
         this.previewFile = file.url;
-        $('.js-crop-modal').modal('show');
       },
       setCoverImage(card) {
         setCover(card, this.productId).then(x => {
