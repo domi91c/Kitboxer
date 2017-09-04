@@ -45,7 +45,7 @@
         let card = {
           productId: this.productId,
           progress: 100,
-          url: image.image.url,
+          url: image.image.cropped.url,
           coverImage: image.cover_image,
           id: image.id,
         };
@@ -81,6 +81,7 @@
       cropImage(card) {
         this.$root.$emit('show::modal', 'image-modal');
         this.currentImage = card;
+        console.log(this.currentImage);
       },
       updateImage(cropData) {
         this.currentImage.cropData = cropData;
@@ -89,8 +90,7 @@
           console.log('image cropped successfully');
           console.log(x);
           let index = this.imageCards.indexOf(this.currentImage);
-          this.imageCards[index].url = respParsed.image.image.url;
-
+          this.imageCards[index].url = respParsed.image.image.cropped.url;
         }).catch(x => {
           console.log('image cropped failed');
         });
@@ -116,7 +116,6 @@
 </script>
 
 <style scoped>
-
     input[type="file"] {
         display: none;
     }
@@ -144,6 +143,3 @@
         bottom: 0;
     }
 </style>
-
-
-

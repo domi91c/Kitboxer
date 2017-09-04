@@ -29,6 +29,9 @@
     components: {
       VueCropper,
     },
+    mounted() {
+      this.$refs.cropper.replace(this.image.url);
+    },
     updated() {
       this.$refs.cropper.replace(this.image.url);
     },

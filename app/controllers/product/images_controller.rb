@@ -20,7 +20,6 @@ class Product::ImagesController < ApplicationController
     if @image.update(image_params)
       if image_params[:crop_data]
         @image.update(crop_data: JSON.parse(params[:image][:crop_data]))
-        @image.update_attributes(image: @image.crop_image)
       end
       render json: { image: @image }, status: :created
     else

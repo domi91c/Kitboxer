@@ -14,18 +14,21 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  version :cropped do
+    process :crop
+    resize_to_fill(200, 200)
+  end
+
   version :large do
     resize_to_limit(600, 600)
   end
 
   version :thumb do
-    process :crop
     resize_to_fill(200, 200)
   end
 
   def crop
     if model.crop_data.present?
-      resize_to_limit(600, 600)
       manipulate! do |img|
         x = model.crop_data["x"].to_i
         y = model.crop_data["y"].to_i

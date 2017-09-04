@@ -22,7 +22,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap', '4.0.0.alpha6'
+gem 'bootstrap', '4.0.0.beta'
 gem 'devise'
 gem 'devise_invitable'
 gem 'high_voltage'
@@ -55,6 +55,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'selenium-webdriver'
 end
 gem "font-awesome-rails"
 

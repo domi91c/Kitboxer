@@ -18,7 +18,6 @@
       <excludeFolder url="file://$MODULE_DIR$/components" />
       <excludeFolder url="file://$MODULE_DIR$/public" />
       <excludeFolder url="file://$MODULE_DIR$/public/system" />
-      <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bundle" />
     </content>
     <orderEntry type="jdk" jdkName="RVM: ruby-2.4.0 [kb]" jdkType="RUBY_SDK" />
@@ -40,7 +39,7 @@
     <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.1.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.5.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v0.7.2, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap (v4.0.0.alpha6, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap (v4.0.0.beta, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.3, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.15.3, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v9.0.6, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
@@ -48,6 +47,7 @@
     <orderEntry type="library" scope="PROVIDED" name="capybara (v2.14.4, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara-webkit (v1.1.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carrierwave (v1.1.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.7.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="client_side_validations (v9.3.4, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.2.2, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
@@ -112,6 +112,7 @@
     <orderEntry type="library" scope="PROVIDED" name="parallel (v1.11.2, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parser (v2.4.0.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.21.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="popper_js (v1.11.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="powerpack (v0.1.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.10.4, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry-byebug (v3.4.2, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
@@ -137,6 +138,7 @@
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v0.4.4, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rename (v1.0.6, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v2.4.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rmagick (v2.16.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec (v3.6.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.6.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.6.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
@@ -146,8 +148,10 @@
     <orderEntry type="library" scope="PROVIDED" name="rubocop (v0.49.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.8.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_dep (v1.5.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.2.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.4.25, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v5.0.6, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v3.5.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="shellany (v0.0.1, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="slop (v3.6.0, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spring (v2.0.2, RVM: ruby-2.4.0 [kb]) [gem]" level="application" />

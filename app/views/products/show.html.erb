@@ -1,13 +1,13 @@
-<div class="container">
-  <section class="box">
-    <div class="card-block">
+<div class="container mt-5">
+  <section class="box ">
+    <div class="card-body">
       <div class="row">
         <div class="col-md-6">
-          <% if @product.images.first.image %>
+          <% if @product.images.first.image.cropped %>
               <%= render 'product_carousel', images: @product.images %>
           <% end %>
         </div>
-        <div class="col-md-5 offset-md-1">
+        <div class="col-md-5 ml-auto">
           <div class="display-5" style="margin-bottom:1.5rem;"> <%= @product.title %> </div>
 
 
@@ -39,19 +39,11 @@
                   <%= text_field_tag :product_quantity, nil, class: 'input form-control', style: 'width: 45px; display:inline-block', id: 'product-count', value: 1 %>
                   <span id="product-count-increase" href="#"><i class="fa fa-plus cart-icon"></i></span>
                   &nbsp;
-                  <div class="hidden-md-down" style="display: inline-block;">
+                  <div class="" style="display: inline-block;">
                     <%= button_tag(type: "submit", class: "btn btn-primary") do %>
                         <i class="fa fa-shopping-cart"></i> Add to cart
                     <% end %>
                     <button class="btn btn-info" style="display: inline-block;">
-                      <i class="fa fa-star"></i> Watch
-                    </button>
-                  </div>
-                  <div class="hidden-lg-up" style="display: inline-block;">
-                    <%= submit_tag "Add to cart", class: "btn btn-sm btn-primary" do %>
-                        <i class="fa fa-shopping-cart"></i> Add to cart
-                    <% end %>
-                    <button class="btn btn-sm btn-info" style="display: inline-block;">
                       <i class="fa fa-star"></i> Watch
                     </button>
                   </div>

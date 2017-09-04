@@ -1,5 +1,8 @@
 <template>
     <div>
+        <h1>Step 1</h1>
+        <label for="step-title" class="">Title</label>
+        <input type="text" id="step-title" class="form-control mb-4">
         <trix-editor></trix-editor>
     </div>
 </template>

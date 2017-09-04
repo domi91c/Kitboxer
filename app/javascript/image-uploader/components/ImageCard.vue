@@ -60,7 +60,6 @@
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>
-    @import '~stylesheets/custom';
 
     .image-card {
         position: relative;
@@ -84,7 +83,7 @@
 
     .cover-image {
         border-radius: 2%;
-        border: 5px solid $brand-primary;
+        border: 5px solid theme-color("primary");
     }
 
     .other-image {

@@ -3,11 +3,10 @@
     <div class="carousel-inner" role="listbox">
       <% images.each do |image| %>
           <div class="carousel-item item-image <%= 'active' if image == images.first %>" data-target="#carouselModal<%= image.id %>" data-toggle="modal">
-            <img class="d-block img-fluid " src="<%= image.image.url %>">
+            <img class="d-block img-fluid " src="<%= image.image.cropped.url %>">
           </div>
           <%= render 'carousel_modal', image: image %>
       <% end %>
-
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

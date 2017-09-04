@@ -4,7 +4,7 @@
 
 ###########################################
 if ClientSideValidations?
-  errorClass = 'has-danger'
+  errorClass = 'field_with_errors'
   errorBlockClass = 'error-group'
 
   getErrorFields = (element) ->
