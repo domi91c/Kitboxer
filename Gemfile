@@ -86,3 +86,5 @@ gem 'trix'
 
 gem "capybara-webkit"
 
+gem 'omniauth-stripe-connect'
+

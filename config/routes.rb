@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  resources :users
+
   resources :posts
   get 'carts/show'
 
@@ -17,6 +20,4 @@ Rails.application.routes.draw do
   end
 
   root to: 'visitors#index'
-  devise_for :users
-  resources :users
 end
