@@ -1,9 +1,8 @@
 <template>
     <div class="app">
         <hr>
-        <div v-for="file in imageCards">
-            <image-card :card="file"
-                        @open-modal="openModal"
+        <div v-for="card in imageCards">
+            <image-card :card="card"
                         @crop-image="cropImage"
                         @delete-image="deleteImage"
                         @cover-image="setCoverImage">
@@ -19,20 +18,20 @@
             </div>
         </div>
         <hr>
-        <image-modal :image="previewFile"></image-modal>
+        <image-modal :image="currentImage" @finish-crop="updateImage"></image-modal>
     </div>
 </template>
 
 <script>
   import ImageCard from './components/ImageCard.vue';
   import ImageModal from './components/ImageModal.vue';
-  import { loadImages, uploadImage, removeImage, setCover } from './model.js';
+  import { loadImages, uploadImage, removeImage, setCoverImage, cropImage } from './model.js';
 
   export default {
     props: ['images', 'productId'],
     data: function() {
       return {
-        previewFile: '',
+        currentImage: '',
         imageCards: [],
       };
     },
@@ -40,11 +39,11 @@
       ImageCard,
       ImageModal,
     },
-
     mounted() {
       for (var i = 0; i < this.images.length - 1; i++) {
         let image = this.images[i];
         let card = {
+          productId: this.productId,
           progress: 100,
           url: image.image.url,
           coverImage: image.cover_image,
@@ -58,6 +57,7 @@
         if (e.target.files[0]) {
           for (let i = 0; i < e.target.files.length; i++) {
             let card = {
+              productId: this.productId,
               file: e.target.files[i],
               formData: {},
               progress: 0,
@@ -65,7 +65,7 @@
               coverImage: false,
             };
             this.imageCards.push(card);
-            uploadImage(card, this.productId, this.onProgress).then((x) => {
+            uploadImage(card, this.onProgress).then((x) => {
               let respParsed = JSON.parse(x);
               card.url = respParsed.image.image.url;
               card.id = respParsed.image.id;
@@ -78,26 +78,31 @@
         console.log(card);
         this.imageCards[this.imageCards.indexOf(card)].progress = percent;
       },
-      cropImage(file) {
+      cropImage(card) {
         this.$root.$emit('show::modal', 'image-modal');
-        this.previewFile = file.url;
+        this.currentImage = card;
+      },
+      updateImage(cropData) {
+        this.currentImage.cropData = cropData;
+        cropImage(this.currentImage).then(x => {
+          let respParsed = JSON.parse(x);
+          console.log('image cropped successfully');
+          console.log(x);
+          let index = this.imageCards.indexOf(this.currentImage);
+          this.imageCards[index].url = respParsed.image.image.url;
+
+        }).catch(x => {
+          console.log('image cropped failed');
+        });
       },
       deleteImage(cardData) {
-        let fileIndex = this.imageCards.indexOf(cardData);
-        this.imageCards.splice(fileIndex, 1);
-        removeImage(cardData, this.productId).then(x => {
+        this.imageCards.splice(this.imageCards.indexOf(cardData), 1);
+        removeImage(cardData).then(x => {
           console.log('deleted image.');
         });
       },
-      addImageCard() {
-        console.log('adding image card');
-      },
-      openModal(file) {
-        this.$root.$emit('show::modal', 'image-modal');
-        this.previewFile = file.url;
-      },
       setCoverImage(card) {
-        setCover(card, this.productId).then(x => {
+        setCoverImage(card).then(x => {
           console.log('set cover image success');
           for (let i = 0; i < this.imageCards.length; i++) {
             let card = this.imageCards[i];

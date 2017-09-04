@@ -4,7 +4,7 @@
       <div class="card-img-top">
         <% if product.images.first %>
             <%= link_to product_path(product.id) do %>
-                <img src=" <%= product.cover_image.image %>" class="product-card-image img-container">
+                <img src=" <%= product.cover_image.image.thumb %>" class="product-card-image img-container">
             <% end %>
         <% end %>
       </div>

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-4 image-card ">
                 <div class="item-image " :class="card.coverImage ? 'cover-image' : 'other-image'">
-                    <img class="" :src="card.url" @click="$emit('open-modal', card)"/>
+                    <img class="" :src="card.url" @click="$emit('crop-image', card)"/>
                 </div>
             </div>
             <div class="col-sm-8" style="">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="actions hidden-lg-up ">
                     <h5>{{card.filename}}</h5>
-                    <span @click="$emit('crop', card)"><i class="fa fa-crop "></i> Crop</span>
+                    <span @click="$emit('crop-image', card)"><i class="fa fa-crop "></i> Crop</span>
                     <span @click="$emit('cover-image', card)"><i class="fa fa-star "></i> Cover Photo</span>
                     <span @click="$emit('delete-image', card)"><i class="fa fa-times "></i> Delete</span>
                 </div>

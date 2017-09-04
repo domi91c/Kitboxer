@@ -22,7 +22,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '4.0.0.alpha6'
 gem 'devise'
 gem 'devise_invitable'
 gem 'high_voltage'
@@ -61,6 +61,8 @@ gem "font-awesome-rails"
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'rmagick'
 
 
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'

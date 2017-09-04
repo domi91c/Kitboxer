@@ -4,8 +4,9 @@
                  no-close-on-backdrop
                  id="image-modal"
                  ref="image_modal"
-                 size="lg">
-            <img v-show="false" :src="image" alt="">
+                 size="lg"
+                 @ok="finishCrop">
+            <img v-show="false" :src="image.url" alt="">
             <vue-cropper
                     ref='cropper'
                     :aspect-ratio="1/1"
@@ -22,21 +23,14 @@
 
 <script>
   import VueCropper from 'vue-cropperjs';
+  import Model from '../model.js';
 
   export default {
     components: {
       VueCropper,
     },
-    mounted() {
-      console.log('image mounted:');
-      console.log(this.image);
-      this.$refs.cropper.enable();
-      this.$refs.cropper.replace(this.image);
-    },
-
     updated() {
-      this.$refs.cropper.enable();
-      this.$refs.cropper.replace(this.image);
+      this.$refs.cropper.replace(this.image.url);
     },
     props: ['image'],
     data() {
@@ -45,7 +39,14 @@
       };
     },
 
-    methods: {},
+    methods: {
+      finishCrop() {
+        console.log('finishing crop.');
+        let cropData = this.$refs.cropper.getData();
+        console.log(cropData);
+        this.$emit('finish-crop', cropData);
+      },
+    },
   };
 </script>
 
