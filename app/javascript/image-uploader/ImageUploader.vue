@@ -1,5 +1,5 @@
 <template>
-    <div class="app">
+    <div class="image-uploader">
         <hr>
         <div v-for="card in imageCards">
             <image-card :card="card"
@@ -45,9 +45,10 @@
         let card = {
           productId: this.productId,
           progress: 100,
-          url: image.image.cropped.url,
+          url: image.image.url,
           coverImage: image.cover_image,
           id: image.id,
+          cropped: image.cropped
         };
         this.imageCards.push(card);
       }
@@ -63,6 +64,7 @@
               progress: 0,
               url: '',
               coverImage: false,
+              cropped: false,
             };
             this.imageCards.push(card);
             uploadImage(card, this.onProgress).then((x) => {
@@ -87,10 +89,12 @@
         this.currentImage.cropData = cropData;
         cropImage(this.currentImage).then(x => {
           let respParsed = JSON.parse(x);
-          console.log('image cropped successfully');
           console.log(x);
           let index = this.imageCards.indexOf(this.currentImage);
-          this.imageCards[index].url = respParsed.image.image.cropped.url;
+          this.imageCards[index].url = respParsed.image.image.url;
+          this.imageCards[index].cropped = true;
+          console.log(this.imageCards[index].url);
+          console.log('image cropped successfully');
         }).catch(x => {
           console.log('image cropped failed');
         });
@@ -118,24 +122,6 @@
 <style scoped>
     input[type="file"] {
         display: none;
-    }
-
-    .image-card {
-        position: relative;
-        top: 0;
-        height: 100%;
-        display: inline-block;
-    }
-
-    .image-card img {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: auto;
-        object-fit: cover;
     }
 
     .progress-bar {

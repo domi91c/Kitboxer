@@ -7,11 +7,11 @@ import { TrixEditor } from 'react-trix';
 
 const GuideEditor = props => (
     <div className="container mt-5">
-      <div className="card-block clearfix">
+      <div className="card-body clearfix">
         <h1>Guide Editor</h1>
         <hr/>
         <div className="box mt-4">
-          <div className="card-block"><h2> Step 1</h2>
+          <div className="card-body"><h2> Step 1</h2>
             <hr/>
             <input type="text" placeholder="Enter step title..."
                    className="form-control mb-4"/>
@@ -19,15 +19,7 @@ const GuideEditor = props => (
                         onEditorReady={this.handleReady}/></div>
         </div>
         <div className="box mt-4">
-          <div className="card-block"><h2> Step 1</h2>
-            <hr/>
-            <input type="text" placeholder="Enter step title..."
-                   className="form-control mb-4"/>
-            <TrixEditor onChange={this.handleChange}
-                        onEditorReady={this.handleReady}/></div>
-        </div>
-        <div className="box mt-4">
-          <div className="card-block"><h2> Step 1</h2>
+          <div className="card-body"><h2> Step 2</h2>
             <hr/>
             <input type="text" placeholder="Enter step title..."
                    className="form-control mb-4"/>

@@ -5,25 +5,20 @@
             <span class="badge badge-cart"><%= current_user.cart_count if current_user.cart_count > 0 %></span>
           </i>
       <% end %>
-      <!--          <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>-->
     </li>
     <li class='nav-item'>
       <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete', class: 'nav-link btn' %>
     </li>
 <% else %>
     <li class='nav-item d-none d-lg-block ml-4'>
-      <%= link_to 'Sign In', new_user_session_path, class: ' btn btn-outline-secondary  ' %>
+      <%= link_to 'Sign In', new_user_session_path, class: ' btn btn-outline-info  ' %>
     </li>
     <li class='nav-item d-none d-lg-block ml-2'>
       <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary ' %>
     </li>
-    <div class=" d-lg-none  mt-3 " style="">
+    <div class=" d-lg-none mt-3 " style="">
       <li class='nav-item ' style="width:49%;display: inline-block; float: left">
-        <%= link_to 'Sign In', new_user_session_path, class: ' btn btn-outline-secondary  btn-block' %>
+        <%= link_to 'Sign In', new_user_session_path, class: ' btn btn-outline-info  btn-block' %>
       </li>
       <li class='nav-item ' style="width: 49%; display: inline-block; float: right">
         <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-block ' %>

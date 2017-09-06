@@ -2,12 +2,12 @@
     <div class="mb-4">
         <div class="row">
             <div class="col-sm-4 image-card ">
-                <div class="item-image " :class="card.coverImage ? 'cover-image' : 'other-image'">
-                    <img class="" :src="card.url" @click="$emit('crop-image', card)"/>
-                </div>
+                <img :class="card.coverImage ? 'cover-image' : 'other-image'" class="img-contain img-fluid"
+                     :src="card.url"
+                     @click="$emit('crop-image', card)"/>
             </div>
             <div class="col-sm-8" style="">
-                <div class="actions hidden-md-down " style="">
+                <div class="actions d-none d-lg-block" style="">
                     <h5>{{card.filename}}</h5>
                     <div class="btn btn-success" @click="$emit('crop-image', card)">
                         <i class="fa fa-crop "></i>
@@ -23,7 +23,7 @@
                         Delete
                     </div>
                 </div>
-                <div class="actions hidden-lg-up ">
+                <div class="actions d-lg-none text-center">
                     <h5>{{card.filename}}</h5>
                     <span @click="$emit('crop-image', card)"><i class="fa fa-crop "></i> Crop</span>
                     <span @click="$emit('cover-image', card)"><i class="fa fa-star "></i> Cover Photo</span>
@@ -61,24 +61,11 @@
 
 <style lang="scss" rel="stylesheet/scss" scoped>
 
-    .image-card {
-        position: relative;
-        top: 0;
-        height: 100%;
-        display: inline-block;
-        cursor: hand;
-    }
+    @import "~bootstrap/scss/functions";
+    @import "~stylesheets/variables";
 
-    .image-card img {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: auto;
-        object-fit: contain;
-        cursor: hand;
+    .actions span {
+        cursor: pointer;
     }
 
     .cover-image {
@@ -89,6 +76,13 @@
     .other-image {
         border-radius: 2%;
         border: 5px solid #FFFFFF;
+    }
+
+    .img-contain {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        background-color: $gray-blue;
     }
 
 </style>

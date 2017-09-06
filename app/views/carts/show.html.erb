@@ -1,10 +1,10 @@
 <section class="cart-show container">
   <h1>Checkout</h1>
-  <table class="table table-striped">
-    <tbody>
+
+  <div>
     <% @cart_data.each do |cart_product, cart_quantity| %>
-        <tr class="product-row">
-          <td class="img-fluid"><%= image_tag cart_product.images.first.image.cropped, class: 'product-row-image' %></td>
+        <div class="product-row">
+          <div class="" style="height:300px;"><%= image_tag cart_product.images.first.image, class: 'fill-box', data: { 'scale': 'best-fit', 'align': 'center' } %></div>
           <td><%= link_to cart_product.title, product_path(cart_product) %>
             <br>
             <br>
@@ -25,9 +25,20 @@
                 </div>
               </td>
           <% end %>
-        </tr>
+        </div>
     <% end %>
+  </div>
+
+  <table class="table table-striped">
+    <tbody>
 
     </tbody>
   </table>
 </section>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $('.fill-box').fillBox();
+  });
+
+</script>

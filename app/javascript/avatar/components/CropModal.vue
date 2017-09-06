@@ -12,7 +12,7 @@
                         <vue-cropper
                                 v-show="!cropperLoading"
                                 ref='cropper'
-                                :aspect-ratio="1/1"
+                                :aspect-ratio="309/278"
                                 :guides="false"
                                 :minContainerWidth="520"
                                 :minContainerHeight="500"

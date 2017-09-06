@@ -13,21 +13,18 @@
 
  */
 @import "bootstrap/functions";
-
 @import "variables";
 @import "bootstrap";
 @import "bootstrap-overrides/**/*";
 @import "trix";
-@import "file-uploader";
+@import "image-uploader";
 @import "products";
 @import "font-awesome";
-
 
 .navbar {
   //margin-left: 65px;
   //margin-right: 65px;
 }
-
 
 .navbar {
   background-color: #fff;
@@ -150,31 +147,13 @@
 .img-container {
   height: 300px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: theme-color("info");
 }
 
 .bs-reset {
   padding: 0;
   margin: 0;
-}
-
-.item-image {
-  position: relative;
-  top: 0;
-  width: 100%;
-  padding-bottom: 90%;
-  background-color: $black;
-}
-
-.item-image img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: auto;
-  object-fit: contain;
 }
 
 .wizard-progress {
@@ -251,4 +230,37 @@ trix-toolbar .history_tools {
 
 .field_with_errors .form-control {
   @extend .is-invalid;
+}
+
+.product-carousel {
+  .item-image {
+    position: relative;
+    //top: 0;
+    //width: 100%;
+    padding-bottom: 90%;
+    background-color: theme-color("info");
+  }
+
+  .item-image img {
+    position: absolute;
+    //top: 0;
+    //bottom: 0;
+    //left: 0;
+    //right: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    background-color: theme-color("info");
+  }
+}
+
+.product-row {
+  .item-image {
+  }
+
+  .item-image img {
+    height:100%;
+    object-fit: contain;
+    backface-visibility: #444;
+  }
 }

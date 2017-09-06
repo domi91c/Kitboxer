@@ -1,8 +1,8 @@
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  # include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -14,17 +14,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  version :cropped do
-    process :crop
-    resize_to_fill(200, 200)
-  end
-
-  version :large do
-    resize_to_limit(600, 600)
-  end
-
   version :thumb do
-    resize_to_fill(200, 200)
+    resize_to_fit(309, 278)
   end
 
   def crop

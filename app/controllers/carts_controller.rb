@@ -6,7 +6,6 @@ class CartsController < ApplicationController
     @cart_products = Product.find(cart_hash.keys)
     @cart_quantities = cart_hash.values
     @cart_data = @cart_products.zip(@cart_quantities)
-    binding.pry
   end
 
 

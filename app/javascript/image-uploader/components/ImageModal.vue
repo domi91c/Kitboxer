@@ -13,6 +13,7 @@
                     :guides="false"
                     :view-mode="1"
                     :drag-mode="'crop'"
+                    :min-container-height="400"
                     :auto-crop-area="0.5"
                     :background="false"
                     :rotatable="true">

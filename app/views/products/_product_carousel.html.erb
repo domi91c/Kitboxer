@@ -3,7 +3,7 @@
     <div class="carousel-inner" role="listbox">
       <% images.each do |image| %>
           <div class="carousel-item item-image <%= 'active' if image == images.first %>" data-target="#carouselModal<%= image.id %>" data-toggle="modal">
-            <img class="d-block img-fluid " src="<%= image.image.cropped.url %>">
+            <img class="d-block img-fluid " src="<%= image.image.url %>">
           </div>
           <%= render 'carousel_modal', image: image %>
       <% end %>

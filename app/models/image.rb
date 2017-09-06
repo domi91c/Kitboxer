@@ -2,23 +2,21 @@ class Image < ApplicationRecord
   attr_accessor :crop_data
   belongs_to :product
   mount_uploader :image, ImageUploader
-  after_update :crop_image
+  after_update :recreate_images
 
-
-  # not working
-  def crop_image
+  def recreate_images
     image.recreate_versions! if crop_data.present?
   end
 
-  # def crop_image
-  #   image = MiniMagick::Image.open(self.image.path)
-  #   crop_params =
-  #       "#{ crop_data["width"]}x
-  #        #{crop_data["height"]}+
-  #        #{crop_data["x"]}+
-  #        #{crop_data["y"]}"
-  #   image.crop(crop_params)
-  # end
+  def crop_image
+    cropped_image = MiniMagick::Image.open(self.image.path)
+    crop_params =
+        "#{ crop_data["width"]}x
+         #{crop_data["height"]}+
+         #{crop_data["x"]}+
+         #{crop_data["y"]}"
+    update(image: cropped_image.crop(crop_params))
+  end
 
   def image_json
     {

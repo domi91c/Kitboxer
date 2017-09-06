@@ -17,6 +17,8 @@
 //= require tether/dist/js/tether
 //= require bootstrap-sprockets
 //= require rails.validations
+//= require image-scale
+//= require fill.box
 
 //= require_tree .
 

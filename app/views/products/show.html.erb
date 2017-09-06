@@ -3,7 +3,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-6">
-          <% if @product.images.first.image.cropped %>
+          <% if @product.images.first.image%>
               <%= render 'product_carousel', images: @product.images %>
           <% end %>
         </div>
