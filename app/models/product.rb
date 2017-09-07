@@ -10,7 +10,6 @@ class Product < ApplicationRecord
   validates_presence_of :body, if: -> { required_for_step?(:add_description) }
   validates_presence_of :images, if: -> { required_for_step?(:add_images) }
 
-
   cattr_accessor :form_steps do
     %w(add_description add_images add_shipping)
   end
@@ -38,6 +37,5 @@ class Product < ApplicationRecord
   def self.with_images
     includes(:images).where.not(:images => { :image => nil })
   end
-
 
 end
