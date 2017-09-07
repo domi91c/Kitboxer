@@ -16,10 +16,13 @@
 @import "variables";
 @import "bootstrap";
 @import "bootstrap-overrides/**/*";
+@import "navigation";
 @import "trix";
 @import "image-uploader";
+@import "guide-editor";
 @import "products";
 @import "font-awesome";
+@import "material_icons";
 
 .navbar {
   //margin-left: 65px;
@@ -71,9 +74,8 @@
 }
 
 .nav-icon {
-  color: $gray-900;
+  color: #51646B;
   font-size: 1.3em;
-  margin-bottom: 4px;
 }
 
 .nav-search-form-control {
@@ -147,7 +149,7 @@
 .img-container {
   height: 300px;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   background-color: theme-color("info");
 }
 
@@ -166,44 +168,13 @@
 .wizard {
 
   .box {
+    @extend .card;
     border-radius: 0 !important;
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
     border-bottom-left-radius: 5px !important;
     border-bottom-right-radius: 5px !important;
   }
 }
 
-.ol-container {
-  position: relative;
-}
-
-.ol-image {
-}
-
-.ol-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 75%);
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: .5s ease;
-}
-
-.ol-container .ol-overlay {
-  height: 35%;
-}
-
-.ol-price, .ol-title {
-  padding: 10px;
-  white-space: normal;
-  color: white;
-  font-size: 20px;
-  overflow: hidden;
-}
 
 .img-carousel-indicators {
   display: inline;
@@ -238,7 +209,6 @@ trix-toolbar .history_tools {
     //top: 0;
     //width: 100%;
     padding-bottom: 90%;
-    background-color: theme-color("info");
   }
 
   .item-image img {
@@ -250,7 +220,7 @@ trix-toolbar .history_tools {
     height: 100%;
     width: 100%;
     object-fit: contain;
-    background-color: theme-color("info");
+    background-color: #282834;
   }
 }
 

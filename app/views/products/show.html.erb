@@ -1,9 +1,9 @@
-<div class="container mt-5">
+<div class="container ">
   <section class="box ">
     <div class="card-body">
       <div class="row">
         <div class="col-md-6">
-          <% if @product.images.first.image%>
+          <% if @product.images.first.image %>
               <%= render 'product_carousel', images: @product.images %>
           <% end %>
         </div>

@@ -15,10 +15,9 @@
 //= require trix
 //= require turbolinks
 //= require tether/dist/js/tether
+//= require popper
 //= require bootstrap-sprockets
 //= require rails.validations
-//= require image-scale
-//= require fill.box
 
 //= require_tree .
 

@@ -88,3 +88,5 @@ gem "capybara-webkit"
 
 gem 'omniauth-stripe-connect'
 
+gem 'material_icons'
+
