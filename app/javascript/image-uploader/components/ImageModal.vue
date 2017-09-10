@@ -9,10 +9,10 @@
             <img v-show="false" :src="image.url" alt="">
             <vue-cropper
                     ref='cropper'
-                    :aspect-ratio="1/1"
+                    :aspect-ratio="10/9"
                     :guides="false"
                     :view-mode="1"
-                    :drag-mode="'crop'"
+                    :drag-mode="'move'"
                     :min-container-height="400"
                     :auto-crop-area="0.5"
                     :background="false"

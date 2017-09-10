@@ -25,8 +25,9 @@ class Product < ApplicationRecord
     return true if self.form_steps.index(step.to_s) <= self.form_steps.index(form_step)
   end
 
-  def cover_image
-    (ci = images.where(cover_image: true).last) ? ci : images.first
+  def cover_image_url
+    binding.pry
+    (ci = images.where(cover_image: true).last.image) ? ci : images.last.image
   end
 
   def self.search(search)

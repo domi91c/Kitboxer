@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def cart_count
     $redis.hlen "cart#{id}"
   end
+
+  def cart_name
+    "cart#{id}"
+  end
 end
