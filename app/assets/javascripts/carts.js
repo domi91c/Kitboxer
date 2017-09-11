@@ -7,7 +7,6 @@ document.addEventListener('turbolinks:load', function() {
     let quantityField = $('tr').find(`[data-product-id="${id}"]`)
     quantityField.val(Math.max(1, Number(quantityField.val()) - 1))
   })
-  // language=JQuery-CSS
   $('.js-quantity-increase').click(function() {
     let id = $(this).closest('[data-product-id]').data('product-id')
     let quantityField = $('tr').find(`[data-product-id="${id}"]`)

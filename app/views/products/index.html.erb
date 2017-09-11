@@ -1,6 +1,6 @@
 <div class="product-index mt-5">
   <div class="jumbotron jumbotron-fluid product-index-hero">
-    <div class="container">
+    <div class="container-fluid">
       <h1 class="display-3">Arduino Kits</h1>
       <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
       <%= form_tag(products_path, :method => "get", id: "search-form") do %>
@@ -12,6 +12,7 @@
     </div>
   </div>
   <section class="container-fluid">
+    <br>
     <div class="card-deck">
       <%= render @products %>
     </div>

@@ -6,7 +6,6 @@
         <% @cart_data.each do |cart_product, cart_quantity| %>
             <tr class="product-row" data-product-id="<%= cart_product.id %>">
               <td class="img-fluid"><%= image_tag cart_product.images.first.image.thumb, height: 100 %></td>
-
               <td><%= link_to cart_product.title, product_path(cart_product) %>
                 <br>
                 <br>
@@ -16,11 +15,9 @@
                   <td>
                     <span class="quantity-btn js-quantity-decrease" href="#"><i class="fa fa-minus cart-icon"></i>
                     </span>
-                    &nbsp;
                     <%= text_field_tag :product_quantity, nil, class: 'js-quantity input form-control mb-2', style: 'width: 45px; display:inline-block', value: cart_quantity, data: { product_id: cart_product.id } %>
                     <span class="quantity-btn js-quantity-increase"><i class="fa fa-plus cart-icon"></i>
                     </span>
-                    &nbsp;
                     <div class="d-inline-block" style="display: inline-block;">
                       <%= submit_tag 'Update', class: "btn btn-sm btn-primary" %>
                       <%= link_to remove_from_cart_path(cart_product), method: :put, class: "btn btn-sm btn-info" do %>
@@ -31,16 +28,24 @@
               <% end %>
             </tr>
         <% end %>
-
         </tbody>
-
       </table>
     </div>
     <div class="col-md-3 pull-lg-9">
       <ul class="list-group">
-        <li class="list-group-item"><strong>Tax:</strong> $342.23</li>
-        <li class="list-group-item"><strong>Shipping:</strong> $342.23</li>
-        <li class="list-group-item active"><strong>Total:</strong> <%= number_to_currency(cart_total) %></li>
+        <li class="list-group-item ">
+          <strong>Tax:</strong>
+          <span class="float-right">$342.23</span>
+        </li>
+        <li class="list-group-item ">
+          <strong>Shipping:</strong>
+          <span class="float-right">$342.23</span>
+        </li>
+        <li class="list-group-item active">
+          <strong>Total:</strong>
+          <span class="float-right"><%= number_to_currency(cart_total) %></span>
+        </li>
+
       </ul>
       <%= link_to 'Checkout', '#', class: 'btn btn-block btn-success mt-4' %>
 

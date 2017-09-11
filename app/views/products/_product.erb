@@ -1,17 +1,19 @@
-<div class=" col-lg-3 col-md-3 col-sm-6 bs-reset">
+<div class=" col-lg-2 col-md-3 col-sm-6 bs-reset">
   <div class="m-2">
     <div class="product-card card m-1" style="">
       <div class="card-img-top">
         <% if product.images.first %>
             <%= link_to product_path(product.id) do %>
-                <img src=" <%= product.images.last.image.thumb %>" class="product-card-image img-fluid">
+                <img src=" <%= product.cover_image.thumb %>" class="product-card-image img-fluid">
             <% end %>
         <% end %>
       </div>
       <div class="product-card-footer card-footer">
         <div class="product-card-title _truncate"><%= product.title %></div>
-        <div class="product-card-username text-muted float-left _truncate"><%= product.user.email %></div>
-        <div class="product-card-price float-right"><%= number_to_currency(product.price) %></div>
+        <div class="product-card-meta">
+          <span class="product-card-price float-right"><%= number_to_currency(product.price) %></span>
+          <span class="product-card-username text-muted _truncate "><%= product.user.email %></span>
+        </div>
       </div>
     </div>
   </div>

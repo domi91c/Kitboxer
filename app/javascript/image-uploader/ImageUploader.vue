@@ -23,9 +23,9 @@
 </template>
 
 <script>
-  import ImageCard from './components/ImageCard.vue';
-  import ImageModal from './components/ImageModal.vue';
-  import { loadImages, uploadImage, removeImage, setCoverImage, cropImage } from './model.js';
+  import ImageCard from './components/ImageCard.vue'
+  import ImageModal from './components/ImageModal.vue'
+  import { loadImages, uploadImage, removeImage, setCoverImage, cropImage } from './model.js'
 
   export default {
     props: ['images', 'productId'],
@@ -33,7 +33,7 @@
       return {
         currentImage: '',
         imageCards: [],
-      };
+      }
     },
     components: {
       ImageCard,
@@ -41,16 +41,16 @@
     },
     mounted() {
       for (var i = 0; i < this.images.length - 1; i++) {
-        let image = this.images[i];
+        let image = this.images[i]
         let card = {
           productId: this.productId,
           progress: 100,
           url: image.image.url,
           coverImage: image.cover_image,
           id: image.id,
-          cropped: image.cropped
-        };
-        this.imageCards.push(card);
+          cropped: image.cropped,
+        }
+        this.imageCards.push(card)
       }
     },
     methods: {
@@ -65,58 +65,58 @@
               url: '',
               coverImage: false,
               cropped: false,
-            };
-            this.imageCards.push(card);
+            }
+            this.imageCards.push(card)
             uploadImage(card, this.onProgress).then((x) => {
-              let respParsed = JSON.parse(x);
-              card.url = respParsed.image.image.url;
-              card.id = respParsed.image.id;
-            });
+              let respParsed = JSON.parse(x)
+              card.url = respParsed.image.image.url
+              card.id = respParsed.image.id
+            })
           }
         }
       },
       onProgress(percent, card) {
-        console.log(this.files);
-        console.log(card);
-        this.imageCards[this.imageCards.indexOf(card)].progress = percent;
+        console.log(this.files)
+        console.log(card)
+        this.imageCards[this.imageCards.indexOf(card)].progress = percent
       },
       cropImage(card) {
-        this.$root.$emit('show::modal', 'image-modal');
-        this.currentImage = card;
-        console.log(this.currentImage);
+        this.$root.$emit('show::modal', 'image-modal')
+        this.currentImage = card
+        console.log(this.currentImage)
       },
       updateImage(cropData) {
-        this.currentImage.cropData = cropData;
+        this.currentImage.cropData = cropData
         cropImage(this.currentImage).then(x => {
-          let respParsed = JSON.parse(x);
-          console.log(x);
-          let index = this.imageCards.indexOf(this.currentImage);
-          this.imageCards[index].url = respParsed.image.image.url;
-          this.imageCards[index].cropped = true;
-          console.log(this.imageCards[index].url);
-          console.log('image cropped successfully');
+          let respParsed = JSON.parse(x)
+          console.log(x)
+          let index = this.imageCards.indexOf(this.currentImage)
+          this.imageCards[index].url = respParsed.image.image.url
+          this.imageCards[index].cropped = true
+          console.log(this.imageCards[index].url)
+          console.log('image cropped successfully')
         }).catch(x => {
-          console.log('image cropped failed');
-        });
+          console.log('image cropped failed')
+        })
       },
       deleteImage(cardData) {
-        this.imageCards.splice(this.imageCards.indexOf(cardData), 1);
+        this.imageCards.splice(this.imageCards.indexOf(cardData), 1)
         removeImage(cardData).then(x => {
-          console.log('deleted image.');
-        });
+          console.log('deleted image.')
+        })
       },
       setCoverImage(card) {
         setCoverImage(card).then(x => {
-          console.log('set cover image success');
+          console.log('set cover image success')
           for (let i = 0; i < this.imageCards.length; i++) {
-            let card = this.imageCards[i];
-            card.coverImage = false;
+            let card = this.imageCards[i]
+            card.coverImage = false
           }
-          card.coverImage = true;
-        });
+          card.coverImage = true
+        })
       },
     },
-  };
+  }
 </script>
 
 <style scoped>

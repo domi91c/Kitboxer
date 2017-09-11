@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
-  before_action :authenticate_user!
+
+before_action :authenticate_user!
 
   def show
     cart_hash = $redis.hgetall "#{current_user.cart_name}"

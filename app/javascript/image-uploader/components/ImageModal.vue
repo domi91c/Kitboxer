@@ -23,35 +23,35 @@
 </template>
 
 <script>
-  import VueCropper from 'vue-cropperjs';
-  import Model from '../model.js';
+  import VueCropper from 'vue-cropperjs'
+  import Model from '../model.js'
 
   export default {
     components: {
       VueCropper,
     },
     mounted() {
-      this.$refs.cropper.replace(this.image.url);
+      this.$refs.cropper.replace(this.image.url)
     },
     updated() {
-      this.$refs.cropper.replace(this.image.url);
+      this.$refs.cropper.replace(this.image.url)
     },
     props: ['image'],
     data() {
       return {
         name: 'name',
-      };
+      }
     },
 
     methods: {
       finishCrop() {
-        console.log('finishing crop.');
-        let cropData = this.$refs.cropper.getData();
-        console.log(cropData);
-        this.$emit('finish-crop', cropData);
+        console.log('finishing crop.')
+        let cropData = this.$refs.cropper.getData()
+        console.log(cropData)
+        this.$emit('finish-crop', cropData)
       },
     },
-  };
+  }
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>

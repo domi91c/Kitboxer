@@ -15,12 +15,21 @@
       .product-card-title {
         font-size: .9rem;
       }
-      .product-card-username {
-        font-size: .7rem;
-      }
-      .product-card-price {
-        font-size: .7rem;
-        font-weight: bold;
+      .product-card-meta {
+        display: flex;
+        white-space: nowrap;
+        .product-card-username {
+          font-size: 12px;
+          white-space: nowrap;
+          order: 1;
+        }
+        .product-card-price {
+          font-size: 12px;
+          font-weight: bold;
+          white-space: nowrap;
+          margin-left:auto;
+          order: 2;
+        }
       }
       background-color: white;
     }
@@ -38,3 +47,4 @@
   display: inline-block;
   border: 3px solid $green;
 }
+
