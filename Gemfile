@@ -54,7 +54,6 @@ group :development, :test do
   gem "capybara-webkit"
   gem 'rubocop'
   gem 'dotenv-rails'
-  gem 'colorize'
 end
 group :test do
   gem 'database_cleaner'

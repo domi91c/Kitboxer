@@ -1,3 +1,4 @@
+=begin
 require 'colorize'
 class String
   # colorization
@@ -33,4 +34,4 @@ class String
     puts self.light_blue
     puts "______________________________________________________________________________".blue.on_red.blink
   end
-end
+end=end
