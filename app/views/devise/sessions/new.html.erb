@@ -16,7 +16,7 @@
           <%= f.label :password %>
           <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
         </div>
-        <%= f.submit t('.sign_in', :default => "Sign In"), class: "btn btn-secondary" %>
+        <%= f.submit t('.sign_in', :default => "Sign In"), class: "btn btn-outline-default" %>
     <% end %>
     <%= render "devise/shared/links" %>
   </div>

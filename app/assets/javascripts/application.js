@@ -14,8 +14,8 @@
 //= require rails-ujs
 //= require trix
 //= require turbolinks
-//= require tether/dist/js/tether
 //= require popper
+//= require tether/dist/js/tether
 //= require bootstrap-sprockets
 //= require rails.validations
 //= require stripe

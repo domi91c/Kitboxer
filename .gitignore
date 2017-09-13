@@ -88,3 +88,6 @@ pickle-email-*.html
 
 # custom
 /public/uploads/*
+
+dump.rdb
+

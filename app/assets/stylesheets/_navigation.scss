@@ -4,14 +4,14 @@
 
 .nav-container {
   //margin-bottom: 30px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom:    1px solid rgba(0, 0, 0, 0.08);
   background-color: #ffffff;
-  margin-bottom:100px;
+  margin-bottom:    100px;
 }
 
 @media (min-width: 992px) {
   .nav-search-form-control {
-    width: 500px;
+    width:  500px;
     border: none;
   }
   .navbar {
@@ -28,11 +28,17 @@
 
 .nav-divider {
   @extend .nav-item;
-  margin: 0 20px !important;
-  height: 23px;
+  margin:      0 20px !important;
+  height:      23px;
   border-left: 1px solid $gray-200;
 }
 
-.nav-search {
-  border: 0;
+.NavSearch {
+  &--icon {
+    margin-top: 6px;
+  }
+  &--field {
+    border: 0;
+  }
 }
+

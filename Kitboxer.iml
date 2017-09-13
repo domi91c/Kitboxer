@@ -146,7 +146,6 @@
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.9.10, RVM: ruby-2.4.0 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="redis (v3.3.3, RVM: ruby-2.4.0 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v0.4.4, RVM: ruby-2.4.0 [kitboxer] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rename (v1.0.6, RVM: ruby-2.4.0 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v2.4.0, RVM: ruby-2.4.0 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rmagick (v2.16.0, RVM: ruby-2.4.0 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec (v3.6.0, RVM: ruby-2.4.0 [kitboxer] (1)) [gem]" level="application" />
