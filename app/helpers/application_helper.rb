@@ -6,7 +6,6 @@ module ApplicationHelper
         class_str = "unfinished "
         class_str = "active " if every_step == step
         class_str = "finished" if past_step?(every_step)
-        every_step.big
         concat(
             content_tag(:li, class: 'nav-item') do
               link_to I18n.t(every_step), wizard_path(every_step), class: "nav-link #{class_str}"
