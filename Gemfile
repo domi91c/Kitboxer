@@ -43,14 +43,18 @@ group :development do
   gem 'spring-commands-rspec'
 end
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'puts_debuggerer', '~> 0.7.1'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'pry-byebug'
-  gem 'rspec-rails'
   gem 'capybara'
+  gem "capybara-webkit"
   gem 'rubocop'
+  gem 'dotenv-rails'
+  gem 'colorize'
 end
 group :test do
   gem 'database_cleaner'
@@ -59,7 +63,6 @@ group :test do
 end
 gem "font-awesome-rails"
 
-gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
@@ -67,15 +70,12 @@ gem 'rmagick'
 
 
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
-gem 'rename'
 
-gem 'puts_debuggerer', '~> 0.7.1'
 
 
 gem 'wicked'
 
 
-gem 'colorize'
 gem 'client_side_validations'
 
 
@@ -84,7 +84,6 @@ gem 'hiredis'
 
 gem 'trix'
 
-gem "capybara-webkit"
 
 gem 'omniauth-stripe-connect'
 
