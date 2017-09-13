@@ -51,23 +51,5 @@
 
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-9">
-      <div class="card">
-        <div class="card-body ">
-          <%= form_tag('/charges', authenticity_token: form_authenticity_token, id: "payment-form") do %>
-              <div class="form-row">
-                <div id="card-element" class="form-control">
-                  <!-- a Stripe Element will be inserted here. -->
-                </div>
-                <!-- Used to display form errors -->
-                <div id="card-errors"></div>
-              </div>
-              <%= hidden_field_tag :amount, cart_total %>
-              <%= submit_tag "Submit Payment", class: 'btn btn-outline-default mt-4' %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render 'carts/payment_form' %>
 </section>
