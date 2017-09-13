@@ -19,5 +19,4 @@
 //= require bootstrap-sprockets
 //= require rails.validations
 //= require stripe
-
 //= require_tree .

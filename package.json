@@ -2,6 +2,7 @@
   "name": "bstemp",
   "private": true,
   "dependencies": {
+    "@fancyapps/fancybox": "^3.1.20",
     "axios": "latest",
     "babel-core": "^6.25.0",
     "babel-loader": "7.x",
