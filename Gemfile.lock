@@ -97,7 +97,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    colorize (0.8.1)
     concurrent-ruby (1.0.5)
     database_cleaner (1.6.1)
     debug_inspector (0.0.3)
@@ -398,7 +397,6 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   client_side_validations
   coffee-rails (~> 4.2)
-  colorize
   database_cleaner
   devise
   devise_invitable
