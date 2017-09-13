@@ -55,9 +55,11 @@
 
 <script>
   export default {
-    data: {
-      slide: 0,
-      sliding: null,
+    data() {
+      return {
+        slide: 0,
+        sliding: null,
+      }
     },
     methods: {
       onSlideStart(slide) {

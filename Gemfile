@@ -90,3 +90,5 @@ gem 'omniauth-stripe-connect'
 
 gem 'material_icons'
 
+gem 'stripe'
+
