@@ -76,14 +76,14 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: 587,
-    domain: 'kitboxer.com',
+    domain: 'kitboxer.herokuapp.com',
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: 'deds0und',
     password: 'element9',
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'kitboxer.com' }
+  config.action_mailer.default_url_options = { :host => 'kitboxer.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
