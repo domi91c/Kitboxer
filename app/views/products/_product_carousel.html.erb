@@ -20,12 +20,13 @@
   <% if images.count > 1 %>
       <div class="img-carousel-indicators">
         <% images.each_with_index do |image, index| %>
-            <div data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="img-carousel-indicator img-responsive <%= 'active' if image == images.first %>">
+            <a data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="img-carousel-indicator img-responsive <%= 'active' if image == images.first %>">
               <%= image_tag image.image.url,
                             class: "img-container",
                             style: 'height: 50px; width: 60px' %>
-            </div>
+            </a>
         <% end %>
       </div>
   <% end %>
+
 </div>
