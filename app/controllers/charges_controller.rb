@@ -2,8 +2,8 @@ class ChargesController < ApplicationController
   def new
   end
 
-  def index
-
+  def show
+    binding.pry
   end
 
   def create
@@ -23,21 +23,24 @@ class ChargesController < ApplicationController
     end
 
     begin
-      binding.pry
       charge = Stripe::Charge.create(
-          :customer => customer.id,
-          :amount => @amount,
-          :description => 'Rails Stripe customer',
-          :currency => 'usd'
+          customer: customer.id,
+          amount: @amount,
+          description: 'Rails Stripe customer',
+          currency: 'usd'
       )
-    rescue Stripe::CardError => e
       binding.pry
+    rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
     else
-      binding.pry
-      redirect_to charges_path
+      redirect_to charge_path(@user.id)
     end
+
+  end
+
+  def charges_params
+    params.require(:charges).permit(:user)
   end
 end
 

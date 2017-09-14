@@ -10,17 +10,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
-group :development do
-
-  gem 'web-console', '>= 3.3.0'
-  gem 'meta_request'
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '4.0.0.beta'
 gem 'devise'
@@ -28,6 +17,11 @@ gem 'devise_invitable'
 gem 'high_voltage'
 gem 'pg'
 group :development do
+  gem 'web-console', '>= 3.3.0'
+  gem 'meta_request'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'foreman'
   gem 'guard-bundler'
@@ -43,6 +37,8 @@ group :development do
   gem 'spring-commands-rspec'
 end
 group :development, :test do
+  gem 'bootsnap', require: false
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'puts_debuggerer', '~> 0.7.1'
   gem 'factory_girl_rails'
@@ -69,7 +65,6 @@ gem 'rmagick'
 
 
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
-
 
 
 gem 'wicked'
