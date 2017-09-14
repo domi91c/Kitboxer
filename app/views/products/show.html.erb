@@ -1,130 +1,128 @@
-<div class="container-fluid ">
-  <section class="box ">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-6">
-          <% if @product.images.first.image %>
-              <%= render 'product_carousel', images: @product.images %>
+<section class="box">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <% if @product.images.first.image %>
+            <%= render 'product_carousel', images: @product.images %>
+        <% end %>
+      </div>
+      <div class="col-md-5 ml-auto">
+        <div class="display-5" style="margin-bottom:1.5rem;"> <%= @product.title %> </div>
+
+
+        <p class="display-6 text-muted"><%= number_to_currency(@product.price) %></p>
+        <hr>
+        <br>
+        <p>
+          <i class="fa fa-star " style="color: #FF6080;"></i>
+          <i class="fa fa-star " style="color: #FF6080;"></i>
+          <i class="fa fa-star " style="color: #FF6080;"></i>
+          <i class="fa fa-star " style="color: #95A5A6"></i>
+          <i class="fa fa-star " style="color: #95A5A6"></i>
+          &nbsp; &nbsp;
+          <strong>41 Reviews</strong>
+          &nbsp; &nbsp;
+          <a href="#">show all</a></p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          Nemo
+          enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+          eos
+          qui ratione voluptatem sequi nesciunt. </p>
+
+        <div class="product-actions">
+          &nbsp;
+          <%= form_tag add_to_cart_path(@product), method: :put do %>
+              <div>
+                <span id="product-count-decrease" href="#"><i class="fa fa-minus cart-icon"></i></span>
+                &nbsp;
+                <%= text_field_tag :product_quantity, nil, class: 'input form-control', style: 'width: 45px; display:inline-block', id: 'product-count', value: 1 %>
+                <span id="product-count-increase" href="#"><i class="fa fa-plus cart-icon"></i></span>
+                &nbsp;
+                <div class="" style="display: inline-block;">
+                  <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+                      <i class="fa fa-shopping-cart"></i> Add to cart
+                  <% end %>
+                  <button class="btn btn-info" style="display: inline-block;">
+                    <i class="fa fa-star"></i> Watch
+                  </button>
+                </div>
+              </div>
           <% end %>
         </div>
-        <div class="col-md-5 ml-auto">
-          <div class="display-5" style="margin-bottom:1.5rem;"> <%= @product.title %> </div>
-
-
-          <p class="display-6 text-muted"><%= number_to_currency(@product.price) %></p>
-          <hr>
-          <br>
-          <p>
-            <i class="fa fa-star " style="color: #FF6080;"></i>
-            <i class="fa fa-star " style="color: #FF6080;"></i>
-            <i class="fa fa-star " style="color: #FF6080;"></i>
-            <i class="fa fa-star " style="color: #95A5A6"></i>
-            <i class="fa fa-star " style="color: #95A5A6"></i>
-            &nbsp; &nbsp;
-            <strong>41 Reviews</strong>
-            &nbsp; &nbsp;
-            <a href="#">show all</a></p>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            Nemo
-            enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos
-            qui ratione voluptatem sequi nesciunt. </p>
-
-          <div class="product-actions">
-            &nbsp;
-            <%= form_tag add_to_cart_path(@product), method: :put do %>
-                <div>
-                  <span id="product-count-decrease" href="#"><i class="fa fa-minus cart-icon"></i></span>
-                  &nbsp;
-                  <%= text_field_tag :product_quantity, nil, class: 'input form-control', style: 'width: 45px; display:inline-block', id: 'product-count', value: 1 %>
-                  <span id="product-count-increase" href="#"><i class="fa fa-plus cart-icon"></i></span>
-                  &nbsp;
-                  <div class="" style="display: inline-block;">
-                    <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-                        <i class="fa fa-shopping-cart"></i> Add to cart
-                    <% end %>
-                    <button class="btn btn-info" style="display: inline-block;">
-                      <i class="fa fa-star"></i> Watch
-                    </button>
-                  </div>
-                </div>
-            <% end %>
-          </div>
-          <table class="table table-hover mt-4">
-            <tbody>
-            <tr>
-              <td class="has-text-right"><strong>Item ID</strong></td>
-              <td>1234</td>
-            </tr>
-            <tr>
-              <td class="has-text-right"><strong>Seller</strong></td>
-              <td>jsmith</td>
-            </tr>
-            <tr>
-              <td class="has-text-right"><strong>Added</strong></td>
-              <td>3 days ago</td>
-            </tr>
-            <tr>
-              <td class="has-text-right"><strong>Views</strong></td>
-              <td>3</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-
+        <table class="table table-hover mt-4">
+          <tbody>
+          <tr>
+            <td class="has-text-right"><strong>Item ID</strong></td>
+            <td>1234</td>
+          </tr>
+          <tr>
+            <td class="has-text-right"><strong>Seller</strong></td>
+            <td>jsmith</td>
+          </tr>
+          <tr>
+            <td class="has-text-right"><strong>Added</strong></td>
+            <td>3 days ago</td>
+          </tr>
+          <tr>
+            <td class="has-text-right"><strong>Views</strong></td>
+            <td>3</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
 
-      <br>
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="nav nav-tabs " id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#overview" role="tab" aria-controls="home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#reviews" role="tab" aria-controls="profile">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#shipping" role="tab" aria-controls="messages">Messages</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#settings" role="tab" aria-controls="settings">Settings</a>
-            </li>
-          </ul>
+    </div>
 
-          <div class="tab-content">
-            <div class="tab-pane active" id="overview" role="tabpanel">
-              <div class="card mt-3 pa-4">
-                <div class="card-block">
-                  <div class="card-title">Overview</div>
-                  <div class="card-text"><%= @product.body.html_safe %></div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs " id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#overview" role="tab" aria-controls="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab" aria-controls="profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#shipping" role="tab" aria-controls="messages">Messages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#settings" role="tab" aria-controls="settings">Settings</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="overview" role="tabpanel">
+            <div class="card mt-3 pa-4">
+              <div class="card-block">
+                <div class="card-title">Overview</div>
+                <div class="card-text"><%= @product.body.html_safe %></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane " id="reviews" role="tabpanel">
+            <div class="card mt-3">
+              <div class="card-block">
+                <div class="card-title">Reviews</div>
+                <div class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at consectetur consequatur
+                  corporis
+                  distinctio eaque eveniet facilis id ipsa ipsum iusto nesciunt odio, quas quos ratione tempora velit
+                  veritatis?
                 </div>
               </div>
             </div>
-            <div class="tab-pane " id="reviews" role="tabpanel">
-              <div class="card mt-3">
-                <div class="card-block">
-                  <div class="card-title">Reviews</div>
-                  <div class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at consectetur consequatur
-                    corporis
-                    distinctio eaque eveniet facilis id ipsa ipsum iusto nesciunt odio, quas quos ratione tempora velit
-                    veritatis?
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane " id="shipping" role="tabpanel">
-              <div class="card mt-3">
-                <div class="card-block">
-                  <div class="card-title">Shipping</div>
-                  <div class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at consectetur consequatur
-                    corporis
-                    distinctio eaque eveniet facilis id ipsa ipsum iusto nesciunt odio, quas quos ratione tempora velit
-                    veritatis?
-                  </div>
+          </div>
+          <div class="tab-pane " id="shipping" role="tabpanel">
+            <div class="card mt-3">
+              <div class="card-block">
+                <div class="card-title">Shipping</div>
+                <div class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at consectetur consequatur
+                  corporis
+                  distinctio eaque eveniet facilis id ipsa ipsum iusto nesciunt odio, quas quos ratione tempora velit
+                  veritatis?
                 </div>
               </div>
             </div>
@@ -132,10 +130,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <%= link_to 'Edit', products_path, method: :put %>
-  <%= link_to 'Back', products_path %></div>
+<%= link_to 'Edit', products_path, method: :put %>
+<%= link_to 'Back', products_path %>
 
 
 <%= content_tag :div, class: 'js-lightbox' %>
