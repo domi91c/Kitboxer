@@ -79,8 +79,8 @@ Rails.application.configure do
     domain: 'kitboxer.heroku.com',
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
+    user_name: 'deds0und',
+    password: 'element9',
   }
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'kitboxer.heroku.com' }
