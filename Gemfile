@@ -1,5 +1,5 @@
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 ruby '2.4.0'
@@ -47,7 +47,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'pry-byebug'
   gem 'capybara'
-  gem "capybara-webkit"
+  gem 'capybara-webkit'
   gem 'rubocop'
   gem 'dotenv-rails'
 end
@@ -56,7 +56,7 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 
 gem 'carrierwave', '~> 1.0'
