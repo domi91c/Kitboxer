@@ -9,7 +9,7 @@ class ChargesController < ApplicationController
   def create
     # Amount in cents
     @user = current_user
-    @amount = params[:amount].to_i*100
+    @amount = params[:amount].to_i * 100
 
     if !@user.stripe_customer_id
       customer = Stripe::Customer.create(
@@ -33,8 +33,8 @@ class ChargesController < ApplicationController
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
+      redirect_to order_path(@user.id)
     else
-      redirect_to charge_path(@user.id)
     end
 
   end

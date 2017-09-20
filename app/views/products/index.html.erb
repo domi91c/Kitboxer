@@ -4,14 +4,14 @@
       <h1 class="display-3">Arduino Kits</h1>
       <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
       <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-          <div class="input-group input-group-lg mb-4">
-            <%= text_field_tag :search, params[:search], placeholder: "Search...", class: 'form-control' %>
-            <%= submit_tag "Go", class: 'input-group-addon' %>
-          </div>
+        <div class="input-group input-group-lg mb-4">
+          <%= text_field_tag :search, params[:search], placeholder: "Search...", class: 'form-control' %>
+          <%= submit_tag "Go", class: 'input-group-addon' %>
+        </div>
       <% end %>
     </div>
   </div>
-  <section class="container-fluid">
+  <section class="">
     <br>
     <div class="card-deck">
       <%= render @products %>
