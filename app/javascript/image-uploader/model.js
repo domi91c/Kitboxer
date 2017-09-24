@@ -3,7 +3,12 @@ import axios from 'axios';
 axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector(
     'meta[name="csrf-token"]').getAttribute('content');
 
-const BASE_URL = 'http://localhost:3002';
+var BASE_URL = '';
+if (window.environment === 'development') {
+  BASE_URL = 'http://localhost:3002';
+} else if (window.environment === 'production') {
+  BASE_URL = 'https://www.kitboxer.com';
+}
 
 function loadImages(productId) {
   const url = `${BASE_URL}/products/${productId}/images`;
