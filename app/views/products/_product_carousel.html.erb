@@ -2,9 +2,9 @@
   <div id="carouselExampleIndicators" class="carousel " data-ride="carousel">
     <div class="carousel-inner" role="listbox">
       <% images.each do |image| %>
-          <a href="<%= image.image.url %>" class="carousel-item item-image <%= 'active' if image == images.first %>" data-target="#carouselModal<%= image.id %>" data-toggle="modal" data-fancybox="carousel">
-            <img class="d-block img-fluid " src="<%= image.image.url %>">
-          </a>
+        <a href="<%= image.image.url %>" class="carousel-item item-image <%= 'active' if image == images.first %>" data-target="#carouselModal<%= image.id %>" data-toggle="modal" data-fancybox="carousel">
+          <img class="d-block img-fluid " src="<%= image.image.url %>">
+        </a>
       <% end %>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -18,15 +18,15 @@
   </div>
   <br>
   <% if images.count > 1 %>
-      <div class="img-carousel-indicators">
-        <% images.each_with_index do |image, index| %>
-            <a data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="img-carousel-indicator img-responsive <%= 'active' if image == images.first %>">
-              <%= image_tag image.image.url,
-                            class: "img-container",
-                            style: 'height: 50px; width: 60px' %>
-            </a>
-        <% end %>
-      </div>
+    <div class="img-carousel-indicators">
+      <% images.each_with_index do |image, index| %>
+        <a data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="img-carousel-indicator img-responsive <%= 'active' if image == images.first %>">
+          <%= image_tag image.image.url,
+                        class: "img-container",
+                        style: 'height: 50px; width: 60px' %>
+        </a>
+      <% end %>
+    </div>
   <% end %>
 
 </div>

@@ -10,6 +10,7 @@ class ChargesController < ApplicationController
     # Amount in cents
     @user = current_user
     @amount = params[:amount].to_i * 100
+    @products = params[:product_ids]
 
     if !@user.stripe_customer_id
       customer = Stripe::Customer.create(
@@ -35,12 +36,14 @@ class ChargesController < ApplicationController
       redirect_to new_charge_path
       redirect_to order_path(@user.id)
     else
+      Order.new()
+      redirect_to charges_path
     end
 
   end
 
   def charges_params
-    params.require(:charges).permit(:user)
+    params.require(:charges).permit(:user, product_ids: [])
   end
 end
 

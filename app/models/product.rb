@@ -8,7 +8,13 @@ class Product < ApplicationRecord
   validates_presence_of :body, if: -> { required_for_step?(:add_description) }
   validates_presence_of :price, if: -> { required_for_step?(:add_description) }
   validates_presence_of :body, if: -> { required_for_step?(:add_description) }
-  validates_presence_of :images, if: -> { required_for_step?(:add_images) }
+  validate :has_images, if: -> { required_for_step?(:add_images) }
+
+  def has_images
+    unless images.present?
+      errors.add(:product, "must include at least one image")
+    end
+  end
 
   cattr_accessor :form_steps do
     %w(add_description add_images add_shipping)
