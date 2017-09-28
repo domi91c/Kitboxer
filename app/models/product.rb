@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
+  has_many :purchases
   has_many :images, dependent: :destroy
 
   validates_presence_of :title, if: -> { required_for_step?(:add_description) }
@@ -32,9 +33,16 @@ class Product < ApplicationRecord
   end
 
   def cover_image
-    (ci = images.where(cover_image: true).first) ? ci.image : images.last.image
+    (ci = images.where(cover_image: true).first) ? ci.image : images.first.image
   end
 
+  def cover_thumb
+    cover_image.thumb
+  end
+
+  def thumb
+
+  end
   def self.search(search)
     where("title ILIKE ?", "%#{search}%")
     # where("body ILIKE ?", "%#{search}%")

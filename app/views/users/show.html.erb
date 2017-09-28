@@ -1,9 +1,47 @@
 <h3>User</h3>
 <p>Name: <%= @user.name if @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<p>Customer ID: <%= @user.stripe_customer_id %></p>
 
-<h3>Orders</h3>
-<hr>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-9"><h1>My Orders</h1></div>
+</div>
 
-<h3>Reviews</h3>
-<hr>
+<div class="row">
+  <div class="col-md-3">
+    <ul class="list-group">
+      <li class="list-group-item ">My Favorites</li>
+      <li class="list-group-item active">My Orders</li>
+      <li class="list-group-item">My Reviews</li>
+    </ul>
+    <br>
+  </div>
+  <div class="col-md-9">
+    <% @orders.each do |order| %>
+      <table class="Order table card">
+        <tbody class="Order__row card-body ">
+        <% order.purchases.each do |purchase| %>
+          <tr>
+            <td><%= image_tag purchase.product.cover_thumb, class: 'OrderRow__thumb' %></td>
+            <td>
+              <%= purchase.product.title %>
+              <br>
+              <div class="badge badge-success">Shipped</div>
+            </td>
+            <td>
+              <%= number_to_currency purchase.product.price %>
+              <strong class="float-right"> x<%= purchase.quantity %></strong>
+            </td>
+          </tr>
+        <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class=" Order__row__total"><%= number_to_currency(order.total) %></td>
+        </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

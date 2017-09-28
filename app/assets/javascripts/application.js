@@ -20,3 +20,11 @@
 //= require rails.validations
 //= require stripe
 //= require_tree .
+
+document.addEventListener('turbolinks:load', function() {
+  $('.hero-dropdown-menu').on('click', 'div', function() {
+    console.log('clicked menu')
+    $('.hero-dropdown-toggle').text($(this).text())
+  })
+})
+

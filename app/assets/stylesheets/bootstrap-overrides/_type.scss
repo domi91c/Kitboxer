@@ -29,7 +29,5 @@ a:hover {
 //END Bootstrap
 
 ._truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include text-truncate;
 }

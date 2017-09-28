@@ -2,8 +2,9 @@
 
 <p>Thanks for your purchase.</p>
 
-<%= @order.purchases.each do |purchase| %>
+<% @order.purchases.each do |purchase| %>
   <%= purchase.product.title %>
   <%= purchase.quantity %>
+  <hr>
 <% end %>
-
+  <%=debug Stripe::Charge.retrieve(@order.stripe_charge_id) %>

@@ -3,8 +3,14 @@ class ChargesController < ApplicationController
   end
 
   def show
-    binding.pry
+    @order = Order.find(params[:order_id])
   end
+
+
+  def index
+    @order = Order.last
+  end
+
 
   def create
     # Amount in cents
@@ -19,6 +25,8 @@ class ChargesController < ApplicationController
           email: @user.email,
           source: params[:stripe_token]
       )
+      @user.stripe_customer_id = customer.id
+      @user.save
     else
       customer = Stripe::Customer.retrieve(@user.stripe_customer_id)
     end
@@ -30,21 +38,21 @@ class ChargesController < ApplicationController
           description: 'Rails Stripe customer',
           currency: 'usd'
       )
-      binding.pry
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
       redirect_to order_path(@user.id)
     else
-      Order.new()
-      redirect_to charges_path
+      @order = Order.new(user: current_user, stripe_charge_id: charge.id)
+      @order.create_purchases
     end
-
+    @order.save
+    redirect_to order_path(@order.id)
   end
+
 
   def charges_params
     params.require(:charges).permit(:user, product_ids: [])
   end
+
 end
-
-

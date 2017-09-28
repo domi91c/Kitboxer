@@ -1,0 +1,31 @@
+// Place all the styles related to the orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.ProductList {
+}
+
+.ProductRow {
+  .ProductRow__thumb-col {
+    height: 200px;
+    > .ProductRow__thumb-img {
+
+    }
+  }
+}
+
+.product-row-img {
+  max-height: 200px;
+}
+
+.OrderRow {
+  &__thumb {
+    height: 100px;
+  }
+}
+
+.Order__row {
+}
+
+.Order__row__total {
+  font-size: 30px;
+}

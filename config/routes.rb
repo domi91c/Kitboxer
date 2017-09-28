@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   resources :users
   resources :charges
