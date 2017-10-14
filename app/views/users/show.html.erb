@@ -19,8 +19,8 @@
   </div>
   <div class="col-md-9">
     <% @orders.each do |order| %>
-      <table class="Order table card">
-        <tbody class="Order__row card-body ">
+      <table class="Order__table table card table-responsive table-bordered">
+        <tbody class="Order__row card-body">
         <% order.purchases.each do |purchase| %>
           <tr>
             <td><%= image_tag purchase.product.cover_thumb, class: 'OrderRow__thumb' %></td>

@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "Kitboxer" %></title>
-  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Bstemp" %>">
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Kitboxer" %>">
   <meta name="turbolinks-cache-control" content="no-cache">
 
   <script src="https://js.stripe.com/v3/"></script>
@@ -14,7 +14,7 @@
   <%= stylesheet_pack_tag 'application' %>
 
 </head>
-<body style="background-color: #F1F3F3;" data-environment="<%= Rails.env %>">
+<body style="background-color: #EBEFF2;" data-environment="<%= Rails.env %>">
 <%= render 'layouts/navigation' %>
 <%= content_for?(:header) ? yield(:header) : "" %>
 
@@ -38,7 +38,7 @@
           <i class="fa fa-github"></i>
         </a>
       </p>
-      <%= link_to image_tag('stripe-badge.png'), user_stripe_connect_omniauth_authorize_path %>
+      <%#= link_to image_tag('stripe-badge.png'), user_stripe_connect_omniauth_authorize_path , width: '50'%>
 
     </div>
   </div>

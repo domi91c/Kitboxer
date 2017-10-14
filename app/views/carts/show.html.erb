@@ -1,7 +1,7 @@
 <section class="cart-show">
   <div class="row">
-    <div class="col-md-9">
-      <table class="table card">
+    <div class="col-md-9 col-xs-12">
+      <table class="table table-responsive card">
         <tbody class="card-body">
         <% @cart_data.each do |cart_product, cart_quantity| %>
             <tr class="product-row" data-product-id="<%= cart_product.id %>">

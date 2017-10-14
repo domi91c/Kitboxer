@@ -15,6 +15,6 @@ class User < ApplicationRecord
   end
 
   def customer
-    Stripe::Customer.retrieve(stripe_customer_id)
+    Stripe::Customer.retrieve(stripe_customer_id) if stripe_customer_id
   end
 end
