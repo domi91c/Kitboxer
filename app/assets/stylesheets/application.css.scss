@@ -44,17 +44,7 @@
   background-color: #fff;
 }
 
-.navbar-light .navbar-toggler {
-  border: none;
-}
 
-.nav-item {
-  margin: 0;
-}
-
-.jumbotron {
-  background-color: #fafafa;
-}
 
 .dropdown-toggle::after {
   border:         1px solid theme-color("info");
@@ -82,14 +72,6 @@
 .nav-icon {
   color:     #51646B;
   font-size: 1.3em;
-}
-
-.nav-search-form-control {
-  border-radius: 0;
-  padding:       0;
-  width:         70%;
-  border:        none;
-  border-bottom: 1px solid $gray-500;
 }
 
 .page-header {
@@ -217,3 +199,8 @@ $btn-padding-y-xs: .18rem !default;
   @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $font-size-sm, 1, $btn-border-radius-sm);
 }
 
+.card-social-media-button {
+  font-size: 1.5rem;
+  margin:0 10px 0 10px;
+
+}

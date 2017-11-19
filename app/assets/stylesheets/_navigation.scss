@@ -1,28 +1,39 @@
 .navbar {
-  border-bottom: 1px solid rgba(230, 230, 230, 0.7);
+  border-bottom: 1px solid #d9dede;
+
 }
 
-.nav-container {
-  //margin-bottom: 30px;
-  border-bottom:    1px solid rgba(0, 0, 0, 0.08);
-  background-color: #ffffff;
-  margin-bottom:    100px;
-}
+.navbar-brand {
+  display:        inline-block;
+  padding-top:    $navbar-brand-padding-y;
+  padding-bottom: $navbar-brand-padding-y;
+  font-size:      $navbar-brand-font-size;
+  line-height:    inherit;
+  white-space:    nowrap;
+  margin:         0 30px 5px 0;
 
-@media (min-width: 992px) {
-  .nav-search-form-control {
-    width:  500px;
-    border: none;
-  }
-  .navbar {
-    //margin-left: 65px;
-    //margin-right: 65px;
+  @include hover-focus {
+    text-decoration: none;
   }
 }
 
-@media (max-width: 61.9em) {
-  .nav-search .input-group-addon {
-    padding: 1rem 0.5rem 0.5rem 0;
+.nav-category {
+  color:       #868E96;
+  font-weight: 500;
+}
+
+.nav-shopping-cart {
+  color:       #868E96;
+  font-weight: 500;
+  position:    relative;
+  font-size:   15px;
+
+  &--icon {
+    font-size: 12px !important;
+    position:  absolute;
+    top:       12%;
+    right:     12%;
+    color:     theme-color('danger');
   }
 }
 
@@ -34,11 +45,18 @@
 }
 
 .NavSearch {
+  border:        1px solid #CCCCCC;
+  padding-left:  0.75rem;
+  border-radius: 0.15rem;
+  font-size:     1rem;
+  line-height:   1.25;
+  color:         #868E96;
   &--icon {
     margin-top: 6px;
   }
   &--field {
-    border: 0;
+    border:     0;
+    font-style: italic;
   }
 }
 
@@ -47,17 +65,18 @@
 }
 
 .nav-username {
+  color:         #868E96;
   position:      relative;
-  top:           50%;
+  top:           36%;
   transform:     translateY(-50%);
   display:       inline-block;
   padding-right: 12px;
 }
 
 .nav-avatar {
-  height: 36px;
-  width:  36px;
-  top: 3px;
+  height:   36px;
+  width:    36px;
+  top:      3px;
   position: relative;
 }
 
@@ -69,4 +88,5 @@
   margin-top:       2px;
   display:          inline-block;
 }
+
 
