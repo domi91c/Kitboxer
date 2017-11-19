@@ -7,4 +7,5 @@
   <%= purchase.quantity %>
   <hr>
 <% end %>
-  <%=debug Stripe::Charge.retrieve(@order.stripe_charge_id) %>
+
+<%= debug Stripe::Charge.retrieve(@order.stripe_charge_id) %>

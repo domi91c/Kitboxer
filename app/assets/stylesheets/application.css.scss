@@ -209,3 +209,11 @@ trix-toolbar .history_tools {
     backface-visibility: #444;
   }
 }
+
+$btn-padding-x-xs: .38rem !default;
+$btn-padding-y-xs: .18rem !default;
+
+.btn-xs {
+  @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $font-size-sm, 1, $btn-border-radius-sm);
+}
+

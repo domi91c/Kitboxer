@@ -42,3 +42,31 @@
   }
 }
 
+.nav-user-info {
+  margin-bottom: -2px;
+}
+
+.nav-username {
+  position:      relative;
+  top:           50%;
+  transform:     translateY(-50%);
+  display:       inline-block;
+  padding-right: 12px;
+}
+
+.nav-avatar {
+  height: 36px;
+  width:  36px;
+  top: 3px;
+  position: relative;
+}
+
+.nav-avatar img {
+  height:           30px;
+  width:            30px;
+  border-radius:    50px;
+  background-color: #EBEFF2;
+  margin-top:       2px;
+  display:          inline-block;
+}
+

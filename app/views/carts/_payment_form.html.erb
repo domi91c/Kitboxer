@@ -4,13 +4,15 @@
       <div class="card-body ">
         <%= form_tag('/charges', authenticity_token: form_authenticity_token, id: "payment-form") do %>
           <div class="form-row">
-            <%= text_field_tag :email, nil, class: 'form-control my-2' %>
+            <div class="col-md-6">
+              <%= text_field_tag :first_name, nil, class: 'form-control my-2', placeholder: 'First name'  %>
+            </div>
+            <div class="col-md-6">
+              <%= text_field_tag :last_name, nil, class: 'form-control my-2' , placeholder: 'Last name'%>
+            </div>
           </div>
           <div class="form-row">
-            <%= text_field_tag :email, nil, class: 'form-control my-2' %>
-          </div>
-          <div class="form-row">
-            <%= text_field_tag :email, nil, class: 'form-control my-2' %>
+            <%= text_field_tag :street_address, nil, class: 'form-control my-2' , placeholder: 'Street address'%>
           </div>
           <div class="form-row">
             <div id="card-element" class="form-control my-2">

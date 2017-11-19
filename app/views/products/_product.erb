@@ -2,7 +2,7 @@
   <div class="m-2">
     <div class="product-card card m-1" style="">
       <div class="card-img-top">
-        <% if product.images.first %>
+        <% if product.images.last %>
             <%= link_to product_path(product.id) do %>
                 <img src=" <%= product.cover_image.thumb %>" class="product-card-image img-fluid">
             <% end %>

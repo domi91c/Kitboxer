@@ -3,16 +3,17 @@
     <div class="row">
       <div class="col-md-6">
         <% if @product.images.first.image %>
-            <%= render 'product_carousel', images: @product.images %>
+          <%= render 'product_carousel', images: @product.images %>
         <% end %>
       </div>
+
       <div class="col-md-5 ml-auto">
         <div class="display-5" style="margin-bottom:1.5rem;"> <%= @product.title %> </div>
 
 
-        <p class="display-6 text-muted"><%= number_to_currency(@product.price) %></p>
+        <p class="display-6 text-muted"><%= number_to_currency(@product.price) %>
+        </p>
         <hr>
-        <br>
         <p>
           <i class="fa fa-star " style="color: #FF6080;"></i>
           <i class="fa fa-star " style="color: #FF6080;"></i>
@@ -33,21 +34,24 @@
         <div class="product-actions">
           &nbsp;
           <%= form_tag add_to_cart_path(@product), method: :put do %>
-              <div>
-                <span id="product-count-decrease" href="#"><i class="fa fa-minus cart-icon"></i></span>
-                &nbsp;
-                <%= text_field_tag :product_quantity, nil, class: 'input form-control', style: 'width: 45px; display:inline-block', id: 'product-count', value: 1 %>
-                <span id="product-count-increase" href="#"><i class="fa fa-plus cart-icon"></i></span>
-                &nbsp;
-                <div class="" style="display: inline-block;">
-                  <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-                      <i class="fa fa-shopping-cart"></i> Add to cart
-                  <% end %>
-                  <button class="btn btn-info" style="display: inline-block;">
-                    <i class="fa fa-star"></i> Watch
-                  </button>
-                </div>
+            <div>
+              <span id="product-count-decrease" href="#"><i class="fa fa-minus cart-icon"></i></span>
+              &nbsp;
+              <%= text_field_tag :product_quantity, nil, class: 'input form-control', style: 'width: 45px; display:inline-block', id: 'product-count', value: 1 %>
+              <span id="product-count-increase" href="#"><i class="fa fa-plus cart-icon"></i></span>
+              &nbsp;
+              <div class="" style="display: inline-block;">
+                <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+                  <i class="fa fa-shopping-cart"></i> Add to cart
+                <% end %>
+                <%= button_tag(type: "submit", class: "btn btn-success") do %>
+                  <i class="fa fa-shopping-cart"></i> View Guide
+                <% end %>
+                <button class="btn btn-info" style="display: inline-block;">
+                  <i class="fa fa-star"></i> Watch
+                </button>
               </div>
+            </div>
           <% end %>
         </div>
         <table class="table table-hover mt-4">
@@ -138,5 +142,3 @@
 
 
 <%= content_tag :div, class: 'js-lightbox' %>
-
-<div class="js-lightbox"></div>
