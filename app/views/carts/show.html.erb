@@ -5,11 +5,9 @@
         <tbody class="card-body">
         <% @cart_data.each do |cart_product, cart_quantity| %>
             <tr class="product-row" data-product-id="<%= cart_product.id %>">
-              <td class="img-fluid"><%= image_tag cart_product.images.first.image.thumb, height: 100 %></td>
+              <td><%= image_tag cart_product.images.first.image.thumb, height: 100 %></td>
               <td><%= link_to cart_product.title, product_path(cart_product) %>
-                <br>
-                <br>
-                <p class="display-7"><%= number_to_currency(cart_product.price) %> x <%= cart_quantity %></p>
+                <p class="display-7 mt-4"><%= number_to_currency(cart_product.price) %> x <%= cart_quantity %></p>
               </td>
               <%= form_tag add_to_cart_path(cart_product), method: :put do %>
                   <td>

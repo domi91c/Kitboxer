@@ -3,13 +3,14 @@
   <div class="nav-item d-inline">
   </div>
   <li class="">
-    <a class="nav-avatar dropdown dropdown-toggle show" data-toggle="dropdown">
+    <a class="nav-avatar dropdown dropdown-toggle " data-toggle="dropdown">
       <%= image_tag 'default_avatar.png' %>
     </a>
     <div class="dropdown-menu dropdown-menu-right">
       <div class="dropdown-header">Ben Conte</div>
       <div class="dropdown-divider"></div>
-      <%= link_to "Account", user_path(current_user.id), class: 'dropdown-item' %>
+      <%= link_to "Profile", user_path(current_user.id), class: 'dropdown-item' %>
+      <%= link_to "Edit Account", edit_user_registration_path, class: 'dropdown-item' %>
       <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
     </div>
   </li>

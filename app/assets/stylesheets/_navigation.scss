@@ -41,7 +41,7 @@
   @extend .nav-item;
   margin:      0 20px !important;
   height:      23px;
-  border-left: 1px solid $gray-200;
+  border-left: 1px solid $gray-300;
 }
 
 .NavSearch {
@@ -76,8 +76,6 @@
 .nav-avatar {
   height:   36px;
   width:    36px;
-  top:      3px;
-  position: relative;
 }
 
 .nav-avatar img {
