@@ -17,4 +17,8 @@ class User < ApplicationRecord
   def customer
     Stripe::Customer.retrieve(stripe_customer_id) if stripe_customer_id
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
