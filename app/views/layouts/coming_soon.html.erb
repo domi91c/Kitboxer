@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Kitboxer" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Kitboxer" %>">
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_pack_tag 'application' %>
+  <%= stylesheet_pack_tag 'application' %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body data-environment="<%= Rails.env %>">
+<div class="coming-soon-page">
+  <div class="kb-logo">
+    <%= image_tag 'logos/kitboxer_logo.png', width: 170 %>
+    <h1 class="display-2">Kitboxer</h1>
+    <h2 class="display-5">Coming soon.</h2>
+  </div>
+</div>
+</body>
+
+</html>

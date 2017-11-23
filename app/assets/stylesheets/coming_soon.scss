@@ -1,0 +1,20 @@
+html, body, .coming-soon-page {
+  margin:  0;
+  padding: 0;
+  height:  100%;
+  width:   100%;
+}
+
+.coming-soon-page {
+  display: table;
+}
+
+.kb-logo {
+  display:        table-cell;
+  margin:         0;
+  padding:        0;
+
+  text-align:     center;
+  vertical-align: middle;
+}
+
