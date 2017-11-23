@@ -2,16 +2,13 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/coming_soon.scss"/>
-  <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/coming_soon.scss"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "Kitboxer" %></title>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Kitboxer" %>">
   <meta name="turbolinks-cache-control" content="no-cache">
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= stylesheet_link_tag 'coming_soon', media: 'all', 'data-turbolinks-track' => 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-  <%= javascript_pack_tag 'application' %>
-  <%= stylesheet_pack_tag 'application' %>
   <%= csrf_meta_tags %>
 
 </head>
