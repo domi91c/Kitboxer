@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/coming_soon.scss"/>
+  <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/coming_soon.scss"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "Kitboxer" %></title>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Kitboxer" %>">
@@ -15,10 +17,27 @@
 </head>
 <body data-environment="<%= Rails.env %>">
 <div class="coming-soon-page">
-  <div class="kb-logo">
-    <%= image_tag 'logos/kitboxer_logo.png', width: 170 %>
-    <h1 class="display-2">Kitboxer</h1>
-    <h2 class="display-5">Coming soon.</h2>
+  <div class="table-center">
+    <div class=" col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <%= image_tag 'logos/kitboxer_logo.png', width: 170 %>
+          <h1 class="display-2">Kitboxer</h1>
+          <h2 class="display-5">Coming soon.</h2>
+          <br>
+
+          <div class="col-lg-7 mx-auto">
+            <div class="input-group">
+              <input type="text" class="coming-soon-form-control form-control" placeholder="Email" aria-label="Search for...">
+              <span class="input-group-btn ">
+            <button class="btn btn-outline-primary coming-soon-btn" type="button">Subscribe</button>
+          </span>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </body>

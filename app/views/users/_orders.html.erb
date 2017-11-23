@@ -1,34 +1,49 @@
-<h1 class="display-4">Orders</h1>
-
 <% @orders.each do |order| %>
-  <div class="card">
-    <table class="table table-responsive">
-      <tbody>
-      <% order.purchases.each do |purchase| %>
-        <tr>
-          <th scope="row" class="" style="height: 50px">
-            <%= image_tag purchase.product.cover_thumb, style: 'height: 100px' %>
-          </th>
-          <th scope="row">
-            <%= link_to purchase.product.title, product_path(purchase.product) %>
-          </th>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
-  <br>
-  <br>
-<% end %>
+  <% order.purchases.each do |purchase| %>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <table class="table table-responsive">
+            <tbody>
+            <tr>
+              <th scope="row" class="" style="height: 50px">
+                <%= image_tag purchase.product.cover_thumb, style: 'height:150px' %>
+              </th>
+              <th scope="row">
+                <%= link_to purchase.product.title, product_path(purchase.product) %>
+              </th>
+              <th>
+                <span class="badge badge-warning">Shipped</span>
+              </th>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-3 pull-lg-9">
+        <ul class="list-group">
+          <li class="list-group-item ">
+            <strong>Tax:</strong>
+            <span class="float-right">$342.23</span>
+          </li>
+          <li class="list-group-item ">
+            <strong>Shipping:</strong>
+            <span class="float-right">$342.23</span>
+          </li>
+          <li class="list-group-item active">
+            <strong>Total:</strong>
+            <span class="float-right">$343232.23</span>
+          </li>
 
-<ul class="list-unstyled">
-  <li class="media">
-    <img class="mr-3" src="..." alt="Generic placeholder image">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">List-based media object</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
-      vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-      lacinia congue felis in faucibus.
+        </ul>
+        <%= link_to 'Leave Review', '#', class: 'btn btn-block btn-success mt-4' %>
+        <%= link_to 'Contact Seller', '#', class: 'btn btn-block btn-success ' %>
+        <%= link_to 'Request Refund', '#', class: 'btn btn-block btn-success ' %>
+
+      </div>
     </div>
-  </li>
-</ul>
+    <br>
+    <br>
+    <hr>
+  <% end %>
+<% end %>

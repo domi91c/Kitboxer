@@ -1,10 +1,13 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :products
-  has_many :orders
   devise :invitable, :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+  has_many :products
+  has_many :orders
+  has_many :purchases, through: :orders
+
 
   def cart_count
     $redis.hlen "cart#{id}"
