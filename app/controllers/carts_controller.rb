@@ -14,7 +14,7 @@ before_action :authenticate_user!
     $redis.mapped_hmset current_user.cart_name, {
         params[:product_id] => params[:product_quantity]
     }
-    redirect_to carts_show_path(current_user.cart_name)
+    redirect_to cart_path(current_user.cart_name)
     # render json: current_user.cart_count, status: 200
   end
 

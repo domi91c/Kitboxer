@@ -83,6 +83,7 @@
     <orderEntry type="library" scope="PROVIDED" name="guard-livereload (v2.5.2, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-rails (v0.8.0, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-rspec (v4.7.3, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="guard-zeus (v2.0.1, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hashie (v3.5.6, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="high_voltage (v3.0.0, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hiredis (v0.6.1, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
@@ -96,6 +97,7 @@
     <orderEntry type="library" scope="PROVIDED" name="json (v2.1.0, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v1.5.6, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.3, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="letter_opener (v1.4.1, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.1.5, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.0.3, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.0.12, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
@@ -180,6 +182,7 @@
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.3, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v3.2.0, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v1.3.0, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="validates_email_format_of (v1.6.3, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.7, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v3.5.1, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webpacker (v2.0@2b0972, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
@@ -187,6 +190,7 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.2, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="wicked (v1.3.2, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v2.1.0, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="zeus (v0.15.14, RVM: ruby-2.4.0 [kb] (1)) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

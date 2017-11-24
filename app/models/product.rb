@@ -40,9 +40,6 @@ class Product < ApplicationRecord
     cover_image.thumb
   end
 
-  def thumb
-
-  end
   def self.search(search)
     where("title ILIKE ?", "%#{search}%")
     # where("body ILIKE ?", "%#{search}%")

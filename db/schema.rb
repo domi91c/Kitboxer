@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120045315) do
+ActiveRecord::Schema.define(version: 20171123055509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1113,6 +1113,14 @@ ActiveRecord::Schema.define(version: 20171120045315) do
     t.string "kind"
     t.index ["default_tax"], name: "index_spree_zones_on_default_tax"
     t.index ["kind"], name: "index_spree_zones_on_kind"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "email"
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_subscriptions_on_email", unique: true
   end
 
   create_table "users", force: :cascade do |t|

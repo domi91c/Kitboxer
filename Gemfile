@@ -27,6 +27,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-zeus'
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'binding_of_caller'
   gem 'hub', :require => nil
@@ -35,6 +36,7 @@ group :development do
   gem 'rb-fsevent', :require => false
   gem 'rb-inotify', :require => false
   gem 'spring-commands-rspec'
+  gem "letter_opener"
 end
 group :development, :test do
   gem 'bootsnap', require: false
@@ -50,6 +52,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'rubocop'
   gem 'dotenv-rails'
+
 end
 group :test do
   gem 'database_cleaner'
@@ -86,4 +89,6 @@ gem 'material_icons'
 gem 'stripe'
 
 
+
+gem 'validates_email_format_of'
 

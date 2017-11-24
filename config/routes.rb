@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  resources :orders
   devise_for :users, controllers: {
       sessions: 'users/sessions',
       registrations: 'users/registrations',
       omniauth_callbacks: "users/omniauth_callbacks"
   }
 
+  resources :orders
   resources :users
   resources :charges
   resources :purchases
-
   resources :posts
-  get 'carts/show'
+
+  resources :subscriptions
 
   resources :products do
     resources :build, controller: 'product/build'
@@ -22,10 +22,12 @@ Rails.application.routes.draw do
     end
   end
 
+
   resource :cart, only: [:show] do
     put 'add/:product_id', to: 'carts#add', as: :add_to
     put 'remove/:product_id', to: 'carts#remove', as: :remove_from
   end
 
   root to: 'visitors#index'
+
 end
