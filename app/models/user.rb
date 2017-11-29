@@ -4,6 +4,12 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+  validates_presence_of :email
+  validates_presence_of :password
+  validates_presence_of :password_confirmation
+
   has_many :products
   has_many :orders
   has_many :purchases, through: :orders

@@ -201,7 +201,7 @@ trix-toolbar .history_tools {
   position:         relative;
 
   .user-info {
-    padding-bottom:20px;
+    padding-bottom: 20px;
   }
 }
 
@@ -213,5 +213,12 @@ trix-toolbar .history_tools {
       border-bottom: 3px solid #00D9A8;
       color:         #00D9A8;
     }
+  }
+}
+
+.cost-list {
+  .active {
+    background:   $gray-500;
+    border-color: $gray-500;
   }
 }

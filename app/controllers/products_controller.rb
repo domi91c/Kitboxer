@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  # before_action :verify_authorized!
+  before_action :authenticate_user!, except: [:index, :show]
 
 
   # GET /products
@@ -55,11 +55,11 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html {redirect_to @product, notice: 'Product was successfully updated.'}
-        format.json {render :show, status: :ok, location: @product}
+        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.json { render :show, status: :ok, location: @product }
       else
-        format.html {render :edit}
-        format.json {render json: @product.errors, status: :unprocessable_entity}
+        format.html { render :edit }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,8 +69,8 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html {redirect_to products_url, notice: 'Product was successfully destroyed.'}
-      format.json {head :no_content}
+      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

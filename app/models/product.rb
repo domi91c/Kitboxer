@@ -9,7 +9,7 @@ class Product < ApplicationRecord
   validates_presence_of :body, if: -> { required_for_step?(:add_description) }
   validates_presence_of :price, if: -> { required_for_step?(:add_description) }
   validates_presence_of :body, if: -> { required_for_step?(:add_description) }
-  validate :has_images, if: -> { required_for_step?(:add_images) }
+  # validate :has_images, if: -> { required_for_step?(:add_images) }
 
   def has_images
     unless images.present?

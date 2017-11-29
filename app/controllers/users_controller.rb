@@ -8,7 +8,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @orders = @user.orders
-    @cards = @user.customer.sources
+    if @user.customer
+      @cards = @user.customer.sources
+    end
 
     unless @user == current_user
       redirect_to root_path, alert: "Access denied."

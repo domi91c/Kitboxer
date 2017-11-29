@@ -1,10 +1,22 @@
 @import "variables";
+
 .box {
   @extend .card;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius:    8px;
   //box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  display: block;
+  //border: 1px solid rgba(0, 0, 0, 0.08);
+  display:          block;
 }
 
+.card {
+  border: none;
+}
+
+.card-header {
+  background-color: #fff;
+}
+
+.card-footer {
+  background-color: #fff;
+}

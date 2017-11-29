@@ -1,28 +1,32 @@
 <div class="container">
   <% @orders.each do |order| %>
     <% order.purchases.each do |purchase| %>
-      <h4>Sold by: <%= link_to purchase.product.user.email %></h4>
       <div class="card">
+        <div class="card-header">
+          <h4 class="float-left">Sold by: <%= link_to purchase.product.user.email %></h4>
+          <h5 class="float-right">March 3rd, 2017</h5>
+        </div>
         <div class="card-body">
           <div class="row">
             <div class="col-md-9">
               <table class="table table-responsive">
                 <tbody>
                 <tr>
-                  <td scope="row" class="" style="height: 50px">
+                  <td scope="row" class="">
                     <%= image_tag purchase.product.cover_thumb, style: 'height:150px' %>
                   </td>
-                  <td scope="row">
+                  <td scope="row" class="">
                     <%= link_to purchase.product.title, product_path(purchase.product), class: 'display-7' %>
                     <br>
-                    <span class="badge badge-warning">Shipped on March, 3rd</span>
+                    <br>
+                    <h4><%= number_to_currency purchase.product.price %> x <%= purchase.quantity %></h4>
                   </td>
                 </tr>
                 </tbody>
               </table>
             </div>
             <div class="col-md-3 pull-lg-9">
-              <ul class="list-group">
+              <ul class="list-group cost-list">
                 <li class="list-group-item ">
                   <strong>Tax:</strong>
                   <span class="float-right">$342.23</span>
@@ -35,17 +39,18 @@
                   <strong>Total:</strong>
                   <span class="float-right">$343232.23</span>
                 </li>
-
               </ul>
-              <%= link_to 'Leave Review', '#', class: 'btn btn-block btn-outline-success mt-4' %>
-              <%= link_to 'Contact Seller', '#', class: 'btn btn-block btn-outline-success ' %>
-              <%= link_to 'Request Refund', '#', class: 'btn btn-block btn-outline-success ' %>
 
             </div>
           </div>
         </div>
+        <div class="card-footer">
+          <%= link_to 'Actions', '#', class: 'btn  btn-secondary float-right' %>
+        </div>
       </div>
       <br>
-      <br>
     <% end %>
-  <% end %></div>
+  <% end %>
+</div>
+
+
