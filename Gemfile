@@ -44,7 +44,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'puts_debuggerer', '~> 0.7.1'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'pry-byebug'
@@ -92,3 +91,4 @@ gem 'stripe'
 
 gem 'validates_email_format_of'
 
+gem 'faker'

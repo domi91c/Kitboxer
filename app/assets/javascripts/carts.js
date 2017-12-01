@@ -3,13 +3,16 @@
 
 document.addEventListener('turbolinks:load', function() {
   $('.js-quantity-decrease').click(function() {
+    console.log(this)
     var id = $(this).closest('[data-product-id]').data('product-id')
-    var quantityField = $('tr').find('[data-product-id="' + id + '"]')
+    var quantityField = $('form').find('[data-product-id="' + id + '"]')
+    debugger
+
     quantityField.val(Math.max(1, Number(quantityField.val()) - 1))
   })
   $('.js-quantity-increase').click(function() {
     var id = $(this).closest('[data-product-id]').data('product-id')
-    var quantityField = $('tr').find('[data-product-id="' + id + '"]')
+    var quantityField = $('form').find('[data-product-id="' + id + '"]')
     quantityField.val(Math.max(1, Number(quantityField.val()) + 1))
   })
 })
