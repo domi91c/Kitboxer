@@ -18,7 +18,7 @@ development:
   encoding: unicode
   database: kitboxer_development
   pool:     5
-  username: kitboxer
+  username: domi91c
   password:
   template: template0
 
