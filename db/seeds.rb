@@ -25,7 +25,7 @@
       price: rand(100),
       quantity: rand(1...20),
       category: Faker::Commerce.department(1),
-      user_id: 1,
+      user_id: 16,
   )
   product.save!
 
