@@ -2,17 +2,17 @@
   <div class="col-md-9">
     <div class="card">
       <div class="card-body ">
-        <%= form_tag('/charges', authenticity_token: form_authenticity_token, id: "payment-form") do %>
+        <%= form_tag(orders_path, authenticity_token: form_authenticity_token, id: "payment-form", method: :post) do %>
           <div class="form-row">
             <div class="col-md-6">
-              <%= text_field_tag :first_name, nil, class: 'form-control my-2', placeholder: 'First name'  %>
+              <%= text_field_tag :first_name, nil, class: 'form-control my-2', placeholder: 'First name' %>
             </div>
             <div class="col-md-6">
-              <%= text_field_tag :last_name, nil, class: 'form-control my-2' , placeholder: 'Last name'%>
+              <%= text_field_tag :last_name, nil, class: 'form-control my-2', placeholder: 'Last name' %>
             </div>
           </div>
           <div class="form-row">
-            <%= text_field_tag :street_address, nil, class: 'form-control my-2' , placeholder: 'Street address'%>
+            <%= text_field_tag :street_address, nil, class: 'form-control my-2', placeholder: 'Street address' %>
           </div>
           <div class="form-row">
             <div id="card-element" class="form-control my-2">
@@ -21,8 +21,8 @@
             <!-- Used to display form errors -->
             <div id="card-errors"></div>
           </div>
-          <%= hidden_field_tag :amount, cart_total %>
-          <%= hidden_field_tag :product_ids, cart_products %>
+          <%= hidden_field_tag :amount, Cart.total %>
+          <%= hidden_field_tag :product_ids, Cart.contents %>
           <div class="form-row">
             <%= submit_tag "Submit Payment", class: 'btn btn-outline-default mt-4' %>
           </div>

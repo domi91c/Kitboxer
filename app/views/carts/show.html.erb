@@ -1,60 +1,57 @@
 <section class="cart-show">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-9 mx-auto">
       <div class="card">
         <div class="card-body">
           <ul class="list-unstyled">
             <% @cart_data.each do |cart_product, cart_quantity| %>
-              <li class="media">
-                <%= image_tag cart_product.images.first.image.thumb, class: ' mr-3', height: 100 %>
-                <div class="media-body">
-                  <div class="row">
-                    <div class="col-md-8">
-                      <h5 class="mt-0 mb-1"><%= link_to cart_product.title, product_path(cart_product) %> </h5>
-                      <p class="display-7 mt-5"><%= number_to_currency(cart_product.price) %> x <%= cart_quantity %></p>
-                    </div>
-                    <div class="col-md-4 float-right">
-                      <%= form_tag add_to_cart_path(cart_product), class: 'quantity-form', method: :put do %>
-                        <span class="quantity-btn js-quantity-decrease" href="#">
-                          <i class="fa fa-minus cart-icon"></i>
-                        </span>
-                        <%= text_field_tag :product_quantity, nil, class: 'js-quantity input form-control mb-2',
-                                           style: 'width: 45px; display:inline-block',
-                                           value: cart_quantity,
-                                           data: { product_id: cart_product.id } %>
-                        <span class="quantity-btn js-quantity-increase"><i class="fa fa-plus cart-icon"></i></span>
-                        <div class="d-inline-block" style="display: inline-block;">
-                          <%= button_tag type: 'submit', method: :put, class: "btn btn-xs btn-primary" do %>
-                            <i class="fa fa-star"></i> Update.
-                          <% end %>
-                          <%= link_to remove_from_cart_path(cart_product), method: :put, class: "btn btn-xs btn-info" do %>
-                            <i class="fa fa-trash"></i> Remove
-                          <% end %>
-                        </div>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <% if [cart_product, cart_quantity] != @cart_data.last %>
-                <hr>
-              <% end %>
+              <%= render 'cart_product', product: cart_product, quantity: cart_quantity %>
             <% end %>
           </ul>
+          <hr>
+          <div class="row">
+            <div class="col-sm-12 text-right display-8">
+              <p>Tax: $10.23</p>
+              <p>Shipping: $12.32</p>
+              <strong>Total: $34.23</strong>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-3">
-      <br class="d-md-none">
-      <div class="list-group">
-        <div class="list-group-item"><strong>Tax:</strong> $23.43</div>
-        <div class="list-group-item"><strong>Shipping:</strong> $19.99</div>
-        <div class="list-group-item active"><strong>Total:</strong> $140.32</div>
-      </div>
-      <hr>
-      <%= link_to 'Checkout', '#', class: 'btn btn-block btn-success' %>
     </div>
   </div>
 
 
+  <br>
+  <div class="row">
+    <div class="col-md-9 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <%= form_tag(orders_path, authenticity_token: form_authenticity_token, id: "payment-form", method: :post) do %>
+            <div class="form-row">
+              <div class="col-md-6">
+                <%= text_field_tag :first_name, nil, value: current_user.first_name, class: 'form-control my-2', placeholder: 'First name' %>
+              </div>
+              <div class="col-md-6">
+                <%= text_field_tag :last_name, nil, value: current_user.last_name, class: 'form-control my-2', placeholder: 'Last name' %>
+              </div>
+            </div>
+            <div class="form-row">
+              <%= text_field_tag :street_address, nil, class: 'form-control my-2', placeholder: 'Street address' %>
+            </div>
+            <div class="form-row">
+              <div id="card-element" class="form-control my-2">
+                <!-- a Stripe Element will be inserted here. -->
+              </div>
+              <!-- Used to display Stripe form errors -->
+              <div id="card-errors"></div>
+            </div>
+            <div class="form-row">
+              <%= submit_tag "Submit Payment", class: 'btn btn-outline-default mt-4' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

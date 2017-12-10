@@ -1,0 +1,26 @@
+<div class="media">
+  <%= image_tag product.cover_thumb, style: 'height:100px', class: 'mr-3' %>
+  <div class="media-body">
+    <h4 class="mt-0"><%= link_to product.title, product_path(product) %></h4>
+    <h4 class="display-8 mt-1">@robot_super_store </h4>
+
+    <%= form_tag add_to_cart_path(product), class: 'd-inline', method: :put do %>
+      <button type="button" class="quantity-button js-quantity-decrease">
+        <i class="fa fa-minus"></i>
+      </button>
+      &nbsp;
+      <%= text_field_tag :product_quantity,
+                         nil,
+                         class: 'form-control quantity-input js-quantity-input',
+                         value: quantity %>
+      <button type="button" class="quantity-button js-quantity-increase">
+        <i class="fa fa-plus"></i>
+      </button>
+      &nbsp;
+    <% end %>
+
+    <span class="ml-2  float-right display-8"> <%= quantity %>
+      x <%= number_to_currency(product.price) %></span>
+  </div>
+</div>
+<br>

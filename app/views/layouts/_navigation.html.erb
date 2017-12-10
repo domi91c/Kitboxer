@@ -10,15 +10,19 @@
         <li class="nav-item ml-2 mb-3 mr-2 " style="">
           <% if user_signed_in? %>
             <%= link_to cart_path class: 'nav-link' do %>
-              <i class="fa fa-shopping-cart  nav-icon" style=" position: relative;top: 9px">
+              <i class="fa fa-shopping-cart  nav-icon">
                 <span class="badge badge-cart"><%= current_user.cart_count if current_user.cart_count > 0 %></span>
               </i>
             <% end %>
           <% end %>
         </li>
         <li class="nav-item ml-4 mb-3 mr-2" style="">
-          <i class="fa fa-globe nav-icon" style="position: relative; top: 9px">
-          </i>
+          <% if user_signed_in? %>
+            <%= link_to products_path class: 'nav-link' do %>
+              <i class="fa fa-globe  nav-icon">
+              </i>
+            <% end %>
+          <% end %>
         </li>
       </ul>
       <span class="nav-divider d-none d-md-block"></span>

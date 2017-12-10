@@ -1,4 +1,6 @@
 class Order < ApplicationRecord
+  after_create :create_purchases
+
   belongs_to :user
   has_many :purchases
   has_many :products, through: :purchases
@@ -6,10 +8,9 @@ class Order < ApplicationRecord
   def create_purchases
     cart_data.each do |product, quantity|
       if quantity > 0
-        purchases.new(product: product, quantity: quantity)
+        purchases.build(product: product, quantity: quantity)
       end
     end
-    save
   end
 
   def total

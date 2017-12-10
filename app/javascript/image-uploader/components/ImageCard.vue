@@ -41,7 +41,6 @@
 </template>
 
 <script>
-
   import placeholder from '../images/placeholder_img.png';
 
   export default {
@@ -70,7 +69,7 @@
 
     .cover-image {
         border-radius: 2%;
-        border: 5px solid theme-color("primary");
+        border: 5px solid theme-color("info");
     }
 
     .other-image {

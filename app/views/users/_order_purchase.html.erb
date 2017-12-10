@@ -1,0 +1,22 @@
+<div class="media">
+  <%= image_tag product.cover_thumb, style: 'height:100px', class: 'mr-3' %>
+  <div class="media-body">
+    <h4 class="mt-0"><%= link_to product.title, product_path(product) %> <span></span></h4>
+    <h4 class="display-8 mt-1">@robot_super_store
+      <% if rand(3) == 1 %>
+        <span class="badge badge-success">Shipped March 9th</span>
+      <% end %>
+    </h4>
+    <button class="btn btn-outline-default btn-sm" data-toggle="dropdown">Actions <span class="ml-1 dropdown-toggle"></span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Contact Seller</a>
+      <a class="dropdown-item" href="#">Review Product</a>
+      <a class="dropdown-item" href="#">Request Refund</a>
+    </div>
+    <span class="ml-2 display-8 float-right"><%= quantity %> x <%= number_to_currency(product.price) %></span>
+  </div>
+</div>
+<br>
+
+

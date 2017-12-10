@@ -126,6 +126,7 @@
 
     .progress-bar {
         border-radius: 50%;
-        bottom: 0;
+        bottom:        0;
     }
+
 </style>

@@ -45,7 +45,7 @@
 }
 
 .dropdown-toggle::after {
-  border:         1px solid theme-color("info");
+  border:         1px solid #00D9A8;
   border-right:   0;
   border-top:     0;
   display:        inline-block;
@@ -68,6 +68,8 @@
 }
 
 .nav-icon {
+  position:  relative;
+  top:       9px;
   color:     #51646B;
   font-size: 1.3em;
 }
@@ -221,4 +223,13 @@ trix-toolbar .history_tools {
     background:   $gray-500;
     border-color: $gray-500;
   }
+}
+
+.order-date {
+  color: $gray-600
+}
+
+.quantity-input {
+  width:   45px;
+  display: inline-block
 }
