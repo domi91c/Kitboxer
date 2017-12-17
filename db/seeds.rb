@@ -8,16 +8,18 @@
 # user = CreateAdminService.new.call
 # puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
-# user = User.new(
-#     first_name: 'Dominic',
-#     last_name: 'Nunes',
-#     email: 'dominic.n@me.com',
-#     password: 'password',
-#     password_confirmation: 'password',
-# )
-# user.confirmed_at = Time.now
-# user.save!
-(1...50).each do |i|
+
+user = User.new(
+    first_name: 'Dominic',
+    last_name: 'Nunes',
+    email: 'dominic.n@me.com',
+    password: 'password',
+    password_confirmation: 'password',
+)
+user.confirmed_at = Time.now
+user.save!
+
+(1...100).each do |i|
   product = Product.new(
       title: Faker::Commerce.product_name,
       tagline: Faker::HarryPotter.quote,
@@ -25,7 +27,7 @@
       price: rand(100),
       quantity: rand(1...20),
       category: Faker::Commerce.department(1),
-      user_id: 16,
+      user_id: 1,
   )
   product.save!
 

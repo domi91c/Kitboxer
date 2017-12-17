@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :invitable, :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  has_one :store
+  has_many :products
+  has_many :orders
+  has_many :purchases, through: :orders
 
   validates_presence_of :first_name
   validates_presence_of :last_name
@@ -10,10 +10,10 @@ class User < ApplicationRecord
   # validates_presence_of :password
   # validates_presence_of :password_confirmation
 
-  has_many :products
-  has_many :orders
-  has_many :purchases, through: :orders
-
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :invitable, :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   def cart_count
     $redis.hlen "cart#{id}"
