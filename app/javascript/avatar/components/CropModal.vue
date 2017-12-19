@@ -38,9 +38,9 @@
 
 <script>
 
-  import VueCropper from 'vue-cropperjs';
-  import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
-  import { uploadAvatar } from '../model';
+  import VueCropper from 'vue-cropperjs'
+  import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+  import { uploadAvatar } from '../model'
 
   export default {
     components: {
@@ -54,80 +54,80 @@
         cropperActive: false,
         cropperLoading: false,
         formData: new FormData(),
-      };
+      }
     },
     mounted() {
       console.log('hello')
     },
     updated() {
-      this.$refs.cropper.enable();
+      this.$refs.cropper.enable()
     },
     methods: {
       handleFileInput(event) {
-        this.currentImage = event.target.files[0];
-        this.$refs.cropper.reset();
-        let reader = new FileReader();
-        const self = this;
+        this.currentImage = event.target.files[0]
+        this.$refs.cropper.reset()
+        let reader = new FileReader()
+        const self = this
         reader.onload = function() {
-          self.cropperLoading = false;
-          self.$refs.cropper.replace(reader.result);
-        };
-        reader.readAsDataURL(event.target.files[0]);
-        this.cropperActive = true;
-        this.cropperLoading = true;
+          self.cropperLoading = false
+          self.$refs.cropper.replace(reader.result)
+        }
+        reader.readAsDataURL(event.target.files[0])
+        this.cropperActive = true
+        this.cropperLoading = true
       },
       handleReset() {
-        this.$refs.file.value = '';
-        this.$refs.cropper.destroy();
-        this.cropperActive = false;
+        this.$refs.file.value = ''
+        this.$refs.cropper.destroy()
+        this.cropperActive = false
       },
       handleSubmit() {
-        $('#cropModal').modal('hide');
-        const cropData = this.$refs.cropper.getData();
-        let fd = new FormData();
-        fd.append('crop_data', JSON.stringify(cropData));
-        fd.append('avatar', this.currentImage);
+        $('#cropModal').modal('hide')
+        const cropData = this.$refs.cropper.getData()
+        let fd = new FormData()
+        fd.append('crop_data', JSON.stringify(cropData))
+        fd.append('avatar', this.currentImage)
         uploadAvatar(fd).then(x => {
-          this.$emit('submit', x);
+          this.$emit('submit', x)
         }).catch(x => {
-        });
+        })
       },
     },
-  };
+  }
 </script>
 
 
 <style>
     .img-container {
         max-width: 100%;
-        height: 500px;
+        height:    500px;
     }
 
     .inputfile {
-        width: 0.1px;
-        height: 0.1px;
-        opacity: 0;
+        width:    0.1px;
+        height:   0.1px;
+        opacity:  0;
         overflow: hidden;
         position: absolute;
-        z-index: -1;
+        z-index:  -1;
     }
 
     .drop-box {
-        position: absolute;
-        border: 2px dashed #666;
+        position:         absolute;
+        border:           2px dashed #666;
         background-color: #ccc;
-        width: 95%;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center
+        width:            95%;
+        height:           500px;
+        display:          flex;
+        flex-direction:   column;
+        justify-content:  center
     }
 
     .loading {
-        width: 95%;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
+        width:           95%;
+        height:          500px;
+        display:         flex;
+        flex-direction:  column;
         justify-content: center
     }
 
@@ -137,8 +137,8 @@
 
     .v-spinner {
         position: absolute;
-        top: 50%;
-        margin: 0 auto;
-        width: 100%;
+        top:      50%;
+        margin:   0 auto;
+        width:    100%;
     }
 </style>

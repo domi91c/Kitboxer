@@ -12,8 +12,8 @@
         <li class="nav-item ml-2 mb-3 mr-2 " style="">
           <% if user_signed_in? %>
             <%= link_to cart_path class: 'nav-link' do %>
-              <i class="fa fa-shopping-cart  nav-icon">
-                <span class="badge badge-cart"><%= current_user.cart_count if current_user.cart_count > 0 %></span>
+              <i class="fa fa-shopping-cart nav-icon">
+                <span class="badge"><%= current_user.cart_count if current_user.cart_count > 0 %></span>
               </i>
             <% end %>
           <% end %>
@@ -21,7 +21,8 @@
         <li class="nav-item ml-4 mb-3 mr-2" style="">
           <% if user_signed_in? %>
             <%= link_to products_path class: 'nav-link' do %>
-              <i class="fa fa-globe  nav-icon">
+              <i class="material-icons md-24 store nav-icon">
+
               </i>
             <% end %>
           <% end %>
@@ -32,7 +33,7 @@
         <li class="nav-item">
           <%= form_tag(products_path, method: :get, class: 'form-inline') do %>
             <div class="input-group NavSearch">
-              <i class="material-icons NavSearch--icon" style="color: #51646B">search</i>
+              <i class="material-icons md-24 search NavSearch--icon" style="color: #51646B"></i>
               <input type="text" class="NavSearch--field form-control" placeholder="Search...">
             </div>
           <% end %>

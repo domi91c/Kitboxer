@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
 
   resources :orders
-  resources :users
+  resources :users do
   resources :charges
   resources :purchases
   resources :posts

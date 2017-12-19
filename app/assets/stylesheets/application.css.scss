@@ -23,6 +23,7 @@
 @import "products";
 @import "font-awesome";
 @import "material_icons";
+@import "material_icons_unicode";
 @import "carts";
 @import "orders";
 @import "jquery.fancybox";
@@ -72,20 +73,22 @@
   top:       9px;
   color:     #51646B;
   font-size: 1.3em;
+  .badge {
+    background-color: $red;
+    color:            $white;
+    height:           16px;
+    width:            16px;
+    border-radius:    100%;
+    position:         absolute;
+    top:              -5px;
+    left:             12px;
+    font-size:        12px;
+    opacity:          .8;
+    font-family:      Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
 }
 
 .badge-cart {
-  background-color: $red;
-  color:            $white;
-  height:           16px;
-  width:            16px;
-  border-radius:    100%;
-  position:         absolute;
-  top:              -10px;
-  left:             12px;
-  font-size:        12px;
-  opacity:          .8;
-  font-family:      Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .section {

@@ -83,8 +83,6 @@ gem 'trix'
 
 gem 'omniauth-stripe-connect'
 
-gem 'material_icons'
-
 gem 'stripe'
 
 
@@ -92,3 +90,5 @@ gem 'stripe'
 gem 'validates_email_format_of'
 
 gem 'faker'
+
+gem 'material_icons'
