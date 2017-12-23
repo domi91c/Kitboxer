@@ -20,9 +20,8 @@
         </li>
         <li class="nav-item ml-4 mb-3 mr-2" style="">
           <% if user_signed_in? %>
-            <%= link_to products_path class: 'nav-link' do %>
+            <%= link_to user_store_path(current_user), html: { class: 'nav-link' } do %>
               <i class="material-icons md-24 store nav-icon">
-
               </i>
             <% end %>
           <% end %>

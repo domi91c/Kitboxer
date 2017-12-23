@@ -1,6 +1,9 @@
 <template>
-        <img src="http://via.placeholder.com/100x100" height="100px" width="100px" class="img-fluid mx-1 mt-2"
-              @click="openImageModal()">
+    <div class="step-image mx-1 mt-2">
+        <img :src="image"
+             class=""
+             @click="openImageModal()">
+    </div>
 </template>
 
 <script>
@@ -17,7 +20,6 @@
 
     methods: {
       openImageModal() {
-        console.log('peenor')
       },
     },
   }
@@ -25,5 +27,13 @@
 
 <style lang="scss" rel="stylesheet/scss" scoped>
     /*@import "./resources/assets/sass/variables";*/
+    .step-image {
+        border:        1px solid #bbb;
+        border-radius: 3px;
+        cursor:        pointer;
+        height: 120px;
+        width: 120px;
+
+    }
 
 </style>

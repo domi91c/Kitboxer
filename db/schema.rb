@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217031049) do
+ActiveRecord::Schema.define(version: 20171220015734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1115,6 +1115,14 @@ ActiveRecord::Schema.define(version: 20171217031049) do
     t.index ["kind"], name: "index_spree_zones_on_kind"
   end
 
+  create_table "stores", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stores_on_user_id"
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.string "email"
     t.boolean "active", default: true
@@ -1165,4 +1173,5 @@ ActiveRecord::Schema.define(version: 20171217031049) do
   end
 
   add_foreign_key "products", "users"
+  add_foreign_key "stores", "users"
 end

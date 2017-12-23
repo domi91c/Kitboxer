@@ -1,4 +1,4 @@
-<template>
+<template class="StepImageModal">
     <div class="modal js-step-image-modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -38,6 +38,9 @@
 
 <style lang="scss" rel="stylesheet/scss" scoped>
     /*@import "./resources/assets/sass/variables";*/
+    .StepImageModal {
+
+    }
 
 
 </style>

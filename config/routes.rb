@@ -5,8 +5,13 @@ Rails.application.routes.draw do
       omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :orders
   resources :users do
+    resource :store, only: :show, controller: 'users/stores'
+  end
+
+  resources :orders
+
+
   resources :charges
   resources :purchases
   resources :posts
@@ -14,8 +19,8 @@ Rails.application.routes.draw do
   resources :subscriptions
 
   resources :products do
-    resources :build, controller: 'product/build'
-    resources :images, controller: 'product/images' do
+    resources :build, controller: 'products/build'
+    resources :images, controller: 'products/images' do
       member do
         patch :set_cover_image
       end

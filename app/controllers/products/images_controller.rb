@@ -1,4 +1,4 @@
-class Product::ImagesController < ApplicationController
+class Products::ImagesController < ApplicationController
   # before_action :set_product, only: [:create, :index]
 
   def index

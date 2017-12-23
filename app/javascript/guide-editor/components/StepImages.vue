@@ -1,8 +1,8 @@
-<template>
+<template class="step-images">
     <div class="row">
         <div class="col-md-12 mb-2">
-            <step-image v-for="image in images" :image="image"></step-image>
-            <crop-modal :image="image"></crop-modal>
+            <new-image-button class="float-left" @get-new-image="getNewImage"></new-image-button>
+            <step-image class="float-left" v-for="image in images" :image="image"></step-image>
         </div>
     </div>
 </template>
@@ -11,11 +11,13 @@
   import StepImage from './StepImage.vue'
   import StepImageModal from './StepImageModal.vue'
   import CropModal from '../../image-uploader/components/CropModal'
+  import NewImageButton from './NewImageButton'
 
   export default {
     components: {
       StepImage,
       CropModal,
+      NewImageButton,
     },
     mounted() {
 
@@ -23,28 +25,15 @@
 
     data() {
       return {
-        images: [
-          {
-            id: 0,
-            src: 'http://via.placeholder.com/100x100',
-          },
-          {
-            id: 1,
-            src: 'http://via.placeholder.com/100x100',
-          },
-          {
-            id: 2,
-            src: 'http://via.placeholder.com/100x100',
-          },
-          {
-            id: 3,
-            src: 'http://via.placeholder.com/100x100',
-          },
-        ],
+        images: [],
       }
     },
 
-    methods: {},
+    methods: {
+      getNewImage(formData) {
+        this.images.push(formData)
+      },
+    },
   }
 </script>
 

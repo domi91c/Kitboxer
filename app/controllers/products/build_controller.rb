@@ -1,4 +1,4 @@
-class Product::BuildController < ApplicationController
+class Products::BuildController < ApplicationController
   include Wicked::Wizard
   steps *Product.form_steps
 
