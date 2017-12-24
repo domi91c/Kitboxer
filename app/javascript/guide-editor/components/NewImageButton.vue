@@ -26,8 +26,8 @@
     },
     methods: {
       handleFileInput(fieldName, fileList) {
+        console.log(fileList)
         const formData = new FormData()
-        debugger
         if (!fileList.length) return
         Array
             .from(Array(fileList.length).keys())

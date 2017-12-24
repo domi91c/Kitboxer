@@ -1,34 +1,32 @@
-<section class="card">
-  <div class="card-body">
-    <h3>Step 1: <span class="display-7">This is the title of the step one</span></h3>
-    <hr>
-    <div class="row">
-      <div class="col-md-6">
-        <% if @product.images.first.image %>
-          <%= render 'product_carousel', images: @product.images %>
-        <% end %>
-      </div>
-      <div class="col-md-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam aspernatur autem blanditiis deleniti
-          dolore dolorem dolores est et, laborum nisi nobis nostrum officia quidem quos, repudiandae rerum sint
-          voluptatem.</p>
-      </div>
+<div class="card-body">
+  <h3>Step 1: <span class="display-7">This is the title of the step one</span></h3>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <% if @product.images.first.image %>
+        <%= render 'product_carousel', images: @product.images %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam aspernatur autem blanditiis deleniti
+        dolore dolorem dolores est et, laborum nisi nobis nostrum officia quidem quos, repudiandae rerum sint
+        voluptatem.</p>
     </div>
   </div>
-  <div class="card-body">
-    <h3>Step 2: <span class="display-7">This is the title of the step one</span></h3>
-    <hr>
-    <div class="row">
-      <div class="col-md-6">
-        <% if @product.images.first.image %>
-          <%= render 'product_carousel', images: @product.images %>
-        <% end %>
-      </div>
-      <div class="col-md-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam aspernatur autem blanditiis deleniti
-          dolore dolorem dolores est et, laborum nisi nobis nostrum officia quidem quos, repudiandae rerum sint
-          voluptatem.</p>
-      </div>
+</div>
+<div class="card-body">
+  <h3>Step 2: <span class="display-7">This is the title of the step one</span></h3>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam aspernatur autem blanditiis deleniti
+        dolore dolorem dolores est et, laborum nisi nobis nostrum officia quidem quos, repudiandae rerum sint
+        voluptatem.</p>
+    </div>
+    <div class="col-md-6">
+      <% if @product.images.first.image %>
+        <%= render 'product_carousel', images: @product.images %>
+      <% end %>
     </div>
   </div>
-</section>
+</div>

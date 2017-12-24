@@ -3,8 +3,6 @@
     <div class="col-md-9 mx-auto">
       <div class="card">
         <div class="card-body">
-          <h4>Shopping Cart</h4>
-          <br>
           <ul class="list-unstyled">
             <% @cart_data.each do |cart_product, cart_quantity| %>
               <%= render 'cart_product', product: cart_product, quantity: cart_quantity %>
@@ -19,7 +17,11 @@
             </div>
           </div>
 
-          <br>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-body">
           <div class="row">
             <div class="col-md-12 ">
               <h4>Checkout</h4>

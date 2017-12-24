@@ -2,9 +2,9 @@
   <%= image_tag product.cover_thumb, style: 'height:100px', class: 'mr-3' %>
   <div class="media-body">
     <h4 class="mt-0"><%= link_to product.title, product_path(product) %></h4>
-    <h4 class="display-8 mt-1">@robot_super_store:
+    <p class="display-8 mt-1 text-info">@robot_super_store:
       <small class="text-muted ">Toronto, ON Canada</small>
-    </h4>
+    </p>
 
     <%= form_tag add_to_cart_path(product), class: 'd-inline', method: :put do %>
       <button type="button" class="quantity-button js-quantity-decrease">

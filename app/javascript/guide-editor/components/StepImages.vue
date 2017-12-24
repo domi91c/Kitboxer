@@ -31,7 +31,8 @@
 
     methods: {
       getNewImage(formData) {
-        this.images.push(formData)
+        console.log(formData)
+        this.images.push(formData[0])
       },
     },
   }

@@ -2,7 +2,8 @@
   <div id="carouselExampleIndicators" class="carousel " data-ride="carousel">
     <div class="carousel-inner" role="listbox">
       <% images.each do |image| %>
-        <a href="<%= image.image.url %>" class="carousel-item item-image <%= 'active' if image == images.first %>" data-target="#carouselModal<%= image.id %>" data-toggle="modal" data-fancybox="carousel">
+        <a href="<%= image.image.url %>"
+           class="carousel-item item-image <%= 'active' if image == images.first %>" data-target="#carouselModal<%= image.id %>" data-toggle="modal" data-fancybox="carousel">
           <img class="d-block img-fluid " src="<%= image.image.url %>">
         </a>
       <% end %>
