@@ -7,10 +7,15 @@
         <span class="badge badge-success">Shipped March 9th</span>
       <% end %>
     </h4>
-    <button class="btn btn-outline-default btn-sm" data-toggle="dropdown">Actions <span class="ml-1 dropdown-toggle"></span>
+    <button class="btn btn-outline-default btn-sm" data-toggle="dropdown">Actions
+      <span class="ml-1 dropdown-toggle"></span>
     </button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Contact Seller</a>
+    <div class="dropdown-menu ">
+      <a class="dropdown-item"
+         data-toggle="modal"
+         data-target=".js-contact-seller-modal"
+         href="#">Contact Seller
+      </a>
       <a class="dropdown-item" href="#">Review Product</a>
       <a class="dropdown-item" href="#">Request Refund</a>
     </div>
@@ -19,4 +24,27 @@
 </div>
 <br>
 
+
+
+<div class="modal js-contact-seller-modal">
+  <div class="modal-center">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 

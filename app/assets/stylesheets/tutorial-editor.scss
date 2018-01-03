@@ -1,4 +1,4 @@
-.guide-editor {
+.tutorial-editor {
   .img-placeholder {
     position: relative;
     width: 140px;
@@ -11,7 +11,7 @@
     border-radius: .15rem;
   }
 
-  .guide-image-uploader {
+  .tutorial-image-uploader {
     @extend .card;
     border: 1px solid rgba($black,.50);
   }

@@ -44,6 +44,10 @@
   dependencies:
     arrify "^1.0.1"
 
+"@fancyapps/fancybox@^3.1.20":
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/@fancyapps/fancybox/-/fancybox-3.2.5.tgz#c866f399bf3d2ef61d4103dfe9f297e74d3c3ff3"
+
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
@@ -3519,6 +3523,10 @@ lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
 
+lazysizes@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-3.0.0.tgz#b1bacb5a0f28113ffa7b389ce2f35f1cff19d9b9"
+
 lcid@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lcid/-/lcid-1.0.0.tgz#308accafa0bc483a3867b4b6f2b9506251d1b835"
@@ -6393,6 +6401,13 @@ vue-hot-reload-api@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.1.0.tgz#9ca58a6e0df9078554ce1708688b6578754d86de"
 
+vue-images@^1.0.10:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vue-images/-/vue-images-1.1.0.tgz#4df1bb86d6afa8398f41d2c329dfc91c1118d73a"
+  dependencies:
+    lazysizes "^3.0.0"
+    vue "^2.1.0"
+
 vue-loader@^12.2.2:
   version "12.2.2"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-12.2.2.tgz#2b3a764f27018f975bc78cb8b1f55137548ee2d7"
@@ -6453,9 +6468,17 @@ vue@^2.0.5, vue@^2.2.4, vue@^2.2.6, vue@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.2.tgz#a9855261f191c978cc0dc1150531b8d08149b58c"
 
+vue@^2.1.0:
+  version "2.5.13"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.13.tgz#95bd31e20efcf7a7f39239c9aa6787ce8cf578e1"
+
 vue@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.1.tgz#76e0b8eee614613532216b7bfe784e0b5695b160"
+
+vuex@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.0.1.tgz#e761352ebe0af537d4bb755a9b9dc4be3df7efd2"
 
 watchpack@^1.4.0:
   version "1.4.0"

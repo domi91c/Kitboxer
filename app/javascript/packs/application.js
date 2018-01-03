@@ -1,8 +1,4 @@
 /* eslint no-console:0 */
-import 'avatar';
-import 'image-uploader';
-import 'guide-editor';
-
-import 'lightbox';
-
+import 'image-uploader'
+import 'tutorial-editor'
 

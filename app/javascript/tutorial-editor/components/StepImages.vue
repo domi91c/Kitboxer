@@ -1,8 +1,17 @@
 <template class="step-images">
     <div class="row">
         <div class="col-md-12 mb-2">
-            <new-image-button class="float-left" @get-new-image="getNewImage"></new-image-button>
-            <step-image class="float-left" v-for="image in images" :image="image"></step-image>
+            <new-image-button class="float-left"
+                              :product="product"
+                              :step="step"
+                              @get-new-image="getNewImage">
+            </new-image-button>
+            <step-image class="float-left"
+                        :product="product"
+                        v-for="image in images"
+                        :image="image"
+                        :key="image.id">
+            </step-image>
         </div>
     </div>
 </template>
@@ -14,13 +23,13 @@
   import NewImageButton from './NewImageButton'
 
   export default {
+    props: ['product', 'step'],
     components: {
       StepImage,
       CropModal,
       NewImageButton,
     },
     mounted() {
-
     },
 
     data() {
@@ -30,9 +39,8 @@
     },
 
     methods: {
-      getNewImage(formData) {
-        console.log(formData)
-        this.images.push(formData[0])
+      getNewImage(image) {
+        this.images.push(image)
       },
     },
   }

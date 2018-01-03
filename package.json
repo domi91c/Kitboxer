@@ -55,6 +55,7 @@
     "vue-template-compiler": "^2.4.1",
     "vue-turbolinks": "^1.1.0",
     "vue-upload-component": "^2.4.0-beta.3",
+    "vuex": "^3.0.1",
     "webpack": "^3.3.0",
     "webpack-manifest-plugin": "^1.1.2",
     "webpack-merge": "^4.1.0"

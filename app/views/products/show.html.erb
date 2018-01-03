@@ -1,4 +1,4 @@
-<section class="box">
+<section class="card">
   <div class="card-body">
     <div class="row">
       <div class="col-md-6">
@@ -7,7 +7,7 @@
         <% end %>
       </div>
 
-      <div class="col-md-6 ml-auto">
+      <div class="col-md-5 ml-auto">
         <div class="display-5" style="margin-bottom:1.5rem;"> <%= @product.title %> </div>
 
 
@@ -23,7 +23,7 @@
           &nbsp; &nbsp;
           <strong>41 Reviews</strong>
           &nbsp; &nbsp;
-          <a href="#">show all</a></p>
+          <a href="#" class="js-show-reviews">show all</a></p>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
           aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
           Nemo
@@ -104,7 +104,7 @@
           </div>
           <div class="tab-pane " id="reviews" role="tabpanel">
             <div class="card mt-3">
-              <div class="card-block">
+              <div class="card-body">
                 <div class="card-title">Reviews</div>
                 <div class="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at consectetur consequatur

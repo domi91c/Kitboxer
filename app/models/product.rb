@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :purchases
   has_many :images, dependent: :destroy
+  has_one :tutorial
 
   validates_presence_of :title, if: -> { required_for_step?(:add_description) }
   validates_presence_of :category, if: -> { required_for_step?(:add_description) }
@@ -18,7 +19,7 @@ class Product < ApplicationRecord
   end
 
   cattr_accessor :form_steps do
-    %w(add_description add_images add_shipping)
+    %w(add_description add_images add_tutorial)
   end
   attr_accessor :form_step
 

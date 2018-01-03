@@ -26,6 +26,10 @@ document.addEventListener('turbolinks:load', function() {
     console.log('clicked menu')
     $('.hero-dropdown-toggle').text($(this).text())
   })
+
+  $('.carousel').carousel({
+    interval: false
+  })
 })
 
 $('.js-subscription-form')
@@ -33,3 +37,4 @@ $('.js-subscription-form')
       // insert the failure message inside the "#account_settings" element
       $(this).append(xhr.responseText)
     })
+

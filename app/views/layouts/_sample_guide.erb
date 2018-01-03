@@ -3,14 +3,14 @@
   <hr>
   <div class="row">
     <div class="col-md-6">
-      <% if @product.images.first.image %>
-        <%= render 'product_carousel', images: @product.images %>
-      <% end %>
-    </div>
-    <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam aspernatur autem blanditiis deleniti
+      <p class="display-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam aspernatur autem blanditiis deleniti
         dolore dolorem dolores est et, laborum nisi nobis nostrum officia quidem quos, repudiandae rerum sint
         voluptatem.</p>
+    </div>
+    <div class="col-md-6">
+      <% if @product.images.first.image %>
+        <%= render 'products/product_carousel', images: @product.images %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -19,13 +19,13 @@
   <hr>
   <div class="row">
     <div class="col-md-6">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam aspernatur autem blanditiis deleniti
+      <p class="display-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam aspernatur autem blanditiis deleniti
         dolore dolorem dolores est et, laborum nisi nobis nostrum officia quidem quos, repudiandae rerum sint
         voluptatem.</p>
     </div>
     <div class="col-md-6">
       <% if @product.images.first.image %>
-        <%= render 'product_carousel', images: @product.images %>
+        <%= render 'products/product_carousel', images: @product.images %>
       <% end %>
     </div>
   </div>

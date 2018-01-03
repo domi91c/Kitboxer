@@ -86,9 +86,15 @@ gem 'omniauth-stripe-connect'
 gem 'stripe'
 
 
-
 gem 'validates_email_format_of'
 
 gem 'faker'
 
+
 gem 'material_icons'
+
+gem 'rack-cors', github: 'cyu/rack-cors'
+
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+
+

@@ -1,7 +1,7 @@
 <template>
     <div class="new-image-button text-center mx-1 mt-2">
         <input type="file" name="file" id="file" class="new-image-file-field"
-               @change="handleFileInput($event.target.name, $event.target.files)"/>
+               @change="handleFileInput($event.target.files)"/>
         <label for="file">
             <i class="material-icons md-24 image new-image-button-icon"></i>
             <p>New Image</p>
@@ -10,12 +10,13 @@
 </template>
 
 <script>
+  import * as model from '../model'
 
   export default {
+    props: ['step', 'product', 'tutorial'],
     mounted() {
 
     },
-
     data() {
       return {
         uploadedFiles: [],
@@ -25,22 +26,23 @@
       }
     },
     methods: {
-      handleFileInput(fieldName, fileList) {
-        console.log(fileList)
+      handleFileInput(fileList) {
         const formData = new FormData()
         if (!fileList.length) return
-        Array
-            .from(Array(fileList.length).keys())
-            .map(x => {
-              formData.append(fieldName, fileList[x], fileList[x].name)
-            })
-        this.$emit('get-new-image', formData)
+        formData.append('image[image]', fileList[0])
+        formData.append('image[step_id]', this.step.id)
+        formData.append('image[product_id]', this.product.id)
+        model.uploadImage(formData, this.product)
+             .then(x => {
+               this.$emit('get-new-image', x.image.url)
+             })
+             .catch(err => console.log(err))
       },
     },
   }
 </script>
 
-<style lang="scss" rel="stylesheet/scss" scoped>
+<style lang="scss" rel="styesheet/scss" scoped>
     .new-image-button {
         border:        1px solid #bbb;
         border-radius: 3px;
@@ -55,8 +57,8 @@
     }
 
     .new-image-button-icon {
-        position: relative;
-        top: 9px;
+        position:  relative;
+        top:       9px;
         font-size: 5rem;
         color:     #393F57;
     }

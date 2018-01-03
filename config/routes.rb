@@ -25,12 +25,15 @@ Rails.application.routes.draw do
         patch :set_cover_image
       end
     end
+    resource :tutorial, controller: 'products/tutorial' do
+      resources :images, controller: 'products/tutorial/images'
+    end
   end
 
 
   resource :cart, only: [:show] do
     put 'add/:product_id', to: 'carts#add', as: :add_to
-    put 'remove/:product_id', to: 'carts#remove', as: :remove_from
+    get 'remove/:product_id', to: 'carts#remove', as: :remove_from
   end
 
   root to: 'visitors#index'

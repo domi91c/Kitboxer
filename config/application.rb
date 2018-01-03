@@ -18,7 +18,7 @@ Bundler.require(*Rails.groups)
 
 module Kitboxer
   class Application < Rails::Application
-    Dir[File.join(Rails.root, "lib", "utils", "*.rb")].each {|l| require l}
+    Dir[File.join(Rails.root, "lib", "utils", "*.rb")].each { |l| require l }
 
     config.generators do |g|
       g.test_framework :rspec,
@@ -28,9 +28,16 @@ module Kitboxer
                        routing_specs: false,
                        controller_specs: false,
                        request_specs: false
-      g.fixture_replacement :factory_girl, dir: "spec/factories"
+      g.fixture_replacement :factory_bot, dir: "spec/factories"
       g.javascript_engine :js
 
+    end
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
     end
 
     # Initialize configuration defaults for originally generated Rails version.

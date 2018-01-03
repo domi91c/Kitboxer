@@ -4,7 +4,8 @@ class Products::BuildController < ApplicationController
 
   def show
     @product = Product.find(params[:product_id])
-    @image = @product.images.build
+    @product.tutorial = Tutorial.new unless @product.tutorial
+    @tutorial = @product.tutorial
     render_wizard
   end
 
@@ -22,7 +23,7 @@ class Products::BuildController < ApplicationController
                                [:title, :price, :tagline, :category, :body]
                              when 'add_images'
                                [images_attributes: [:image, :image_id, :user_id]]
-                             when 'add_shipping'
+                             when 'add_tutorial'
                                [:user_id]
                            end
 

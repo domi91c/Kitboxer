@@ -2,8 +2,13 @@
 
   <div class="row">
     <div class="col-md-9 order-2">
-      <div class="js-guide-editor">
-      </div>
+      <%= content_tag :div,
+                      class: "js-tutorial-editor",
+                      data: {
+                          product: @product,
+                          tutorial: @tutorial
+                      }.to_json do %>
+      <% end %>
     </div>
     <div class="col-md-3 order-1 mb-4">
       <ul class="list-group">

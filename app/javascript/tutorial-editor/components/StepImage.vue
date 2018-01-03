@@ -1,7 +1,8 @@
 <template>
     <div class="step-image mx-1 mt-2">
         <img :src="image"
-             class=""
+             height="120"
+             width="120"
              @click="openImageModal()">
     </div>
 </template>
@@ -11,7 +12,6 @@
   export default {
     props: ['image'],
     mounted() {
-
     },
 
     data() {
@@ -20,6 +20,7 @@
 
     methods: {
       openImageModal() {
+
       },
     },
   }
@@ -31,8 +32,8 @@
         border:        1px solid #bbb;
         border-radius: 3px;
         cursor:        pointer;
-        height: 120px;
-        width: 120px;
+        height:        120px;
+        width:         120px;
     }
 
 </style>
