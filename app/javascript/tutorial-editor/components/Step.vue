@@ -12,7 +12,7 @@
                 <div class="form-group">
                     <input type="file" class="form-control" @change="handleFileInput($event)">
                 </div>
-                <div class="row no-gutters">
+                <div class="row ">
                     <step-image v-for="image in step.images" :key="image.id" :image="image"></step-image>
                 </div>
             </form>
