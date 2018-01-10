@@ -1,6 +1,7 @@
 class Image < ApplicationRecord
   attr_accessor :crop_data
-  belongs_to :product
+  belongs_to :product, optional: true
+  belongs_to :step, optional: true
   mount_uploader :image, ImageUploader
   after_update :recreate_images
 

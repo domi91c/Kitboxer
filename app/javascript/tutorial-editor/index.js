@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let el = document.querySelector('.js-tutorial-editor')
   if (el !== null) {
     const props = JSON.parse(el.getAttribute('data'))
+    console.dir(props)
+    store.commit('SET_INITIAL_STATE', { props })
     new Vue({
       render: h => h(TutorialEditor, { props }),
       store,
@@ -17,4 +19,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }).$mount(el)
   }
 })
-

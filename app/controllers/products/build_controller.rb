@@ -6,6 +6,12 @@ class Products::BuildController < ApplicationController
     @product = Product.find(params[:product_id])
     @product.tutorial = Tutorial.new unless @product.tutorial
     @tutorial = @product.tutorial
+    @serialized_product = ActiveModel::Serializer::Adapter::Json
+                              .new(ProductSerializer.new(@product))
+                              .serializable_hash
+    @serialized_tutorial = ActiveModel::Serializer::Adapter::Json
+                               .new(TutorialSerializer.new(@tutorial))
+                               .serializable_hash
     render_wizard
   end
 

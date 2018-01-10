@@ -10,13 +10,22 @@ if (window.environment === 'development') {
   BASE_URL = 'https://www.kitboxer.com'
 }
 
-function uploadImage(formData, product) {
-  const url = `${BASE_URL}/products/${product.id}/tutorial/images`
-  return axios.post(url, formData).then(x => {
-    return JSON.parse(x.request.response)
-  }).catch((error) => {
-    console.log(error)
-  })
-}
+export default {
+  state: {
+    product: null,
+  },
 
-export { uploadImage }
+  actions: {},
+
+  mutations: {
+    SET_INITIAL_STATE: (state, { props }) => {
+      state.product = props.product.product
+      state.tutorial = props.tutorial.tutorial
+    },
+  },
+
+  getters: {
+    product: state => state.product,
+  },
+
+}

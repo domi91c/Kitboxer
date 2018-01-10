@@ -5,8 +5,8 @@
       <%= content_tag :div,
                       class: "js-tutorial-editor",
                       data: {
-                          product: @product,
-                          tutorial: @tutorial
+                          product: @serialized_product,
+                          tutorial: @serialized_tutorial,
                       }.to_json do %>
       <% end %>
     </div>

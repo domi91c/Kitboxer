@@ -28,6 +28,14 @@
 @import "orders";
 @import "jquery.fancybox";
 
+.navbar-toggler {
+  border: none
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
 @media (min-width: 992px) {
   .container-fluid {
     padding-right: 35px;

@@ -1,8 +1,8 @@
 <template>
     <div class="new-image-button text-center mx-1 mt-2">
-        <input type="file" name="file" id="file" class="new-image-file-field"
-               @change="handleFileInput($event.target.files)"/>
-        <label for="file">
+        <label>
+            <input type="file" id="file" class="new-image-file-field"
+                   @change="handleFileInput($event.target.files)"/>
             <i class="material-icons md-24 image new-image-button-icon"></i>
             <p>New Image</p>
         </label>
@@ -10,33 +10,22 @@
 </template>
 
 <script>
-  import * as model from '../model'
+  import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
 
   export default {
-    props: ['step', 'product', 'tutorial'],
-    mounted() {
+    props: ['step'],
 
-    },
-    data() {
-      return {
-        uploadedFiles: [],
-        uploadError: null,
-        currentStatus: null,
-        uploadFieldName: 'photos',
-      }
+    computed: {
+      ...mapGetters([
+        'product',
+        'tutorial',
+        'steps',
+      ]),
     },
     methods: {
       handleFileInput(fileList) {
-        const formData = new FormData()
-        if (!fileList.length) return
-        formData.append('image[image]', fileList[0])
-        formData.append('image[step_id]', this.step.id)
-        formData.append('image[product_id]', this.product.id)
-        model.uploadImage(formData, this.product)
-             .then(x => {
-               this.$emit('get-new-image', x.image.url)
-             })
-             .catch(err => console.log(err))
+        this.$store.dispatch('UPLOAD_IMAGE',
+            { product: this.product, image: fileList[0], step: this.step })
       },
     },
   }
