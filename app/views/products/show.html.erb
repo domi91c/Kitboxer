@@ -96,13 +96,12 @@
         <div class="tab-content">
           <div class="tab-pane active" id="overview" role="tabpanel">
             <div class="card mt-3 pa-4">
-              <div class="card-block">
-                <div class="card-title">Overview</div>
-                <div class="card-text"><%= @product.body.html_safe %></div>
+              <div class="card-body">
+                <%= @product.body.html_safe %>
               </div>
             </div>
           </div>
-          <div class="tab-pane " id="reviews" role="tabpanel">
+          <div class="tab-pane js-reviews-pane" id="reviews" role="tabpanel">
             <div class="card mt-3">
               <div class="card-body">
                 <div class="card-title">Reviews</div>

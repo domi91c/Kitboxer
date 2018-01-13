@@ -2,6 +2,9 @@
 @import "variables";
 @import "bootstrap";
 @import "bootstrap-overrides/**/*";
+@import "font-awesome";
+@import "material_icons";
+@import "material_icons_unicode";
 
 html, body, .coming-soon-page {
   margin:  0;
@@ -26,10 +29,5 @@ html, body, .coming-soon-page {
 
 .coming-soon-form-control {
   border-radius: 0;
-}
-
-.coming-soon-btn {
-  border-top-right-radius:     .15rem;
-  border-bottom-right-radius: .15rem;
 }
 
