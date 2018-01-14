@@ -9,11 +9,13 @@
                 <div class="form-group">
                     <trix-editor class="form-control" placeholder="Step instructions..."></trix-editor>
                 </div>
-                <div class="form-group">
-                    <input type="file" class="form-control" @change="handleFileInput($event)">
-                </div>
                 <div class="row ">
-                    <step-image v-for="image in step.images" :key="image.id" :image="image"></step-image>
+                    <step-image-button :step="step"></step-image-button>
+                    <step-image v-for="image in step.images"
+                                :key="image.id"
+                                :step="step"
+                                :image="image">
+                    </step-image>
                 </div>
             </form>
         </div>
@@ -21,11 +23,13 @@
 </template>
 
 <script>
+  import StepImageButton from './StepImageButton.vue'
   import StepImage from './StepImage.vue'
 
   export default {
     props: ['step'],
     components: {
+      StepImageButton,
       StepImage,
     },
     mounted() {
@@ -36,12 +40,7 @@
       return {}
     },
 
-    methods: {
-      handleFileInput(e) {
-        this.$store.dispatch('UPLOAD_IMAGE',
-            { product: this.$store.state.product, image: e.target.files[0], step: this.step })
-      },
-    },
+    methods: {},
   }
 </script>
 

@@ -6,6 +6,11 @@ module Products
         render json: @image
       end
 
+      def destroy
+        Image.destroy(params[:id])
+        render json: { status: 'Successfully deleted image.' }
+      end
+
       def image_params
         params.require(:image).permit(:image, :step_id)
       end

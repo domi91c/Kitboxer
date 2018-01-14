@@ -82,7 +82,7 @@
         height: 500px;
     }
 
-    .inputfile {
+    .file-input {
         width: 0.1px;
         height: 0.1px;
         opacity: 0;

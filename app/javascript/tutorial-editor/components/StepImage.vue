@@ -1,16 +1,16 @@
 <template>
     <div class="d-inline col-4 col-sm-3">
         <div class="step-image">
-            <img height="100" class="img-fluid img-thumbnail" :src="image.image.url"
+            <img class="img-fluid img-thumbnail" :src="image.image.url"
                  alt="">
             <div class="image-overlay">
                 <div class="btn-group">
-                    <button class="btn btn-default">
+                    <div class="btn btn-info">
                         <i class="fa fa-crop"></i>
-                    </button>
-                    <button class="btn btn-default" @click="removeImage(this.$event)">
+                    </div>
+                    <div class="btn btn-secondary" @click="deleteImage">
                         <i class="fa fa-trash"></i>
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -18,14 +18,19 @@
 </template>
 
 <script>
-  import { mapState, mapActions, mapMutations } from 'vuex';
+  import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
 
   export default {
-    props: ['image'],
+    props: ['step', 'image'],
     mounted() {
 
     },
-    computed: {},
+    computed: {
+      ...mapGetters([
+        'steps',
+        'images',
+      ]),
+    },
 
     data() {
       return {}
@@ -35,9 +40,12 @@
       cropImage() {
 
       },
-      removeImage(e) {
-
-      }
+      deleteImage() {
+        let stepIndex = this.steps.indexOf(this.step)
+        let imageIndex = this.steps[stepIndex].images.indexOf(this.image)
+        this.$store.dispatch('DELETE_IMAGE',
+            { product: this.$store.state.product, stepIndex: stepIndex, imageIndex: imageIndex, image: this.image })
+      },
     },
   }
 </script>
@@ -50,10 +58,6 @@
         padding-bottom: 90%;
         margin-bottom:  30px;
 
-        &:hover .image-overlay {
-            opacity: 1;
-        }
-
         img {
             position:         absolute;
             height:           100%;
@@ -63,15 +67,18 @@
         }
 
         .image-overlay {
-            opacity:    0;
-            position:   relative;
+            opacity:      0;
+            position:     absolute;
+            right:        0;
+            left:         0;
+            bottom:       0;
             text-align: center;
 
             & .btn {
-                position:  relative;
-                top:       150px;
-                font-size: 20px;
             }
+        }
+        &:hover .image-overlay {
+            opacity: 1;
         }
 
     }

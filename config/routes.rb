@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
       sessions: 'users/sessions',
       registrations: 'users/registrations',
-      omniauth_callbacks: "users/omniauth_callbacks"
+      omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
   resources :users do
@@ -10,12 +10,9 @@ Rails.application.routes.draw do
   end
 
   resources :orders
-
-
   resources :charges
   resources :purchases
   resources :posts
-
   resources :subscriptions
 
   resources :products do
