@@ -56,7 +56,6 @@
     .step-image {
         position:       relative;
         padding-bottom: 90%;
-        margin-bottom:  30px;
 
         img {
             position:         absolute;
@@ -75,6 +74,7 @@
             text-align: center;
 
             & .btn {
+                cursor: pointer;
             }
         }
         &:hover .image-overlay {

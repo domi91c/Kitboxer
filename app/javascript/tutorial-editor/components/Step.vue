@@ -1,7 +1,7 @@
 <template>
     <div class="card mb-4">
         <div class="card-body">
-            <h5 class="card-title">Step 1</h5>
+            <h2 class="card-title text-center">Step 1</h2>
             <form>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Step title...">
@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <trix-editor class="form-control" placeholder="Step instructions..."></trix-editor>
                 </div>
-                <div class="row ">
+                <div class="row">
                     <step-image-button :step="step"></step-image-button>
                     <step-image v-for="image in step.images"
                                 :key="image.id"

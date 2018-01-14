@@ -3,9 +3,7 @@
         <div class="step-image-button">
             <label class="img-fluid img-thumbnail" alt="">
                 <input type="file" name="file" id="file" class="inputfile" @change="uploadImage($event)"/>
-                <div class="inner-label">
-                    <i class="fa fa-camera"></i>
-                </div>
+                <img src="../images/step-image-button.png" alt="">
             </label>
         </div>
     </div>
@@ -13,9 +11,17 @@
 
 <script>
   import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
+  import buttonImage from '../images/coming_soon_bg.png'
+
 
   export default {
     props: ['step', 'image'],
+
+    data() {
+      return {
+        buttonImage: buttonImage
+      }
+    },
     mounted() {
 
     },
@@ -57,6 +63,7 @@
         }
 
         label {
+            cursor: pointer;
             position:         absolute;
             height:           100%;
             width:            100%;
@@ -64,12 +71,11 @@
             background-color: #ffffff;
             text-align: center;
 
-            .inner-label {
-                position:     absolute;
-                right:        0;
-                left:         0;
-                text-align: center;
-                font-size: 2rem;
+            img {
+                height:           100%;
+                width:            100%;
+                object-fit:       contain;
+                background-color: #ffffff;
             }
         }
 
