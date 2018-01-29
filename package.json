@@ -48,6 +48,7 @@
     "vue-cropper": "^0.1.4",
     "vue-cropper-simple": "^1.0.5",
     "vue-cropperjs": "^2.1.1",
+    "vue-fancybox": "^1.0.3",
     "vue-images": "^1.0.10",
     "vue-loader": "^12.2.2",
     "vue-resource": "latest",

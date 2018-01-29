@@ -11,8 +11,6 @@
 
 <script>
   import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
-  import buttonImage from '../images/coming_soon_bg.png'
-
 
   export default {
     props: ['step', 'image'],
@@ -51,7 +49,7 @@
     .step-image-button {
         position:       relative;
         padding-bottom: 90%;
-        margin-bottom:  30px;
+        margin-top:  15px;
 
         .inputfile {
             width:    0.1px;

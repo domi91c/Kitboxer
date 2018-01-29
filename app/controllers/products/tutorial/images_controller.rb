@@ -8,7 +8,7 @@ module Products
 
       def destroy
         Image.destroy(params[:id])
-        render json: { status: 'Successfully deleted image.' }
+        render json: {}, status: 200
       end
 
       def image_params

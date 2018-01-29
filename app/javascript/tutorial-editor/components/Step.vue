@@ -1,7 +1,7 @@
 <template>
     <div class="card mb-4">
         <div class="card-body">
-            <h2 class="card-title text-center">Step 1</h2>
+            <h2 class="card-title">Step {{this.$store.getters.steps.indexOf(step)+1}}</h2>
             <form>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Step title...">
@@ -9,13 +9,15 @@
                 <div class="form-group">
                     <trix-editor class="form-control" placeholder="Step instructions..."></trix-editor>
                 </div>
-                <div class="row">
+                <div class="row ">
                     <step-image-button :step="step"></step-image-button>
                     <step-image v-for="image in step.images"
                                 :key="image.id"
                                 :step="step"
-                                :image="image">
+                                :image="image"
+                                @preview-image="previewImage(image)">
                     </step-image>
+                    <crop-modal :step="step" :image="currentImage"></crop-modal>
                 </div>
             </form>
         </div>
@@ -25,22 +27,26 @@
 <script>
   import StepImageButton from './StepImageButton.vue'
   import StepImage from './StepImage.vue'
+  import CropModal from './CropModal.vue'
 
   export default {
     props: ['step'],
     components: {
       StepImageButton,
       StepImage,
+      CropModal,
     },
-    mounted() {
-
-    },
-
     data() {
-      return {}
+      return {
+        currentImage: this.step.images[0],
+      }
     },
-
-    methods: {},
+    methods: {
+      previewImage(image) {
+        this.currentImage = image
+        this.$root.$emit('show::modal', `image-modal-${this.step.id}`)
+      },
+    },
   }
 </script>
 

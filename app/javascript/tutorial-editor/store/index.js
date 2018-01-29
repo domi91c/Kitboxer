@@ -27,11 +27,11 @@ const store = new Vuex.Store({
       formData.append('image[image]', image)
       formData.append('image[step_id]', step.id)
       return axios.post(url, formData)
-                  .then(response => {
+                  .then(res => {
                     commit('ADD_IMAGE',
-                        { step: step, image: response.data })
+                        { step: step, image: res.data })
                   })
-                  .catch((err) => {
+                  .catch(err => {
                     console.log(err)
                   })
     },

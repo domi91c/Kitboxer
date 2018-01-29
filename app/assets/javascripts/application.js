@@ -29,6 +29,13 @@ document.addEventListener('turbolinks:load', function() {
   $('.carousel').carousel({
     interval: false
   })
+
+  $('.js-show-reviews').click(function() {
+    $('html, body').animate({
+      scrollTop: $('.js-product-tabs').offset().top,
+    }, 500)
+    $('.js-product-tabs a[href="#reviews"]').tab('show')
+  })
 })
 
 $('.js-subscription-form')
