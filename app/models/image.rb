@@ -12,7 +12,7 @@ class Image < ApplicationRecord
   def crop_image
     cropped_image = MiniMagick::Image.open(self.image.path)
     crop_params =
-        "#{ crop_data["width"]}x
+        "#{crop_data["width"]}x
          #{crop_data["height"]}+
          #{crop_data["x"]}+
          #{crop_data["y"]}"

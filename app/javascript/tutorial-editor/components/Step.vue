@@ -15,7 +15,7 @@
                                 :key="image.id"
                                 :step="step"
                                 :image="image"
-                                @preview-image="previewImage(image)">
+                                @preview-image="launchCropModal(image)">
                     </step-image>
                     <crop-modal :step="step" :image="currentImage"></crop-modal>
                 </div>
@@ -42,7 +42,7 @@
       }
     },
     methods: {
-      previewImage(image) {
+      launchCropModal(image) {
         this.currentImage = image
         this.$root.$emit('show::modal', `image-modal-${this.step.id}`)
       },

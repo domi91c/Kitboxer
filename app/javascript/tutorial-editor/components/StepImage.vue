@@ -31,13 +31,9 @@
       ]),
     },
     methods: {
-      cropImage() {
-      },
       deleteImage() {
-        let stepIndex = this.steps.indexOf(this.step)
-        let imageIndex = this.steps[stepIndex].images.indexOf(this.image)
         this.$store.dispatch('DELETE_IMAGE',
-            { product: this.$store.state.product, stepIndex: stepIndex, imageIndex: imageIndex, image: this.image })
+            { product: this.$store.state.product, step: this.step, image: this.image })
       },
     },
   }
@@ -49,7 +45,7 @@
     .step-image {
         position:       relative;
         padding-bottom: 90%;
-        margin-top:  15px;
+        margin-top:     15px;
 
         img {
             position:         absolute;

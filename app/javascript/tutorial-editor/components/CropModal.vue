@@ -5,6 +5,9 @@
                  :id="`image-modal-${step.id}`"
                  ref="image_modal"
                  size="lg"
+                 lazy
+                 ok-title="Crop"
+                 @ok="submitCropData(this.$event)"
         >
             <img v-show="false" :src="image.image.url" alt="">
             <vue-cropper
@@ -40,7 +43,13 @@
         name: 'name',
       }
     },
-    methods: {},
+    methods: {
+      submitCropData(event) {
+        let cropData = this.$refs.cropper.getData()
+        this.$store.dispatch('CROP_IMAGE',
+            { product: this.$store.state.product, step: this.step, image: this.image, cropData: cropData })
+      },
+    },
   }
 </script>
 
