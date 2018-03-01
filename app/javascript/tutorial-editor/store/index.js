@@ -21,7 +21,7 @@ const store = new Vuex.Store({
     steps: [],
   },
   actions: {
-    UPLOAD_IMAGE: function({ commit }, { step, image }) {
+    'UPLOAD_IMAGE': function({ commit }, { step, image }) {
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images`
       const formData = new FormData()
       formData.append('image[image]', image)
@@ -35,7 +35,7 @@ const store = new Vuex.Store({
                     console.log(err)
                   })
     },
-    CROP_IMAGE: function({ commit }, { step, image, cropData }) {
+    'CROP_IMAGE': function({ commit }, { step, image, cropData }) {
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
       const formData = new FormData()
       formData.append('image[crop_data]', JSON.stringify(cropData))
