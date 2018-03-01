@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :purchase do
     product_id "MyString"
     quantity "MyString"

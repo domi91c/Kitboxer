@@ -21,8 +21,8 @@ const store = new Vuex.Store({
     steps: [],
   },
   actions: {
-    UPLOAD_IMAGE: function({ commit }, { product, step, image }) {
-      const url = `${BASE_URL}/products/${product.id}/tutorial/images`
+    UPLOAD_IMAGE: function({ commit }, { step, image }) {
+      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images`
       const formData = new FormData()
       formData.append('image[image]', image)
       formData.append('image[step_id]', step.id)
@@ -35,11 +35,12 @@ const store = new Vuex.Store({
                     console.log(err)
                   })
     },
-    CROP_IMAGE: function({ commit }, { product, step, image, cropData }) {
-      const url = `${BASE_URL}/products/${product.id}/tutorial/images/${image.id}`
+    CROP_IMAGE: function({ commit }, { step, image, cropData }) {
+      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
       const formData = new FormData()
       formData.append('image[crop_data]', JSON.stringify(cropData))
       formData.append('image[step_id]', step.id)
+      debugger
       return axios.patch(url, formData)
                   .then(res => {
                     commit('UPDATE_IMAGE',
@@ -53,9 +54,9 @@ const store = new Vuex.Store({
                     console.log(err)
                   })
     },
-    DELETE_IMAGE: function(
-        { commit }, { product, step, image }) {
-      const url = `${BASE_URL}/products/${product.id}/tutorial/images/${image.id}`
+    'DELETE_IMAGE': function(
+        { commit }, { step, image }) {
+      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
       return axios.delete(url)
                   .then(response => {
                     commit('REMOVE_IMAGE', {
@@ -68,20 +69,20 @@ const store = new Vuex.Store({
     },
   },
   mutations: {
-    SET_INITIAL_STATE: (state, { props }) => {
+    'SET_INITIAL_STATE': (state, { props }) => {
       state.product = props.product.product
       state.tutorial = props.tutorial.tutorial
     },
-    ADD_IMAGE: (state, { step, image }) => {
+    'ADD_IMAGE': (state, { step, image }) => {
       let stepIndex = state.tutorial.steps.indexOf(step)
       state.tutorial.steps[stepIndex].images.push(image)
     },
-    UPDATE_IMAGE: (state, { step, oldImage, newImage }) => {
+    'UPDATE_IMAGE': (state, { step, oldImage, newImage }) => {
       let stepIndex = state.tutorial.steps.indexOf(step)
       let imageIndex = state.tutorial.steps[stepIndex].images.indexOf(oldImage)
       state.tutorial.steps[stepIndex].images.splice(imageIndex, 1, newImage)
     },
-    REMOVE_IMAGE: (state, { step, image }) => {
+    'REMOVE_IMAGE': (state, { step, image }) => {
       let stepIndex = state.tutorial.steps.indexOf(step)
       let imageIndex = state.tutorial.steps[stepIndex].images.indexOf(image)
       state.tutorial.steps[stepIndex].images.splice(imageIndex, 1)

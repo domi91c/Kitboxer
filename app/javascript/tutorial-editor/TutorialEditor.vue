@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex'
   import Step from './components/Step'
 
   export default {

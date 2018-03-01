@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :step do
     tutorial nil
     title "MyString"

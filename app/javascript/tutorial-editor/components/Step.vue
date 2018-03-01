@@ -41,10 +41,13 @@
         currentImage: this.step.images[0],
       }
     },
+    mounted() {
+      this.currentImage = {}
+    },
     methods: {
-      launchCropModal(image) {
+     launchCropModal(image) {
         this.currentImage = image
-        this.$root.$emit('show::modal', `image-modal-${this.step.id}`)
+        this.$root.$emit('bv::show::modal', `image-modal-${this.step.id}`)
       },
     },
   }

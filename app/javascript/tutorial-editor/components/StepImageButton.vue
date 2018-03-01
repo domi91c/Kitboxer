@@ -37,7 +37,7 @@
     methods: {
       uploadImage(e) {
         this.$store.dispatch('UPLOAD_IMAGE',
-            { product: this.$store.state.product, step: this.step, image: e.target.files[0] })
+            { step: this.step, image: e.target.files[0] })
       },
     },
   }

@@ -13,7 +13,8 @@
                         <i class="fa fa-crop "></i>
                         Crop
                     </div>
-                    <div class="btn btn-primary" :class="card.coverImage ? 'disabled' : ''"
+                    <div class="btn btn-primary"
+                         :class="card.coverImage ? 'disabled' : ''"
                          @click="$emit('cover-image', card)">
                         <i class="fa fa-star "></i>
                         Cover Photo
@@ -41,7 +42,7 @@
 </template>
 
 <script>
-  import placeholder from '../images/placeholder_img.png';
+  import placeholder from '../images/placeholder_img.png'
 
   export default {
     mounted() {
@@ -51,17 +52,14 @@
       return {
         currentFile: placeholder,
         isCoverPhoto: false,
-      };
+      }
     },
 
     methods: {},
-  };
+  }
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>
-
-    @import "~bootstrap/scss/functions";
-    @import "~stylesheets/variables";
 
     .actions span {
         cursor: pointer;
@@ -69,19 +67,18 @@
 
     .cover-image {
         border-radius: 2%;
-        border: 5px solid theme-color("info");
+        border:        5px solid theme-color("info");
     }
 
     .other-image {
         border-radius: 2%;
-        border: 5px solid #FFFFFF;
+        border:        5px solid #FFFFFF;
     }
 
     .img-contain {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-        background-color: $gray-blue;
+        height:           100%;
+        width:            100%;
+        object-fit:       contain;
     }
 
 </style>

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import TurbolinksAdapter from 'vue-turbolinks'
 import TutorialEditor from '../tutorial-editor/TutorialEditor.vue'
+import VueLoading from 'vuex-loading'
 import store from './store/index'
-
 
 document.addEventListener('DOMContentLoaded', () => {
   let el = document.querySelector('.js-tutorial-editor')

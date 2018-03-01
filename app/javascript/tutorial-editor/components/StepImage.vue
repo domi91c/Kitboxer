@@ -17,23 +17,12 @@
 </template>
 
 <script>
-  import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
-
   export default {
     props: ['step', 'image'],
-    data() {
-      return {}
-    },
-    computed: {
-      ...mapGetters([
-        'steps',
-        'images',
-      ]),
-    },
     methods: {
       deleteImage() {
         this.$store.dispatch('DELETE_IMAGE',
-            { product: this.$store.state.product, step: this.step, image: this.image })
+            { step: this.step, image: this.image })
       },
     },
   }

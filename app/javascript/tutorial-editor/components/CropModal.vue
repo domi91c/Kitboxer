@@ -32,9 +32,6 @@
     components: {
       VueCropper,
     },
-    mounted() {
-      this.$refs.cropper.replace(this.image.image.url)
-    },
     updated() {
       this.$refs.cropper.replace(this.image.image.url)
     },
@@ -47,7 +44,7 @@
       submitCropData(event) {
         let cropData = this.$refs.cropper.getData()
         this.$store.dispatch('CROP_IMAGE',
-            { product: this.$store.state.product, step: this.step, image: this.image, cropData: cropData })
+            { step: this.step, image: this.image, cropData: cropData })
       },
     },
   }
