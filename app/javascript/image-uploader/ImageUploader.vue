@@ -81,7 +81,7 @@
         this.imageCards[this.imageCards.indexOf(card)].progress = percent
       },
       cropImage(card) {
-        this.$root.$emit('show::modal', 'image-modal')
+        this.$root.$emit('bv::show::modal', 'image-modal')
         this.currentImage = card
         console.log(this.currentImage)
       },

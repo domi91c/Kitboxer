@@ -20,9 +20,6 @@
         buttonImage: buttonImage
       }
     },
-    mounted() {
-
-    },
     computed: {
       ...mapGetters([
         'steps',

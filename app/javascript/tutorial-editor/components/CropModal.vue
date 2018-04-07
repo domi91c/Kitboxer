@@ -8,6 +8,7 @@
                  lazy
                  ok-title="Crop"
                  @ok="submitCropData(this.$event)"
+                 v-model="modalVisible"
         >
             <img v-show="false" :src="image.image.url" alt="">
             <vue-cropper
@@ -28,17 +29,19 @@
   import VueCropper from 'vue-cropperjs'
 
   export default {
-    props: ['step', 'image'],
     components: {
       VueCropper,
     },
-    updated() {
-      this.$refs.cropper.replace(this.image.image.url)
-    },
+    props: ['step', 'image'],
     data() {
       return {
-        name: 'name',
+        modalVisible: false,
       }
+    },
+    watch: {
+      modalVisible() {
+        this.$refs.cropper.replace(this.image.image.url)
+      },
     },
     methods: {
       submitCropData(event) {

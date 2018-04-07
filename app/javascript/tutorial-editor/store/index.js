@@ -18,29 +18,41 @@ const store = new Vuex.Store({
   state: {
     product: {},
     tutorial: {},
-    steps: [],
+    uploadLoading: false,
   },
   actions: {
-    'UPLOAD_IMAGE': function({ commit }, { step, image }) {
+    'START_UPLOAD': function({ commit }) {
+      console.log('STARTING UPLOAD')
+    },
+    'UPLOAD_IMAGE': function({ commit, dispatch }, { step, image }) {
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images`
       const formData = new FormData()
       formData.append('image[image]', image)
       formData.append('image[step_id]', step.id)
+      dispatch('START_UPLOAD')
       return axios.post(url, formData)
                   .then(res => {
                     commit('ADD_IMAGE',
                         { step: step, image: res.data })
+                    dispatch('FINISH_UPLOAD')
                   })
                   .catch(err => {
                     console.log(err)
+                    dispatch('FINISH_UPLOAD')
                   })
     },
-    'CROP_IMAGE': function({ commit }, { step, image, cropData }) {
+    'FINISH_UPLOAD': function({ commit }) {
+      console.log('FINISHING UPLOAD')
+    },
+    'START_CROP': function({ commit }) {
+      console.log('STARTING CROP')
+    },
+    'CROP_IMAGE': function({ commit, dispatch }, { step, image, cropData }) {
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
       const formData = new FormData()
       formData.append('image[crop_data]', JSON.stringify(cropData))
       formData.append('image[step_id]', step.id)
-      debugger
+      dispatch('START_CROP')
       return axios.patch(url, formData)
                   .then(res => {
                     commit('UPDATE_IMAGE',
@@ -49,10 +61,15 @@ const store = new Vuex.Store({
                           oldImage: image,
                           newImage: res.data.image,
                         })
+                    dispatch('FINISH_CROP')
                   })
                   .catch(err => {
                     console.log(err)
+                    dispatch('FINISH_CROP')
                   })
+    },
+    'FINISH_CROP': function({ commit }) {
+      console.log('FINISHING CROP')
     },
     'DELETE_IMAGE': function(
         { commit }, { step, image }) {
@@ -90,9 +107,12 @@ const store = new Vuex.Store({
   },
 
   getters: {
-    product: state => state.product,
+    product: state => state.tutorial.product,
     tutorial: state => state.tutorial,
     steps: state => state.tutorial.steps,
+    getStepById: (state, getters) => (id) => {
+      state.tutorial.steps.find(step => step.id === id)
+    },
   },
 })
 

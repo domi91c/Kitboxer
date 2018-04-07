@@ -28,28 +28,27 @@
 @import "orders";
 @import "jquery.fancybox";
 
+body {
+  font-weight: normal;
+  color:                   #2c3e50;
+}
+
 .navbar-toggler {
-  border: none
+  //border: none
 }
 
 .btn:focus {
   box-shadow: none;
 }
 
-@media (min-width: 992px) {
-  .container-fluid {
-    padding-right: 35px;
-    padding-left:  35px;
-    margin-right:  auto;
-    margin-left:   auto;
-  }
-
+@include media-breakpoint-down(sm) {
   .navbar {
-    padding: 3px 0;
+    padding: 3px 16px !important;
   }
 }
 
 .navbar {
+  padding:          4px;
   background-color: #fff;
 }
 

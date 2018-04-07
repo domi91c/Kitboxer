@@ -1,7 +1,8 @@
 <template>
     <div class="card mb-4">
+        <crop-modal :step="step" :image="currentImage"></crop-modal>
         <div class="card-body">
-            <h2 class="card-title">Step {{this.$store.getters.steps.indexOf(step)+1}}</h2>
+            <h2 class="card-title">Step {{this.stepNumber}}</h2>
             <form>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Step title...">
@@ -17,7 +18,6 @@
                                 :image="image"
                                 @preview-image="launchCropModal(image)">
                     </step-image>
-                    <crop-modal :step="step" :image="currentImage"></crop-modal>
                 </div>
             </form>
         </div>
@@ -29,6 +29,8 @@
   import StepImage from './StepImage.vue'
   import CropModal from './CropModal.vue'
 
+  import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
+
   export default {
     props: ['step'],
     components: {
@@ -36,16 +38,22 @@
       StepImage,
       CropModal,
     },
+
     data() {
       return {
-        currentImage: this.step.images[0],
+        currentImage: { image: { url: '' } },
       }
     },
-    mounted() {
-      this.currentImage = {}
+
+    computed: {
+      ...mapGetters([
+        'steps',
+        'getStepById',
+      ]),
+      stepNumber() {return this.steps.indexOf(this.step) + 1},
     },
     methods: {
-     launchCropModal(image) {
+      launchCropModal(image) {
         this.currentImage = image
         this.$root.$emit('bv::show::modal', `image-modal-${this.step.id}`)
       },

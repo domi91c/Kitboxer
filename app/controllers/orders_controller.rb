@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+lass OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
   end

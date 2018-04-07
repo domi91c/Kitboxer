@@ -1,6 +1,7 @@
 <template>
     <div>
         <step v-for="step in tutorial.steps" :key="step.id" :step="step"></step>
+        <step v-for="step in getStepById(49)" :key="step.id" :step="step"></step>
     </div>
 </template>
 
@@ -16,6 +17,7 @@
       ...mapGetters([
         'product',
         'tutorial',
+        'getStepById',
       ]),
     },
     mounted() {
