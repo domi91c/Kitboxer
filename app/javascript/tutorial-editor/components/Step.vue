@@ -18,6 +18,7 @@
                                 :image="image"
                                 @preview-image="launchCropModal(image)">
                     </step-image>
+                    <step-image-loading></step-image-loading>
                 </div>
             </form>
         </div>

@@ -1,7 +1,17 @@
 <template>
     <div>
-        <step v-for="step in tutorial.steps" :key="step.id" :step="step"></step>
-        <step v-for="step in getStepById(49)" :key="step.id" :step="step"></step>
+        <div v-for="step in tutorial.steps">
+            <step :key="step.id" :step="step"></step>
+            <hr>
+            <div class="text-center">
+                <button type="button"
+                        class="btn btn-outline-info"
+                        @click="addStep(step)">
+                    <i class="fa fa-plus"></i> Add Step
+                </button>
+            </div>
+            <hr>
+        </div>
     </div>
 </template>
 
@@ -27,7 +37,11 @@
       return {}
     },
 
-    methods: {},
+    methods: {
+      addStep(step) {
+        alert('adding another step in between' + step.id)
+      },
+    },
   }
 </script>
 
