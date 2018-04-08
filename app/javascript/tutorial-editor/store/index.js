@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import { createActionHelpers } from '../../vuex-loading'
+
+const { startLoading, endLoading } = createActionHelpers({
+  moduleName: 'loading',
+})
 
 axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector(
     'meta[name="csrf-token"]').getAttribute('content')
@@ -18,58 +23,44 @@ const store = new Vuex.Store({
   state: {
     product: {},
     tutorial: {},
-    uploadLoading: false,
   },
   actions: {
-    'START_UPLOAD': function({ commit }) {
-      console.log('STARTING UPLOAD')
-    },
     'UPLOAD_IMAGE': function({ commit, dispatch }, { step, image }) {
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images`
       const formData = new FormData()
       formData.append('image[image]', image)
       formData.append('image[step_id]', step.id)
-      dispatch('START_UPLOAD')
+      startLoading(dispatch, `upload image ${step.id}`)
       return axios.post(url, formData)
                   .then(res => {
-                    commit('ADD_IMAGE',
-                        { step: step, image: res.data })
-                    dispatch('FINISH_UPLOAD')
+                    endLoading(dispatch, `upload image ${step.id}`)
+                    commit('ADD_IMAGE', { step: step, image: res.data })
                   })
                   .catch(err => {
+                    endLoading(dispatch, `upload image ${step.id}`)
                     console.log(err)
-                    dispatch('FINISH_UPLOAD')
                   })
-    },
-    'FINISH_UPLOAD': function({ commit }) {
-      console.log('FINISHING UPLOAD')
-    },
-    'START_CROP': function({ commit }) {
-      console.log('STARTING CROP')
     },
     'CROP_IMAGE': function({ commit, dispatch }, { step, image, cropData }) {
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
       const formData = new FormData()
       formData.append('image[crop_data]', JSON.stringify(cropData))
       formData.append('image[step_id]', step.id)
-      dispatch('START_CROP')
+      startLoading(dispatch, `crop image ${image.id}`)
       return axios.patch(url, formData)
                   .then(res => {
+                    endLoading(dispatch, `crop image ${image.id}`)
                     commit('UPDATE_IMAGE',
                         {
                           step: step,
                           oldImage: image,
                           newImage: res.data.image,
                         })
-                    dispatch('FINISH_CROP')
                   })
                   .catch(err => {
+                    endLoading(dispatch, `crop image ${image.id}`)
                     console.log(err)
-                    dispatch('FINISH_CROP')
                   })
-    },
-    'FINISH_CROP': function({ commit }) {
-      console.log('FINISHING CROP')
     },
     'DELETE_IMAGE': function(
         { commit }, { step, image }) {

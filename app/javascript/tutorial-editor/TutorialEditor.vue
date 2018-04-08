@@ -27,7 +27,6 @@
       ...mapGetters([
         'product',
         'tutorial',
-        'getStepById',
       ]),
     },
     mounted() {

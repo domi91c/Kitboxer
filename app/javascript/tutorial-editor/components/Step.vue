@@ -18,7 +18,7 @@
                                 :image="image"
                                 @preview-image="launchCropModal(image)">
                     </step-image>
-                    <step-image-loading></step-image-loading>
+                    <step-image-loading :step="step"></step-image-loading>
                 </div>
             </form>
         </div>
@@ -27,6 +27,7 @@
 
 <script>
   import StepImageButton from './StepImageButton.vue'
+  import StepImageLoading from './StepImageLoading.vue'
   import StepImage from './StepImage.vue'
   import CropModal from './CropModal.vue'
 
@@ -36,6 +37,7 @@
     props: ['step'],
     components: {
       StepImageButton,
+      StepImageLoading,
       StepImage,
       CropModal,
     },
@@ -49,7 +51,6 @@
     computed: {
       ...mapGetters([
         'steps',
-        'getStepById',
       ]),
       stepNumber() {return this.steps.indexOf(this.step) + 1},
     },
@@ -64,6 +65,5 @@
 
 <style lang="scss" rel="stylesheet/scss" scoped>
     /*@import "./resources/assets/sass/variables";*/
-
 
 </style>

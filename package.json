@@ -52,12 +52,11 @@
     "vue-images": "^1.0.10",
     "vue-loader": "^12.2.2",
     "vue-resource": "latest",
-    "vue-spinner": "^1.0.2",
+    "vue-spinner": "^1.0.3",
     "vue-template-compiler": "^2.4.1",
     "vue-turbolinks": "^1.1.0",
     "vue-upload-component": "^2.4.0-beta.3",
     "vuex": "^3.0.1",
-    "vuex-loading": "^0.2.5",
     "webpack": "^3.3.0",
     "webpack-manifest-plugin": "^1.1.2",
     "webpack-merge": "^4.1.0"
