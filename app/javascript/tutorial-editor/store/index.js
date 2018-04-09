@@ -22,7 +22,11 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     product: {},
-    tutorial: {},
+    tutorial: {
+      steps: {
+        images: {},
+      },
+    },
   },
   actions: {
     'UPLOAD_IMAGE': function({ commit, dispatch }, { step, image }) {
@@ -44,7 +48,10 @@ const store = new Vuex.Store({
     'CROP_IMAGE': function({ commit, dispatch }, { step, image, cropData }) {
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
       const formData = new FormData()
-      formData.append('image[crop_data]', JSON.stringify(cropData))
+      formData.append('image[crop_x]', cropData['x'])
+      formData.append('image[crop_y]', cropData['y'])
+      formData.append('image[crop_width]', cropData['width'])
+      formData.append('image[crop_height]', cropData['height'])
       formData.append('image[step_id]', step.id)
       startLoading(dispatch, `crop image ${image.id}`)
       return axios.patch(url, formData)
@@ -75,6 +82,9 @@ const store = new Vuex.Store({
                     console.log(err)
                   })
     },
+    'ADD_STEP': function({ commit }) {
+      commit('ADD_STEP')
+    },
   },
   mutations: {
     'SET_INITIAL_STATE': (state, { props }) => {
@@ -94,6 +104,9 @@ const store = new Vuex.Store({
       let stepIndex = state.tutorial.steps.indexOf(step)
       let imageIndex = state.tutorial.steps[stepIndex].images.indexOf(image)
       state.tutorial.steps[stepIndex].images.splice(imageIndex, 1)
+    },
+    'ADD_STEP': (state, {step}) => {
+      state.tutorial.steps.push(step)
     },
   },
 

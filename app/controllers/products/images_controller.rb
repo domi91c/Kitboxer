@@ -18,8 +18,7 @@ class Products::ImagesController < ApplicationController
   def update
     @image = Image.find(params[:id])
     if @image.update(image_params)
-      if image_params[:crop_data]
-        @image.update(crop_data: JSON.parse(params[:image][:crop_data]))
+      if image_params[:crop_x]
         @image.crop_image
       end
       render json: { image: @image }, status: :created

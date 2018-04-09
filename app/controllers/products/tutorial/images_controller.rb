@@ -9,8 +9,7 @@ module Products
       def update
         @image = Image.find(params[:id])
         if @image.update(image_params)
-          if image_params[:crop_data]
-            @image.update(crop_data: JSON.parse(params[:image][:crop_data]))
+          if image_params[:crop_x]
             @image.crop_image
           end
           render json: { image: @image }, status: :created
@@ -25,7 +24,7 @@ module Products
       end
 
       def image_params
-        params.require(:image).permit(:image, :step_id, :crop_data)
+        params.require(:image).permit(:image, :step_id, :crop_x, :crop_y, :crop_width, :crop_height)
       end
     end
   end

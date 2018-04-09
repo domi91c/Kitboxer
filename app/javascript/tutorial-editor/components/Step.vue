@@ -56,6 +56,7 @@
     },
     methods: {
       launchCropModal(image) {
+        debugger
         this.currentImage = image
         this.$root.$emit('bv::show::modal', `image-modal-${this.step.id}`)
       },

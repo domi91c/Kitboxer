@@ -38,7 +38,7 @@
 
     methods: {
       addStep(step) {
-        alert('adding another step in between' + step.id)
+        this.$store.dispatch('ADD_STEP')
       },
     },
   }

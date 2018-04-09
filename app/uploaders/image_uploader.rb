@@ -14,22 +14,26 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  # Create different versions of your uploaded files:
+  # version :thumb do
+  #   process resize_to_fit: [50, 50]
+  # end
+
+  version :default do
+    process :crop
+  end
+
   version :thumb do
     resize_to_fill(450, 405)
   end
+  # Process files as they are uploaded:
+  # process scale: [200, 300]
+  #
+  # def scale(width, height)
+  #   # do something
+  # end
 
-  def crop
-    if model.crop_data.present?
-      manipulate! do |img|
-        x = model.crop_data["x"].to_i
-        y = model.crop_data["y"].to_i
-        w = model.crop_data["width"].to_i
-        h = model.crop_data["height"].to_i
-        img.crop!(x, y, w, h)
-      end
-    end
-  end
-
+  # process crop
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -38,17 +42,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  # Process files as they are uploaded:
-  # process scale: [200, 300]
-  #
-  # def scale(width, height)
-  #   # do something
-  # end
-
-  # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process resize_to_fit: [50, 50]
-  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -61,5 +54,19 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  private
+
+  def crop
+    if model.crop_x.present?
+      manipulate! do |img|
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_width.to_i
+        h = model.crop_height.to_i
+        img.crop("#{w}x #{h}+ #{x}+ #{y}")
+      end
+    end
+  end
 
 end
