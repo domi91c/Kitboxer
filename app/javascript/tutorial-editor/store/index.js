@@ -12,7 +12,7 @@ axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector(
 
 var BASE_URL = ''
 if (window.environment === 'development') {
-  BASE_URL = 'http://localhost:3002'
+  BASE_URL = 'http://localhost:3003'
 } else if (window.environment === 'production') {
   BASE_URL = 'https://www.kitboxer.com'
 }
@@ -73,7 +73,7 @@ const store = new Vuex.Store({
         { commit }, { step, image }) {
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
       return axios.delete(url)
-                  .then(response => {
+                  .then(() => {
                     commit('REMOVE_IMAGE', {
                       step: step, image: image,
                     })
@@ -83,7 +83,26 @@ const store = new Vuex.Store({
                   })
     },
     'ADD_STEP': function({ commit }) {
-      commit('ADD_STEP')
+      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/steps/`
+      return axios.post(url, {
+        step: {
+          body: '',
+          title: '',
+          number: this.state.tutorial.steps.length + 1,
+        },
+      })
+                  .then(res => {
+                    commit('ADD_STEP', res.data)
+                  })
+                  .catch(err => console.log(err))
+    },
+    deleteStep({ commit }, step) {
+      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/steps/${step.id}`
+      return axios.delete(url)
+                  .then(res => {
+                    commit('REMOVE_STEP', step)
+                  })
+                  .catch(err => console.log())
     },
   },
   mutations: {
@@ -92,21 +111,25 @@ const store = new Vuex.Store({
       state.tutorial = props.tutorial.tutorial
     },
     'ADD_IMAGE': (state, { step, image }) => {
-      let stepIndex = state.tutorial.steps.indexOf(step)
-      state.tutorial.steps[stepIndex].images.push(image)
+      let stepIdx = state.tutorial.steps.indexOf(step)
+      state.tutorial.steps[stepIdx].images.push(image)
     },
     'UPDATE_IMAGE': (state, { step, oldImage, newImage }) => {
-      let stepIndex = state.tutorial.steps.indexOf(step)
-      let imageIndex = state.tutorial.steps[stepIndex].images.indexOf(oldImage)
-      state.tutorial.steps[stepIndex].images.splice(imageIndex, 1, newImage)
+      let stepIdx = state.tutorial.steps.indexOf(step)
+      let imageIdx = state.tutorial.steps[stepIdx].images.indexOf(oldImage)
+      state.tutorial.steps[stepIdx].images.splice(imageIdx, 1, newImage)
     },
     'REMOVE_IMAGE': (state, { step, image }) => {
-      let stepIndex = state.tutorial.steps.indexOf(step)
-      let imageIndex = state.tutorial.steps[stepIndex].images.indexOf(image)
-      state.tutorial.steps[stepIndex].images.splice(imageIndex, 1)
+      let stepIdx = state.tutorial.steps.indexOf(step)
+      let imageIdx = state.tutorial.steps[stepIdx].images.indexOf(image)
+      state.tutorial.steps[stepIdx].images.splice(imageIdx, 1)
     },
-    'ADD_STEP': (state, {step}) => {
+    'ADD_STEP': (state, step) => {
       state.tutorial.steps.push(step)
+    },
+    'REMOVE_STEP': (state, step) => {
+      let stepIdx = state.tutorial.steps.indexOf(step)
+      state.tutorial.steps.splice(stepIdx, 1)
     },
   },
 

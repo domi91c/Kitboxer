@@ -1,17 +1,19 @@
 <template>
     <div>
-        <div v-for="step in tutorial.steps">
-            <step :key="step.id" :step="step"></step>
-            <hr>
-            <div class="text-center">
-                <button type="button"
-                        class="btn btn-outline-info"
-                        @click="addStep(step)">
-                    <i class="fa fa-plus"></i> Add Step
-                </button>
+        <transition-group name="step-list" tag="p">
+            <div v-for="step in tutorial.steps" :key="step.id">
+                <step :step="step"></step>
             </div>
-            <hr>
+        </transition-group>
+        <hr>
+        <div class="text-center">
+            <button type="button"
+                    class="btn btn-outline-info"
+                    @click="addStep()">
+                <i class="fa fa-plus"></i> Add Step
+            </button>
         </div>
+        <hr>
     </div>
 </template>
 
@@ -47,5 +49,12 @@
 <style lang="scss" rel="stylesheet/scss" scoped>
     /*@import "./resources/assets/sass/variables";*/
 
+    .step-list-enter-active, .step-list-leave-active {
+        transition: all .4s;
+    }
 
+    .step-list-enter, .step-list-leave-to {
+        opacity:   0;
+        transform: translateY(30px);
+    }
 </style>

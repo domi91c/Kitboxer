@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     end
     resource :tutorial, controller: 'products/tutorial' do
       resources :images, controller: 'products/tutorial/images'
+      resources :steps, controller: 'products/tutorial/steps'
     end
   end
 

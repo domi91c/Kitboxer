@@ -2,7 +2,11 @@
     <div class="card mb-4">
         <crop-modal :step="step" :image="currentImage"></crop-modal>
         <div class="card-body">
-            <h2 class="card-title">Step {{this.stepNumber}}</h2>
+            <h2 class="card-title">Step {{this.stepNumber}}
+                <span class="close" style="font-size: .5em" @click.prevent="removeStep(step)">
+                    <i class="fa fa-close float-right"></i>
+                </span>
+            </h2>
             <form>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Step title...">
@@ -56,10 +60,12 @@
     },
     methods: {
       launchCropModal(image) {
-        debugger
         this.currentImage = image
         this.$root.$emit('bv::show::modal', `image-modal-${this.step.id}`)
       },
+      removeStep(step) {
+        this.$store.dispatch('deleteStep', step)
+      }
     },
   }
 </script>
