@@ -4,7 +4,7 @@ default: &default
   source_path: app/javascript
   source_entry_path: packs
   public_output_path: packs
-  compile: false
+  compile:false
 
   extensions:
     - .coffee
@@ -39,3 +39,4 @@ test:
 
 production:
   <<: *default
+  compile: true
