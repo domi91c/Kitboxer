@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @steps = @product.tutorial.steps.order(number: :asc)
   end
 
   # GET /products/new

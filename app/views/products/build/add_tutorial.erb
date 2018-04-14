@@ -1,9 +1,11 @@
-<div class="wizard container mt-5">
+<div class="wizard container mt-5 js-hide-before-load">
   <%= form_for @product, url: wizard_path, method: :put do |form| %>
+    <%= form.hidden_field :id %>
     <div class="row">
       <div class="col-md-9">
         <%= content_tag :div,
                         class: "js-tutorial-editor",
+                        ref: "tutorial-editor",
                         data: {
                             product: @serialized_product,
                             tutorial: @serialized_tutorial,
@@ -24,7 +26,7 @@
         <div class="card">
           <div class="card-body clearfix">
             <%= link_to "Previous", previous_wizard_path, class: 'btn btn-outline-default' %>
-            <%= form.submit 'Submit', class: 'btn btn-success pull-right' %>
+            <%= form.submit 'Submit', class: 'btn btn-success pull-right js-submit-tutorial' %>
           </div>
         </div>
       </div>

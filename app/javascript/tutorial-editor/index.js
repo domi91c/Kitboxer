@@ -20,5 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
       vueLoading: new VueLoading({ useVuex: true }),
     }).$mount(el)
 
+    $('.js-submit-tutorial').click(() => {
+      store.dispatch('submitTutorial')
+    })
   }
 })

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import { createActionHelpers } from '../../vuex-loading'
+import { getField, updateField } from 'vuex-map-fields'
 
 const { startLoading, endLoading } = createActionHelpers({
   moduleName: 'loading',
@@ -21,11 +22,10 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    appReady: false,
     product: {},
     tutorial: {
-      steps: {
-        images: {},
-      },
+      steps: [{}],
     },
   },
   actions: {
@@ -69,8 +69,7 @@ const store = new Vuex.Store({
                     console.log(err)
                   })
     },
-    'DELETE_IMAGE': function(
-        { commit }, { step, image }) {
+    'DELETE_IMAGE': function({ commit }, { step, image }) {
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
       return axios.delete(url)
                   .then(() => {
@@ -97,6 +96,7 @@ const store = new Vuex.Store({
                   .catch(err => console.log(err))
     },
     deleteStep({ commit }, step) {
+      if (this.state.tutorial.steps.length <= 1) return
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/steps/${step.id}`
       return axios.delete(url)
                   .then(res => {
@@ -104,8 +104,22 @@ const store = new Vuex.Store({
                   })
                   .catch(err => console.log())
     },
+    submitTutorial({ commit }) {
+      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/`
+      return axios.patch(url, { tutorial: this.state.tutorial })
+                  .then(res => {
+                    console.log('SUBMITTED TUTORIAL')
+                  })
+                  .catch(err => console.log(err))
+    },
   },
   mutations: {
+    'APP_READY': (state) => {
+      state.appReady = true
+    },
+    'APP_STOPPED': (state) => {
+      state.appReady = false
+    },
     'SET_INITIAL_STATE': (state, { props }) => {
       state.product = props.product.product
       state.tutorial = props.tutorial.tutorial
@@ -127,6 +141,14 @@ const store = new Vuex.Store({
     'ADD_STEP': (state, step) => {
       state.tutorial.steps.push(step)
     },
+    'UPDATE_STEP_TITLE': (state, { title, step }) => {
+      let stepIdx = state.tutorial.steps.indexOf(step)
+      state.tutorial.steps[stepIdx].title = title
+    },
+    'UPDATE_STEP_BODY': (state, { body, step }) => {
+      let stepIdx = state.tutorial.steps.indexOf(step)
+      state.tutorial.steps[stepIdx].body = body
+    },
     'REMOVE_STEP': (state, step) => {
       let stepIdx = state.tutorial.steps.indexOf(step)
       state.tutorial.steps.splice(stepIdx, 1)
@@ -134,12 +156,17 @@ const store = new Vuex.Store({
   },
 
   getters: {
+    getField,
     product: state => state.tutorial.product,
     tutorial: state => state.tutorial,
-    steps: state => state.tutorial.steps,
-    getStepById: (state, getters) => (id) => {
-      state.tutorial.steps.find(step => step.id === id)
+    steps: state => {
+      return state.tutorial.steps.sort(
+          (a, b) => { return a.number - b.number})
     },
+    getStepById: (state, getters) => (id) => {
+      return state.tutorial.steps.find(step => step.id === id)
+    },
+    appReady: (state) => state.appReady
   },
 })
 

@@ -1,0 +1,39 @@
+<div class="col-md-8 mx-auto">
+  <div class="card">
+    <div class="card-body">
+      <table class="table ">
+        <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= image_tag product.cover_thumb, style: 'height:100px' %></td>
+            <td><%= product.title %></td>
+            <td><%= product.price %></td>
+            <td>
+              <button class="btn btn-outline-default btn-sm" data-toggle="dropdown">Actions
+                <span class="ml-1 dropdown-toggle"></span>
+              </button>
+              <div class="dropdown-menu ">
+                <a class="dropdown-item"
+                   data-toggle="modal"
+                   data-target=".js-contact-seller-modal"
+                   href="#">Contact Seller
+                </a>
+                <a class="dropdown-item" href="#">Review Product</a>
+                <a class="dropdown-item" href="#">Request Refund</a>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+  table > tr{
+    vertical-align: middle;
+  }
+</style>

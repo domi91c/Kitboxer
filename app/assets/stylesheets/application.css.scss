@@ -30,11 +30,15 @@
 
 body {
   font-weight: normal;
-  color:                   #2c3e50;
+  color:       #2c3e50;
+}
+
+.table th, .table td {
+  vertical-align: middle;
 }
 
 .navbar-toggler {
-  //border: none
+  border: none
 }
 
 .btn:focus {
@@ -246,3 +250,6 @@ trix-toolbar .history_tools {
   border-radius: .15rem;
 }
 
+.js-hide-before-load {
+  display: none;
+}

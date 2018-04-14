@@ -3,7 +3,6 @@
         <b-modal hide-header-close
                  no-close-on-backdrop
                  id="image-modal"
-                 ref="image_modal"
                  size="lg"
                  @ok="finishCrop">
             <img v-show="false" :src="image.url" alt="">

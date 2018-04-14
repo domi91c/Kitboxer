@@ -1,7 +1,7 @@
 <template>
     <div>
         <transition-group name="step-list" tag="p">
-            <div v-for="step in tutorial.steps" :key="step.id">
+            <div v-for="step in steps" :key="step.id">
                 <step :step="step"></step>
             </div>
         </transition-group>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
   import Step from './components/Step'
 
   export default {
@@ -28,14 +28,17 @@
     computed: {
       ...mapGetters([
         'product',
-        'tutorial',
+        'steps',
       ]),
     },
+
     mounted() {
+      let containerEl = document.getElementsByClassName('js-hide-before-load')
+      containerEl[0].classList.remove('js-hide-before-load')
     },
 
-    data() {
-      return {}
+    destroyed() {
+      this.$store.commit('APP_DESTROYED')
     },
 
     methods: {

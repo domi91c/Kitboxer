@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.4.0'
+ruby '2.5.0'
 gem 'rails', '~> 5.1.2'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -30,7 +30,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-zeus'
   gem 'guard-livereload', '~> 2.5', require: false
-  gem 'binding_of_caller'
+  gem 'binding_of_caller', '>= 0.8.0'
   gem 'hub', :require => nil
   gem 'rails_layout'
   gem 'rb-fchange', :require => false

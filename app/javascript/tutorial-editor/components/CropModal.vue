@@ -3,7 +3,6 @@
         <b-modal hide-header-close
                  no-close-on-backdrop
                  :id="`image-modal-${step.id}`"
-                 ref="image_modal"
                  size="lg"
                  lazy
                  ok-title="Crop"

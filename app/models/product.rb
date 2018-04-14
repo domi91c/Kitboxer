@@ -24,6 +24,7 @@ class Product < ApplicationRecord
   attr_accessor :form_step
 
   accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :tutorial
 
   def required_for_step?(step)
     # All fields are required if no form step is present

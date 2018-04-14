@@ -21,7 +21,10 @@
           <a class="nav-link" data-toggle="tab" href="#reviews" role="tab" aria-controls="profile">Reviews</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#shipping" role="tab" aria-controls="messages">Watching</a>
+          <a class="nav-link" data-toggle="tab" href="#watching" role="tab" aria-controls="messages">Watching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#selling" role="tab" aria-controls="messages">Selling</a>
         </li>
       </ul>
     </div>
@@ -36,8 +39,12 @@
     <%= render 'reviews' %>
   </div>
 
-  <div class="tab-pane " id="shipping" role="tabpanel">
+  <div class="tab-pane " id="watching" role="tabpanel">
     <%= render 'watching' %>
+  </div>
+
+  <div class="tab-pane " id="selling" role="tabpanel">
+    <%= render 'selling' %>
   </div>
 </div>
 

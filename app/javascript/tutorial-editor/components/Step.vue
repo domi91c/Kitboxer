@@ -1,18 +1,25 @@
 <template>
     <div class="card mb-4">
         <crop-modal :step="step" :image="currentImage"></crop-modal>
+        <b-modal
+                :id="`remove-step-modal-${step.id}`"
+                size="sm"
+                lazy
+                title="Delete Step"
+                ok-title="Delete"
+                @ok="$store.dispatch('deleteStep', step)">
+            <p>Are you sure you want to delete this step?</p>
+        </b-modal>
         <div class="card-body">
+            <button type="button" class="close" v-b-modal="`remove-step-modal-${step.id}`">×</button>
             <h2 class="card-title">Step {{this.stepNumber}}
-                <span class="close" style="font-size: .5em" @click.prevent="removeStep(step)">
-                    <i class="fa fa-close float-right"></i>
-                </span>
             </h2>
             <form>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Step title...">
+                    <input type="text" class="form-control" placeholder="Step title..." v-model="title">
                 </div>
                 <div class="form-group">
-                    <trix-editor class="form-control" placeholder="Step instructions..."></trix-editor>
+                    <text-editor :placeholder="'Step instructions...'" :value="body" v-model="body"></text-editor>
                 </div>
                 <div class="row ">
                     <step-image-button :step="step"></step-image-button>
@@ -30,6 +37,7 @@
 </template>
 
 <script>
+  import TextEditor from './TextEditor.vue'
   import StepImageButton from './StepImageButton.vue'
   import StepImageLoading from './StepImageLoading.vue'
   import StepImage from './StepImage.vue'
@@ -40,6 +48,7 @@
   export default {
     props: ['step'],
     components: {
+      TextEditor,
       StepImageButton,
       StepImageLoading,
       StepImage,
@@ -54,9 +63,25 @@
 
     computed: {
       ...mapGetters([
-        'steps',
+        'steps', 'getStepById',
       ]),
       stepNumber() {return this.steps.indexOf(this.step) + 1},
+      title: {
+        get() {
+          return this.$store.getters.getStepById(this.step.id).title
+        },
+        set(value) {
+          this.$store.commit('UPDATE_STEP_TITLE', { title: value, step: this.step })
+        },
+      },
+      body: {
+        get() {
+          return this.$store.getters.getStepById(this.step.id).body
+        },
+        set(value) {
+          this.$store.commit('UPDATE_STEP_BODY', { body: value, step: this.step })
+        },
+      },
     },
     methods: {
       launchCropModal(image) {
@@ -64,13 +89,16 @@
         this.$root.$emit('bv::show::modal', `image-modal-${this.step.id}`)
       },
       removeStep(step) {
-        this.$store.dispatch('deleteStep', step)
-      }
+      },
     },
   }
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>
     /*@import "./resources/assets/sass/variables";*/
+
+    .remove-step-icon {
+        font-size: .5em;
+    }
 
 </style>
