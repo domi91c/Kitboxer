@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
     @user = current_user
     @amount = Cart[current_user].total
 
+    debugger
     if !@user.stripe_customer_id
       customer = Stripe::Customer.create(
           account_balance: 0,

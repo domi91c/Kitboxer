@@ -2,7 +2,6 @@ class SubscriptionsController < ApplicationController
 
   def create
     @subscription = Subscription.new(subscription_params)
-    binding.pry
     SubsciptionMailer.deliver_coming_soon
     respond_to do |format|
       if @subscription.save

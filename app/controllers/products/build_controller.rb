@@ -37,7 +37,6 @@ class Products::BuildController < ApplicationController
   end
 
   def finish_wizard_path(params)
-    binding.pry
     product_path(params[:id])
   end
 end
