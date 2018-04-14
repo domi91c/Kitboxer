@@ -15,7 +15,7 @@ var BASE_URL = ''
 if (window.environment === 'development') {
   BASE_URL = 'http://localhost:3003'
 } else if (window.environment === 'production') {
-  BASE_URL = 'https://www.kitboxer.com'
+  BASE_URL = 'https://www.kitboxer.herokuapp.com'
 }
 
 Vue.use(Vuex)
