@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :purchases
   has_many :images, dependent: :destroy
-  has_one :tutorial
+  has_one :tutorial, dependent: :destroy
 
   validates_presence_of :title, if: -> { required_for_step?(:add_description) }
   validates_presence_of :category, if: -> { required_for_step?(:add_description) }
