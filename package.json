@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@fancyapps/fancybox": "^3.1.20",
+    "@rails/webpacker": "^3.4.3",
     "axios": "latest",
     "babel-core": "^6.25.0",
     "babel-loader": "7.x",
@@ -25,9 +26,10 @@
     "jquery": "^3.2.1",
     "js-yaml": "^3.9.0",
     "lodash": "^4.17.5",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.8.3",
     "path-complete-extname": "^0.1.0",
     "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.1.0",
     "postcss-loader": "^2.0.6",
     "postcss-smart-import": "^0.7.5",
     "prop-types": "^15.5.10",
@@ -65,6 +67,6 @@
   },
   "devDependencies": {
     "ava": "^0.22.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack-dev-server": "2.11.1"
   }
 }

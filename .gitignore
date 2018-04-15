@@ -91,3 +91,8 @@ pickle-email-*.html
 
 dump.rdb
 
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity

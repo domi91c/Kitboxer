@@ -1,6 +1,6 @@
 {
-  "application.css": "http://localhost:8080/packs/application.css",
-  "application.js": "http://localhost:8080/packs/application.js",
-  "placeholder_img.png": "http://localhost:8080/packs/placeholder_img.png",
-  "step-image-button.png": "http://localhost:8080/packs/step-image-button.png"
+  "application.css": "/packs/application.css",
+  "application.js": "/packs/application.js",
+  "placeholder_img.png": "/packs/placeholder_img.png",
+  "step-image-button.png": "/packs/step-image-button.png"
 }
