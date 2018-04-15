@@ -54,7 +54,7 @@
     "vue-cropperjs": "^2.1.1",
     "vue-fancybox": "^1.0.3",
     "vue-images": "^1.0.10",
-    "vue-loader": "^15.0.0-rc.2",
+    "vue-loader": "^14.2.2",
     "vue-resource": "latest",
     "vue-spinner": "^1.0.3",
     "vue-template-compiler": "^2.5.16",
