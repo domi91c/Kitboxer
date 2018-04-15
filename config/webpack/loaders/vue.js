@@ -1,43 +1,11 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const { env } = require('../configuration.js')
+const { dev_server: devServer } = require('@rails/webpacker').config
 
-// Change it to false if you prefer Vue styles to be inlined by javascript in runtime
-const extractStyles = false
-
-const cssLoader = [
-  { loader: 'css-loader', options: { minimize: env.NODE_ENV === 'production' } },
-  { loader: 'postcss-loader', options: { sourceMap: true } },
-  'resolve-url-loader'
-]
-const sassLoader = cssLoader.concat([
-  { loader: 'sass-loader', options: { sourceMap: true, indentedSyntax: true } }
-])
-const scssLoader = cssLoader.concat([
-  { loader: 'sass-loader', options: { sourceMap: true } }
-])
-
-function vueStyleLoader(loader) {
-  if (extractStyles) {
-    return ExtractTextPlugin.extract({
-      fallback: 'vue-style-loader',
-      use: loader
-    })
-  }
-  return ['vue-style-loader'].concat(loader)
-}
+const isProduction = process.env.NODE_ENV === 'production'
+const inDevServer = process.argv.find(v => v.includes('webpack-dev-server'))
 
 module.exports = {
-  test: /\.vue$/,
   test: /\.vue(\.erb)?$/,
-
-  loader: 'vue-loader',
-  options: {
-    loaders: {
-      js: 'babel-loader',
-      file: 'file-loader',
-      css: vueStyleLoader(cssLoader),
-      scss: vueStyleLoader(scssLoader),
-      sass: vueStyleLoader(sassLoader)
-    }
-  }
+  use: [{
+    loader: 'vue-loader'
+  }]
 }

@@ -1,6 +1,7 @@
 {
   "application.css": "/packs/application.css",
   "application.js": "/packs/application.js",
+  "hello_vue.js": "/packs/hello_vue.js",
   "placeholder_img.png": "/packs/placeholder_img.png",
   "step-image-button.png": "/packs/step-image-button.png"
 }

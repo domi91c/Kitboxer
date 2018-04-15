@@ -81,7 +81,6 @@ gem 'hiredis'
 
 gem 'trix'
 
-
 gem 'omniauth-stripe-connect'
 
 gem 'stripe'

@@ -19,7 +19,7 @@
 
 <script>
   import { mapGetters, mapActions } from 'vuex'
-  import Step from './components/Step.vue'
+  import Step from './components/Step'
 
   export default {
     components: {
