@@ -116,7 +116,9 @@
           </div>
           <div class="tab-pane " id="tutorial" role="tabpanel">
             <div class=" mt-3">
-              <%= render 'layouts/sample_guide', product: @product %>
+              <% unless @product.tutorial.steps[0].images.empty? %>
+                <%= render 'layouts/sample_guide', product: @product %>
+              <% end %>
             </div>
           </div>
         </div>
