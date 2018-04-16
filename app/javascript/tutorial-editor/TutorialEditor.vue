@@ -37,10 +37,6 @@
       containerEl[0].classList.remove('js-hide-before-load')
     },
 
-    destroyed() {
-      this.$store.commit('APP_DESTROYED')
-    },
-
     methods: {
       addStep(step) {
         this.$store.dispatch('ADD_STEP')

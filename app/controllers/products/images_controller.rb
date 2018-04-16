@@ -50,7 +50,7 @@ class Products::ImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit(:image, :product_id, :crop_data)
+    params.require(:image).permit(:image, :product_id, :crop_x, :crop_y, :crop_width, :crop_height)
   end
 
 end

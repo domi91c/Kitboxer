@@ -6,7 +6,7 @@
                  size="lg"
                  lazy
                  ok-title="Crop"
-                 @ok="submitCropData(this.$event)"
+                 @ok="submitCropData()"
                  v-model="modalVisible"
         >
             <img v-show="false" :src="image.image.url" alt="">

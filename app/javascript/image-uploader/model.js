@@ -1,17 +1,17 @@
-import axios from 'axios';
+import axios from 'axios'
 
 axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector(
-    'meta[name="csrf-token"]').getAttribute('content');
+    'meta[name="csrf-token"]').getAttribute('content')
 
-var BASE_URL = '';
+var BASE_URL = ''
 if (window.environment === 'development') {
-  BASE_URL = 'http://localhost:3002';
+  BASE_URL = 'http://localhost:3002'
 } else if (window.environment === 'production') {
-  BASE_URL = 'https://www.kitboxer.com';
+  BASE_URL = 'https://www.kitboxer.com'
 }
 
 function loadImages(productId) {
-  const url = `${BASE_URL}/products/${productId}/images`;
+  const url = `${BASE_URL}/products/${productId}/images`
   return axios.get(url).then(x => x.request.response).catch(error => error);
 }
 
@@ -45,9 +45,15 @@ function setCoverImage(imageData, productId) {
 function cropImage(imageData) {
   const url = `${BASE_URL}/products/${imageData.productId}/images/${imageData.id}`;
   var formData = new FormData();
-  formData.append('image[crop_data]', JSON.stringify(imageData.cropData));
+  let cropData = imageData.cropData;
+  formData.append('image[crop_x]', cropData['x'])
+  formData.append('image[crop_y]', cropData['y'])
+  formData.append('image[crop_width]', cropData['width'])
+  formData.append('image[crop_height]', cropData['height'])
   formData.append('image[product_id]', imageData.productId);
-  return axios.patch(url, formData).then(x => x.request.response).catch(error => error);
+  return axios.patch(url, formData)
+              .then(x => x.request.response)
+              .catch(error => error);
 }
 
 export { loadImages, uploadImage, removeImage, setCoverImage, cropImage };

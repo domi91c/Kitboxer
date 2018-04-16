@@ -2092,7 +2092,11 @@ create-react-class@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-cropperjs@^1.0.0-rc.2, cropperjs@^1.1.3, cropperjs@^1.3.4:
+cropperjs@^1.1.3:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/cropperjs/-/cropperjs-1.3.5.tgz#d235665e370f2ce27c5115e203ed0d7b68d722b6"
+
+cropperjs@^1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/cropperjs/-/cropperjs-1.3.4.tgz#e288af96f7781f85a3cbefaf342095ab35818110"
 
@@ -7854,23 +7858,7 @@ vue-core-image-upload@^2.3.7:
     daycaca "^0.1.1"
     vue "^2.5.13"
 
-vue-croppa@^0.1.3:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/vue-croppa/-/vue-croppa-0.1.5.tgz#dd14d8d9a2bf2796041d6517c060013c6f9a0db6"
-  dependencies:
-    object-assign "^4.1.1"
-
-vue-cropper-simple@^1.0.5:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/vue-cropper-simple/-/vue-cropper-simple-1.1.1.tgz#723f1352152e1dfe95ed8fa170a8ebc73c79f92b"
-  dependencies:
-    cropperjs "^1.0.0-rc.2"
-
-vue-cropper@^0.1.4:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/vue-cropper/-/vue-cropper-0.1.9.tgz#72b1ef291ca056caec2cdb0aa8afe7cacb4a6d9c"
-
-vue-cropperjs@^2.1.1:
+vue-cropperjs@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/vue-cropperjs/-/vue-cropperjs-2.2.0.tgz#cd8f00ee01914e86f114ee8aa3f7354e3c76a8fc"
   dependencies:

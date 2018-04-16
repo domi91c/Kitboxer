@@ -1,7 +1,10 @@
 {
-  "application.css": "/packs/application.css",
-  "application.js": "/packs/application.js",
-  "hello_vue.js": "/packs/hello_vue.js",
-  "placeholder_img.png": "/packs/placeholder_img.png",
-  "step-image-button.png": "/packs/step-image-button.png"
+  "application.css": "/packs/application-3087860d1f4d36376bf7778c95efc5d7.css",
+  "application.css.map": "/packs/application-3087860d1f4d36376bf7778c95efc5d7.css.map",
+  "application.js": "/packs/application-0bdeecec9571534ab5f6.js",
+  "application.js.map": "/packs/application-0bdeecec9571534ab5f6.js.map",
+  "hello_vue.js": "/packs/hello_vue-959c946be00738099b6f.js",
+  "hello_vue.js.map": "/packs/hello_vue-959c946be00738099b6f.js.map",
+  "image-uploader/images/placeholder_img.png": "/packs/image-uploader/images/placeholder_img-1d42c05fa21f456f4cc6711cfe8e4556.png",
+  "tutorial-editor/images/step-image-button.png": "/packs/tutorial-editor/images/step-image-button-77db85e8d41b381da6a869767589dafa.png"
 }
