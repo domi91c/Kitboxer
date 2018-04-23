@@ -8,9 +8,9 @@ class CartsController < ApplicationController
   end
 
   def add
-    if params[:product_quantity].to_i > 0
+    if params[:cart_quantity].to_i > 0
       $redis.mapped_hmset current_user.cart_name, {
-          params[:product_id] => params[:product_quantity]
+          params[:product_id] => params[:cart_quantity]
       }
     else
       $redis.hdel current_user.cart_name, params[:product_id]
@@ -28,11 +28,16 @@ class CartsController < ApplicationController
     $redis.del current_user.cart_name
   end
 
+  def save_for_later
+    $redis.hdel current_user.cart_name, params[:product_id]
+    
+  end
+
   private
 
 
   def cart_params
-    params.require(:cart).permit(:product_id, :product_quantity)
+    params.require(:cart).permit(:product_id, :cart_quantity)
   end
 
 end

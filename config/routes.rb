@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # global options responder -> makes sure OPTION request for CORS endpoints work
+
   devise_for :users, controllers: {
       sessions: 'users/sessions',
       registrations: 'users/registrations',

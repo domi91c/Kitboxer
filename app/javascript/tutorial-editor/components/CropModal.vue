@@ -3,13 +3,13 @@
         <b-modal hide-header-close
                  no-close-on-backdrop
                  :id="`image-modal-${step.id}`"
-                 size="lg"
+                 size="xl"
                  lazy
                  ok-title="Crop"
                  @ok="submitCropData()"
                  v-model="modalVisible"
         >
-            <img v-show="false" :src="image.image.url" alt="">
+            <img v-show="false" :src="image.image.url" alt="" class="hello">
             <vue-cropper
                     ref='cropper'
                     :aspect-ratio="10/9"

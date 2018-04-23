@@ -28,6 +28,11 @@
 @import "orders";
 @import "jquery.fancybox";
 
+
+div.trix-button-row > span.trix-button-group.trix-button-group--history-tools {
+  display: none;
+}
+
 body {
   font-weight: normal;
   color:       #2c3e50;

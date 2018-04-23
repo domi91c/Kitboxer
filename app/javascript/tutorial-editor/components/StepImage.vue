@@ -1,25 +1,27 @@
 <template>
-    <div class="d-inline col-4 col-sm-3">
-        <div class="step-image">
-            <img class="img-fluid img-thumbnail" :src="image.image.url">
-            <v-loading :loader="`crop image ${image.id}`">
-                <template slot='spinner'>
-                    <pulse-loader class="loading-indicator" color="#6C6CE1">
-                    </pulse-loader>
-                </template>
-            </v-loading>
-            <div class="image-overlay">
-                <div class="btn-group">
-                    <div class="btn btn-info" @click.stop="$emit('preview-image', image)">
-                        <i class="fa fa-crop"></i>
-                    </div>
-                    <div class="btn btn-secondary" @click.stop="deleteImage">
-                        <i class="fa fa-trash"></i>
+    <transition name="fade">
+        <div class="d-inline col-4 col-sm-3">
+            <div class="step-image">
+                <img class="img-fluid img-thumbnail" :src="image.image.url">
+                <v-loading :loader="`crop image ${image.id}`">
+                    <template slot='spinner'>
+                        <pulse-loader class="loading-indicator" color="#6C6CE1">
+                        </pulse-loader>
+                    </template>
+                </v-loading>
+                <div class="image-overlay">
+                    <div class="btn-group">
+                        <div class="btn btn-info" @click.stop="$emit('preview-image', image)">
+                            <i class="fa fa-crop"></i>
+                        </div>
+                        <div class="btn btn-secondary" @click.stop="deleteImage">
+                            <i class="fa fa-trash"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -79,5 +81,14 @@
         top:         50%;
         margin-left: -28px;
         margin-top:  -10px;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .2s;
+    }
+
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+    {
+        opacity: 0;
     }
 </style>

@@ -17,6 +17,12 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @steps = @product.tutorial.steps.order(number: :asc)
+    if @cart_quantity = Cart[current_user].lines[@product]
+      @cart_button_string = "Update "
+    else
+      @cart_quantity = 0
+      @cart_button_string = "Add to "
+    end
   end
 
   # GET /products/new
@@ -76,6 +82,7 @@ class ProductsController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(params[:id])

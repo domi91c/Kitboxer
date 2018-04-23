@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
-config.webpacker.check_yarn_integrity = true
+  config.webpacker.check_yarn_integrity = true
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -77,6 +77,12 @@ config.webpacker.check_yarn_integrity = true
 
 
   #App specific information
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => [:get, :post, :options]
+    end
+  end
 end
 
 

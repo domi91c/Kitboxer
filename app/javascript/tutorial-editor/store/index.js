@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import { createActionHelpers } from '../../vuex-loading'
-import { getField, updateField } from 'vuex-map-fields'
 
 const { startLoading, endLoading } = createActionHelpers({
   moduleName: 'loading',
@@ -156,7 +155,6 @@ const store = new Vuex.Store({
   },
 
   getters: {
-    getField,
     product: state => state.tutorial.product,
     tutorial: state => state.tutorial,
     steps: state => {

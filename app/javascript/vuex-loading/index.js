@@ -57,7 +57,8 @@ export default class VueLoading {
       actions: {
         load: ({ commit }, loaderMessage) =>
             commit(mutations.LOAD, loaderMessage),
-        end: ({ commit }, loaderMessage) => commit(mutations.END, loaderMessage),
+        end: ({ commit }, loaderMessage) => commit(mutations.END,
+            loaderMessage),
       },
       mutations: {
         [mutations.LOAD](state, loaderMessage) {

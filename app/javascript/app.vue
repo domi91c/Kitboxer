@@ -1,6 +1,7 @@
-<!--<template>
+<template>
   <div id="app">
-    <p>{{ message }}</p>
+    <p >{{ message }}</p>
+
   </div>
 </template>
 
@@ -19,4 +20,4 @@ p {
   font-size: 2em;
   text-align: center;
 }
-</style>-->
+</style>

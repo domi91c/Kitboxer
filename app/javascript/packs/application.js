@@ -1,3 +1,3 @@
-/* eslint no-console:0 */
+import 'shared'
 import 'image-uploader'
 import 'tutorial-editor'

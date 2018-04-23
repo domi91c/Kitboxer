@@ -12,13 +12,13 @@ class Products::BuildController < ApplicationController
     @serialized_tutorial = ActiveModel::Serializer::Adapter::Json
                                .new(TutorialSerializer.new(@tutorial))
                                .serializable_hash
-    render_wizard
+    render_wizard(nil, {}, { product_id: params[:product_id] })
   end
 
   def update
     @product = Product.find(params[:product_id])
     @product.update(product_params(step))
-    render_wizard @product
+    render_wizard(@product, {}, { product_id: params[:product_id] })
   end
 
   private
@@ -37,7 +37,7 @@ class Products::BuildController < ApplicationController
   end
 
   def finish_wizard_path(params)
-    product_path(params[:id])
+    product_path(params[:product_id])
   end
 end
 

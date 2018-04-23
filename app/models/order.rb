@@ -1,13 +1,13 @@
 class Order < ApplicationRecord
-  after_create :create_purchases
+  after_create :create_purchases, :empty_cart
 
   belongs_to :user
   has_many :purchases
   has_many :products, through: :purchases
 
   def create_purchases
-    cart_data.each do |product, quantity|
-      if quantity > 0
+    Cart[user].lines.each do |product, quantity|
+      if quantity.to_i > 0
         purchases.build(product: product, quantity: quantity)
       end
     end
@@ -21,11 +21,10 @@ class Order < ApplicationRecord
     total
   end
 
-  def cart_data
-    cart_hash = $redis.hgetall "#{user.cart_name}"
-    cart_products = Product.find(cart_hash.keys)
-    cart_quantities = cart_hash.values.map(&:to_i)
-    cart_data = cart_products.zip(cart_quantities)
+  private
+
+  def empty_cart
+    Cart[user].empty
   end
 end
 

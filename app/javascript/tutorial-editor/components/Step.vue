@@ -97,8 +97,11 @@
 <style lang="scss" rel="stylesheet/scss" scoped>
     /*@import "./resources/assets/sass/variables";*/
 
-    .remove-step-icon {
-        font-size: .5em;
+    .step-image-list-enter-active, .step-image-list-leave-active {
+        transition: all .4s;
     }
 
+    .step-image-list-enter, .step-image-list-leave-to {
+        opacity: 0;
+    }
 </style>

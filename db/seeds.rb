@@ -30,6 +30,7 @@ user.save!
       user_id: 1,
   )
   product.save!
+  product
 
   (1...(rand(5))).each do |ii|
     image = Image.new(
@@ -40,5 +41,6 @@ user.save!
     image.save!
   end
 end
+
 
 

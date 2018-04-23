@@ -27,7 +27,7 @@ document.addEventListener('turbolinks:load', function() {
   })
 
   $('.carousel').carousel({
-    interval: false
+    interval: false,
   })
 
   $('.js-show-reviews').click(function() {

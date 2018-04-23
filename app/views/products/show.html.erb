@@ -35,14 +35,18 @@
           &nbsp;
           <%= form_tag add_to_cart_path(@product), method: :put do %>
             <div>
-              <span id="product-count-decrease" href="#"><i class="fa fa-minus cart-icon"></i></span>
-              &nbsp;
-              <%= text_field_tag :product_quantity, nil, class: 'input form-control', style: 'width: 45px; display:inline-block', id: 'product-count', value: 1 %>
-              <span id="product-count-increase" href="#"><i class="fa fa-plus cart-icon"></i></span>
-              &nbsp;
+              <div id="number-field">
+                <number-field id="number-field" name="cart_quantity" value="<%= quantity_field_value(@product) %>">
+                  <div class="d-inline col-1" style="user-select: none;">
+                    <span><i class="mr-2 fa fa-minus cart-icon"></i></span>
+                    <input type="text" class="form-control d-inline-block col-2">
+                    <span><i class="ml-2 fa fa-plus cart-icon"></i></span>
+                  </div>
+                </number-field>
+              </div>
               <div class="" style="display: inline-block;">
                 <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-                  <i class="fa fa-shopping-cart"></i> Add to cart
+                  <i class="fa fa-shopping-cart"></i> <%= cart_button_string(@product) %> cart
                 <% end %>
                 <button class="btn btn-info" style="display: inline-block;">
                   <i class="fa fa-star"></i> Watch
@@ -116,9 +120,7 @@
           </div>
           <div class="tab-pane " id="tutorial" role="tabpanel">
             <div class=" mt-3">
-              <% unless @product.tutorial.steps[0].images.empty? %>
-                <%= render 'layouts/sample_guide', product: @product %>
-              <% end %>
+              <%= render 'layouts/sample_tutorial', product: @product %>
             </div>
           </div>
         </div>
