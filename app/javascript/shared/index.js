@@ -1,10 +1,10 @@
 import TurbolinksAdapter from 'vue-turbolinks'
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue'
 import App from '../app.vue'
 import NumberField from '../NumberField.vue'
 import BootstrapVue from 'bootstrap-vue'
 
-// Vue.use(TurbolinksAdapter)
+Vue.use(TurbolinksAdapter)
 Vue.use(BootstrapVue)
 
 document.addEventListener('turbolinks:load', () => {

@@ -15,6 +15,10 @@ class Products::BuildController < ApplicationController
     render_wizard(nil, {}, { product_id: params[:product_id] })
   end
 
+  def edit
+
+  end
+
   def update
     @product = Product.find(params[:product_id])
     @product.update(product_params(step))

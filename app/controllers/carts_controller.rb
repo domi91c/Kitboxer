@@ -30,11 +30,9 @@ class CartsController < ApplicationController
 
   def save_for_later
     $redis.hdel current_user.cart_name, params[:product_id]
-    
   end
 
   private
-
 
   def cart_params
     params.require(:cart).permit(:product_id, :cart_quantity)

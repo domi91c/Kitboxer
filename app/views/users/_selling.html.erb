@@ -18,8 +18,7 @@
                    data-target=".js-contact-seller-modal"
                    href="#">Contact Seller
                 </a>
-                <a class="dropdown-item" href="#">Review Product</a>
-                <a class="dropdown-item" href="#">Request Refund</a>
+                <%= link_to "Edit Product", product_build_path(id: Wicked::FIRST_STEP, product_id: product.id), class: 'dropdown-item' %>
               </div>
             </td>
           </tr>
@@ -32,8 +31,7 @@
 
 
 <style>
-
-  table > tr{
+  table > tr {
     vertical-align: middle;
   }
 </style>

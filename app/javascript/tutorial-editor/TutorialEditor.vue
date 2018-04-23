@@ -33,7 +33,6 @@
     },
 
     mounted() {
-      alert('yoo')
       let containerEl = document.getElementsByClassName('js-hide-before-load')
       containerEl[0].classList.remove('js-hide-before-load')
     },
@@ -55,7 +54,7 @@
 
     .step-list-enter, .step-list-leave-to {
         opacity:   0;
-        transform: translateY(-300px);
+        transform: translateY(-30px);
     }
 
 </style>
