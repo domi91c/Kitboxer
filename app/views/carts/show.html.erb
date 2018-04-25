@@ -1,78 +1,15 @@
 <section class="cart-show">
   <div class="row">
     <div class="col-md-9 mx-auto">
-      <% if @cart_data.length > 0 %>
-        <div class="card">
-          <div class="card-body">
-            <ul class="list-unstyled">
-              <% @cart_data.each do |cart_product, cart_quantity| %>
-                <%= render 'cart_product', product: cart_product, quantity: cart_quantity %>
-              <% end %>
-        </ul>
-        <hr>
-        <div class="row">
-          <div class="col-sm-12 text-right display-8">
-            <p>Tax: $10.23</p>
-            <p>Shipping: $12.32</p>
-            <strong>Total: <%= number_to_currency(cart_total) %></strong>
+      <div class="card">
+        <div class="card-body">
+          <div class="cart-contents">
+            <%= render 'cart_contents' %>
           </div>
         </div>
-
-        </div>
-        </div>
-        <br>
-        <div class="card">
-          <div class="card-body">
-            <div class="card-title">
-              <h4>Checkout</h4>
-            </div>
-            <div class="row">
-              <div class="col-md-12 ">
-                <div class="fieldset">
-                  <%= form_tag(orders_path, authenticity_token: form_authenticity_token, id: "payment-form", method: :post) do %>
-                    <div class="form-row">
-                      <div class="col-md-6">
-                        <%= text_field_tag :first_name, nil, value: current_user.first_name, class: 'form-control my-2', placeholder: 'First name' %>
-                      </div>
-                      <div class="col-md-6">
-                        <%= text_field_tag :last_name, nil, value: current_user.last_name, class: 'form-control my-2', placeholder: 'Last name' %>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="col-md-12">
-                        <%= text_field_tag :street_address, nil, class: 'form-control my-2', placeholder: 'Street address' %>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="col-md-12">
-                        <div id="card-element" class="form-control my-2">
-                          <!-- a Stripe Element will be inserted here. -->
-                        </div>
-                        <!-- Used to display Stripe form errors -->
-                        <div id="card-errors"></div>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="col-md-12">
-                        <%= submit_tag "Checkout", class: 'btn btn-success mt-4 float-right' %>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% else %>
-        <div class="card">
-          <div class="card-body">
-            <div class="text-center my-5">
-              <p class="display-8 mt-2">Nothing in cart.</p>
-              <%= link_to "Go Shopping", products_path, class: 'btn btn-lg btn-outline-dark' %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      </div>
+      <br>
+      <%= render 'checkout_form' %>
     </div>
   </div>
 </section>

@@ -1,1 +1,24 @@
-<h1 class="display-4">Watching</h1>
+<div class="col-md-8 mx-auto">
+  <div class="card">
+    <div class="card-body">
+      <table class="table ">
+        <tbody>
+        <% @favorite_products.each do |product| %>
+          <tr>
+            <td><%= image_tag product.cover_thumb, style: 'height:100px' %></td>
+            <td><%= product.title %></td>
+            <td><%= product.price %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  table > tr {
+    vertical-align: middle;
+  }
+</style>

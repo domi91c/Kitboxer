@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :build, controller: 'products/build'
+    resources :favorites, controller: 'products/favorites', only: [:create, :update]
     resources :images, controller: 'products/images' do
       member do
         patch :set_cover_image
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
   resource :cart, only: [:show] do
     put 'add/:product_id', to: 'carts#add', as: :add_to
     get 'remove/:product_id', to: 'carts#remove', as: :remove_from
+    put 'save_for_later/:product_id', to: 'carts#save_for_later', as: :save_for_later
   end
 
   root to: 'visitors#index'

@@ -23,7 +23,8 @@
           &nbsp; &nbsp;
           <strong>41 Reviews</strong>
           &nbsp; &nbsp;
-          <a href="#" class="js-show-reviews">show all</a></p>
+          <%= link_to "show all", '#', class: 'js-show-reviews', remote: true %>
+        </p>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
           aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
           Nemo
@@ -34,24 +35,18 @@
         <div class="product-actions">
           &nbsp;
           <%= form_tag add_to_cart_path(@product), method: :put do %>
-            <div>
-              <div id="number-field">
-                <number-field id="number-field" name="cart_quantity" value="<%= quantity_field_value(@product) %>">
-                  <div class="d-inline mr-2" style="user-select: none;">
-                    <span><i class="mr-2 fa fa-minus cart-icon"></i></span>
-                    <input type="text" class="form-control d-inline-block col-2">
-                    <span><i class="ml-2 fa fa-plus cart-icon"></i></span>
-                  </div>
-                </number-field>
+            <div class="row">
+              <div class="number-field" style="user-select: none;">
+                <span class="js-quantity-decrease"><i class="fa fa-minus cart-icon"></i></span>
+                &nbsp;
+                <%= text_field_tag :cart_quantity, nil, class: 'input form-control js-quantity-input', style: 'width: 45px; display:inline', id: 'product-count', value: quantity_field_value(@product) %>
+                <span class="js-quantity-increase"><i class="fa fa-plus cart-icon"></i></span>
+                &nbsp;
               </div>
-              <div class="" style="display: inline-block;">
-                <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-                  <i class="fa fa-shopping-cart"></i> <%= cart_button_string(@product) %> cart
-                <% end %>
-                <button class="btn btn-info" style="display: inline-block;">
-                  <i class="fa fa-star"></i> Watch
-                </button>
-              </div>
+              <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+                <i class="fa fa-shopping-cart"></i> <%= cart_button_string(@product) %> cart
+              <% end %>
+              <%= link_to fa_icon('star', text: 'Watch'), product_favorite_path(product_id: @product), remote: true, method: :put, class: 'ml-1 btn btn-info watch-button' %>
             </div>
           <% end %>
         </div>

@@ -7,14 +7,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to root_path, alert: "Access denied."
+    end
     @products = @user.products
+    @favorite_products = Product.favorited_by(@user)
     @orders = @user.orders
     if @user.customer
       @cards = @user.customer.sources
-    end
-
-    unless @user == current_user
-      redirect_to root_path, alert: "Access denied."
     end
   end
 

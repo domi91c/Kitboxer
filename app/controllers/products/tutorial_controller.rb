@@ -18,7 +18,6 @@ class Products::TutorialController < ApplicationController
     tutorial_params[:steps_attributes] = tutorial_params.delete :steps
     tutorial_params[:steps_attributes].each_with_index do |tp, i|
       tp[:images_attributes] = tp.delete :images
-      ActiveModelSerializers::Deserialization.jsonapi_parse!(params, nested_attributes: [:author, :cameras])
     end
     tutorial_params.permit!
   end

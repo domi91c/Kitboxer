@@ -22,6 +22,10 @@ class Cart
       Hash[products.zip(quantities)]
     end
 
+    def delete(product)
+      $redis.hdel @cart_name, product.id
+    end
+
     def empty
       $redis.del @cart_name
     end

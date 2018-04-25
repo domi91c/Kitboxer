@@ -1,4 +1,4 @@
-<div class="media">
+<li class="media">
   <%= image_tag product.cover_thumb, style: 'height:100px', class: 'mr-3' %>
   <div class="media-body">
     <h4 class="mt-0"><%= link_to product.title, product_path(product) %></h4>
@@ -8,26 +8,24 @@
     </h4>
 
     <%= form_tag add_to_cart_path(product), class: 'd-inline', method: :put do %>
-      <button type="button" class="quantity-button js-quantity-decrease">
+      <button type="button" class="quantity-button js-cart-quantity-decrease">
         <i class="fa fa-minus"></i>
       </button>
       <%= text_field_tag :cart_quantity,
                          nil,
                          class: 'form-control quantity-input js-quantity-input',
                          value: quantity %>
-      <button type="button" class="quantity-button js-quantity-increase">
+      <button type="button" class="quantity-button js-cart-quantity-increase">
         <i class="fa fa-plus"></i>
       </button>
       &nbsp;
-      <!--<%#= submit_tag "Update", class: 'btn btn-secondary btn-xs' %>
-      |-->
-      <%= link_to "Remove from cart", remove_from_cart_path(product) %>
+      <%= link_to "Remove from cart", remove_from_cart_path(product), class: 'remove-link' %>
       |
-      <%= link_to "Save for later", class: '' %>
+      <%= link_to "Save for later", save_for_later_cart_path(product.id), class: 'remove-link', method: :put, remote: true %>
     <% end %>
 
     <span class="ml-2  float-right display-8"> <%= quantity %>
       x <%= number_to_currency(product.price) %></span>
   </div>
-</div>
+</li>
 <br>

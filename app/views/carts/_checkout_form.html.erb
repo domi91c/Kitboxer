@@ -1,0 +1,43 @@
+<div class="card checkout-form">
+  <div class="card-body">
+    <div class="card-title">
+      <h4>Checkout</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12 ">
+        <div class="fieldset">
+          <%= form_tag(orders_path, authenticity_token: form_authenticity_token, id: "payment-form", method: :post) do %>
+            <div class="form-row">
+              <div class="col-md-6">
+                <%= text_field_tag :first_name, nil, value: current_user.first_name, class: 'form-control my-2', placeholder: 'First name' %>
+              </div>
+              <div class="col-md-6">
+                <%= text_field_tag :last_name, nil, value: current_user.last_name, class: 'form-control my-2', placeholder: 'Last name' %>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-12">
+                <%= text_field_tag :street_address, nil, class: 'form-control my-2', placeholder: 'Street address' %>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-12">
+                <div id="card-element" class="form-control my-2">
+                  <!-- a Stripe Element will be inserted here. -->
+                </div>
+                <!-- Used to display Stripe form errors -->
+                <div id="card-errors"></div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-12">
+                <%= submit_tag "Checkout", class: 'btn btn-success mt-4 float-right' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://js.stripe.com/v3/"></script>

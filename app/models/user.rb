@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :products
   has_many :orders
   has_many :purchases, through: :orders
+  has_many :favorites, dependent: :destroy
 
   validates_presence_of :first_name
   validates_presence_of :last_name
@@ -24,10 +25,21 @@ class User < ApplicationRecord
   end
 
   def customer
-    # Stripe::Customer.retrieve(stripe_customer_id) if stripe_customer_id
+    Stripe::Customer.retrieve(stripe_customer_id) if stripe_customer_id
   end
 
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def favorite(product)
+    favorites.find_or_create_by(product: product)
+    product.reload
+  end
+
+  def unfavorite(product)
+    favorites.where(product: product).destroy_all
+    product.reload
+  end
+
 end

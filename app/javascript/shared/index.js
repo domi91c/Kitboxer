@@ -1,20 +1,18 @@
 import TurbolinksAdapter from 'vue-turbolinks'
-import Vue from 'vue'
-import App from '../app.vue'
+import Vue from 'vue/dist/vue.esm'
+import HideBeforeLoad from './hide-before-load.js'
 import NumberField from '../NumberField.vue'
 import BootstrapVue from 'bootstrap-vue'
 
-Vue.use(TurbolinksAdapter)
-Vue.use(BootstrapVue)
-
 document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('number-field')) {
-    const app = new Vue({
+    new Vue({
       el: '#number-field',
-      data: {
-        message: 'Can you say hello?',
-      },
-      components: { App, NumberField },
+      components: { NumberField },
     })
+
+    Vue.use(TurbolinksAdapter)
+    Vue.use(BootstrapVue)
+    // Vue.use(HideBeforeLoad)
   }
 })

@@ -40,6 +40,8 @@
       ImageModal,
     },
     mounted() {
+      let containerEl = document.getElementsByClassName('js-hide-before-load')
+      containerEl[0].classList.remove('js-hide-before-load')
       for (var i = 0; i < this.images.length - 1; i++) {
         let image = this.images[i]
         let card = {

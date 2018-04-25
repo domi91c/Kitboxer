@@ -18,6 +18,7 @@
 //= require bootstrap-sprockets
 //= require rails.validations
 //= require stripe
+//= require products
 //= require_tree .
 
 document.addEventListener('turbolinks:load', function() {

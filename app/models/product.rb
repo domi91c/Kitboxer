@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :purchases
   has_many :images, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   has_one :tutorial, dependent: :destroy
 
   validates_presence_of :title, if: -> { required_for_step?(:add_description) }
@@ -11,6 +12,12 @@ class Product < ApplicationRecord
   validates_presence_of :price, if: -> { required_for_step?(:add_description) }
   validates_presence_of :body, if: -> { required_for_step?(:add_description) }
   validate :has_images, if: -> { required_for_step?(:add_images) }
+
+  scope :favorited_by, -> (user) { joins(:favorites).where(favorites: { user: User.find(user.id) }) }
+
+  def favorited_by?(user)
+    favorites.where(user: User.find(user.id)).size > 0
+  end
 
   def has_images
     unless images.present?
@@ -43,8 +50,7 @@ class Product < ApplicationRecord
   end
 
   def self.search(search)
-    where("title ILIKE ?", "%#{search}%")
-    # where("body ILIKE ?", "%#{search}%")
+    where("title ILIKE ?", "%#{search}%").or(where("body ILIKE ?", "%#{search}%"))
   end
 
   def self.with_images

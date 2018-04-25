@@ -2,9 +2,7 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @cart_products = Cart[current_user].products
-    @cart_quantities = Cart[current_user].quantities
-    @cart_data = @cart_products.zip(@cart_quantities)
+    @cart_data = Cart[current_user].lines
   end
 
   def add
@@ -15,21 +13,23 @@ class CartsController < ApplicationController
     else
       $redis.hdel current_user.cart_name, params[:product_id]
     end
-    redirect_to cart_path(current_user.cart_name)
+    redirect_to cart_path(current_user)
   end
 
   def remove
     $redis.hdel current_user.cart_name, params[:product_id]
-    redirect_to cart_path(current_user.cart_name)
+    redirect_to cart_path(current_user)
     # render json: current_user.cart_count, status: 200
   end
 
-  def empty
-    $redis.del current_user.cart_name
-  end
-
   def save_for_later
-    $redis.hdel current_user.cart_name, params[:product_id]
+    @product = Product.find(params[:product_id])
+    Cart[current_user].delete(@product)
+    @cart_data = Cart[current_user].lines
+    current_user.favorite(@product)
+    respond_to do |format|
+      format.js { flash.now[:notice] = "Added to Watch List" }
+    end
   end
 
   private

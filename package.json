@@ -56,7 +56,7 @@
     "vue-resource": "^1.5.0",
     "vue-spinner": "^1.0.3",
     "vue-template-compiler": "^2.5.16",
-    "vue-turbolinks": "^1.1.0",
+    "vue-turbolinks": "^2.0.3",
     "vue-upload-component": "^2.4.0-beta.3",
     "vuex": "^3.0.1",
     "vuex-map-fields": "^1.1.6",

@@ -1,0 +1,34 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.store-show {
+  .product-card {
+    border: none;
+    .product-card-image {
+    }
+    .product-card-footer {
+      padding:          5px;
+      .product-card-title {
+        font-size: .9rem;
+      }
+      .product-card-meta {
+        display:     flex;
+        white-space: nowrap;
+        .product-card-username {
+          font-size:   12px;
+          white-space: nowrap;
+          order:       1;
+        }
+        .product-card-price {
+          font-size:   12px;
+          font-weight: bold;
+          white-space: nowrap;
+          margin-left: auto;
+          order:       2;
+        }
+      }
+      background-color: white;
+    }
+  }
+}

@@ -7950,9 +7950,9 @@ vue-template-es2015-compiler@^1.6.0:
     rollup-plugin-commonjs "^7.0.0"
     rollup-plugin-node-resolve "^2.0.0"
 
-vue-turbolinks@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/vue-turbolinks/-/vue-turbolinks-1.1.1.tgz#5a9c6a3f6c83ccd8fb5895fba9e75588e19516da"
+vue-turbolinks@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/vue-turbolinks/-/vue-turbolinks-2.0.3.tgz#4600d4c4f2e6a35cf5f93636c9d5c20285bc2cd7"
   dependencies:
     vue "^2.2.4"
 

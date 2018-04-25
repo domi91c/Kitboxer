@@ -1,4 +1,4 @@
-<div class="wizard container mt-5">
+<div class="wizard container mt-5 js-hide-before-load">
   <%= form_for @product, url: wizard_path, method: :put do |form| %>
     <%= form.hidden_field :id %>
     <div class="row">
@@ -10,7 +10,7 @@
             <div id='root'>
               <% placeholder = image_path('placeholder_img.jpg') %>
 
-              <%= content_tag :app,
+              <%= content_tag :div,
                               class: 'js-image-uploader',
                               data: {
                                   images: @product.images,

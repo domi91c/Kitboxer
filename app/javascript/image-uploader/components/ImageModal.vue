@@ -3,7 +3,7 @@
         <b-modal hide-header-close
                  no-close-on-backdrop
                  id="image-modal"
-                 size="lg"
+                 size="xl"
                  @ok="finishCrop">
             <img v-show="false" :src="image.url" alt="">
             <vue-cropper
@@ -23,28 +23,17 @@
 
 <script>
   import VueCropper from 'vue-cropperjs'
-  import Model from '../model.js'
 
   export default {
     components: {
       VueCropper,
     },
-    mounted() {
-      this.$refs.cropper.replace(this.image.url)
-    },
     updated() {
       this.$refs.cropper.replace(this.image.url)
     },
     props: ['image'],
-    data() {
-      return {
-        name: 'name',
-      }
-    },
-
     methods: {
       finishCrop() {
-        console.log('finishing crop.')
         let cropData = this.$refs.cropper.getData()
         console.log(cropData)
         this.$emit('finish-crop', cropData)

@@ -31,12 +31,6 @@
         'steps',
       ]),
     },
-
-    mounted() {
-      let containerEl = document.getElementsByClassName('js-hide-before-load')
-      containerEl[0].classList.remove('js-hide-before-load')
-    },
-
     methods: {
       addStep(step) {
         this.$store.dispatch('ADD_STEP')

@@ -1,0 +1,20 @@
+<% if @cart_data.length > 0 %>
+  <ul class="list-unstyled cart-list">
+    <% @cart_data.each do |cart_product, cart_quantity| %>
+      <%= render 'cart_product', product: cart_product, quantity: cart_quantity %>
+    <% end %>
+  </ul>
+<% else %>
+  <div class="text-center my-5">
+    <p class="display-8 mt-2">Nothing in cart.</p>
+    <%= link_to "Go Shopping", products_path, class: 'btn btn-lg btn-outline-dark' %>
+  </div>
+<% end %>
+<hr>
+<div class="row">
+  <div class="col-sm-12 text-right display-8">
+    <p>Tax: <%= number_to_currency(cart_total * 0.15) %></p>
+    <p>Shipping: <%= number_to_currency(cart_total * 0.05) %></p>
+    <strong>Total: <%= number_to_currency(cart_total) %></strong>
+  </div>
+</div>

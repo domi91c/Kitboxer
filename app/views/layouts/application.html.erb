@@ -6,7 +6,6 @@
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Kitboxer" %>">
   <meta name="turbolinks-cache-control" content="no-cache">
 
-  <script src="https://js.stripe.com/v3/"></script>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
@@ -16,8 +15,10 @@
 <%= content_for?(:header) ? yield(:header) : "" %>
 <div role="main" style="min-height: calc(100vh - 70px); margin-top:30px;">
   <div class="container-fluid">
-    <%= render 'layouts/messages' %>
-      <%= yield %>
+    <div class="js-flash">
+      <%= render 'layouts/messages' %>
+    </div>
+    <%= yield %>
   </div>
 </div>
 <%= render 'layouts/footer' %>
