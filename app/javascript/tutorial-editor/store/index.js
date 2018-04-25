@@ -95,7 +95,7 @@ const store = new Vuex.Store({
                   .catch(err => console.log(err))
     },
     deleteStep({ commit }, step) {
-      if (this.state.tutorial.steps.length <= 1) return
+      // if (this.state.tutorial.steps.length <= 1) return
       const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/steps/${step.id}`
       return axios.delete(url)
                   .then(res => {
