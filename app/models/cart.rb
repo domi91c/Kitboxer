@@ -1,13 +1,13 @@
 class Cart
   class << self
-    def [](current_user)
-      @cart_name = current_user.cart_name
+    def [](user)
+      @cart_name = user.cart_name
       @contents = $redis.hgetall @cart_name
       self
     end
 
     def total
-      lines.sum { |product, quantity| product.price * quantity.to_i }.to_i
+      lines.sum { |product, quantity| product.price * quantity }
     end
 
     def products
@@ -15,19 +15,24 @@ class Cart
     end
 
     def quantities
-      @contents.values
+      @contents.values.map(&:to_i)
     end
 
     def lines
       Hash[products.zip(quantities)]
     end
 
-    def delete(product)
+    def add(product, quantity)
+      $redis.mapped_hmset @cart_name, { product => quantity }
+    end
+
+    def remove(product)
       $redis.hdel @cart_name, product.id
     end
 
     def empty
       $redis.del @cart_name
     end
+
   end
 end

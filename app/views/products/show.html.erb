@@ -36,17 +36,17 @@
           &nbsp;
           <%= form_tag add_to_cart_path(@product), method: :put do %>
             <div class="row">
-              <div class="number-field" style="user-select: none;">
-                <span class="js-quantity-decrease"><i class="fa fa-minus cart-icon"></i></span>
+              <div class="number-field" style="user-select: none; display: flex; align-items: center">
+                <span class="js-quantity-decrease ml-3 mr-2"><i class="fa fa-minus cart-icon"></i></span>
                 &nbsp;
-                <%= text_field_tag :cart_quantity, nil, class: 'input form-control js-quantity-input', style: 'width: 45px; display:inline', id: 'product-count', value: quantity_field_value(@product) %>
-                <span class="js-quantity-increase"><i class="fa fa-plus cart-icon"></i></span>
+                <%= text_field_tag :cart_quantity, nil, class: 'form-control js-quantity-input', style: 'width: 55px; display:inline', id: 'product-count', value: quantity_field_value(@product) %>
+                <span class="js-quantity-increase mx-2"><i class="fa fa-plus cart-icon"></i></span>
                 &nbsp;
               </div>
               <%= button_tag(type: "submit", class: "btn btn-primary") do %>
                 <i class="fa fa-shopping-cart"></i> <%= cart_button_string(@product) %> cart
               <% end %>
-              <%= link_to fa_icon('star', text: 'Watch'), product_favorite_path(product_id: @product), remote: true, method: :put, class: 'ml-1 btn btn-info watch-button' %>
+              <%= link_to fa_icon('star', text: @watch_button_text), product_favorite_path(product_id: @product), remote: true, method: :put, class: 'ml-1 btn btn-info watch-button' %>
             </div>
           <% end %>
         </div>

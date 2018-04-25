@@ -1,15 +1,13 @@
 class CartsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_cart
 
   def show
-    @cart_data = Cart[current_user].lines
+    @cart_data = @cart.lines
   end
 
   def add
     if params[:cart_quantity].to_i > 0
-      $redis.mapped_hmset current_user.cart_name, {
-          params[:product_id] => params[:cart_quantity]
-      }
+      @cart.add(params[:product_id], params[:cart_quantity])
     else
       $redis.hdel current_user.cart_name, params[:product_id]
     end
@@ -24,7 +22,7 @@ class CartsController < ApplicationController
 
   def save_for_later
     @product = Product.find(params[:product_id])
-    Cart[current_user].delete(@product)
+    Cart[current_user].remove(@product)
     @cart_data = Cart[current_user].lines
     current_user.favorite(@product)
     respond_to do |format|
@@ -33,6 +31,10 @@ class CartsController < ApplicationController
   end
 
   private
+
+  def set_cart
+    @cart = Cart[current_user]
+  end
 
   def cart_params
     params.require(:cart).permit(:product_id, :cart_quantity)

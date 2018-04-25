@@ -1,0 +1,8 @@
+<ul class="list-group">
+  <%= link_to "1. Description", wizard_path(:add_description),
+              class: "list-group-item list-group-item-action #{current_class?(wizard_path(:add_description))}" %>
+  <%= link_to "2. Images", wizard_path(:add_images),
+              class: "list-group-item list-group-item-action #{current_class?(wizard_path(:add_images))}" %>
+  <%= link_to "3. Tutorial", wizard_path(:add_tutorial),
+              class: "list-group-item list-group-item-action #{current_class?(wizard_path(:add_tutorial))}" %>
+</ul>

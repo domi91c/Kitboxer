@@ -17,6 +17,11 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @steps = @product.tutorial.steps.order(number: :asc)
+    if @product.favorited_by?(current_user)
+      @watch_button_text = 'Watching'
+    else
+      @watch_button_text = 'Watch'
+    end
     if @cart_quantity = Cart[current_user].lines[@product]
       @cart_button_string = "Update "
     else

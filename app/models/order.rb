@@ -7,7 +7,7 @@ class Order < ApplicationRecord
 
   def create_purchases
     Cart[user].lines.each do |product, quantity|
-      if quantity.to_i > 0
+      if quantity > 0
         purchases.build(product: product, quantity: quantity)
       end
     end

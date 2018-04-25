@@ -1,4 +1,7 @@
 module ApplicationHelper
+  def current_class?(path)
+    request.path == path ? 'active' : ''
+  end
 
   def wizard_progress_bar
     content_tag(:ul, class: "nav nav-pills nav-justified wizard-progress") do
