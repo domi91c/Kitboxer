@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card-body">
         <% order.purchases.each do |purchase| %>
-          <%= render 'order_purchase', product: purchase.product, quantity: purchase.quantity %>
+          <%= render 'order_purchase', purchase: purchase, product: purchase.product, quantity: purchase.quantity %>
         <% end %>
         <hr>
         <div class="row">

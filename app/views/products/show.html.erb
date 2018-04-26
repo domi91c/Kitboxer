@@ -15,13 +15,9 @@
         </p>
         <hr>
         <p>
-          <i class="fa fa-star " style="color: #FF6080;"></i>
-          <i class="fa fa-star " style="color: #FF6080;"></i>
-          <i class="fa fa-star " style="color: #FF6080;"></i>
-          <i class="fa fa-star " style="color: #95A5A6"></i>
-          <i class="fa fa-star " style="color: #95A5A6"></i>
+          <%= render 'show_rating', score: @product.reviews_average("Product") %>
           &nbsp; &nbsp;
-          <strong>41 Reviews</strong>
+          <strong><%= @product.reviews.count %> Reviews</strong>
           &nbsp; &nbsp;
           <%= link_to "show all", '#', class: 'js-show-reviews', remote: true %>
         </p>
@@ -103,13 +99,7 @@
           <div class="tab-pane js-reviews-pane" id="reviews" role="tabpanel">
             <div class="card mt-3">
               <div class="card-body">
-                <div class="card-title">Reviews</div>
-                <div class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda at consectetur consequatur
-                  corporis
-                  distinctio eaque eveniet facilis id ipsa ipsum iusto nesciunt odio, quas quos ratione tempora velit
-                  veritatis?
-                </div>
+                <%= render 'reviews' %>
               </div>
             </div>
           </div>

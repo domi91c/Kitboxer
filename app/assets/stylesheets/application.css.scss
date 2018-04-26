@@ -27,8 +27,8 @@
 @import "carts";
 @import "orders";
 @import "store";
+@import "reviews";
 @import "jquery.fancybox";
-
 
 div.trix-button-row > span.trix-button-group.trix-button-group--history-tools {
   display: none;
@@ -39,7 +39,7 @@ body {
   color:       #2c3e50;
 }
 
-.table th, .table td {
+.table .table--is-vcentered .table th, .table td {
   vertical-align: middle;
 }
 

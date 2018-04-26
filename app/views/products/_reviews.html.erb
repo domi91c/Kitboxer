@@ -1,0 +1,36 @@
+<div class="reviews-header">
+  <div class="row">
+    <div class="col-sm-3 col-xs-6">
+      <h6>Product</h6>
+      <%= render 'show_rating', score: 4 %>
+    </div>
+    <div class="col-sm-3 col-xs-6">
+      <h6>Communication</h6>
+      <%= render 'show_rating', score: 5 %>
+    </div>
+    <div class="col-sm-3 col-xs-6">
+      <h6>Shipping</h6>
+      <%= render 'show_rating', score: 2 %>
+    </div>
+    <div class="col-sm-3 col-xs-6">
+      <h6>Guides</h6>
+      <%= render 'show_rating', score: 4 %>
+    </div>
+  </div>
+  <hr>
+</div>
+<% @reviews.each do |review| %>
+  <div class="row">
+    <div class="col-md-2">
+      <% review.ratings.each do |rating| %>
+        <h6><%= rating.context %></h6>
+        <%= render 'show_rating', score: rating.score %>
+      <% end %>
+    </div>
+    <div class="col-md-10">
+      <h5><%= review.summary %></h5>
+      <p><%= review.body %></p>
+    </div>
+  </div>
+  <hr>
+<% end %>

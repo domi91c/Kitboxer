@@ -1,13 +1,13 @@
 <div class="col-md-8 mx-auto">
   <div class="card">
     <div class="card-body">
-      <table class="table ">
+      <table class="table  ">
         <tbody>
         <% @favorite_products.each do |product| %>
           <tr>
             <td><%= image_tag product.cover_thumb, style: 'height:100px' %></td>
-            <td><%= product.title %></td>
-            <td><%= product.price %></td>
+            <td><%= link_to product.title, product %></td>
+            <td><%= number_to_currency product.price %></td>
           </tr>
         <% end %>
         </tbody>
@@ -18,7 +18,7 @@
 
 
 <style>
-  table > tr {
+  table  {
     vertical-align: middle;
   }
 </style>

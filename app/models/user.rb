@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :purchases, through: :orders
   has_many :favorites, dependent: :destroy
+  has_many :reviews, through: :products
 
   validates_presence_of :first_name
   validates_presence_of :last_name
@@ -42,4 +43,7 @@ class User < ApplicationRecord
     product.reload
   end
 
+  def reviewed?(purchase)
+    reviews.where(purchase_id: purchase.id).any?
+  end
 end

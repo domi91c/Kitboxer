@@ -1,9 +1,13 @@
 class Product < ApplicationRecord
   belongs_to :user
-  has_many :purchases
+
   has_many :images, dependent: :destroy
-  has_many :favorites, dependent: :destroy
   has_one :tutorial, dependent: :destroy
+
+  has_many :favorites, dependent: :destroy
+
+  has_many :purchases
+  has_many :reviews, through: :purchases
 
   validates_presence_of :title, if: -> { required_for_step?(:add_description) }
   validates_presence_of :category, if: -> { required_for_step?(:add_description) }
@@ -16,7 +20,7 @@ class Product < ApplicationRecord
   scope :favorited_by, -> (user) { joins(:favorites).where(favorites: { user: User.find(user.id) }) }
 
   def favorited_by?(user)
-    favorites.where(user: User.find(user.id)).size > 0
+    favorites.where(user: User.find(user.id)).any?
   end
 
   def has_images
@@ -55,6 +59,15 @@ class Product < ApplicationRecord
 
   def self.with_images
     includes(:images).where.not(:images => { :image => nil })
+  end
+
+
+  def reviews_average(context = nil)
+    sum = 0
+    reviews.each do |review|
+      sum += review.ratings_average(context)
+    end
+    sum / reviews.count
   end
 
 end

@@ -34,9 +34,8 @@ class Products::BuildController < ApplicationController
                            when 'add_images'
                              [images_attributes: [:image, :image_id, :user_id]]
                            when 'add_tutorial'
-                             [images_attributes: [:image, :image_id, :user_id]]
+                             [tutorial_attributes: [:image, :image_id, :user_id]]
                            end
-
     params.require(:product).permit(permitted_attributes).merge(form_step: step)
   end
 

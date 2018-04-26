@@ -1,0 +1,12 @@
+.rating {
+  .rating__icon {
+    color:     #95A5A6;
+    font-size: 1.2em;
+    &--hover {
+      color: #FF6080;
+    }
+    &--checked {
+      color: #FF6080;
+    }
+  }
+}

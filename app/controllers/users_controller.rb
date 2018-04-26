@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @reviews = @user.reviews
     unless @user == current_user
       redirect_to root_path, alert: "Access denied."
     end

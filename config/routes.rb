@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   resources :orders
   resources :charges
-  resources :purchases
+  resources :purchases do
+    resources :review, controller: 'purchases/review', only: [:new, :create, :update]
+  end
   resources :posts
   resources :subscriptions
 

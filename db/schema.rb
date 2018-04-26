@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424043635) do
+ActiveRecord::Schema.define(version: 20180426054812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,27 @@ ActiveRecord::Schema.define(version: 20180424043635) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.bigint "review_id"
+    t.string "context"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "body"
+    t.index ["review_id"], name: "index_ratings_on_review_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "purchase_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "summary"
+    t.text "body"
+    t.index ["purchase_id"], name: "index_reviews_on_purchase_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "steps", force: :cascade do |t|
     t.bigint "tutorial_id"
     t.string "title"
@@ -168,6 +189,9 @@ ActiveRecord::Schema.define(version: 20180424043635) do
   end
 
   add_foreign_key "products", "users"
+  add_foreign_key "ratings", "reviews"
+  add_foreign_key "reviews", "purchases"
+  add_foreign_key "reviews", "users"
   add_foreign_key "steps", "tutorials"
   add_foreign_key "stores", "users"
 end

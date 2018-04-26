@@ -1,15 +1,15 @@
-<% @steps.each do |step| %>
+<% @steps.each_with_index do |step, index| %>
   <div class="card-body">
     <div class="card" style="box-shadow: 1px 3px 0px #ECECEC">
       <div class="card-body">
-        <h3>Step <%= step.number %>: <span class="display-7"><%= step.title %></span></h3>
+        <h3>Step <%= index + 1 %>: <span class="display-7"><%= step.title %></span></h3>
         <br>
         <div class="row">
           <div class="col-md-6">
             <p class="display-8"><%= step.body.html_safe %></p>
           </div>
           <div class="col-md-6">
-            <% if step.images.first%>
+            <% if step.images.first %>
               <%= render 'products/product_carousel', images: step.images %>
             <% end %>
           </div>

@@ -1,0 +1,22 @@
+<%= form_with model: [@purchase, @review], url: purchase_review_index_path(@purchase, @review) do |f| %>
+  <%= render 'layouts/errors', resource: review %>
+  <div class="card-header">
+    <div class="row">
+      <%= render 'rating', form: f %>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <%= f.label :summary %>
+      <%= f.text_field :summary, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="card-footer clearfix">
+    <%= link_to "Cancel", :back, class: 'btn btn-light ml-2 float-right' %>
+    <%= f.submit class: 'btn btn-success float-right' %>
+  </div>
+<% end %>

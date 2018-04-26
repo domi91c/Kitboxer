@@ -16,7 +16,15 @@
          data-target=".js-contact-seller-modal"
          href="#">Contact Seller
       </a>
-      <a class="dropdown-item" href="#">Review Product</a>
+      <% if purchase.reviewed? %>
+        <a class="dropdown-item"
+           data-toggle="modal"
+           data-target=".js-view-review-modal"
+           href="#">View Review
+        </a>
+      <% else %>
+        <%= link_to "Leave Review", new_purchase_review_path(purchase), class: 'dropdown-item' %>
+      <% end %>
       <a class="dropdown-item" href="#">Request Refund</a>
     </div>
     <span class="ml-2 display-8 float-right"><%= quantity %> x <%= number_to_currency(product.price) %></span>
@@ -47,4 +55,32 @@
     </div>
   </div>
 </div>
+<% if purchase.reviewed? %>
 
+  <div class="modal js-view-review-modal">
+    <div class="modal-center">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Review for: <%= truncate(purchase.product.title) %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+            <%= purchase.review.summary %>
+            <% purchase.review.ratings.each do |rating| %>
+              <%= rating.context %>
+              <%= rating.score %>
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

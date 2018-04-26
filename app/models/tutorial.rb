@@ -1,7 +1,7 @@
 class Tutorial < ApplicationRecord
   after_create :create_initial_steps
   has_many :steps, dependent: :destroy
-  belongs_to :product, dependent: :destroy
+  belongs_to :product
 
   accepts_nested_attributes_for :steps
 
