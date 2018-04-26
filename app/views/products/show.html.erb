@@ -15,7 +15,7 @@
         </p>
         <hr>
         <p>
-          <%= render 'show_rating', score: @product.reviews_average("Product") %>
+          <%= render 'show_rating', score: @product.reviews_average %>
           &nbsp; &nbsp;
           <strong><%= @product.reviews.count %> Reviews</strong>
           &nbsp; &nbsp;
