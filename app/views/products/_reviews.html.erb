@@ -19,18 +19,20 @@
   </div>
   <hr>
 </div>
-<% @reviews.each do |review| %>
-  <div class="row">
-    <div class="col-md-2">
-      <% review.ratings.each do |rating| %>
-        <h6><%= rating.context %></h6>
-        <%= render 'show_rating', score: rating.score %>
-      <% end %>
-    </div>
-    <div class="col-md-10">
-      <h5><%= review.summary %></h5>
-      <p><%= review.body %></p>
-    </div>
-  </div>
-  <hr>
-<% end %>
+<ul class="list-unstyled">
+  <li class="row">
+    <% @reviews.each do |review| %>
+      <div class="col-lg-6">
+        <div class="media">
+          <div class="media-body">
+            <h5 class="mt-0"><%= review.summary %></h5>
+            <p><%= review.body %></p>
+            <div class="float-right rating__show"><%= render 'show_rating', score: review.ratings_average %>
+              —  <%= review.user.first_name %></div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    <% end %>
+  </li>
+</ul>

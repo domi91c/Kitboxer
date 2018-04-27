@@ -1,9 +1,9 @@
 <%= form.fields_for :ratings do |ff| %>
   <div class="form-group col-md-3">
     <%= ff.label ff.object.context %>
-    <%= ff.hidden_field :context, value:ff.object.context %>
-    <%= ff.hidden_field :score %>
-    <div class="rating">
+    <%= ff.hidden_field :context, value: ff.object.context %>
+    <div class="rating-field">
+      <%= ff.hidden_field :score %>
       <i class="rating__icon fa fa-star" data-value="1"></i>
       <i class="rating__icon fa fa-star" data-value="2"></i>
       <i class="rating__icon fa fa-star" data-value="3"></i>

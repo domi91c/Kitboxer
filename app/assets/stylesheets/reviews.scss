@@ -10,3 +10,24 @@
     }
   }
 }
+
+.rating-field {
+  .rating__icon {
+    color:     #95A5A6;
+    font-size: 1.2em;
+    &--hover {
+      color: #FF6080;
+    }
+    &--checked {
+      color: #FF6080;
+    }
+  }
+}
+
+.rating__show {
+  .rating__icon {
+    font-size: 1em;
+    &--checked {
+    }
+  }
+}

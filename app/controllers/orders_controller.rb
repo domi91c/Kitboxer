@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
 
   def create
     @user = current_user
-    @amount = Cart[current_user].total
+    @amount = Cart[current_user].total.to_i
 
     if !@user.stripe_customer_id
       customer = Stripe::Customer.create(

@@ -42,7 +42,7 @@ class Product < ApplicationRecord
     return true if form_step.nil?
     # All fields from previous steps are required if the
     # step parameter appears before or we are on the current step
-    return true if self.form_steps.index(step.to_s) <= self.form_steps.index(form_step)
+    true if self.form_steps.index(step.to_s) <= self.form_steps.index(form_step)
   end
 
   def cover_image
@@ -63,11 +63,15 @@ class Product < ApplicationRecord
 
 
   def reviews_average(context = nil)
-    sum = 0
-    reviews.each do |review|
-      sum += review.ratings_average(context)
+    if reviews.any?
+      sum = 0
+      reviews.each do |review|
+        sum += review.ratings_average(context)
+      end
+      sum / reviews.count
+    else
+      0
     end
-    sum / reviews.count
   end
 
 end
