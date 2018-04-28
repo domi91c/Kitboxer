@@ -1,0 +1,7 @@
+<%= content_tag :div,
+                class: 'v-tutorial-editor',
+                data: {
+                    product: @serialized_product,
+                    tutorial: @serialized_tutorial,
+                }.to_json do %>
+<% end %>

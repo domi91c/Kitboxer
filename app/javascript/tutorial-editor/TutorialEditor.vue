@@ -20,6 +20,9 @@
 <script>
   import { mapGetters, mapActions } from 'vuex'
   import Step from './components/Step'
+  import Image from '../services/image.js'
+
+  let image = new Image()
 
   export default {
     components: {
@@ -28,8 +31,18 @@
     computed: {
       ...mapGetters([
         'product',
+        'tutorial',
         'steps',
       ]),
+    },
+    mounted() {
+      image.get(`/products/${this.product.id}/tutorial`)
+           .then(res => {
+             console.dir(res)
+           })
+           .catch(err => {
+             console.log(err)
+           })
     },
     methods: {
       addStep(step) {

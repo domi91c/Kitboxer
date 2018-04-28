@@ -1,11 +1,3 @@
-<template>
-    <div class="d-inline mr-2" style="user-select: none;">
-        <span @click="decrement"><i class="mr-2 fa fa-minus cart-icon "></i></span>
-        <input :name="name" type="text" class="form-control d-inline-block col-2" v-model="newValue">
-        <span @click="increment"><i class="ml-2 fa fa-plus cart-icon"></i></span>
-    </div>
-</template>
-
 <script>
   export default {
     mounted() {

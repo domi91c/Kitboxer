@@ -1,6 +1,7 @@
 class Products::Tutorial::StepsController < ApplicationController
+  before_action :set_product, only: [:create, :update]
   def create
-    @step = Product.find(params[:product_id]).tutorial.steps.create(step_params)
+    @step = @product.tutorial.steps.create(step_params)
     render json: @step
   end
 
@@ -16,6 +17,10 @@ class Products::Tutorial::StepsController < ApplicationController
   def destroy
     Step.destroy(params[:id])
     render json: {}, status: 200
+  end
+
+  def set_product
+    @product = Product.find(params[:product_id])
   end
 
   def step_params

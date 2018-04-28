@@ -209,6 +209,9 @@
     <LOAD_PATH number="0" />
     <I18N_FOLDERS number="1" string0="$MODULE_DIR$/config/locales" />
   </component>
+  <component name="RailwaysModuleConfiguration">
+    <option name="autoUpdate" value="true" />
+  </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
       <list>

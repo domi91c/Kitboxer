@@ -1,16 +1,23 @@
 class Products::TutorialController < ApplicationController
+  before_action :set_product, only: [:show, :update]
+
   def show
-    @tutorial = Product.find(params[:product_id]).tutorial
+    binding.pry
+    @tutorial = @product.tutorial
     render json: @tutorial
   end
 
   def update
-    @tutorial = Product.find(params[:product_id]).tutorial
+    @tutorial = @product.tutorial
     if @tutorial.update(tutorial_params)
       render json: { tutorial: @tutorial }, status: :created
     else
       render json: @tutorial.errors, status: :unprocessable_entity
     end
+  end
+
+  def set_product
+    @product = Product.find(params[:product_id])
   end
 
   def tutorial_params

@@ -259,3 +259,15 @@ trix-toolbar .history_tools {
 .js-hide-before-load {
   display: none;
 }
+
+.js-load {
+  z-index:         10000;
+  @extend .center
+}
+
+div.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

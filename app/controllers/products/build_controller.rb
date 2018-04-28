@@ -1,11 +1,10 @@
 class Products::BuildController < ApplicationController
+  before_action :set_product, only: [:show, :update]
   include Wicked::Wizard
   steps *Product.form_steps
 
   def show
-    @product = Product.find(params[:product_id])
-    @product.tutorial = Tutorial.new unless @product.tutorial
-    @tutorial = @product.tutorial
+    @tutorial = @product.tutorial || @product.create_tutorial
     @serialized_product = ActiveModel::Serializer::Adapter::Json
                               .new(ProductSerializer.new(@product))
                               .serializable_hash
@@ -20,12 +19,15 @@ class Products::BuildController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:product_id])
     @product.update(product_params(step))
     render_wizard(@product, {}, { product_id: params[:product_id] })
   end
 
   private
+
+  def set_product
+    @product = Product.find(params[:product_id])
+  end
 
   def product_params(step)
     permitted_attributes = case step
