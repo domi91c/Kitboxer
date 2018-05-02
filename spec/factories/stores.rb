@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :store do
+  factory :index do
     name "MyString"
     user nil
   end

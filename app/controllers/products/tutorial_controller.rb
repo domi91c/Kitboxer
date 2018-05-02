@@ -1,18 +1,43 @@
 class Products::TutorialController < ApplicationController
-  before_action :set_product, only: [:show, :update]
+  before_action :set_product, only: [:new, :edit, :show, :update]
+
+  def new
+    tutorial = @product.create_tutorial
+    @serialized_tutorial = TutorialSerializer.new(tutorial)
+  end
+
+  def edit
+    tutorial = @product.tutorial
+    @serialized_tutorial = TutorialSerializer.new(tutorial)
+  end
 
   def show
-    binding.pry
-    @tutorial = @product.tutorial
-    render json: @tutorial
+  end
+
+  def create
+    @tutorial_form = TutorialForm.new(@project.tutorial.new)
+    respond_to do |format|
+      if @tutorial_form.validate(tutorial_params)
+        @tutorial_form.save
+        format.html { render :show, notice: 'Tutoriial was successfully created.' }
+        format.json { render @tutorial, status: :created, location: @product }
+      else
+        @tutorial_form.sync(tutorial_params)
+        format.html { render :new }
+        format.json { render json: @tutorial.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
     @tutorial = @product.tutorial
-    if @tutorial.update(tutorial_params)
-      render json: { tutorial: @tutorial }, status: :created
+    @tutorial_form = TutorialForm.new(@tutorial)
+    if @tutorial_form.validate(tutorial_params)
+      @tutorial_form.save
+      render json: @tutorial, status: :created, location: @product
     else
-      render json: @tutorial.errors, status: :unprocessable_entity
+      @tutorial_form.sync(tutorial_params)
+      render json: @tutorial_form, status: :unprocessable_entity
     end
   end
 
@@ -22,10 +47,6 @@ class Products::TutorialController < ApplicationController
 
   def tutorial_params
     tutorial_params = params.require(:tutorial).permit(:id, :product_id, steps: [:id, :tutorial_id, :title, :body, :number, images: [:id, :image]])
-    tutorial_params[:steps_attributes] = tutorial_params.delete :steps
-    tutorial_params[:steps_attributes].each_with_index do |tp, i|
-      tp[:images_attributes] = tp.delete :images
-    end
-    tutorial_params.permit!
   end
+
 end

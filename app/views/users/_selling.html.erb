@@ -5,7 +5,7 @@
         <tbody>
         <% @products.each do |product| %>
           <tr>
-            <td><%= image_tag product.cover_thumb, style: 'height:100px' %></td>
+            <td><%= image_tag product.cover_thumb.url, style: 'height:100px' %></td>
             <td><%= link_to product.title, product %></td>
             <td><%= number_to_currency product.price %></td>
             <td>
@@ -19,6 +19,11 @@
                    href="#">Contact Seller
                 </a>
                 <%= link_to "Edit Product", product_build_path(id: Wicked::FIRST_STEP, product_id: product.id), class: 'dropdown-item' %>
+                <% if product.tutorial %>
+                  <%= link_to "Edit Tutorial", edit_product_tutorial_path(product_id: product.id), class: 'dropdown-item' %>
+                <% else %>
+                  <%= link_to "Create Tutorial", new_product_tutorial_path(product_id: product.id), class: 'dropdown-item' %>
+                <% end %>
               </div>
             </td>
           </tr>

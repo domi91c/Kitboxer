@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # global options responder -> makes sure OPTION request for CORS endpoints work
+  #
 
   devise_for :users, controllers: {
       sessions: 'users/sessions',
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   resources :subscriptions
 
   resources :products do
+    resources :tests, controller: 'products/tests'
     resources :build, controller: 'products/build'
     resources :favorites, controller: 'products/favorites', only: [:create, :update]
     resources :images, controller: 'products/images' do

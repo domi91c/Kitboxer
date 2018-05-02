@@ -4,8 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.5.0'
-gem 'rails', '~> 5.1.2'
+ruby '2.5.1'
+gem 'rails', '~> 5.2'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -101,4 +101,5 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'carrierwave-aws'
 
 
-
+gem "reform"
+gem 'reform-rails'

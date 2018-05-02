@@ -1,5 +1,6 @@
 class Products::Tutorial::StepsController < ApplicationController
-  before_action :set_product, only: [:create, :update]
+  before_action :set_product, only: [:create, :update, :destroy]
+
   def create
     @step = @product.tutorial.steps.create(step_params)
     render json: @step
@@ -8,6 +9,7 @@ class Products::Tutorial::StepsController < ApplicationController
   def update
     @step = Step.find(params[:id])
     if @step.update(step_params)
+      @product.tutorial.steps.each_with_index { |step, index| step.number = index + 1 }
       render json: { step: @step }, status: :created
     else
       render json: @step.errors, status: :unprocessable_entity
@@ -16,6 +18,7 @@ class Products::Tutorial::StepsController < ApplicationController
 
   def destroy
     Step.destroy(params[:id])
+    @product.tutorial.steps.each_with_index { |step, index| step.number = index + 1 }
     render json: {}, status: 200
   end
 

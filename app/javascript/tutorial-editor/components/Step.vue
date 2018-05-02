@@ -1,5 +1,6 @@
 <template>
     <div class="card mb-4">
+
         <crop-modal :step="step" :image="currentImage"></crop-modal>
         <b-modal
                 :id="`remove-step-modal-${step.id}`"
@@ -14,12 +15,30 @@
             <button type="button" class="close" v-b-modal="`remove-step-modal-${step.id}`">×</button>
             <h2 class="card-title">Step {{this.stepNumber}}
             </h2>
-            <form>
+            <form :data-vv-scope="step.id">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Step title..." v-model="title">
+                    <input type="text"
+                           name="title"
+                           class="form-control"
+                           :class="{'is-invalid': errors.has(`${step.id}.title`)}"
+                           placeholder="Step title..."
+                           v-validate="'required'"
+                           v-model="title">
+                    <span v-show="errors.has(`${step.id}.title`)" class="text-danger">
+                        {{ errors.first(`${step.id}.title`) }}
+                    </span>
                 </div>
                 <div class="form-group">
-                    <text-editor :placeholder="'Step instructions...'" :value="body" v-model="body"></text-editor>
+                    <text-editor
+                            @input="validate"
+                            :placeholder="'Step instructions...'"
+                            :data-vv-scope="step.id"
+                            :name="'body'"
+                            :value="body"
+                            :scope="step.id"
+                            :validate="'required'"
+                            v-model="body">
+                    </text-editor>
                 </div>
                 <div class="row ">
                     <step-image-button :step="step"></step-image-button>
@@ -46,6 +65,7 @@
   import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
 
   export default {
+    inject: ['$validator'],
     props: ['step'],
     components: {
       TextEditor,
@@ -89,6 +109,12 @@
         this.$root.$emit('bv::show::modal', `image-modal-${this.step.id}`)
       },
       removeStep(step) {
+      },
+      validate() {
+        this.$validator.validate(`${this.step.id}.body`)
+      },
+      change({ target }) {
+        this.$emit('input', target.value)
       },
     },
   }

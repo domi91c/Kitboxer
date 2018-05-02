@@ -6,16 +6,12 @@ class Image {
     this.http = axios.create({
       baseURL: 'http://localhost:3003/',
     })
-    this.object = {
-      _id: 0,
-    }
   }
 
   get(url) {
     return new Promise((resolve, reject) => {
       axios.get(url)
            .then((response) => {
-             debugger
              return resolve(response)
            })
            .catch((error) => {
@@ -23,6 +19,11 @@ class Image {
            })
     })
   }
+}
+
+let imageModel = {
+  id: null,
+  product_id: null
 }
 
 export default Image

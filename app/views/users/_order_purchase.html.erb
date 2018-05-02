@@ -1,5 +1,5 @@
 <div class="media">
-  <%= image_tag product.cover_thumb, style: 'height:100px', class: 'mr-3' %>
+  <%= image_tag product.cover_thumb.url, style: 'height:100px', class: 'mr-3' %>
   <div class="media-body ">
     <h4 class="mt-0"><%= link_to product.title, product_path(product) %> <span></span></h4>
     <h4 class="display-8 mt-1">@robot_super_store

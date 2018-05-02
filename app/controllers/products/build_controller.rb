@@ -1,5 +1,5 @@
 class Products::BuildController < ApplicationController
-  before_action :set_product, only: [:show, :update]
+  before_action :set_product, only: [:show, :edit, :update,]
   include Wicked::Wizard
   steps *Product.form_steps
 

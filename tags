@@ -971,6 +971,7 @@ Ta	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^function yd(a){v
 Ta	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^function yd(a){var b=O.gaDevIds;ka(b)&&0!=b.length&&a.set("&did",b.join(","),!0)}function vb(a){/;"	f
 Td	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^(function(){var $c=function(a){this.w=a||[]};$c.prototype.set=function(a){this.w[a]=!0};$c.proto/;"	f
 Td	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^(function(){var $c=function(a){this.w=a||[]};$c.prototype.set=function(a){this.w[a]=!0};$c.proto/;"	f
+TestsController	app/controllers/products/tests_controller.rb	/^class Products::TestsController < ApplicationController$/;"	c	module:Products
 The change you wanted was rejected.	public/422.html	/^      <h1>The change you wanted was rejected.<\/h1>$/;"	h
 The page you were looking for doesn't exist.	public/404.html	/^      <h1>The page you were looking for doesn't exist.<\/h1>$/;"	h
 ToolTip	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c
@@ -992,6 +993,7 @@ TrixEditor	public/packs-test/hello_react.js	/^var TrixEditor = (function (_super
 TurbolinksAdapter	public/packs-test/application.js	/^var TurbolinksAdapter = {$/;"	c
 Tutorial	app/models/tutorial.rb	/^class Tutorial < ApplicationRecord$/;"	c
 TutorialController	app/controllers/products/tutorial_controller.rb	/^class Products::TutorialController < ApplicationController$/;"	c	module:Products
+TutorialForm	app/forms/tutorial_form.rb	/^class TutorialForm < Reform::Form$/;"	c
 TutorialSerializer	app/serializers/tutorial_serializer.rb	/^class TutorialSerializer < ActiveModel::Serializer$/;"	c
 UIEventInterface	public/packs-test/hello_react.js	/^var UIEventInterface = {$/;"	c
 UPDATE_QUEUEING	public/packs-test/hello_react.js	/^var UPDATE_QUEUEING = {$/;"	c
@@ -1945,8 +1947,10 @@ cover_thumb	app/models/product.rb	/^  def cover_thumb$/;"	f	class:Product
 create	app/controllers/orders_controller.rb	/^  def create$/;"	f	class:OrdersController
 create	app/controllers/posts_controller.rb	/^  def create$/;"	f	class:PostsController
 create	app/controllers/products/images_controller.rb	/^  def create$/;"	f	class:ImagesController
+create	app/controllers/products/tests_controller.rb	/^  def create$/;"	f	class:TestsController
 create	app/controllers/products/tutorial/images_controller.rb	/^  def create$/;"	f	class:ImagesController
 create	app/controllers/products/tutorial/steps_controller.rb	/^  def create$/;"	f	class:StepsController
+create	app/controllers/products/tutorial_controller.rb	/^  def create$/;"	f	class:TutorialController
 create	app/controllers/products_controller.rb	/^  def create$/;"	f	class:ProductsController
 create	app/controllers/purchases/review_controller.rb	/^  def create$/;"	f	class:ReviewController
 create	app/controllers/purchases_controller.rb	/^  def create$/;"	f	class:PurchasesController
@@ -2515,6 +2519,8 @@ ecommerce	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^i
 edgeMode	public/packs-test/hello_react.js	/^  edgeMode: 'edgeMode',$/;"	p	class:ATTRS
 edit	app/controllers/posts_controller.rb	/^  def edit$/;"	f	class:PostsController
 edit	app/controllers/products/build_controller.rb	/^  def edit$/;"	f	class:BuildController
+edit	app/controllers/products/tests_controller.rb	/^  def edit$/;"	f	class:TestsController
+edit	app/controllers/products/tutorial_controller.rb	/^  def edit$/;"	f	class:TutorialController
 edit	app/controllers/products_controller.rb	/^  def edit$/;"	f	class:ProductsController
 ee	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^for(var c={},d=Math.min(a.length+1,b.length),e=0;e<d;e++)if("object"===typeof b[e]){for(var g in/;"	c
 ee	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^for(var c={},d=Math.min(a.length+1,b.length),e=0;e<d;e++)if("object"===typeof b[e]){for(var g in/;"	c
@@ -3291,6 +3297,7 @@ html	public/packs-test/hello_react.js	/^  html: createDOMFactory('html'),$/;"	p	
 html5	app/assets/javascripts/jquery.fancybox.js	/^				html5 : 1$/;"	p	class:defaults.youtube.params
 htmlFor	public/packs-test/hello_react.js	/^    htmlFor: 'for',$/;"	p	class:HTMLDOMPropertyConfig.DOMAttributeNames
 htmlFor	public/packs-test/hello_react.js	/^    htmlFor: 0,$/;"	p	class:HTMLDOMPropertyConfig.Properties
+http	app/javascript/tutorial-editor/store/http.js	/^let http = axios.create({$/;"	v
 httpEquiv	public/packs-test/hello_react.js	/^    httpEquiv: 'http-equiv'$/;"	p	class:HTMLDOMPropertyConfig.DOMAttributeNames
 httpEquiv	public/packs-test/hello_react.js	/^    httpEquiv: 0,$/;"	p	class:HTMLDOMPropertyConfig.Properties
 hydrate	public/packs-test/application.js	/^  function hydrate (elm, vnode, insertedVnodeQueue) {$/;"	f	function:createPatchFunction
@@ -3304,6 +3311,7 @@ ia	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^var u=function(a
 ia	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^var u=function(a,b,c){b==N||b.get(V);var d=Yd.get(a);if(!ea(d))return!1;b.plugins_=b.plugins_||n/;"	p	class:d
 icon	public/packs-test/hello_react.js	/^    icon: 0,$/;"	p	class:HTMLDOMPropertyConfig.Properties
 iconColor	app/assets/javascripts/stripe.js	/^        iconColor: '#fa755a',$/;"	p	class:style.invalid
+id	app/javascript/services/image.js	/^  id: null,$/;"	p	class:import
 id	public/packs-test/application.js	/^        id: image.id,$/;"	p	class:card
 id	public/packs-test/application.js	/^      id: parentId + ':' + i,$/;"	p	class:module.exports.part
 id	public/packs-test/application.js	/^      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }$/;"	p	class:stylesInDom
@@ -3350,6 +3358,7 @@ imgBlankColor	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(f
 imgHeight	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c	class:carouselSlide.props
 imgSrc	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c	class:carouselSlide.props
 imgWidth	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c	class:carouselSlide.props
+import	app/javascript/services/image.js	/^import Vue from 'vue'$/;"	c
 import	app/javascript/vuex-loading/index.js	/^import vLoading from '.\/v-loading.vue'$/;"	c
 in	public/packs-test/hello_react.js	/^  'in': 0,$/;"	p	class:ATTRS
 in2	public/packs-test/hello_react.js	/^  in2: 0,$/;"	p	class:ATTRS
@@ -3360,6 +3369,7 @@ indeterminate	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(f
 indeterminate	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:formCheckbox.watch
 index	app/controllers/posts_controller.rb	/^  def index$/;"	f	class:PostsController
 index	app/controllers/products/images_controller.rb	/^  def index$/;"	f	class:ImagesController
+index	app/controllers/products/tests_controller.rb	/^  def index$/;"	f	class:TestsController
 index	app/controllers/products_controller.rb	/^  def index$/;"	f	class:ProductsController
 index	app/controllers/purchases_controller.rb	/^  def index$/;"	f	class:PurchasesController
 index	app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
@@ -4039,6 +4049,8 @@ nd	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^!hc&&(mc
 needsNormalization	public/packs-test/application.js	/^function needsNormalization (el) {$/;"	f
 nestedFlushStartTime	public/packs-test/hello_react.js	/^    nestedFlushStartTime: performanceNow(),$/;"	p	class:pauseCurrentLifeCycleTimer.currentTimer
 new	app/controllers/posts_controller.rb	/^  def new$/;"	f	class:PostsController
+new	app/controllers/products/tests_controller.rb	/^  def new$/;"	f	class:TestsController
+new	app/controllers/products/tutorial_controller.rb	/^  def new$/;"	f	class:TutorialController
 new	app/controllers/products_controller.rb	/^  def new$/;"	f	class:ProductsController
 new	app/controllers/purchases/review_controller.rb	/^  def new$/;"	f	class:ReviewController
 newHandler	public/packs-test/application.js	/^  var newHandler = { value: value, modifiers: modifiers };$/;"	c	class:addHandler
@@ -4442,6 +4454,7 @@ processSlot	public/packs-test/application.js	/^function processSlot (el) {$/;"	f
 processUpdates	public/packs-test/hello_react.js	/^  processUpdates: function (parentNode, updates) {$/;"	m	class:DOMChildrenOperations
 productId	public/packs-test/application.js	/^            productId: _this.productId,$/;"	p	class:_loop.card
 productId	public/packs-test/application.js	/^        productId: this.productId,$/;"	p	class:card
+product_id	app/javascript/services/image.js	/^  product_id: null$/;"	p	class:import
 product_params	app/controllers/products/build_controller.rb	/^  def product_params(step)$/;"	f	class:BuildController
 product_params	app/controllers/products_controller.rb	/^  def product_params$/;"	f	class:ProductsController
 productionTip	public/packs-test/application.js	/^  productionTip: "test" !== 'production',$/;"	p	class:config
@@ -5003,8 +5016,12 @@ setValueForStyles	public/packs-test/hello_react.js	/^  setValueForStyles: functi
 set_cart	app/controllers/carts_controller.rb	/^  def set_cart$/;"	f	class:CartsController
 set_cover_image	app/controllers/products/images_controller.rb	/^  def set_cover_image$/;"	f	class:ImagesController
 set_post	app/controllers/posts_controller.rb	/^    def set_post$/;"	f	class:PostsController
+set_product	app/controllers/products/build_controller.rb	/^  def set_product$/;"	f	class:BuildController
 set_product	app/controllers/products/favorites_controller.rb	/^  def set_product$/;"	f	class:FavoritesController
 set_product	app/controllers/products/images_controller.rb	/^  def set_product$/;"	f	class:ImagesController
+set_product	app/controllers/products/tests_controller.rb	/^  def set_product$/;"	f	class:TestsController
+set_product	app/controllers/products/tutorial/steps_controller.rb	/^  def set_product$/;"	f	class:StepsController
+set_product	app/controllers/products/tutorial_controller.rb	/^  def set_product$/;"	f	class:TutorialController
 set_product	app/controllers/products_controller.rb	/^  def set_product$/;"	f	class:ProductsController
 set_purchase	app/controllers/purchases/review_controller.rb	/^  def set_purchase$/;"	f	class:ReviewController
 settings	app/assets/javascripts/jquery.fancybox.js	/^            settings : {$/;"	c	class:defaults.ajax
@@ -5043,6 +5060,7 @@ show	app/controllers/carts_controller.rb	/^  def show$/;"	f	class:CartsControlle
 show	app/controllers/orders_controller.rb	/^  def show$/;"	f	class:OrdersController
 show	app/controllers/posts_controller.rb	/^  def show$/;"	f	class:PostsController
 show	app/controllers/products/build_controller.rb	/^  def show$/;"	f	class:BuildController
+show	app/controllers/products/tests_controller.rb	/^  def show$/;"	f	class:TestsController
 show	app/controllers/products/tutorial_controller.rb	/^  def show$/;"	f	class:TutorialController
 show	app/controllers/products_controller.rb	/^  def show$/;"	f	class:ProductsController
 show	app/controllers/users/stores_controller.rb	/^  def show$/;"	f	class:StoresController
@@ -5654,6 +5672,7 @@ trim	public/packs-test/application.js	/^function trim(str) {$/;"	f
 trix	package.json	/^    "trix": "^0.11.2",$/;"	s	object:dependencies
 trix-vue2	package.json	/^    "trix-vue2": "^1.0.1",$/;"	s	object:dependencies
 tspan	public/packs-test/hello_react.js	/^  tspan: createDOMFactory('tspan')$/;"	p	class:ReactDOMFactories
+tutorial_params	app/controllers/products/tests_controller.rb	/^  def tutorial_params$/;"	f	class:TestsController
 tutorial_params	app/controllers/products/tutorial_controller.rb	/^  def tutorial_params$/;"	f	class:TutorialController
 twoArgumentPooler	public/packs-test/hello_react.js	/^  twoArgumentPooler: twoArgumentPooler,$/;"	p	class:PooledClass
 twoArgumentPooler	public/packs-test/hello_react.js	/^var twoArgumentPooler = function (a1, a2) {$/;"	f
@@ -5954,6 +5973,7 @@ update	app/controllers/posts_controller.rb	/^  def update$/;"	f	class:PostsContr
 update	app/controllers/products/build_controller.rb	/^  def update$/;"	f	class:BuildController
 update	app/controllers/products/favorites_controller.rb	/^  def update$/;"	f	class:FavoritesController
 update	app/controllers/products/images_controller.rb	/^  def update$/;"	f	class:ImagesController
+update	app/controllers/products/tests_controller.rb	/^  def update$/;"	f	class:TestsController
 update	app/controllers/products/tutorial/images_controller.rb	/^  def update$/;"	f	class:ImagesController
 update	app/controllers/products/tutorial/steps_controller.rb	/^  def update$/;"	f	class:StepsController
 update	app/controllers/products/tutorial_controller.rb	/^  def update$/;"	f	class:TutorialController

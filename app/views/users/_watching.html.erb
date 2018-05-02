@@ -5,7 +5,7 @@
         <tbody>
         <% @favorite_products.each do |product| %>
           <tr>
-            <td><%= image_tag product.cover_thumb, style: 'height:100px' %></td>
+            <td><%= image_tag product.cover_thumb.url, style: 'height:100px' %></td>
             <td><%= link_to product.title, product %></td>
             <td><%= number_to_currency product.price %></td>
           </tr>

@@ -7,9 +7,6 @@ const { startLoading, endLoading } = createActionHelpers({
   moduleName: 'loading',
 })
 
-axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector(
-    'meta[name="csrf-token"]').getAttribute('content')
-
 var BASE_URL = ''
 if (window.environment === 'development') {
   BASE_URL = 'http://localhost:3003'
@@ -17,19 +14,28 @@ if (window.environment === 'development') {
   BASE_URL = 'https://www.kitboxer.herokuapp.com'
 }
 
+this.http = axios.create({
+  baseURL: BASE_URL,
+})
+
+this.http.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector(
+    'meta[name="csrf-token"]').getAttribute('content')
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
     appReady: false,
-    product: {},
+    errors: {},
     tutorial: {
+      errors: {},
+      product_id: 0,
       steps: [{}],
     },
   },
   actions: {
     'UPLOAD_IMAGE': function({ commit, dispatch }, { step, image }) {
-      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images`
+      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/images`
       const formData = new FormData()
       formData.append('image[image]', image)
       formData.append('image[step_id]', step.id)
@@ -45,7 +51,7 @@ const store = new Vuex.Store({
                   })
     },
     'CROP_IMAGE': function({ commit, dispatch }, { step, image, cropData }) {
-      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
+      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/images/${image.id}`
       const formData = new FormData()
       formData.append('image[crop_x]', cropData['x'])
       formData.append('image[crop_y]', cropData['y'])
@@ -69,7 +75,7 @@ const store = new Vuex.Store({
                   })
     },
     'DELETE_IMAGE': function({ commit }, { step, image }) {
-      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/images/${image.id}`
+      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/images/${image.id}`
       return axios.delete(url)
                   .then(() => {
                     commit('REMOVE_IMAGE', {
@@ -80,8 +86,8 @@ const store = new Vuex.Store({
                     console.log(err)
                   })
     },
-    'ADD_STEP': function({ commit }) {
-      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/steps/`
+    addStep({ commit }) {
+      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/`
       return axios.post(url, {
         step: {
           body: '',
@@ -96,7 +102,7 @@ const store = new Vuex.Store({
     },
     deleteStep({ commit }, step) {
       // if (this.state.tutorial.steps.length <= 1) return
-      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/steps/${step.id}`
+      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/${step.id}`
       return axios.delete(url)
                   .then(res => {
                     commit('REMOVE_STEP', step)
@@ -104,12 +110,17 @@ const store = new Vuex.Store({
                   .catch(err => console.log())
     },
     submitTutorial({ commit }) {
-      const url = `${BASE_URL}/products/${this.state.product.id}/tutorial/`
+      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial`
       return axios.patch(url, { tutorial: this.state.tutorial })
                   .then(res => {
+                    console.dir('redirecting....')
+                    Turbolinks.visit('/products/' + this.state.productId + '/')
                     console.log('SUBMITTED TUTORIAL')
                   })
-                  .catch(err => console.log(err))
+                  .catch(err => {
+                    console.log(err)
+                    commit('SUBMIT_TUTORIAL_FAILED', err.response.data)
+                  })
     },
   },
   mutations: {
@@ -120,8 +131,8 @@ const store = new Vuex.Store({
       state.appReady = false
     },
     'SET_INITIAL_STATE': (state, { props }) => {
-      state.product = props.product.product
-      state.tutorial = props.tutorial.tutorial
+      state.tutorial = props
+      state.productId = props.product_id
     },
     'ADD_IMAGE': (state, { step, image }) => {
       let stepIdx = state.tutorial.steps.indexOf(step)
@@ -152,10 +163,14 @@ const store = new Vuex.Store({
       let stepIdx = state.tutorial.steps.indexOf(step)
       state.tutorial.steps.splice(stepIdx, 1)
     },
+    'SUBMIT_TUTORIAL_FAILED': (state, errors) => {
+      state.errors = errors
+    }
   },
 
   getters: {
-    product: state => state.tutorial.product,
+    errors: state => state.tutorial.errors,
+    productId: state => state.tutorial.product_id,
     tutorial: state => state.tutorial,
     steps: state => {
       return state.tutorial.steps.sort(

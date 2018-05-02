@@ -1,0 +1,13 @@
+<h1>Tests Edit View</h1>
+<hr>
+
+<%= form_for @tutorial_form, url: product_test_path(id: @tutorial_form.id, product_id: @tutorial_form.product_id) do |f| %>
+  <%= render 'layouts/errors', resource: @tutorial_form %>
+  <%= f.fields_for :steps do |ff| %>
+    <h2>Steps</h2>
+    <%= ff.label :title %>
+    <%= ff.text_field :title %>
+    <%= ff.text_field :body %>
+  <% end %>
+  <%= f.submit %>
+<% end %>

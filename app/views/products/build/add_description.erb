@@ -56,7 +56,9 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <%= form.label :body, 'Description', class: 'control-label' %>
-                  <%= form.trix_editor :body, class: 'form-control' %>
+                  <%#= form.trix_editor :body, class: 'form-control' %>
+                  <!--TODO add trix editor-->
+                  <%= form.text_area :body, class: 'form-control' %>
                 </div>
               </div>
             </div>

@@ -3,7 +3,7 @@ class Tutorial < ApplicationRecord
   has_many :steps, dependent: :destroy
   belongs_to :product
 
-  accepts_nested_attributes_for :steps
+  # accepts_nested_attributes_for :steps
 
   private
 

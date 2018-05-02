@@ -14,15 +14,15 @@
             </button>
         </div>
         <hr>
+        <button type="submit" class="btn btn-lg btn-success float-right" @click="handleSubmit">Submit Tutorial
+        </button>
     </div>
 </template>
 
 <script>
   import { mapGetters, mapActions } from 'vuex'
   import Step from './components/Step'
-  import Image from '../services/image.js'
-
-  let image = new Image()
+  import scrollIntoView from 'scroll-into-view'
 
   export default {
     components: {
@@ -30,23 +30,27 @@
     },
     computed: {
       ...mapGetters([
-        'product',
+        'productId',
         'tutorial',
         'steps',
       ]),
     },
-    mounted() {
-      image.get(`/products/${this.product.id}/tutorial`)
-           .then(res => {
-             console.dir(res)
-           })
-           .catch(err => {
-             console.log(err)
-           })
-    },
     methods: {
-      addStep(step) {
-        this.$store.dispatch('ADD_STEP')
+      ...mapActions([
+        'addStep',
+        'submitTutorial',
+      ]),
+      handleSubmit() {
+        this.$validator.validateScopes()
+            .then((result) => {
+              if (!result) {
+                scrollIntoView(this.$el.querySelector('[data-vv-id="' + this.$validator.errors.items[0].id + '"]'),
+                    { time: 250 })
+                return
+              }
+              this.submitTutorial()
+            }).catch(() => {
+        })
       },
     },
   }
