@@ -23,7 +23,9 @@
         <div class="card">
           <div class="card-body clearfix">
             <%= link_to "Previous", previous_wizard_path, class: 'btn btn-outline-default' %>
-            <%= form.submit 'Publish', class: 'btn btn-success pull-right' %>
+            <%= form.submit 'Publish', name: 'publish', class: 'btn btn-success ml-2 pull-right' %>
+            <%= form.submit 'Save', name: 'save', class: 'btn btn-primary ml-2 pull-right' %>
+            <%= form.submit 'Cancel', name: 'cancel', class: 'btn btn-outline-default ml-2 pull-right' %>
           </div>
         </div>
       </div>

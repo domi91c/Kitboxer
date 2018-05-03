@@ -17,6 +17,15 @@ class Products::BuildController < ApplicationController
 
   def update
     @product.update(product_params(step))
+    if params[:publish]
+
+    end
+    if params[:save]
+
+    end
+    if params[:cancel]
+
+    end
     render_wizard(@product, {}, { product_id: params[:product_id] })
   end
 
