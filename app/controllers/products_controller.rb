@@ -7,9 +7,9 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:search]
-      @products = Product.with_images.search(params[:search])
+      @products = Product.published.search(params[:search])
     else
-      @products = Product.with_images
+      @products = Product.published
     end
   end
 

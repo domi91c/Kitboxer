@@ -17,6 +17,8 @@ class Product < ApplicationRecord
   validates_presence_of :body, if: -> { required_for_step?(:add_description) }
   validate :has_images, if: -> { required_for_step?(:add_images) }
 
+  scope :published, -> { where(published: true) }
+  scope :unpublished, -> { where(published: false) }
   scope :favorited_by, -> (user) { joins(:favorites).where(favorites: { user: User.find(user.id) }) }
 
   def favorited_by?(user)

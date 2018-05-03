@@ -18,13 +18,15 @@ class Products::BuildController < ApplicationController
   def update
     @product.update(product_params(step))
     if params[:publish]
-
+      @product.published = true
+      flash[:notice] = "Published product."
     end
     if params[:save]
-
+      @product.published = false
+      flash[:notice] = "Product saved."
     end
     if params[:cancel]
-
+      @product.destroy
     end
     render_wizard(@product, {}, { product_id: params[:product_id] })
   end
@@ -48,7 +50,6 @@ class Products::BuildController < ApplicationController
   end
 
   def finish_wizard_path(params)
-    flash[:notice] = "Published new product."
     product_path(params[:product_id])
   end
 end
