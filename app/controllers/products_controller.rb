@@ -7,9 +7,9 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:search]
-      @products = Product.published.search(params[:search])
+      @products = Product.where(published: true).search(params[:search])
     else
-      @products = Product.published
+      @products = Product.where(published: true)
     end
   end
 

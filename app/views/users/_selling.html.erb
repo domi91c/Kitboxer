@@ -6,7 +6,13 @@
         <% @products.each do |product| %>
           <tr>
             <td><%= image_tag product.cover_thumb.url, style: 'height:100px' %></td>
-            <td><%= link_to product.title, product %></td>
+            <td>
+              <% if product.published %>
+                <span class="badge badge-success">Live</span>
+              <% else %>
+                <span class="badge badge-danger">Draft</span>
+              <% end %>
+              <%= link_to product.title, product %></td>
             <td><%= number_to_currency product.price %></td>
             <td>
               <button class="btn btn-outline-default btn-sm" data-toggle="dropdown">Actions

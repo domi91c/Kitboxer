@@ -1,6 +1,7 @@
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
     <div class=" col-xl-4  col-sm-12 messages js-messages alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %> " role="alert" style="display: none;">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     </div>
   <% end %>

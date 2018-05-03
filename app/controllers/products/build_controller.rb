@@ -4,11 +4,11 @@ class Products::BuildController < ApplicationController
   steps *Product.form_steps
 
   def show
-    @tutorial = @product.tutorial || @product.create_tutorial
     @serialized_product = ActiveModel::Serializer::Adapter::Json
                               .new(ProductSerializer.new(@product))
                               .serializable_hash
-    render_wizard(nil, {}, { product_id: params[:product_id] })
+    submit = params[:submit] if params[:submit]
+    render_wizard(nil, {}, { product_id: params[:product_id], submit: submit })
   end
 
   def edit
@@ -17,18 +17,8 @@ class Products::BuildController < ApplicationController
 
   def update
     @product.update(product_params(step))
-    if params[:publish]
-      @product.published = true
-      flash[:notice] = "Published product."
-    end
-    if params[:save]
-      @product.published = false
-      flash[:notice] = "Product saved."
-    end
-    if params[:cancel]
-      @product.destroy
-    end
-    render_wizard(@product, {}, { product_id: params[:product_id] })
+    submit = params[:submit].keys.first if params[:submit]
+    render_wizard(@product, {}, { product_id: params[:product_id], submit: submit })
   end
 
   private
@@ -50,7 +40,21 @@ class Products::BuildController < ApplicationController
   end
 
   def finish_wizard_path(params)
-    product_path(params[:product_id])
+    case params[:submit].to_sym
+    when :publish
+      Product.find(params[:product_id]).publish
+      flash[:notice] = "Your product has been published."
+      return product_path(params[:product_id])
+    when :create_tutorial
+      flash[:notice] = "Saved product as draft."
+      return new_product_tutorial_path(params[:product_id])
+    when :save_draft
+      flash[:notice] = "Saved product as draft."
+      return user_path(current_user)
+    when :cancel
+      Product.find(params[:product_id]).destroy
+      return user_path(current_user)
+    end
   end
-end
 
+end
