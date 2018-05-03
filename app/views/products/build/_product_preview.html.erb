@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-md-6">
+    <% if product.images.any? %>
+      <%= render 'products/product_carousel', images: product.images %>
+    <% end %>
+  </div>
+
+  <div class="col-md-5 ml-auto">
+    <div class="display-5" style="margin-bottom:1.5rem;"> <%= product.title %> </div>
+
+    <p class="display-6 text-muted"><%= number_to_currency(product.price) %>
+    </p>
+    <hr>
+    <p>
+      <%= render 'products/show_rating', score: 4 %>
+      &nbsp; &nbsp;
+      <strong>12 Reviews</strong>
+      &nbsp; &nbsp;
+      <%= link_to "show all", '#' %>
+    </p>
+    <p><%= product.tagline %></p>
+
+    <div class="product-actions">
+      &nbsp;
+        <div class="row">
+          <div class="number-field" style="user-select: none; display: flex; align-items: center">
+            <span class="ml-3 mr-2"><i class="fa fa-minus cart-icon"></i></span>
+            &nbsp;
+            <%= text_field_tag :cart_quantity, nil, class: 'form-control ', style: 'width: 55px; display:inline', id: 'product-count', value: 1 %>
+            <span class="mx-2"><i class="fa fa-plus cart-icon"></i></span>
+            &nbsp;
+          </div>
+          <%= button_tag(type: "button", class: "btn btn-primary") do %>
+            <i class="fa fa-shopping-cart"></i> Buy
+          <% end %>
+          <%= button_tag(type: "button", class: "btn btn-info ml-2") do %>
+            <i class="fa fa-star"></i> Watch
+          <% end %>
+        </div>
+    </div>
+    <table class="table table-hover mt-4">
+      <tbody>
+      <tr>
+        <td class="has-text-right"><strong>Item ID</strong></td>
+        <td>1234</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><strong>Seller</strong></td>
+        <td>jsmith</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><strong>Added</strong></td>
+        <td>3 days ago</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><strong>Views</strong></td>
+        <td>3</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="nav nav-tabs page-header-tabs ">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#description" role="tab" aria-controls="home">Description</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" data-toggle="tab" href="#reviews" role="tab" aria-controls="profile">Reviews</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#shipping" role="tab" aria-controls="messages">Shipping</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" data-toggle="tab" href="#tutorial" role="tab" aria-controls="settings">Tutorial</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="description" role="tabpanel">
+        <div class="card mt-3 pa-4">
+          <div class="card-body">
+            <%= product.body.html_safe %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

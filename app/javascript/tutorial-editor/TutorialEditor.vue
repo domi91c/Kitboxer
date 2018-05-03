@@ -14,7 +14,13 @@
             </button>
         </div>
         <hr>
-        <button type="submit" class="btn btn-lg btn-success float-right" @click="handleSubmit">Submit Tutorial
+        <button type="submit" class="btn btn-lg btn-success float-right" @click="handleSubmit">
+            <span v-if="$loading.isLoading('submitting tutorial')">
+               Submitting <i class="fa fa-spinner fa-spin"></i>
+            </span>
+            <span v-else>
+                Submit Tutorial
+            </span>
         </button>
     </div>
 </template>

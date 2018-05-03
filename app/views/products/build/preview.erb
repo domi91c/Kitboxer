@@ -1,0 +1,32 @@
+<div class="wizard container mt-5 ">
+  <%= form_for @product, url: wizard_path, method: :put do |form| %>
+    <%= form.hidden_field :id %>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="box">
+          <div class="card-body clearfix">
+            <h1>Listing Preview</h1>
+            <hr>
+            <%= render 'product_preview', product: @product %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <%= render 'wizard_steps' %>
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col-md-9 push-md-3">
+        <div class="card">
+          <div class="card-body clearfix">
+            <%= link_to "Previous", previous_wizard_path, class: 'btn btn-outline-default' %>
+            <%= form.submit 'Publish', class: 'btn btn-success pull-right' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,5 @@
 <template>
     <div class="card mb-4">
-
         <crop-modal :step="step" :image="currentImage"></crop-modal>
         <b-modal
                 :id="`remove-step-modal-${step.id}`"

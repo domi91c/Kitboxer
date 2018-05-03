@@ -9,7 +9,7 @@ const { startLoading, endLoading } = createActionHelpers({
 
 var BASE_URL = ''
 if (window.environment === 'development') {
-  BASE_URL = 'http://localhost:3003'
+  BASE_URL = 'http://localhost:3009'
 } else if (window.environment === 'production') {
   BASE_URL = 'https://www.kitboxer.herokuapp.com'
 }
@@ -26,7 +26,6 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     appReady: false,
-    errors: {},
     tutorial: {
       errors: {},
       product_id: 0,
@@ -92,7 +91,8 @@ const store = new Vuex.Store({
         step: {
           body: '',
           title: '',
-          number: this.state.tutorial.steps.length + 1,
+          number: this.state.tutorial.steps[this.state.tutorial.steps.length -
+          1].number + 1,
         },
       })
                   .then(res => {
@@ -109,17 +109,17 @@ const store = new Vuex.Store({
                   })
                   .catch(err => console.log())
     },
-    submitTutorial({ commit }) {
+    submitTutorial({ commit, dispatch }) {
       const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial`
+      startLoading(dispatch, `submitting tutorial`)
       return axios.patch(url, { tutorial: this.state.tutorial })
                   .then(res => {
-                    console.dir('redirecting....')
+                    endLoading(dispatch, `submitting tutorial`)
                     Turbolinks.visit('/products/' + this.state.productId + '/')
                     console.log('SUBMITTED TUTORIAL')
                   })
                   .catch(err => {
                     console.log(err)
-                    commit('SUBMIT_TUTORIAL_FAILED', err.response.data)
                   })
     },
   },
@@ -163,9 +163,6 @@ const store = new Vuex.Store({
       let stepIdx = state.tutorial.steps.indexOf(step)
       state.tutorial.steps.splice(stepIdx, 1)
     },
-    'SUBMIT_TUTORIAL_FAILED': (state, errors) => {
-      state.errors = errors
-    }
   },
 
   getters: {

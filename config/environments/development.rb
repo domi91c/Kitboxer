@@ -49,14 +49,14 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address: "smtp.sendgrid.net",
       port: 587,
-      domain: 'localhost:3003',
+      domain: 'localhost:3009',
       authentication: "plain",
       enable_starttls_auto: true,
       user_name: ENV['SENDGRID_USERNAME'],
       password: ENV['SENDGRID_PASSWORD'],
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { host: 'localhost:3003' }
+  config.action_mailer.default_url_options = { host: 'localhost:3009' }
   # config.action_mailer.delivery_method = :smtp
   config.action_mailer.delivery_method = :letter_opener
 

@@ -5,7 +5,7 @@ import store from './index.js'
 
 let baseUrl = ''
 if (window.environment === 'development') {
-  baseUrl = 'http://localhost:3003'
+  baseUrl = 'http://localhost:3009'
 } else if (window.environment === 'production') {
   baseUrl = 'https://www.kitboxer.herokuapp.com'
 }

@@ -9,7 +9,6 @@ class Products::Tutorial::StepsController < ApplicationController
   def update
     @step = Step.find(params[:id])
     if @step.update(step_params)
-      @product.tutorial.steps.each_with_index { |step, index| step.number = index + 1 }
       render json: { step: @step }, status: :created
     else
       render json: @step.errors, status: :unprocessable_entity
@@ -18,7 +17,6 @@ class Products::Tutorial::StepsController < ApplicationController
 
   def destroy
     Step.destroy(params[:id])
-    @product.tutorial.steps.each_with_index { |step, index| step.number = index + 1 }
     render json: {}, status: 200
   end
 

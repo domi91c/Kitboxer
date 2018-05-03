@@ -30,7 +30,7 @@ class Product < ApplicationRecord
   end
 
   cattr_accessor :form_steps do
-    %w(add_description add_images add_tutorial)
+    %w(add_description add_images preview)
   end
   attr_accessor :form_step
 

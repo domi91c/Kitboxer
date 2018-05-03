@@ -19,7 +19,7 @@ class Products::TutorialController < ApplicationController
     respond_to do |format|
       if @tutorial_form.validate(tutorial_params)
         @tutorial_form.save
-        format.html { render :show, notice: 'Tutoriial was successfully created.' }
+        format.html { render :show, notice: 'Tutorial was successfully created.' }
         format.json { render @tutorial, status: :created, location: @product }
       else
         @tutorial_form.sync(tutorial_params)

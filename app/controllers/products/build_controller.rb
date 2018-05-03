@@ -8,9 +8,6 @@ class Products::BuildController < ApplicationController
     @serialized_product = ActiveModel::Serializer::Adapter::Json
                               .new(ProductSerializer.new(@product))
                               .serializable_hash
-    @serialized_tutorial = ActiveModel::Serializer::Adapter::Json
-                               .new(TutorialSerializer.new(@tutorial))
-                               .serializable_hash
     render_wizard(nil, {}, { product_id: params[:product_id] })
   end
 
@@ -35,13 +32,14 @@ class Products::BuildController < ApplicationController
                              [:title, :price, :tagline, :category, :body]
                            when 'add_images'
                              [images_attributes: [:image, :image_id, :user_id]]
-                           when 'add_tutorial'
+                           when 'preview'
                              [tutorial_attributes: [:image, :image_id, :user_id]]
                            end
     params.require(:product).permit(permitted_attributes).merge(form_step: step)
   end
 
   def finish_wizard_path(params)
+    flash[:notice] = "Published new product."
     product_path(params[:product_id])
   end
 end
