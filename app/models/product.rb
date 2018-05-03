@@ -9,12 +9,14 @@ class Product < ApplicationRecord
   has_many :purchases
   has_many :reviews, through: :purchases
 
-  validates_presence_of :title, if: -> { required_for_step?(:add_description) }
-  validates_presence_of :category, if: -> { required_for_step?(:add_description) }
-  validates_presence_of :tagline, if: -> { required_for_step?(:add_description) }
-  validates_presence_of :body, if: -> { required_for_step?(:add_description) }
-  validates_presence_of :price, if: -> { required_for_step?(:add_description) }
-  validates_presence_of :body, if: -> { required_for_step?(:add_description) }
+  validates :title, presence: true, if: -> { required_for_step?(:add_description) }
+  validates :category, presence: true, if: -> { required_for_step?(:add_description) }
+  validates :tagline, presence: true, if: -> { required_for_step?(:add_description) }
+  validates :body, presence: true, if: -> { required_for_step?(:add_description) }
+  validates :price, presence: true, if: -> { required_for_step?(:add_description) }
+  validates :body, presence: true, if: -> { required_for_step?(:add_description) }
+  validates :price, presence: true, numericality: true, if: -> { required_for_step?(:add_description) }
+  validates :quantity, presence: true, numericality: { only_integer: true }, if: -> { required_for_step?(:add_description) }
   validate :has_images, if: -> { required_for_step?(:add_images) }
 
   # scope :published?, -> { where(published: true) }

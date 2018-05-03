@@ -30,7 +30,7 @@ class Products::BuildController < ApplicationController
   def product_params(step)
     permitted_attributes = case step
                            when 'add_description'
-                             [:title, :price, :tagline, :category, :body]
+                             [:title, :price, :tagline, :category, :body, :quantity]
                            when 'add_images'
                              [images_attributes: [:image, :image_id, :user_id]]
                            when 'preview'

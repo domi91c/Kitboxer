@@ -1,11 +1,11 @@
-<div class="wizard container mt-5">
+<div class="wizard mt-5">
   <%= form_for @product, url: wizard_path, method: :put, validate: true do |form| %>
     <div class="row">
       <div class="col-md-9 push-lg-3">
         <div class="card">
           <div class="card-body clearfix">
             <h1>Description</h1>
-
+            <hr>
             <%= render 'layouts/errors', resource: @product %>
 
             <div class="row">
@@ -45,7 +45,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <%= form.label :quantity, 'Quantity', class: 'control-label' %>
-                      <%= form.number_field :quantity, validate: true, class: 'form-control' %>
+                      <%= form.number_field :quantity,validate: true, class: 'form-control' %>
                     </div>
                   </div>
                 </div>
@@ -56,8 +56,6 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <%= form.label :body, 'Description', class: 'control-label' %>
-                  <%#= form.trix_editor :body, class: 'form-control' %>
-                  <!--TODO add trix editor-->
                   <%= form.trix_editor :body, class: 'form-control' %>
                 </div>
               </div>

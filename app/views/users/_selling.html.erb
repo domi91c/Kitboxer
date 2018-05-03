@@ -19,11 +19,6 @@
                 <span class="ml-1 dropdown-toggle"></span>
               </button>
               <div class="dropdown-menu ">
-                <a class="dropdown-item"
-                   data-toggle="modal"
-                   data-target=".js-contact-seller-modal"
-                   href="#">Contact Seller
-                </a>
                 <%= link_to "Edit Product", product_build_path(id: Wicked::FIRST_STEP, product_id: product.id), class: 'dropdown-item' %>
                 <% if product.tutorial %>
                   <%= link_to "Edit Tutorial", edit_product_tutorial_path(product_id: product.id), class: 'dropdown-item' %>
