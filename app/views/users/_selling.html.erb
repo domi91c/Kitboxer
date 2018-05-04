@@ -1,4 +1,5 @@
-<div class="col-md-8 mx-auto">
+<div class="col-md-8 mx-auto clearfix">
+  <div class="text-center"><%= page_entries_info @products %></div>
   <div class="card">
     <div class="card-body">
       <table class="table table--is-vcentered">
@@ -19,7 +20,8 @@
                 <span class="ml-1 dropdown-toggle"></span>
               </button>
               <div class="dropdown-menu ">
-                <%= link_to "Edit Product", product_build_path(id: Wicked::FIRST_STEP, product_id: product.id), class: 'dropdown-item' %>
+                <%= link_to "Edit Listing", product_build_path(id: Wicked::FIRST_STEP, product_id: product.id), class: 'dropdown-item' %>
+                <%= link_to "Archive Listing", product_build_path(id: Wicked::FIRST_STEP, product_id: product.id), class: 'dropdown-item' %>
                 <% if product.tutorial %>
                   <%= link_to "Edit Tutorial", edit_product_tutorial_path(product_id: product.id), class: 'dropdown-item' %>
                 <% else %>
@@ -33,5 +35,11 @@
       </table>
     </div>
   </div>
+  <br>
+  <div class="text-center"><%= page_entries_info @products %></div>
+  <br>
+  <div class="pagination center">
+    <%= will_paginate @products %></div>
+  <br>
 </div>
 

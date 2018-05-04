@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     unless @user == current_user
       redirect_to root_path, alert: "Access denied."
     end
-    @products = @user.products
+    @products = @user.products.paginate(page: params[:page], per_page: 10)
+
     @favorite_products = Product.favorited_by(@user)
     @orders = @user.orders
     if @user.customer

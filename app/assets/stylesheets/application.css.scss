@@ -261,13 +261,27 @@ trix-toolbar .history_tools {
 }
 
 .js-load {
-  z-index:         10000;
-  @extend .center
+  z-index: 10000;
+  @extend .fixed-center
 }
 
-div.center {
-  position: fixed;
-  top: 50%;
-  left: 50%;
+.fixed-center {
+  position:  fixed;
+  top:       50%;
+  left:      50%;
   transform: translate(-50%, -50%);
+}
+
+.pagination.center,
+.pagination.center ul {
+  float:    left;
+  position: relative;
+}
+
+.pagination.center {
+  left: 50%;
+}
+
+.pagination.center ul {
+  left: -50%;
 }
