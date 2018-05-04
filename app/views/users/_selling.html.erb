@@ -13,7 +13,14 @@
               <% else %>
                 <span class="badge badge-danger">Draft</span>
               <% end %>
-              <%= link_to product.title, product %></td>
+              <%= link_to truncate(product.title, length: 100, seperator: ' '), product %>
+              <% if product.published %>
+                <hr >
+                <i class="fa fa-pencil"></i> 1000 Views |
+                <i class="fa fa-globe"></i> 819 Sales |
+                <i class="fa fa-eye"></i> 81 Watching
+              <% end %>
+            </td>
             <td><%= number_to_currency product.price %></td>
             <td>
               <button class="btn btn-outline-default btn-sm" data-toggle="dropdown">Actions
@@ -37,7 +44,6 @@
   </div>
   <br>
   <div class="text-center"><%= page_entries_info @products %></div>
-  <br>
   <div class="pagination center">
     <%= will_paginate @products %></div>
   <br>

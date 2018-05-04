@@ -40,9 +40,10 @@ class Products::BuildController < ApplicationController
   end
 
   def finish_wizard_path(params)
+    product = Product.find(params[:product_id])
     case params[:submit].to_sym
     when :publish
-      Product.find(params[:product_id]).publish
+      product.publish
       flash[:notice] = "Your product has been published."
       return product_path(params[:product_id])
     when :create_tutorial
@@ -52,7 +53,8 @@ class Products::BuildController < ApplicationController
       flash[:notice] = "Saved product as draft."
       return user_path(current_user)
     when :cancel
-      Product.find(params[:product_id]).destroy
+      product.destroy
+      flash[:warning] = "Your product was deleted."
       return user_path(current_user)
     end
   end

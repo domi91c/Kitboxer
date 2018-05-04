@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     end
     @products = @user.products.paginate(page: params[:page], per_page: 10)
 
-    @favorite_products = Product.favorited_by(@user)
+    @favorite_products = Product.favorited_by(@user).paginate(page: params[:page], per_page: 10)
     @orders = @user.orders
     if @user.customer
       @cards = @user.customer.sources

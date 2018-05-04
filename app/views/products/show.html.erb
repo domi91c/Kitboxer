@@ -1,10 +1,17 @@
-<% if !@product.published || @product.user == current_user %>
+<% if @product.user == current_user %>
   <% content_for :header do %>
     <div class="page-header">
-      <h5>This product isn't live yet. Click <a href="#">here</a> to publish it.</h5>
+      <div class="container-fluid">
+        <% if @product.published %>
+          <h5>Product Statistics </h5>
+        <% else %>
+          <h5>This product isn't live yet. Click <a href="#">here</a> to publish it.</h5>
+        <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>
+
 <section class="card">
   <div class="card-body">
     <div class="row">

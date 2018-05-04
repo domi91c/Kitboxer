@@ -17,12 +17,13 @@
     <div class=" col-md-6 mx-auto">
       <%= link_to (image_tag 'logos/kitboxer_logo.png', width: 170), products_path %>
       <h1 class="display-2">Kitboxer</h1>
-      <h2 class="display-5">Coming March 2018.</h2>
+      <h2 class="display-5">Coming July 2018.</h2>
       <br>
 
       <div class="js-subscription-container col-lg-7 mx-auto">
         <%= form_with(model: Subscription.new, class: 'js-subscription-form', validate: true) do |form| %>
           <div class="error-block"></div>
+          <p>Subscribe now for updates.</p>
           <div class="input-group">
             <%= form.text_field :email, class: 'coming-soon-form-control form-control', placeholder: 'Email', validate: { precense: true } %>
             <span class="input-group-btn">

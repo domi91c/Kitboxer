@@ -1,3 +1,7 @@
+# Cart
+# a Cart is a list of Products that a buyer wants to buy. It's managed by Redis.
+# I'm not sure if Redis was the right choice. Probably could have just used two
+# SQL tables, Cart and LineItem.
 class Cart
   class << self
     def [](user)
@@ -33,6 +37,5 @@ class Cart
     def empty
       $redis.del @cart_name
     end
-
   end
 end

@@ -115,8 +115,7 @@ const store = new Vuex.Store({
       return axios.patch(url, { tutorial: this.state.tutorial })
                   .then(res => {
                     endLoading(dispatch, `submitting tutorial`)
-                    // Turbolinks.visit('/products/' + this.state.productId + '/')
-                    console.log('SUBMITTED TUTORIAL')
+                    Turbolinks.visit('/products/' + this.state.productId + '/')
                   })
                   .catch(err => {
                     console.log(err)

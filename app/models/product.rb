@@ -28,8 +28,8 @@ class Product < ApplicationRecord
   end
 
   def publish
-    published = true
-    save
+    self.published = true
+    self.save
   end
 
   def has_images

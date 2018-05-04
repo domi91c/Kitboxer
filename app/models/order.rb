@@ -1,3 +1,5 @@
+# == Order
+# an Order is created when a buyer checks out. It contains a list of Purchases.
 class Order < ApplicationRecord
   after_create :create_purchases, :empty_cart
 
