@@ -23,6 +23,6 @@ document.addEventListener('turbolinks:load', function() {
   // fixes bug with multiple active tabs
   $('.nav-tabs .nav-item .nav-link')
       .click(function() {
-        $('.active').removeClass('active')
+        this.find('.active').removeClass('active')
       })
 })

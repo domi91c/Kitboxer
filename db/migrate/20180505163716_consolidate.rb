@@ -1,7 +1,27 @@
-class Consolidate < ActiveRecord::Migration[5.1]
+class Consolidate < ActiveRecord::Migration[5.2]
   def change
-    # These are extensions that must be enabled in order to support this database
     enable_extension "plpgsql"
+
+    create_table "favorites", force: :cascade do |t|
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.integer "user_id"
+      t.integer "product_id"
+    end
+
+    create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
+      t.string "slug", null: false
+      t.integer "sluggable_id", null: false
+      t.string "sluggable_type", limit: 50
+      t.string "scope"
+      t.datetime "created_at"
+      t.datetime "deleted_at"
+      t.index ["deleted_at"], name: "index_friendly_id_slugs_on_deleted_at"
+      t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+      t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+      t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+      t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+    end
 
     create_table "guides", id: :serial, force: :cascade do |t|
       t.integer "kit_id"
@@ -15,6 +35,7 @@ class Consolidate < ActiveRecord::Migration[5.1]
       t.string "image"
       t.integer "product_id"
       t.boolean "cover_image"
+      t.integer "step_id"
     end
 
     create_table "kits", id: :serial, force: :cascade do |t|
@@ -33,6 +54,13 @@ class Consolidate < ActiveRecord::Migration[5.1]
       t.string "stripe_charge_id"
     end
 
+    create_table "posts", force: :cascade do |t|
+      t.string "title"
+      t.text "body"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+    end
+
     create_table "products", force: :cascade do |t|
       t.string "title"
       t.text "body"
@@ -43,6 +71,8 @@ class Consolidate < ActiveRecord::Migration[5.1]
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
       t.string "category"
+      t.integer "favorites_count"
+      t.boolean "published"
       t.index ["user_id"], name: "index_products_on_user_id"
     end
 
@@ -53,6 +83,58 @@ class Consolidate < ActiveRecord::Migration[5.1]
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
     end
+
+    create_table "ratings", force: :cascade do |t|
+      t.bigint "review_id"
+      t.string "context"
+      t.integer "score"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.text "body"
+      t.index ["review_id"], name: "index_ratings_on_review_id"
+    end
+
+    create_table "reviews", force: :cascade do |t|
+      t.bigint "user_id"
+      t.bigint "purchase_id"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.string "summary"
+      t.text "body"
+      t.index ["purchase_id"], name: "index_reviews_on_purchase_id"
+      t.index ["user_id"], name: "index_reviews_on_user_id"
+    end
+
+    create_table "steps", force: :cascade do |t|
+      t.bigint "tutorial_id"
+      t.string "title"
+      t.text "body"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.integer "number"
+      t.index ["tutorial_id"], name: "index_steps_on_tutorial_id"
+    end
+
+    create_table "stores", force: :cascade do |t|
+      t.string "name"
+      t.bigint "user_id"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.index ["user_id"], name: "index_stores_on_user_id"
+    end
+
+    create_table "subscriptions", force: :cascade do |t|
+      t.string "email"
+      t.boolean "active", default: true
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+      t.index ["email"], name: "index_subscriptions_on_email", unique: true
+    end
+
+    create_table "tutorials", force: :cascade do |t|
+      t.integer "product_id"
+    end
+
     create_table "users", force: :cascade do |t|
       t.string "email", default: "", null: false
       t.string "encrypted_password", default: "", null: false
@@ -95,5 +177,10 @@ class Consolidate < ActiveRecord::Migration[5.1]
     end
 
     add_foreign_key "products", "users"
+    add_foreign_key "ratings", "reviews"
+    add_foreign_key "reviews", "purchases"
+    add_foreign_key "reviews", "users"
+    add_foreign_key "steps", "tutorials"
+    add_foreign_key "stores", "users"
   end
 end
