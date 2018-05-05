@@ -19,4 +19,10 @@ document.addEventListener('turbolinks:load', function() {
   $('.carousel').carousel({
     interval: false,
   })
+
+  // fixes bug with multiple active tabs
+  $('.nav-tabs .nav-item .nav-link')
+      .click(function() {
+        $('.active').removeClass('active')
+      })
 })

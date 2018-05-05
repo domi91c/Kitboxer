@@ -112,6 +112,10 @@
     <orderEntry type="library" scope="PROVIDED" name="json (v2.1.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jsonapi-renderer (v0.2.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v1.5.6, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari (v1.1.1, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari-actionview (v1.1.1, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari-activerecord (v1.1.1, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari-core (v1.1.1, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.3, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="letter_opener (v1.6.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.1.5, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
@@ -214,8 +218,6 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.3, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="wicked (v1.3.2, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.1.6, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="will_paginate-bootstrap4 (v0.2.2, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.0.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeus (v0.15.14, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
   </component>

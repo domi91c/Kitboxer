@@ -15,12 +15,11 @@
       </table>
     </div>
   </div>
-<% if @favorite_products.count > 20 %>
+  <br>
   <div class="text-center"><%= page_entries_info @favorite_products %></div>
   <div class="pagination center">
-    <%= will_paginate @favorite_products %></div>
+    <%= paginate @favorite_products %></div>
   <br>
-<% end %>
 </div>
 
 
