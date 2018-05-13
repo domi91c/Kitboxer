@@ -9,9 +9,18 @@
     <div class="collapse navbar-collapse js-collapse">
       <span class="nav-divider d-none d-md-block"></span>
       <ul class="navbar-nav">
+        <li class="nav-item ml-2 mb-3 mr-4">
+          <% if user_signed_in? %>
+            <%= link_to conversations_path do %>
+              <i class="fa fa-envelope nav-icon" style="">
+                <span class="badge"><%= current_user.mailbox.inbox.unread(current_user).count if current_user.mailbox.inbox.unread(current_user).count > 0 %></span>
+              </i>
+            <% end %>
+          <% end %>
+        </li>
         <li class="nav-item ml-2 mb-3 mr-2 " style="">
           <% if user_signed_in? %>
-            <%= link_to cart_path class: 'nav-link' do %>
+            <%= link_to cart_path do %>
               <i class="fa fa-shopping-cart nav-icon">
                 <span class="badge"><%= current_user.cart_count if current_user.cart_count > 0 %></span>
               </i>
@@ -20,7 +29,7 @@
         </li>
         <li class="nav-item ml-4 mb-3 mr-2" style="">
           <% if user_signed_in? %>
-            <%= link_to user_store_path(current_user), html: { class: 'nav-link' } do %>
+            <%= link_to user_store_path(current_user) do %>
               <i class="material-icons md-24 store nav-icon">
               </i>
             <% end %>

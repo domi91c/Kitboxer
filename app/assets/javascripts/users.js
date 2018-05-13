@@ -1,3 +1,4 @@
+/*
 document.addEventListener('turbolinks:load', function() {
   if (location.hash) {
     $('a[href=\'' + location.hash + '\']').tab('show')
@@ -26,4 +27,4 @@ document.addEventListener('turbolinks:load', function() {
         $('a[data-toggle=\'tab\']').first().attr('href')
     $('a[href=\'' + anchor + '\']').tab('show')
   })
-})
+})*/

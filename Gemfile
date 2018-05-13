@@ -101,13 +101,14 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'carrierwave-aws'
 
 
-gem "reform"
+gem 'reform'
 gem 'reform-rails'
 
-# gem 'will_paginate', '~> 3.1.0'
-#
-# gem 'will_paginate-bootstrap4'
-
-
 gem 'kaminari'
+
+
+gem 'mailboxer'
+
+
+gem 'active_type'
 

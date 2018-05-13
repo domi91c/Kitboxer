@@ -1,0 +1,34 @@
+<div class="conversation__header">
+  <h4><%= @conversation.subject %></h4>
+  <% unless @conversation.messages.first.notified_object.nil? %>
+    <h5>RE:  <%= link_to @notified_object.product.title, @notified_object.product %></h5>
+  <% end %>
+</div>
+
+<div class="conversation__body">
+  <% @conversation.messages.each do |receipt| %>
+    <div class="conversation__message
+                <%= receipt.sender != current_user ? 'conversation__message--right' : '' %>">
+      <strong><%= receipt.sender.full_name %></strong>
+      <%= simple_format receipt.body %>
+
+      <% if receipt.attachment? %>
+        <strong>Attachment:</strong>
+        <%= link_to receipt.attachment.file.filename, receipt.attachment.url, target: :blank %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="conversation__footer">
+  <%= form_for @message, url: conversation_messages_path(@conversation) do |f| %>
+    <div class="conversation__inputGroup">
+      <%= f.text_area :body, placeholder: 'Type your message here...', class: 'form-control' %>
+      <div class="input-group-addon">
+        <%= f.file_field :attachment, class: 'conversation__fileInput' %>
+      </div>
+    </div>
+    <%= f.submit "Send", class: 'btn btn-success form-control' %>
+  <% end %>
+</div>
+

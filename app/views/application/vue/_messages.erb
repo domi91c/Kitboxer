@@ -1,0 +1,6 @@
+<%= content_tag :div,
+                class: 'v-messages',
+                data: {
+                    conversations: @serialized_conversations,
+                }.to_json do %>
+<% end %>

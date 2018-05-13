@@ -432,12 +432,10 @@ ATTRIBUTE_NAME_START_CHAR	public/packs-test/hello_react.js	/^  ATTRIBUTE_NAME_ST
 ATTRS	public/packs-test/hello_react.js	/^var ATTRS = {$/;"	c
 AUTO	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	p	class:AttachmentMap$1
 Accept	public/packs-test/application.js	/^    'Accept': 'application\/json, text\/plain, *\/*'$/;"	p	class:defaults.headers.common
-AddBodyToRatings	db/migrate/20180426053515_add_body_to_ratings.rb	/^class AddBodyToRatings < ActiveRecord::Migration[5.1]$/;"	c
-AddFavoritesCountToProduct	db/migrate/20180424043635_add_favorites_count_to_product.rb	/^class AddFavoritesCountToProduct < ActiveRecord::Migration[5.1]$/;"	c
-AddNumberToStep	db/migrate/20180407222042_add_number_to_step.rb	/^class AddNumberToStep < ActiveRecord::Migration[5.1]$/;"	c
-AddProductIdAndUserIdToFavorites	db/migrate/20180424042144_add_product_id_and_user_id_to_favorites.rb	/^class AddProductIdAndUserIdToFavorites < ActiveRecord::Migration[5.1]$/;"	c
-AddStepIdToImages	db/migrate/20180104023640_add_step_id_to_images.rb	/^class AddStepIdToImages < ActiveRecord::Migration[5.1]$/;"	c
-AddSummaryAndBodyToReviews	db/migrate/20180426054812_add_summary_and_body_to_reviews.rb	/^class AddSummaryAndBodyToReviews < ActiveRecord::Migration[5.1]$/;"	c
+AddConversationOptout	db/migrate/20180505172227_add_conversation_optout.mailboxer_engine.rb	/^class AddConversationOptout < ActiveRecord::Migration[4.2]$/;"	c
+AddDeliveryTrackingInfoToMailboxerReceipts	db/migrate/20180505172229_add_delivery_tracking_info_to_mailboxer_receipts.mailboxer_engine.rb	/^class AddDeliveryTrackingInfoToMailboxerReceipts < ActiveRecord::Migration[4.2]$/;"	c
+AddImpressionsToProducts	db/migrate/20180505174937_add_impressions_to_products.rb	/^class AddImpressionsToProducts < ActiveRecord::Migration[5.2]$/;"	c
+AddMissingIndices	db/migrate/20180505172228_add_missing_indices.mailboxer_engine.rb	/^class AddMissingIndices < ActiveRecord::Migration[4.2]$/;"	c
 Alt	public/packs-test/hello_react.js	/^  Alt: 'altKey',$/;"	p	class:modifierKeyToProp
 AnimationEventInterface	public/packs-test/hello_react.js	/^var AnimationEventInterface = {$/;"	c
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	module:Kitboxer
@@ -459,6 +457,7 @@ B	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^var u=function(a,
 B	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^c))&&B(d)&&(wa(d.url,void 0,e),$d.set(b,!0)))}},v=function(a,b){var c=A.get(a)||[];c.push(b);A.s/;"	f
 B	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^var u=function(a,b,c){b==N||b.get(V);var d=Yd.get(a);if(!ea(d))return!1;b.plugins_=b.plugins_||n/;"	p	class:d
 BASE_URL	app/javascript/image-uploader/model.js	/^var BASE_URL = ''$/;"	v
+BASE_URL	app/javascript/messages/store/index.js	/^var BASE_URL = ''$/;"	v
 BASE_URL	app/javascript/tutorial-editor/store/index.js	/^var BASE_URL = ''$/;"	v
 BEHAVIORS	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c
 BOTTOM	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	p	class:AttachmentMap
@@ -523,20 +522,18 @@ CompositeTypes	public/packs-test/hello_react.js	/^var CompositeTypes = {$/;"	c
 CompositionEventInterface	public/packs-test/hello_react.js	/^var CompositionEventInterface = {$/;"	c
 ConfirmationsController	app/controllers/users/confirmations_controller.rb	/^class Users::ConfirmationsController < Devise::ConfirmationsController$/;"	c	module:Users
 Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	module:ApplicationCable
-Consolidate	db/migrate/20171217031049_consolidate.rb	/^class Consolidate < ActiveRecord::Migration[5.1]$/;"	c
+Consolidate	db/migrate/20180505163716_consolidate.rb	/^class Consolidate < ActiveRecord::Migration[5.2]$/;"	c
 Constructor	public/packs-test/hello_react.js	/^    Constructor.prototype = new ReactClassComponent();$/;"	c	class:factory
 Constructor	public/packs-test/hello_react.js	/^    Constructor.prototype.constructor = Constructor;$/;"	c
 Container	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c
 Content-Type	public/packs-test/application.js	/^  'Content-Type': 'application\/x-www-form-urlencoded'$/;"	p	class:DEFAULT_CONTENT_TYPE
 Control	public/packs-test/hello_react.js	/^  Control: 'ctrlKey',$/;"	p	class:modifierKeyToProp
+ConversationSerializer	app/serializers/conversation_serializer.rb	/^class ConversationSerializer < ActiveModel::Serializer$/;"	c
+ConversationsController	app/controllers/conversations_controller.rb	/^class ConversationsController < ApplicationController$/;"	c
+ConversationsController	app/controllers/purchases/conversations_controller.rb	/^class Purchases::ConversationsController < ApplicationController$/;"	c	module:Purchases
+ConversationsHelper	app/helpers/conversations_helper.rb	/^module ConversationsHelper$/;"	m
 CreateAdminService	app/services/create_admin_service.rb	/^class CreateAdminService$/;"	c
-CreateRatings	db/migrate/20180425232028_create_ratings.rb	/^class CreateRatings < ActiveRecord::Migration[5.1]$/;"	c
-CreateReviews	db/migrate/20180425225022_create_reviews.rb	/^class CreateReviews < ActiveRecord::Migration[5.1]$/;"	c
-CreateSteps	db/migrate/20180102015144_create_steps.rb	/^class CreateSteps < ActiveRecord::Migration[5.1]$/;"	c
-CreateStores	db/migrate/20171220015734_create_stores.rb	/^class CreateStores < ActiveRecord::Migration[5.1]$/;"	c
-CreateSubscriptionsTable	db/migrate/20180415043101_create_subscriptions_table.rb	/^class CreateSubscriptionsTable < ActiveRecord::Migration[5.1]$/;"	c
-CreateTutorial	db/migrate/20171224023724_create_tutorial.rb	/^class CreateTutorial < ActiveRecord::Migration[5.1]$/;"	c
-CreateTutorialTable	db/migrate/20171224023510_create_tutorial_table.rb	/^class CreateTutorialTable < ActiveRecord::Migration[5.1]$/;"	c
+CreateMailboxer	db/migrate/20180505172226_create_mailboxer.mailboxer_engine.rb	/^class CreateMailboxer < ActiveRecord::Migration[4.2]$/;"	c
 CropModal	public/packs-test/application.js	/^    CropModal: __WEBPACK_IMPORTED_MODULE_0__components_CropModal_vue___default.a$/;"	p	class:__webpack_exports__.components
 CropModal	public/packs-test/application.js	/^    CropModal: __WEBPACK_IMPORTED_MODULE_2__image_uploader_components_CropModal___default.a$/;"	p	class:__webpack_exports__.components
 D	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^(function(){var $c=function(a){this.w=a||[]};$c.prototype.set=function(a){this.w[a]=!0};$c.proto/;"	f
@@ -588,7 +585,6 @@ Dep	public/packs-test/application.js	/^var Dep = function Dep () {$/;"	c
 Dep	public/packs-test/application.js	/^var Dep = function Dep () {$/;"	f
 Down	public/packs-test/hello_react.js	/^  Down: 'ArrowDown',$/;"	p	class:normalizeKey
 DragEventInterface	public/packs-test/hello_react.js	/^var DragEventInterface = {$/;"	c
-DropSpreeTables	db/migrate/20180414031223_drop_spree_tables.rb	/^class DropSpreeTables < ActiveRecord::Migration[5.1]$/;"	c
 E	public/packs-test/application.js	/^function E() {$/;"	c
 E	public/packs-test/hello_react.js	/^  E.prototype = Super.prototype;$/;"	c
 E	public/packs-test/hello_react.js	/^  var E = function () {};$/;"	f	function:SyntheticEvent.augmentClass
@@ -634,6 +630,7 @@ FancyThumbs	app/assets/javascripts/jquery.fancybox.js	/^	var FancyThumbs = funct
 Favorite	app/models/favorite.rb	/^class Favorite < ApplicationRecord$/;"	c
 FavoriteSerializer	app/serializers/favorite_serializer.rb	/^class FavoriteSerializer < ActiveModel::Serializer$/;"	c
 FavoritesController	app/controllers/products/favorites_controller.rb	/^class Products::FavoritesController < ApplicationController$/;"	c	module:Products
+FavoritesController	app/controllers/users/favorites_controller.rb	/^class Users::FavoritesController < ApplicationController$/;"	c	module:Users
 FavoritesHelper	app/helpers/favorites_helper.rb	/^module FavoritesHelper$/;"	m
 Fc	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^b.responseStart-b.requestStart;a[Fb]=b.responseEnd-b.responseStart;a[Hb]=b.fetchStart-c;a[Kb]=b./;"	f
 Fc	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^b.responseStart-b.requestStart;a[Fb]=b.responseEnd-b.responseStart;a[Hb]=b.fetchStart-c;a[Kb]=b./;"	f
@@ -729,6 +726,8 @@ MapBookKeeping	public/packs-test/hello_react.js	/^function MapBookKeeping(mapRes
 MediaAside	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c
 MediaBody	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c
 Menu	public/packs-test/hello_react.js	/^  Menu: 'ContextMenu',$/;"	p	class:normalizeKey
+MessagesController	app/controllers/conversations/messages_controller.rb	/^class Conversations::MessagesController < ApplicationController$/;"	c	module:Conversations
+MessagesController	app/controllers/purchases/conversations/messages_controller.rb	/^class Purchases::Conversations::MessagesController < ApplicationController$/;"	c	module:Purchases.Conversations
 Meta	public/packs-test/hello_react.js	/^  Meta: 'metaKey',$/;"	p	class:modifierKeyToProp
 Mixin	public/packs-test/hello_react.js	/^  Mixin: {$/;"	c	class:ReactMultiChild
 Mixin	public/packs-test/hello_react.js	/^ReactDOMComponent.Mixin = {$/;"	c	class:ReactDOMComponent
@@ -756,6 +755,7 @@ NEXT	app/assets/javascripts/jquery.fancybox.js	/^                NEXT        : '
 NS	public/packs-test/hello_react.js	/^var NS = {$/;"	c
 Nd	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^(function(){var $c=function(a){this.w=a||[]};$c.prototype.set=function(a){this.w[a]=!0};$c.proto/;"	f
 Nd	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^(function(){var $c=function(a){this.w=a||[]};$c.prototype.set=function(a){this.w[a]=!0};$c.proto/;"	f
+NotificationSerializer	app/serializers/notification_serializer.rb	/^class NotificationSerializer < ActiveModel::Serializer$/;"	c
 O	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^for(var c={},d=Math.min(a.length+1,b.length),e=0;e<d;e++)if("object"===typeof b[e]){for(var g in/;"	v
 O	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^for(var c={},d=Math.min(a.length+1,b.length),e=0;e<d;e++)if("object"===typeof b[e]){for(var g in/;"	v
 OFFSET	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	p	class:OffsetMethod
@@ -774,6 +774,7 @@ OffsetMethod	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(fu
 OmniauthCallbacksController	app/controllers/users/omniauth_callbacks_controller.rb	/^class OmniauthCallbacksController < Devise::OmniauthCallbacksController$/;"	c
 Order	app/models/order.rb	/^class Order < ApplicationRecord$/;"	c
 OrdersController	app/controllers/orders_controller.rb	/^class OrdersController < ApplicationController$/;"	c
+OrdersController	app/controllers/users/orders_controller.rb	/^class Users::OrdersController < ApplicationController$/;"	c	module:Users
 OrdersHelper	app/helpers/orders_helper.rb	/^module OrdersHelper$/;"	m
 P	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^function yd(a){var b=O.gaDevIds;ka(b)&&0!=b.length&&a.set("&did",b.join(","),!0)}function vb(a){/;"	f
 P	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^function yd(a){var b=O.gaDevIds;ka(b)&&0!=b.length&&a.set("&did",b.join(","),!0)}function vb(a){/;"	f
@@ -792,9 +793,6 @@ Pd	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^c[1])&&r
 PooledClass	public/packs-test/hello_react.js	/^var PooledClass = {$/;"	c
 PopOver	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	f
 Popper	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	f
-Post	app/models/post.rb	/^class Post < ApplicationRecord$/;"	c
-PostsController	app/controllers/posts_controller.rb	/^class PostsController < ApplicationController$/;"	c
-PostsHelper	app/helpers/posts_helper.rb	/^module PostsHelper$/;"	m
 Product	app/models/product.rb	/^class Product < ApplicationRecord$/;"	c
 ProductSerializer	app/serializers/product_serializer.rb	/^class ProductSerializer < ActiveModel::Serializer$/;"	c
 Products	app/models/products.rb	/^module Products$/;"	m
@@ -896,9 +894,10 @@ ReactUpdatesFlushTransaction	public/packs-test/hello_react.js	/^function ReactUp
 ReactUpdatesInjection	public/packs-test/hello_react.js	/^var ReactUpdatesInjection = {$/;"	c
 Redis	config/initializers/redis.rb	/^class Redis$/;"	c
 RegistrationsController	app/controllers/users/registrations_controller.rb	/^class Users::RegistrationsController < Devise::RegistrationsController$/;"	c	module:Users
-RemoveTutorialTable	db/migrate/20171224023606_remove_tutorial_table.rb	/^class RemoveTutorialTable < ActiveRecord::Migration[5.1]$/;"	c
 Review	app/models/review.rb	/^class Review < ApplicationRecord$/;"	c
 ReviewController	app/controllers/purchases/review_controller.rb	/^class Purchases::ReviewController < ApplicationController$/;"	c	module:Purchases
+ReviewsController	app/controllers/users/reviews_controller.rb	/^class Users::ReviewsController < ApplicationController$/;"	c	module:Users
+ReviewsHelper	app/helpers/users/reviews_helper.rb	/^module Users::ReviewsHelper$/;"	m	module:Users
 Right	public/packs-test/hello_react.js	/^  Right: 'ArrowRight',$/;"	p	class:normalizeKey
 S	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^Dc.prototype.S=function(a,b,c){function d(c){try{c=c||O.event;var d;a:{var g=c.target||c.srcElem/;"	m	class:Dc
 S	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^var ab=function(a,b,c,d){if(void 0!=c)switch(b){case Na:wb.test(c)}var e=$a(b);e&&e.o?e.o(a,b,c,/;"	f
@@ -1675,22 +1674,10 @@ cellPadding	public/packs-test/hello_react.js	/^    cellPadding: 0,$/;"	p	class:H
 cellSpacing	public/packs-test/hello_react.js	/^    cellSpacing: 0,$/;"	p	class:HTMLDOMPropertyConfig.Properties
 center	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c	class:props$16
 challenge	public/packs-test/hello_react.js	/^    challenge: 0,$/;"	p	class:HTMLDOMPropertyConfig.Properties
-change	db/migrate/20171217031049_consolidate.rb	/^  def change$/;"	f	class:Consolidate
-change	db/migrate/20171220015734_create_stores.rb	/^  def change$/;"	f	class:CreateStores
-change	db/migrate/20171224023510_create_tutorial_table.rb	/^  def change$/;"	f	class:CreateTutorialTable
-change	db/migrate/20171224023606_remove_tutorial_table.rb	/^  def change$/;"	f	class:RemoveTutorialTable
-change	db/migrate/20171224023724_create_tutorial.rb	/^  def change$/;"	f	class:CreateTutorial
-change	db/migrate/20180102015144_create_steps.rb	/^  def change$/;"	f	class:CreateSteps
-change	db/migrate/20180104023640_add_step_id_to_images.rb	/^  def change$/;"	f	class:AddStepIdToImages
-change	db/migrate/20180407222042_add_number_to_step.rb	/^  def change$/;"	f	class:AddNumberToStep
-change	db/migrate/20180414031223_drop_spree_tables.rb	/^  def change$/;"	f	class:DropSpreeTables
-change	db/migrate/20180415043101_create_subscriptions_table.rb	/^  def change$/;"	f	class:CreateSubscriptionsTable
-change	db/migrate/20180424042144_add_product_id_and_user_id_to_favorites.rb	/^  def change$/;"	f	class:AddProductIdAndUserIdToFavorites
-change	db/migrate/20180424043635_add_favorites_count_to_product.rb	/^  def change$/;"	f	class:AddFavoritesCountToProduct
-change	db/migrate/20180425225022_create_reviews.rb	/^  def change$/;"	f	class:CreateReviews
-change	db/migrate/20180425232028_create_ratings.rb	/^  def change$/;"	f	class:CreateRatings
-change	db/migrate/20180426053515_add_body_to_ratings.rb	/^  def change$/;"	f	class:AddBodyToRatings
-change	db/migrate/20180426054812_add_summary_and_body_to_reviews.rb	/^  def change$/;"	f	class:AddSummaryAndBodyToReviews
+change	db/migrate/20180505163716_consolidate.rb	/^  def change$/;"	f	class:Consolidate
+change	db/migrate/20180505172228_add_missing_indices.mailboxer_engine.rb	/^  def change$/;"	f	class:AddMissingIndices
+change	db/migrate/20180505172229_add_delivery_tracking_info_to_mailboxer_receipts.mailboxer_engine.rb	/^  def change$/;"	f	class:AddDeliveryTrackingInfoToMailboxerReceipts
+change	db/migrate/20180505174937_add_impressions_to_products.rb	/^  def change$/;"	f	class:AddImpressionsToProducts
 change	public/packs-test/hello_react.js	/^  change: {$/;"	c	class:eventTypes
 changedTouches	public/packs-test/hello_react.js	/^  changedTouches: null,$/;"	p	class:TouchEventInterface
 charCode	public/packs-test/hello_react.js	/^  charCode: function (event) {$/;"	m	class:KeyboardEventInterface
@@ -1944,14 +1931,17 @@ coverImage	public/packs-test/application.js	/^            coverImage: false,$/;"
 coverImage	public/packs-test/application.js	/^        coverImage: image.cover_image,$/;"	p	class:card
 cover_image	app/models/product.rb	/^  def cover_image$/;"	f	class:Product
 cover_thumb	app/models/product.rb	/^  def cover_thumb$/;"	f	class:Product
+create	app/controllers/conversations/messages_controller.rb	/^  def create$/;"	f	class:MessagesController
+create	app/controllers/conversations_controller.rb	/^  def create$/;"	f	class:ConversationsController
 create	app/controllers/orders_controller.rb	/^  def create$/;"	f	class:OrdersController
-create	app/controllers/posts_controller.rb	/^  def create$/;"	f	class:PostsController
 create	app/controllers/products/images_controller.rb	/^  def create$/;"	f	class:ImagesController
 create	app/controllers/products/tests_controller.rb	/^  def create$/;"	f	class:TestsController
 create	app/controllers/products/tutorial/images_controller.rb	/^  def create$/;"	f	class:ImagesController
 create	app/controllers/products/tutorial/steps_controller.rb	/^  def create$/;"	f	class:StepsController
 create	app/controllers/products/tutorial_controller.rb	/^  def create$/;"	f	class:TutorialController
 create	app/controllers/products_controller.rb	/^  def create$/;"	f	class:ProductsController
+create	app/controllers/purchases/conversations/messages_controller.rb	/^  def create$/;"	f	class:MessagesController
+create	app/controllers/purchases/conversations_controller.rb	/^  def create$/;"	f	class:ConversationsController
 create	app/controllers/purchases/review_controller.rb	/^  def create$/;"	f	class:ReviewController
 create	app/controllers/purchases_controller.rb	/^  def create$/;"	f	class:PurchasesController
 create	app/controllers/subscriptions_controller.rb	/^  def create$/;"	f	class:SubscriptionsController
@@ -2030,6 +2020,7 @@ createTextNode	public/packs-test/application.js	/^function createTextNode (text)
 createTextVNode	public/packs-test/application.js	/^function createTextVNode (val) {$/;"	f
 createUnionTypeChecker	public/packs-test/hello_react.js	/^  function createUnionTypeChecker(arrayOfTypeCheckers) {$/;"	f	function:module.exports
 createWatcher	public/packs-test/application.js	/^function createWatcher ($/;"	f
+create_conversation	app/models/purchase.rb	/^  def create_conversation$/;"	f	class:Purchase
 create_initial_steps	app/models/tutorial.rb	/^  def create_initial_steps$/;"	f	class:Tutorial
 create_purchases	app/models/order.rb	/^  def create_purchases$/;"	f	class:Order
 created	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:collapse
@@ -2059,7 +2050,7 @@ currentScrollLeft	public/packs-test/hello_react.js	/^  currentScrollLeft: 0,$/;"
 currentScrollTop	public/packs-test/hello_react.js	/^  currentScrollTop: 0,$/;"	p	class:ViewportMetrics
 currentTarget	public/packs-test/hello_react.js	/^  currentTarget: emptyFunction.thatReturnsNull,$/;"	p	class:EventInterface
 currentTimer	public/packs-test/hello_react.js	/^  var currentTimer = {$/;"	c	class:pauseCurrentLifeCycleTimer
-current_class?	app/helpers/application_helper.rb	/^  def current_class?(path)$/;"	f	module:ApplicationHelper
+current_class?	app/helpers/application_helper.rb	/^  def current_class?(path, className = "active")$/;"	f	module:ApplicationHelper
 cursor	public/packs-test/hello_react.js	/^            "cursor": "pointer"$/;"	p	class:renderTagSelector.tagStyle
 cursor	public/packs-test/hello_react.js	/^  cursor: 0,$/;"	p	class:ATTRS
 custom	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:formCustomMixin.computed
@@ -2416,7 +2407,6 @@ description	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(fun
 descriptionId	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:formGroup.computed
 destroy	app/assets/javascripts/jquery.fancybox.js	/^	Guestures.prototype.destroy = function() {$/;"	m	class:Guestures
 destroy	app/assets/javascripts/jquery.fancybox.js	/^        destroy : function() {$/;"	m	class:$.fancybox
-destroy	app/controllers/posts_controller.rb	/^  def destroy$/;"	f	class:PostsController
 destroy	app/controllers/products/images_controller.rb	/^  def destroy$/;"	f	class:ImagesController
 destroy	app/controllers/products/tutorial/images_controller.rb	/^  def destroy$/;"	f	class:ImagesController
 destroy	app/controllers/products/tutorial/steps_controller.rb	/^  def destroy$/;"	f	class:StepsController
@@ -2488,6 +2478,8 @@ domProps	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(functi
 domProps	public/packs-test/application.js	/^var domProps = {$/;"	c
 dominantBaseline	public/packs-test/hello_react.js	/^  dominantBaseline: 'dominant-baseline',$/;"	p	class:ATTRS
 done	app/assets/javascripts/jquery.fancybox.js	/^            var done = function() {$/;"	f
+down	db/migrate/20180505172226_create_mailboxer.mailboxer_engine.rb	/^  def self.down$/;"	F	class:CreateMailboxer
+down	db/migrate/20180505172227_add_conversation_optout.mailboxer_engine.rb	/^  def self.down$/;"	F	class:AddConversationOptout
 down	public/packs-test/application.js	/^  down: 40,$/;"	p	class:keyCodes
 download	public/packs-test/hello_react.js	/^    download: HAS_OVERLOADED_BOOLEAN_VALUE,$/;"	p	class:HTMLDOMPropertyConfig.Properties
 draggable	public/packs-test/hello_react.js	/^    draggable: 0,$/;"	p	class:HTMLDOMPropertyConfig.Properties
@@ -2517,7 +2509,6 @@ ec	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^if(this.
 ecommerce	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^if(this.g&&(!qa(b)||""==b||!ea(a)))throw"abort";if(ud(this.c)||ud(this.K))throw"abort";if(this.g/;"	p	class:Zd
 ecommerce	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^if(this.g&&(!qa(b)||""==b||!ea(a)))throw"abort";if(ud(this.c)||ud(this.K))throw"abort";if(this.g/;"	p	class:Zd
 edgeMode	public/packs-test/hello_react.js	/^  edgeMode: 'edgeMode',$/;"	p	class:ATTRS
-edit	app/controllers/posts_controller.rb	/^  def edit$/;"	f	class:PostsController
 edit	app/controllers/products/build_controller.rb	/^  def edit$/;"	f	class:BuildController
 edit	app/controllers/products/tests_controller.rb	/^  def edit$/;"	f	class:TestsController
 edit	app/controllers/products/tutorial_controller.rb	/^  def edit$/;"	f	class:TutorialController
@@ -2712,6 +2703,7 @@ fancybox	app/assets/javascripts/jquery.fancybox.js	/^    $.fn.fancybox = functio
 favorite	app/models/user.rb	/^  def favorite(product)$/;"	f	class:User
 favorite_params	app/controllers/products/favorites_controller.rb	/^  def favorite_params$/;"	f	class:FavoritesController
 favorited_by?	app/models/product.rb	/^  def favorited_by?(user)$/;"	f	class:Product
+favorites_count	app/helpers/products_helper.rb	/^  def favorites_count(product)$/;"	f	module:ProductsHelper
 fc	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^$b=T("legacyCookieDomain"),Wc=T("legacyHistoryImport",void 0,!0),ac=T("storage",void 0,"cookie")/;"	f
 fc	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^$b=T("legacyCookieDomain"),Wc=T("legacyHistoryImport",void 0,!0),ac=T("storage",void 0,"cookie")/;"	f
 fcssescape	app/assets/javascripts/jquery.fancybox.js	/^			var fcssescape = function( ch, asCodePoint ) {$/;"	f	function:$.escapeSelector
@@ -2747,6 +2739,7 @@ firstDifferenceIndex	public/packs-test/hello_react.js	/^function firstDifference
 fixTitle	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:ToolTip
 fixTransition	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:ToolTip
 fixed	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c	class:props$35
+flash_class	app/helpers/application_helper.rb	/^  def flash_class(level)$/;"	f	module:ApplicationHelper
 flattenChildren	public/packs-test/hello_react.js	/^function flattenChildren(children) {$/;"	f
 flattenSingleChildIntoContext	public/packs-test/hello_react.js	/^function flattenSingleChildIntoContext(traverseContext, child, name, selfDebugID) {$/;"	f
 flex	public/packs-test/hello_react.js	/^  flex: true,$/;"	p	class:isUnitlessNumber
@@ -3297,6 +3290,7 @@ html	public/packs-test/hello_react.js	/^  html: createDOMFactory('html'),$/;"	p	
 html5	app/assets/javascripts/jquery.fancybox.js	/^				html5 : 1$/;"	p	class:defaults.youtube.params
 htmlFor	public/packs-test/hello_react.js	/^    htmlFor: 'for',$/;"	p	class:HTMLDOMPropertyConfig.DOMAttributeNames
 htmlFor	public/packs-test/hello_react.js	/^    htmlFor: 0,$/;"	p	class:HTMLDOMPropertyConfig.Properties
+http	app/javascript/messages/store/http.js	/^let http = axios.create({$/;"	v
 http	app/javascript/tutorial-editor/store/http.js	/^let http = axios.create({$/;"	v
 httpEquiv	public/packs-test/hello_react.js	/^    httpEquiv: 'http-equiv'$/;"	p	class:HTMLDOMPropertyConfig.DOMAttributeNames
 httpEquiv	public/packs-test/hello_react.js	/^    httpEquiv: 0,$/;"	p	class:HTMLDOMPropertyConfig.Properties
@@ -3363,15 +3357,21 @@ import	app/javascript/vuex-loading/index.js	/^import vLoading from '.\/v-loading
 in	public/packs-test/hello_react.js	/^  'in': 0,$/;"	p	class:ATTRS
 in2	public/packs-test/hello_react.js	/^  in2: 0,$/;"	p	class:ATTRS
 inDevServer	config/webpack/loaders/vue.js	/^const inDevServer = process.argv.find(v => v.includes('webpack-dev-server'))$/;"	C
+inbox	app/controllers/conversations_controller.rb	/^  def inbox$/;"	f	class:ConversationsController
 include	public/packs-test/application.js	/^    include: patternTypes,$/;"	p	class:KeepAlive.props
 includeScroll	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	f
+increment_impressions	app/models/product.rb	/^  def increment_impressions(current_user)$/;"	f	class:Product
 indeterminate	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c	class:formCheckbox.props
 indeterminate	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:formCheckbox.watch
-index	app/controllers/posts_controller.rb	/^  def index$/;"	f	class:PostsController
+index	app/controllers/conversations_controller.rb	/^  def index$/;"	f	class:ConversationsController
 index	app/controllers/products/images_controller.rb	/^  def index$/;"	f	class:ImagesController
 index	app/controllers/products/tests_controller.rb	/^  def index$/;"	f	class:TestsController
 index	app/controllers/products_controller.rb	/^  def index$/;"	f	class:ProductsController
+index	app/controllers/purchases/conversations_controller.rb	/^  def index$/;"	f	class:ConversationsController
 index	app/controllers/purchases_controller.rb	/^  def index$/;"	f	class:PurchasesController
+index	app/controllers/users/favorites_controller.rb	/^  def index$/;"	f	class:FavoritesController
+index	app/controllers/users/orders_controller.rb	/^  def index$/;"	f	class:OrdersController
+index	app/controllers/users/reviews_controller.rb	/^  def index$/;"	f	class:ReviewsController
 index	app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
 index	app/controllers/visitors_controller.rb	/^  def index$/;"	f	class:VisitorsController
 info	public/packs-test/hello_react.js	/^    var info = { tag: tag, instance: instance };$/;"	c	class:updatedAncestorInfo
@@ -3805,7 +3805,10 @@ lowPriorityWarning	public/packs-test/hello_react.js	/^var lowPriorityWarning = f
 lowerFirst	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	f
 ma	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^pc.prototype.send=function(a){if(!(1>arguments.length)){var b,c;"string"===typeof arguments[0]?(/;"	m	class:pc
 ma	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^pc.prototype.send=function(a){if(!(1>arguments.length)){var b,c;"string"===typeof arguments[0]?(/;"	m	class:pc
+mailboxer_email	app/models/user.rb	/^  def mailboxer_email(object)$/;"	f	class:User
+mailboxer_name	app/models/user.rb	/^  def mailboxer_name$/;"	f	class:User
 main	public/packs-test/hello_react.js	/^  main: createDOMFactory('main'),$/;"	p	class:ReactDOMFactories
+main	test.c	/^int main() {$/;"	f	typeref:typename:int
 makeAttrsMap	public/packs-test/application.js	/^function makeAttrsMap (attrs) {$/;"	f
 makeEmptyFunction	public/packs-test/hello_react.js	/^function makeEmptyFunction(arg) {$/;"	f
 makeInsertMarkup	public/packs-test/hello_react.js	/^function makeInsertMarkup(markup, afterNode, toIndex) {$/;"	f
@@ -4048,10 +4051,11 @@ nd	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^!hc&&(mc(a),!hc)
 nd	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^!hc&&(mc(a),!hc))throw"abort";},Yc=function(a){if(a.get(Wc)){var b=P(a,W),c=P(a,$b)||xa(),d=Xc("/;"	f
 needsNormalization	public/packs-test/application.js	/^function needsNormalization (el) {$/;"	f
 nestedFlushStartTime	public/packs-test/hello_react.js	/^    nestedFlushStartTime: performanceNow(),$/;"	p	class:pauseCurrentLifeCycleTimer.currentTimer
-new	app/controllers/posts_controller.rb	/^  def new$/;"	f	class:PostsController
+new	app/controllers/conversations_controller.rb	/^  def new$/;"	f	class:ConversationsController
 new	app/controllers/products/tests_controller.rb	/^  def new$/;"	f	class:TestsController
 new	app/controllers/products/tutorial_controller.rb	/^  def new$/;"	f	class:TutorialController
 new	app/controllers/products_controller.rb	/^  def new$/;"	f	class:ProductsController
+new	app/controllers/purchases/conversations_controller.rb	/^  def new$/;"	f	class:ConversationsController
 new	app/controllers/purchases/review_controller.rb	/^  def new$/;"	f	class:ReviewController
 newHandler	public/packs-test/application.js	/^  var newHandler = { value: value, modifiers: modifiers };$/;"	c	class:addHandler
 newPos	app/assets/javascripts/jquery.fancybox.js	/^		var newPos = {$/;"	c	class:Guestures.onZoom
@@ -4298,6 +4302,7 @@ parentEl	app/assets/javascripts/jquery.fancybox.js	/^        parentEl : 'body',$
 parentID	public/packs-test/hello_react.js	/^      parentID: parentID$/;"	p	class:tree
 parentID	public/packs-test/hello_react.js	/^      parentID: parentID,$/;"	p	class:onBeforeMountComponent.item
 parentNode	public/packs-test/application.js	/^function parentNode (node) {$/;"	f
+parent_layout	app/helpers/application_helper.rb	/^  def parent_layout(layout)$/;"	f	module:ApplicationHelper
 parse	public/packs-test/application.js	/^function parse ($/;"	f
 parseBindings$1	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	f
 parseBracket	public/packs-test/application.js	/^function parseBracket (chr) {$/;"	f
@@ -4399,7 +4404,6 @@ postMountWrapper	public/packs-test/hello_react.js	/^  postMountWrapper: function
 postTransforms	public/packs-test/application.js	/^var postTransforms;$/;"	v
 postUpdateSelectWrapper	public/packs-test/hello_react.js	/^function postUpdateSelectWrapper() {$/;"	f
 postUpdateWrapper	public/packs-test/hello_react.js	/^  postUpdateWrapper: function (inst) {$/;"	m	class:ReactDOMSelect
-post_params	app/controllers/posts_controller.rb	/^    def post_params$/;"	f	class:PostsController
 postcss-cssnext	package.json	/^    "postcss-cssnext": "^3.0.2",$/;"	s	object:dependencies
 postcss-import	package.json	/^    "postcss-import": "^11.1.0",$/;"	s	object:dependencies
 postcss-loader	package.json	/^    "postcss-loader": "^2.0.6",$/;"	s	object:dependencies
@@ -4598,6 +4602,8 @@ pseudoElement	public/packs-test/hello_react.js	/^  pseudoElement: null$/;"	p	cla
 pseudoElement	public/packs-test/hello_react.js	/^  pseudoElement: null$/;"	p	class:TransitionEventInterface
 publicPath	config/webpack/configuration.js	/^  publicPath: formatPublicPath(env.ASSET_HOST, settings.public_output_path)$/;"	p	class:output
 publicPath	config/webpack/shared.js	/^    publicPath: output.publicPath$/;"	p	class:module.exports.output
+publish	app/controllers/products_controller.rb	/^  def publish$/;"	f	class:ProductsController
+publish	app/models/product.rb	/^  def publish$/;"	f	class:Product
 publishEventForPlugin	public/packs-test/hello_react.js	/^function publishEventForPlugin(dispatchConfig, pluginModule, eventName) {$/;"	f
 publishRegistrationName	public/packs-test/hello_react.js	/^function publishRegistrationName(registrationName, pluginModule, eventName) {$/;"	f
 purgeDeep	public/packs-test/hello_react.js	/^function purgeDeep(id) {$/;"	f
@@ -4908,6 +4914,7 @@ s	public/packs-test/hello_react.js	/^  s: createDOMFactory('s'),$/;"	p	class:Rea
 sa	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^(function(){var $c=function(a){this.w=a||[]};$c.prototype.set=function(a){this.w[a]=!0};$c.proto/;"	f
 sa	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^(function(){var $c=function(a){this.w=a||[]};$c.prototype.set=function(a){this.w[a]=!0};$c.proto/;"	f
 safeId	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:idMixin.methods
+sales_count	app/helpers/products_helper.rb	/^  def sales_count(product)$/;"	f	module:ProductsHelper
 sameInputType	public/packs-test/application.js	/^function sameInputType (a, b) {$/;"	f
 sameVnode	public/packs-test/application.js	/^function sameVnode (a, b) {$/;"	f
 samp	public/packs-test/hello_react.js	/^  samp: createDOMFactory('samp'),$/;"	p	class:ReactDOMFactories
@@ -4934,6 +4941,7 @@ scopedSlots	public/packs-test/application.js	/^    data.scopedSlots = { default:
 screenX	public/packs-test/hello_react.js	/^  screenX: null,$/;"	p	class:MouseEventInterface
 screenY	public/packs-test/hello_react.js	/^  screenY: null,$/;"	p	class:MouseEventInterface
 script	public/packs-test/hello_react.js	/^  script: createDOMFactory('script'),$/;"	p	class:ReactDOMFactories
+scroll-into-view	package.json	/^    "scroll-into-view": "^1.9.3",$/;"	s	object:dependencies
 scrollMonitor	public/packs-test/hello_react.js	/^  scrollMonitor: function (container, renderCallback) {$/;"	m	class:ReactMount
 scrollParents	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	p	class:state
 scrollValueMonitor	public/packs-test/hello_react.js	/^function scrollValueMonitor(cb) {$/;"	f
@@ -4959,6 +4967,7 @@ selection	public/packs-test/hello_react.js	/^      selection = {$/;"	c
 self	public/packs-test/application.js	/^  self: genGuard("$event.target !== $event.currentTarget"),$/;"	p	class:modifierCode
 send	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^pc.prototype.send=function(a){if(!(1>arguments.length)){var b,c;"string"===typeof arguments[0]?(/;"	m	class:pc
 send	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^pc.prototype.send=function(a){if(!(1>arguments.length)){var b,c;"string"===typeof arguments[0]?(/;"	m	class:pc
+sent	app/controllers/conversations_controller.rb	/^  def sent$/;"	f	class:ConversationsController
 serialize	public/packs-test/application.js	/^    utils.forEach(params, function serialize(val, key) {$/;"	f
 set	public/packs-test/application.js	/^    configDef.set = function () {$/;"	f	function:configDef
 set	public/packs-test/application.js	/^    dataDef.set = function (newData) {$/;"	f	function:dataDef
@@ -5014,8 +5023,9 @@ setValueForAttribute	public/packs-test/hello_react.js	/^  setValueForAttribute: 
 setValueForProperty	public/packs-test/hello_react.js	/^  setValueForProperty: function (node, name, value) {$/;"	m	class:DOMPropertyOperations
 setValueForStyles	public/packs-test/hello_react.js	/^  setValueForStyles: function (node, styles, component) {$/;"	m	class:CSSPropertyOperations
 set_cart	app/controllers/carts_controller.rb	/^  def set_cart$/;"	f	class:CartsController
+set_conversation	app/controllers/conversations/messages_controller.rb	/^  def set_conversation$/;"	f	class:MessagesController
+set_conversation	app/controllers/purchases/conversations/messages_controller.rb	/^  def set_conversation$/;"	f	class:MessagesController
 set_cover_image	app/controllers/products/images_controller.rb	/^  def set_cover_image$/;"	f	class:ImagesController
-set_post	app/controllers/posts_controller.rb	/^    def set_post$/;"	f	class:PostsController
 set_product	app/controllers/products/build_controller.rb	/^  def set_product$/;"	f	class:BuildController
 set_product	app/controllers/products/favorites_controller.rb	/^  def set_product$/;"	f	class:FavoritesController
 set_product	app/controllers/products/images_controller.rb	/^  def set_product$/;"	f	class:ImagesController
@@ -5023,6 +5033,8 @@ set_product	app/controllers/products/tests_controller.rb	/^  def set_product$/;"
 set_product	app/controllers/products/tutorial/steps_controller.rb	/^  def set_product$/;"	f	class:StepsController
 set_product	app/controllers/products/tutorial_controller.rb	/^  def set_product$/;"	f	class:TutorialController
 set_product	app/controllers/products_controller.rb	/^  def set_product$/;"	f	class:ProductsController
+set_purchase	app/controllers/purchases/conversations/messages_controller.rb	/^  def set_purchase$/;"	f	class:MessagesController
+set_purchase	app/controllers/purchases/conversations_controller.rb	/^  def set_purchase$/;"	f	class:ConversationsController
 set_purchase	app/controllers/purchases/review_controller.rb	/^  def set_purchase$/;"	f	class:ReviewController
 settings	app/assets/javascripts/jquery.fancybox.js	/^            settings : {$/;"	c	class:defaults.ajax
 settings	config/webpack/configuration.js	/^const settings = safeLoad(readFileSync(configPath), 'utf8')[env.NODE_ENV]$/;"	C
@@ -5057,12 +5069,13 @@ shouldUseChangeEvent	public/packs-test/hello_react.js	/^function shouldUseChange
 shouldUseClickEvent	public/packs-test/hello_react.js	/^function shouldUseClickEvent(elem) {$/;"	f
 shouldUseNative	public/packs-test/hello_react.js	/^function shouldUseNative() {$/;"	f
 show	app/controllers/carts_controller.rb	/^  def show$/;"	f	class:CartsController
+show	app/controllers/conversations_controller.rb	/^  def show$/;"	f	class:ConversationsController
 show	app/controllers/orders_controller.rb	/^  def show$/;"	f	class:OrdersController
-show	app/controllers/posts_controller.rb	/^  def show$/;"	f	class:PostsController
 show	app/controllers/products/build_controller.rb	/^  def show$/;"	f	class:BuildController
 show	app/controllers/products/tests_controller.rb	/^  def show$/;"	f	class:TestsController
 show	app/controllers/products/tutorial_controller.rb	/^  def show$/;"	f	class:TutorialController
 show	app/controllers/products_controller.rb	/^  def show$/;"	f	class:ProductsController
+show	app/controllers/purchases/conversations_controller.rb	/^  def show$/;"	f	class:ConversationsController
 show	app/controllers/users/stores_controller.rb	/^  def show$/;"	f	class:StoresController
 show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
 show	public/packs-test/application.js	/^  show: show$/;"	p	class:platformDirectives
@@ -5106,6 +5119,7 @@ smallBtn	app/assets/javascripts/jquery.fancybox.js	/^            smallBtn   : '<
 smallBtn	app/assets/javascripts/jquery.fancybox.js	/^        smallBtn : 'auto',$/;"	p	class:defaults
 social	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^D(b[c],"dclid")||D(b[c],"gclsrc"))&&d.push(b[c]);0<d.length&&(b="#"+d.join("&"),a.set(kb,a.get(k/;"	p	class:qc
 social	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^D(b[c],"dclid")||D(b[c],"gclsrc"))&&d.push(b[c]);0<d.length&&(b="#"+d.join("&"),a.set(kb,a.get(k/;"	p	class:qc
+sort_steps	app/models/tutorial.rb	/^  def sort_steps$/;"	f	class:Tutorial
 source	public/packs-test/application.js	/^CancelToken.source = function source() {$/;"	f
 source	public/packs-test/application.js	/^CancelToken.source = function source() {$/;"	f	function:CancelToken
 source	public/packs-test/hello_react.js	/^  source: createDOMFactory('source'),$/;"	p	class:ReactDOMFactories
@@ -5652,6 +5666,7 @@ trapBubbledEvent	public/packs-test/hello_react.js	/^  trapBubbledEvent: function
 trapBubbledEventsLocal	public/packs-test/hello_react.js	/^function trapBubbledEventsLocal() {$/;"	f
 trapCapturedEvent	public/packs-test/hello_react.js	/^  trapCapturedEvent: function (topLevelType, handlerBaseName, element) {$/;"	m	class:ReactEventListener
 trapFocus	app/assets/javascripts/jquery.fancybox.js	/^        trapFocus : true,$/;"	p	class:defaults
+trash	app/controllers/conversations_controller.rb	/^  def trash$/;"	f	class:ConversationsController
 traverse	public/packs-test/application.js	/^function traverse (val) {$/;"	f
 traverseAllChildren	public/packs-test/hello_react.js	/^function traverseAllChildren(children, callback, traverseContext) {$/;"	f
 traverseAllChildrenImpl	public/packs-test/hello_react.js	/^function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext) {$/;"	f
@@ -5968,8 +5983,9 @@ unselectable	public/packs-test/hello_react.js	/^    unselectable: 0$/;"	p	class:
 unshiftRequestInterceptors	public/packs-test/application.js	/^  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {$/;"	f	function:request.interceptors.interceptors
 unstable_batchedUpdates	public/packs-test/hello_react.js	/^  unstable_batchedUpdates: ReactUpdates.batchedUpdates,$/;"	p	class:ReactDOM
 unstable_renderSubtreeIntoContainer	public/packs-test/hello_react.js	/^  unstable_renderSubtreeIntoContainer: renderSubtreeIntoContainer$/;"	p	class:ReactDOM
+up	db/migrate/20180505172226_create_mailboxer.mailboxer_engine.rb	/^  def self.up$/;"	F	class:CreateMailboxer
+up	db/migrate/20180505172227_add_conversation_optout.mailboxer_engine.rb	/^  def self.up$/;"	F	class:AddConversationOptout
 up	public/packs-test/application.js	/^  up: 38,$/;"	p	class:keyCodes
-update	app/controllers/posts_controller.rb	/^  def update$/;"	f	class:PostsController
 update	app/controllers/products/build_controller.rb	/^  def update$/;"	f	class:BuildController
 update	app/controllers/products/favorites_controller.rb	/^  def update$/;"	f	class:FavoritesController
 update	app/controllers/products/images_controller.rb	/^  def update$/;"	f	class:ImagesController
@@ -6119,6 +6135,7 @@ variant	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(functio
 vb	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^function yd(a){var b=O.gaDevIds;ka(b)&&0!=b.length&&a.set("&did",b.join(","),!0)}function vb(a){/;"	f
 vb	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^function yd(a){var b=O.gaDevIds;ka(b)&&0!=b.length&&a.set("&did",b.join(","),!0)}function vb(a){/;"	f
 vectorEffect	public/packs-test/hello_react.js	/^  vectorEffect: 'vector-effect',$/;"	p	class:ATTRS
+vee-validate	package.json	/^    "vee-validate": "^2.0.8",$/;"	s	object:dependencies
 vendorPrefixes	public/packs-test/hello_react.js	/^var vendorPrefixes = {$/;"	c
 version	app/assets/javascripts/jquery.fancybox.js	/^        version  : "3.1.24",$/;"	p	class:$.fancybox
 version	public/packs-test/hello_react.js	/^  version: 0,$/;"	p	class:ATTRS
@@ -6136,6 +6153,7 @@ video	public/packs-test/hello_react.js	/^  video: createDOMFactory('video'),$/;"
 view	public/packs-test/hello_react.js	/^  view: function (event) {$/;"	m	class:UIEventInterface
 viewBox	public/packs-test/hello_react.js	/^  viewBox: 'viewBox',$/;"	p	class:ATTRS
 viewTarget	public/packs-test/hello_react.js	/^  viewTarget: 'viewTarget',$/;"	p	class:ATTRS
+view_count	app/helpers/products_helper.rb	/^  def view_count(product)$/;"	f	module:ProductsHelper
 vimeo	app/assets/javascripts/jquery.fancybox.js	/^		vimeo : {$/;"	c	class:defaults
 vine	app/assets/javascripts/jquery.fancybox.js	/^		vine : {$/;"	c	class:defaults
 visibility	public/packs-test/hello_react.js	/^  visibility: 0,$/;"	p	class:ATTRS

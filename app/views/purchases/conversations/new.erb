@@ -1,0 +1,21 @@
+<div class="col-md-8 mx-auto">
+  <h3 class="text-center">RE: <%= @purchase.product.title.truncate(100) %></h3>
+  <hr>
+  <div class="card">
+    <div class="card-body">
+      <%= form_tag purchase_conversations_path(@purchase), method: :post do %>
+        <div class="form-group">
+          <%= label_tag :subject %>
+          <%= select_tag :subject, options_for_select(["Where's My Stuff?", "Cancel Order", "Change Shipping Address", "Other Shipping Question", "Received Wrong Item", "Received Damaged or Defective Item", "Returns Policy", "Other Question"], "Select a subject"), class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :body %>
+          <%= text_area_tag :body, nil, placeholder: "Leave a comment", class: 'form-control' %>
+        </div>
+
+        <%= submit_tag "Submit", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -83,4 +83,9 @@ class Product < ApplicationRecord
     end
   end
 
+  def increment_impressions(current_user)
+    unless user == current_user
+      increment!(:impressions)
+    end
+  end
 end

@@ -11,11 +11,11 @@ class Purchases::ReviewController < ApplicationController
   end
 
   def create
-    @product = @purchase.product
+    product = @purchase.product
     @review = @purchase.build_review(review_params)
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @product, notice: "Successfully sent review to #{@product.user.email}." }
+        format.html { redirect_to product, notice: "Successfully sent review to #{product.user.email}." }
       else
         format.html { render :new }
       end

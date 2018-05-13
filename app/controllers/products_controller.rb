@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :publish]
   before_action :authenticate_user!, except: [:index, :show]
 
 
@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @product.increment_impressions(current_user)
     @reviews = @product.reviews
     @steps = @product.tutorial.steps.order(number: :asc)
     if @product.favorited_by?(current_user)
@@ -23,7 +24,7 @@ class ProductsController < ApplicationController
     else
       @watch_button_text = 'Watch'
     end
-    if @cart_quantity = Cart[current_user].lines[@product]
+    if (@cart_quantity = Cart[current_user].lines[@product])
       @cart_button_string = "Update "
     else
       @cart_quantity = 0
@@ -85,6 +86,11 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def publish
+    @product.update(published: true)
+    redirect_to @product
   end
 
   private

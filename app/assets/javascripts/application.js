@@ -8,8 +8,8 @@
 //= require stripe
 //= require products
 //= require users
+//= require conversations
 //= require coming_soon
-//= require_tree .
 
 document.addEventListener('turbolinks:load', function() {
   $('.hero-dropdown-menu').on('click', 'div', function() {

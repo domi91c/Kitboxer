@@ -2,6 +2,8 @@
 @import "variables";
 @import "bootstrap";
 @import "bootstrap-overrides/**/*";
+//@import "conversations";
+@import "conversations_test";
 @import "navigation";
 @import "trix";
 @import "image-uploader";
@@ -191,11 +193,6 @@ trix-toolbar .history_tools {
     backface-visibility: #444;
   }
 }
-
-.btn-xs {
-  @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $font-size-sm, 1, $btn-border-radius-sm);
-}
-
 .card-social-media-button {
   font-size: 1.5rem;
   margin:    0 10px 0 10px;
@@ -271,3 +268,4 @@ trix-toolbar .history_tools {
 .pagination.center ul {
   left: -50%;
 }
+

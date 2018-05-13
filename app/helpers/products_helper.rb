@@ -14,4 +14,16 @@ module ProductsHelper
     end
     quantity
   end
+
+  def favorites_count(product)
+    Favorite.where(product_id: product.id).count
+  end
+
+  def sales_count(product)
+    Purchase.where(product_id: product.id).count
+  end
+
+  def view_count(product)
+    product.impressions ||= 0
+  end
 end

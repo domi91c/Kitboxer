@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :users do
+    get 'reviews/index'
+  end
   # global options responder -> makes sure OPTION request for CORS endpoints work
   #
 
@@ -10,18 +13,29 @@ Rails.application.routes.draw do
 
   resources :users do
     resource :store, only: :show, controller: 'users/stores'
+    resources :orders, only: :index, controller: 'users/orders'
+    resources :reviews, only: :index, controller: 'users/reviews'
+    resources :favorites, only: :index, controller: 'users/favorites'
+  end
+
+  resources :conversations do
+    resources :messages, controller: 'conversations/messages'
   end
 
   resources :orders
   resources :charges
   resources :purchases do
     resources :review, controller: 'purchases/review', only: [:new, :create, :update]
+    resources :conversations, controller: 'purchases/conversations' do
+      resources :messages, controller: 'purchases/conversations/messages'
+    end
   end
-  resources :posts
   resources :subscriptions
 
   resources :products do
-    resources :tests, controller: 'products/tests'
+    member do
+      patch :publish
+    end
     resources :build, controller: 'products/build'
     resources :favorites, controller: 'products/favorites', only: [:create, :update]
     resources :images, controller: 'products/images' do

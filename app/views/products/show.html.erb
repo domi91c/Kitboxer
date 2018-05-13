@@ -1,17 +1,19 @@
 <% if @product.user == current_user %>
-  <% content_for :header do %>
-    <div class="page-header">
-      <div class="container-fluid">
-        <% if @product.published %>
+  <% if @product.published %>
+    <% content_for :header do %>
+      <div class="page-header">
+        <div class="container-fluid">
           <h5>Product Statistics </h5>
-        <% else %>
-          <h5>This product isn't live yet. Click <a href="#">here</a> to publish it.</h5>
-        <% end %>
+        </div>
       </div>
+    <% end %>
+  <% else %>
+    <div class="alert alert-primary">This product isn't live yet. Click
+      <strong><%= link_to "here", publish_product_path(@product), method: :patch %></strong>
+      to publish it.
     </div>
   <% end %>
 <% end %>
-
 <section class="card">
   <div class="card-body">
     <div class="row">
@@ -63,20 +65,16 @@
         <table class="table table-hover mt-4">
           <tbody>
           <tr>
-            <td class="has-text-right"><strong>Item ID</strong></td>
-            <td>1234</td>
+            <td class="text-right"><strong>Seller</strong></td>
+            <td><%= @product.user.email %></td>
           </tr>
           <tr>
-            <td class="has-text-right"><strong>Seller</strong></td>
-            <td>jsmith</td>
+            <td class="text-right"><strong>Added</strong></td>
+            <td><%= @product.created_at.strftime("%B %d, %Y") %></td>
           </tr>
           <tr>
-            <td class="has-text-right"><strong>Added</strong></td>
-            <td>3 days ago</td>
-          </tr>
-          <tr>
-            <td class="has-text-right"><strong>Views</strong></td>
-            <td>3</td>
+            <td class="text-right"><strong>Views</strong></td>
+            <td><%= view_count @product %></td>
           </tr>
           </tbody>
         </table>
@@ -117,11 +115,13 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane " id="tutorial" role="tabpanel">
-            <div class=" mt-3">
-              <%= render 'layouts/sample_tutorial', product: @product %>
+          <% unless @product.tutorial.nil? %>
+            <div class="tab-pane " id="tutorial" role="tabpanel">
+              <div class=" mt-3">
+                <%= render 'layouts/sample_tutorial', product: @product %>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>

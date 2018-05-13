@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'users'
   before_action :authenticate_user!
 
   def index
@@ -13,10 +14,8 @@ class UsersController < ApplicationController
     if @user.customer
       @cards = @user.customer.sources
     end
-    @reviews = @user.reviews.page params[:page]
     @products = @user.products.page params[:page]
     @favorite_products = Product.page params[:page]
-    @orders = @user.orders.page params[:page]
   end
 
   def user_params

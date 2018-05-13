@@ -9,3 +9,7 @@
   }
 }
 
+.btn-xs {
+  @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $font-size-sm, 1, $btn-border-radius-sm);
+}
+

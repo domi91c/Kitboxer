@@ -6,8 +6,9 @@
     <% elsif resource.class.name == 'Client' %>
       <h1 class="display-5">Borrower Login</h1>
     <% end %>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }, validate: true) do |f| %>
       <%= devise_error_messages! %>
+      <%= render 'layouts/errors', resource: resource %>
       <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, class: "form-control" %>

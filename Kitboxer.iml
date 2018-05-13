@@ -30,6 +30,7 @@
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v5.2.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionview (v5.2.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="active_model_serializers (v0.10.7, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="active_type (v0.7.5, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activejob (v5.2.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v5.2.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v5.2.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
@@ -122,6 +123,7 @@
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.2.2, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.0.13, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mailboxer (v0.15.1, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v0.3.2, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="material_icons (v2.2.1, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="meta_request (v0.6.0, RVM: ruby-2.5.1 [kitboxer]) [gem]" level="application" />

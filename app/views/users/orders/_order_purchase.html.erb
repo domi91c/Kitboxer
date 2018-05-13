@@ -1,0 +1,35 @@
+<div class="media">
+  <%= image_tag product.cover_thumb.url, style: 'height:100px', class: 'mr-3' %>
+  <div class="media-body ">
+    <h4 class="mt-0"><%= link_to product.title, product_path(product) %> <span></span></h4>
+    <h4 class="display-8 mt-1">@robot_super_store
+      <% if rand(3) == 1 %>
+        <span class="badge badge-success">Shipped March 9th</span>
+      <% end %>
+    </h4>
+    <button class="btn btn-outline-default btn-sm" data-toggle="dropdown">Actions
+      <span class="ml-1 dropdown-toggle"></span>
+    </button>
+    <div class="dropdown-menu ">
+      <%= link_to "Contact Seller", new_purchase_conversation_path(purchase), class: 'dropdown-item' %>
+      <% if purchase.reviewed? %>
+        <a class="dropdown-item"
+           data-toggle="modal"
+           data-target=".js-show-review-modal"
+           href="#">Show Review
+        </a>
+      <% else %>
+        <%= link_to "Leave Review", new_purchase_review_path(purchase), class: 'dropdown-item' %>
+      <% end %>
+      <a class="dropdown-item" href="#">Request Refund</a>
+    </div>
+    <span class="ml-2 display-8 float-right"><%= quantity %> x <%= number_to_currency(product.price) %></span>
+  </div>
+</div>
+<br>
+
+
+<%= render 'contact_seller_modal', product: product %>
+<% if purchase.reviewed? %>
+  <%= render 'show_review_modal' %>
+<% end %>

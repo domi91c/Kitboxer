@@ -1,6 +1,26 @@
 module ApplicationHelper
-  def current_class?(path)
-    request.path == path ? 'active' : ''
+
+  def parent_layout(layout)
+    @view_flow.set(:layout, output_buffer)
+    output = render(file: "layouts/#{layout}")
+    self.output_buffer = ActionView::OutputBuffer.new(output)
+  end
+
+  def current_class?(path, className = "active")
+    request.path == path ? className : ''
+  end
+
+  def flash_class(level)
+    case level.to_sym
+    when :notice then
+      "alert alert-success"
+    when :info then
+      "alert alert-info"
+    when :alert then
+      "alert alert-danger"
+    when :warning then
+      "alert alert-warning"
+    end
   end
 
   def wizard_progress_bar

@@ -1,0 +1,68 @@
+.conversationList {
+  @extend .list-group;
+  height:     84vh;
+  overflow-y: scroll;
+
+  &__item {
+    @extend .list-group-item, .list-group-item-action;
+    &--active {
+      @extend .active
+    }
+  }
+}
+
+.conversation {
+  @extend .card;
+  height: 84vh;
+
+  &__header {
+    @extend .card-body;
+    padding-bottom: 5px;
+    border-bottom:  $border-width solid $gray-300
+  }
+
+  &__body {
+    @extend .card-body;
+    height:100%;
+    overflow-y: scroll;
+  }
+
+  &__footer {
+    @extend .card-footer
+  }
+
+  &__inputGroup {
+    @extend .input-group, .mb-3;
+
+  }
+
+  &__message {
+    @extend .alert, .alert-primary;
+    &--right {
+      @extend .alert, .alert-info, .text-right;
+    }
+  }
+
+  &__name {
+
+  }
+
+  &__fileInput {
+    height:         0.1px;
+    width:          0.1px;
+    outline:        none;
+    display:        inline-block;
+    padding-right:  17px;
+    padding-bottom: 21px;
+    vertical-align: center;
+    border:         0;
+  }
+
+  &__fileInput:before {
+    font-family: FontAwesome;
+    content:     "\f030";
+    position:    relative;
+    border:      none;
+  }
+
+}

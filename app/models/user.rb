@@ -1,9 +1,11 @@
 class User < ApplicationRecord
+
   has_one :store
   has_many :products
   has_many :orders
   has_many :purchases, through: :orders
   has_many :favorites, dependent: :destroy
+  has_many :favorite_products, through: :favorites, source: :product
   has_many :reviews, through: :products
 
   validates_presence_of :first_name
@@ -16,6 +18,20 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+  acts_as_messageable
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def mailboxer_name
+    full_name
+  end
+
+  def mailboxer_email(object)
+    email
+  end
 
   def cart_count
     $redis.hlen "cart#{id}"

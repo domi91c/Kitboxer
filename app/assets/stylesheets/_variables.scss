@@ -1,5 +1,16 @@
+///////////////////////////////////////////////////////////////////////
+
+// Custom
+
 $btn-padding-x-xs: .38rem !default;
 $btn-padding-y-xs: .18rem !default;
+
+$padding-1: .1rem !default;
+$padding-2: .2rem !default;
+$padding-3: .3rem !default;
+$padding-4: .4rem !default;
+$padding-5: .5rem !default;
+
 // Variables
 //
 // Copy settings from this file into the provided `_custom.scss` to override
@@ -846,3 +857,5 @@ $kbd-bg:                      $gray-900 !default;
 
 $pre-color:                   $gray-900 !default;
 $pre-scrollable-max-height:   340px !default;
+
+

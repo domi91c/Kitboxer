@@ -15,16 +15,16 @@
               <% end %>
               <%= link_to truncate(product.title, length: 100, seperator: ' '), product %>
               <% if product.published %>
-                <hr >
-                <i class="fa fa-pencil"></i> 1000 Views |
-                <i class="fa fa-globe"></i> 819 Sales |
-                <i class="fa fa-eye"></i> 81 Watching
+                <hr>
+                <i class="fa fa-pencil"></i> <%= view_count product %> Views |
+                <i class="fa fa-globe"></i> <%= sales_count product %> Sales |
+                <i class="fa fa-eye"></i> <%= favorites_count product %> Watching
               <% end %>
             </td>
             <td><%= number_to_currency product.price %></td>
             <td>
               <button class="btn btn-outline-default btn-sm" data-toggle="dropdown">Actions
-                <span class="ml-1 dropdown-toggle"></span>
+                <span class="ml-1 dropdown-toggle"/>
               </button>
               <div class="dropdown-menu ">
                 <%= link_to "Edit Listing", product_build_path(id: Wicked::FIRST_STEP, product_id: product.id), class: 'dropdown-item' %>
