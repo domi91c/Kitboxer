@@ -10,13 +10,13 @@ class Purchases::Conversations::MessagesController < ApplicationController
 
   private
 
-  def set_purchase
-    @purchase = Purchase.find(params[:purchase_id])
-  end
+    def set_purchase
+      @purchase = Purchase.find(params[:purchase_id])
+    end
 
-  def set_conversation
-    @conversation = current_user.mailbox.conversations.find(params[:conversation_id])
-  end
+    def set_conversation
+      @conversation = current_user.mailbox.conversations.find(params[:conversation_id])
+    end
 
 end
 

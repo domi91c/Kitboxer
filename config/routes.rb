@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  namespace :users do
-    get 'reviews/index'
-  end
-  # global options responder -> makes sure OPTION request for CORS endpoints work
-  #
 
   devise_for :users, controllers: {
       sessions: 'users/sessions',
@@ -12,7 +7,7 @@ Rails.application.routes.draw do
   }
 
   resources :users do
-    resource :store, only: :show, controller: 'users/stores'
+    resource :store, only: :show, controller: 'users/store'
     resources :orders, only: :index, controller: 'users/orders'
     resources :reviews, only: :index, controller: 'users/reviews'
     resources :favorites, only: :index, controller: 'users/favorites'
@@ -23,9 +18,8 @@ Rails.application.routes.draw do
   end
 
   resources :orders
-  resources :charges
   resources :purchases do
-    resources :review, controller: 'purchases/review', only: [:new, :create, :update]
+    resource :review, controller: 'purchases/review', only: [:new, :create, :edit, :update]
     resources :conversations, controller: 'purchases/conversations' do
       resources :messages, controller: 'purchases/conversations/messages'
     end
@@ -33,9 +27,7 @@ Rails.application.routes.draw do
   resources :subscriptions
 
   resources :products do
-    member do
-      patch :publish
-    end
+    resource :publish, controller: 'products/publish'
     resources :build, controller: 'products/build'
     resources :favorites, controller: 'products/favorites', only: [:create, :update]
     resources :images, controller: 'products/images' do

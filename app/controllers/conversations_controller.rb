@@ -3,22 +3,23 @@ class ConversationsController < ApplicationController
   def index
     @conversations = current_user.mailbox.conversations
     @serialized_conversations = ActiveModel::SerializableResource.new(@conversations, each_serializer: ConversationSerializer).as_json
+    redirect_to conversation_path(@conversations.first.id)
   end
 
-  def inbox
-    @conversations = current_user.mailbox.inbox
-    render action: :index
-  end
-
-  def sent
-    @conversations = current_user.mailbox.sentbox
-    render action: :index
-  end
-
-  def trash
-    @conversations = current_user.mailbox.trash
-    render action: :index
-  end
+  # def inbox
+  #   @conversations = current_user.mailbox.inbox
+  #   render action: :index
+  # end
+  #
+  # def sent
+  #   @conversations = current_user.mailbox.sentbox
+  #   render action: :index
+  # end
+  #
+  # def trash
+  #   @conversations = current_user.mailbox.trash
+  #   render action: :index
+  # end
 
   def show
     @conversations = current_user.mailbox.conversations

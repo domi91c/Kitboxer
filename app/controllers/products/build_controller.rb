@@ -23,40 +23,40 @@ class Products::BuildController < ApplicationController
 
   private
 
-  def set_product
-    @product = Product.find(params[:product_id])
-  end
-
-  def product_params(step)
-    permitted_attributes = case step
-                           when 'add_description'
-                             [:title, :price, :tagline, :category, :body, :quantity]
-                           when 'add_images'
-                             [images_attributes: [:image, :image_id, :user_id]]
-                           when 'preview'
-                             [tutorial_attributes: [:image, :image_id, :user_id]]
-                           end
-    params.require(:product).permit(permitted_attributes).merge(form_step: step)
-  end
-
-  def finish_wizard_path(params)
-    product = Product.find(params[:product_id])
-    case params[:submit].to_sym
-    when :publish
-      product.publish
-      flash[:notice] = "Your product has been published."
-      return product_path(params[:product_id])
-    when :create_tutorial
-      flash[:notice] = "Saved product as draft."
-      return new_product_tutorial_path(params[:product_id])
-    when :save_draft
-      flash[:notice] = "Saved product as draft."
-      return user_path(current_user)
-    when :cancel
-      product.destroy
-      flash[:warning] = "Your product was deleted."
-      return user_path(current_user)
+    def set_product
+      @product = Product.find(params[:product_id])
     end
-  end
+
+    def product_params(step)
+      permitted_attributes = case step
+                             when 'add_description'
+                               [:title, :price, :tagline, :category, :body, :quantity]
+                             when 'add_images'
+                               [images_attributes: [:image, :image_id, :user_id]]
+                             when 'preview'
+                               [tutorial_attributes: [:image, :image_id, :user_id]]
+                             end
+      params.require(:product).permit(permitted_attributes).merge(form_step: step)
+    end
+
+    def finish_wizard_path(params)
+      product = Product.find(params[:product_id])
+      case params[:submit].to_sym
+      when :publish
+        product.publish
+        flash[:notice] = "Your product has been published."
+        product_path(product)
+      when :create_tutorial
+        flash[:notice] = "Saved product as draft."
+        new_product_tutorial_path(product)
+      when :save_draft
+        flash[:notice] = "Saved product as draft."
+        product_path(product)
+      when :cancel
+        product.destroy
+        flash[:warning] = "Your product was deleted."
+        user_path(current_user)
+      end
+    end
 
 end

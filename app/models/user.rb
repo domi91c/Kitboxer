@@ -21,10 +21,6 @@ class User < ApplicationRecord
 
   acts_as_messageable
 
-  def full_name
-    "#{first_name} #{last_name}"
-  end
-
   def mailboxer_name
     full_name
   end

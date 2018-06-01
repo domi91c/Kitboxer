@@ -1,9 +1,0 @@
-<h1>Payment Success!</h1>
-
-<p>Thanks for your purchase.</p>
-
-<%= @order.purchases.each do |purchase| %>
-  <%= purchase.product.title %>
-  <%= purchase.quantity %>
-<% end %>
-

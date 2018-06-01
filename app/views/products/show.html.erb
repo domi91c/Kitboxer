@@ -9,7 +9,7 @@
     <% end %>
   <% else %>
     <div class="alert alert-primary">This product isn't live yet. Click
-      <strong><%= link_to "here", publish_product_path(@product), method: :patch %></strong>
+      <strong><%= link_to "here", product_publish_path(@product), method: :post %></strong>
       to publish it.
     </div>
   <% end %>

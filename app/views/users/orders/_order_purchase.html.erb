@@ -31,5 +31,5 @@
 
 <%= render 'contact_seller_modal', product: product %>
 <% if purchase.reviewed? %>
-  <%= render 'show_review_modal' %>
+  <%= render 'show_review_modal', purchase: purchase %>
 <% end %>

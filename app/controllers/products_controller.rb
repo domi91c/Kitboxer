@@ -18,7 +18,9 @@ class ProductsController < ApplicationController
   def show
     @product.increment_impressions(current_user)
     @reviews = @product.reviews
-    @steps = @product.tutorial.steps.order(number: :asc)
+    if @product.tutorial
+      @steps = @product.tutorial.steps.order(number: :asc)
+    end
     if @product.favorited_by?(current_user)
       @watch_button_text = 'Watching'
     else
@@ -88,11 +90,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def publish
-    @product.update(published: true)
-    redirect_to @product
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -102,6 +99,6 @@ class ProductsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def product_params
-    params.require(:product).permit(:title, :body, :tagline, :price, :quantity, :images_attributes => [:image_id, :image])
+    params.require(:product).permit(:title, :body, :tagline, :price, :quantity, images_attributes: [:image_id, :image])
   end
 end

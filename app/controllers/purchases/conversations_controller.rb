@@ -16,7 +16,7 @@ class Purchases::ConversationsController < ApplicationController
     recipient = @purchase.product.user
     receipt = current_user.send_message(recipient, params[:body], params[:subject])
     receipt.notification.update(notified_object: @purchase)
-    redirect_back fallback_location: users_path(current_user), notice: 'Question sent.'
+    redirect_to user_orders_path(current_user), notice: 'Question sent.'
   end
 
   def set_purchase

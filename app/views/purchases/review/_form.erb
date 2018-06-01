@@ -1,4 +1,4 @@
-<%= form_with model: [@purchase, @review], url: purchase_review_index_path(@purchase, @review) do |f| %>
+<%= form_with model: [@purchase, @review], url: purchase_review_path(@purchase) do |f| %>
   <%= render 'layouts/errors', resource: review %>
   <div class="card-header">
     <div class="row">
@@ -17,6 +17,6 @@
   </div>
   <div class="card-footer clearfix">
     <%= link_to "Cancel", :back, class: 'btn btn-light ml-2 float-right' %>
-    <%= f.submit class: 'btn btn-success float-right' %>
+    <%= f.submit 'Submit', class: 'btn btn-success float-right' %>
   </div>
 <% end %>

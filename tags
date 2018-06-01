@@ -804,6 +804,7 @@ PropTypes	public/packs-test/hello_react.js	/^  PropTypes: ReactPropTypes,$/;"	p	
 Properties	public/packs-test/hello_react.js	/^  Properties: {$/;"	c	class:ARIADOMPropertyConfig
 Properties	public/packs-test/hello_react.js	/^  Properties: {$/;"	c	class:HTMLDOMPropertyConfig
 Properties	public/packs-test/hello_react.js	/^  Properties: {},$/;"	p	class:SVGDOMPropertyConfig
+PublishController	app/controllers/products/publish_controller.rb	/^class Products::PublishController < ApplicationController$/;"	c	module:Products
 PulseLoader	public/packs-test/application.js	/^    PulseLoader: __WEBPACK_IMPORTED_MODULE_1_vue_spinner_src_PulseLoader_vue___default.a$/;"	p	class:__webpack_exports__.components
 Purchase	app/models/purchase.rb	/^class Purchase < ApplicationRecord$/;"	c
 PurchasesController	app/controllers/purchases_controller.rb	/^class PurchasesController < ApplicationController$/;"	c
@@ -937,7 +938,7 @@ StepSerializer	app/serializers/step_serializer.rb	/^class StepSerializer < Activ
 StepsController	app/controllers/products/tutorial/steps_controller.rb	/^class Products::Tutorial::StepsController < ApplicationController$/;"	c	module:Products.Tutorial
 StepsHelper	app/helpers/products/tutorial/steps_helper.rb	/^module Products::Tutorial::StepsHelper$/;"	m	module:Products.Tutorial
 Store	app/models/store.rb	/^class Store < ApplicationRecord$/;"	c
-StoresController	app/controllers/users/stores_controller.rb	/^class Users::StoresController < ApplicationController$/;"	c	module:Users
+StoreController	app/controllers/users/store_controller.rb	/^class Users::StoreController < ApplicationController$/;"	c	module:Users
 Sub	public/packs-test/application.js	/^    Sub.prototype = Object.create(Super.prototype);$/;"	c
 Sub	public/packs-test/application.js	/^    var Sub = function VueComponent (options) {$/;"	c	class:Vue.extend
 SubsciptionMailer	app/mailers/subscription_mailer.rb	/^class SubsciptionMailer < ApplicationMailer$/;"	c
@@ -970,7 +971,6 @@ Ta	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^function yd(a){v
 Ta	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^function yd(a){var b=O.gaDevIds;ka(b)&&0!=b.length&&a.set("&did",b.join(","),!0)}function vb(a){/;"	f
 Td	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^(function(){var $c=function(a){this.w=a||[]};$c.prototype.set=function(a){this.w[a]=!0};$c.proto/;"	f
 Td	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^(function(){var $c=function(a){this.w=a||[]};$c.prototype.set=function(a){this.w[a]=!0};$c.proto/;"	f
-TestsController	app/controllers/products/tests_controller.rb	/^class Products::TestsController < ApplicationController$/;"	c	module:Products
 The change you wanted was rejected.	public/422.html	/^      <h1>The change you wanted was rejected.<\/h1>$/;"	h
 The page you were looking for doesn't exist.	public/404.html	/^      <h1>The page you were looking for doesn't exist.<\/h1>$/;"	h
 ToolTip	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c
@@ -1935,7 +1935,7 @@ create	app/controllers/conversations/messages_controller.rb	/^  def create$/;"	f
 create	app/controllers/conversations_controller.rb	/^  def create$/;"	f	class:ConversationsController
 create	app/controllers/orders_controller.rb	/^  def create$/;"	f	class:OrdersController
 create	app/controllers/products/images_controller.rb	/^  def create$/;"	f	class:ImagesController
-create	app/controllers/products/tests_controller.rb	/^  def create$/;"	f	class:TestsController
+create	app/controllers/products/publish_controller.rb	/^  def create$/;"	f	class:PublishController
 create	app/controllers/products/tutorial/images_controller.rb	/^  def create$/;"	f	class:ImagesController
 create	app/controllers/products/tutorial/steps_controller.rb	/^  def create$/;"	f	class:StepsController
 create	app/controllers/products/tutorial_controller.rb	/^  def create$/;"	f	class:TutorialController
@@ -2510,7 +2510,6 @@ ecommerce	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^if(this.g
 ecommerce	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^if(this.g&&(!qa(b)||""==b||!ea(a)))throw"abort";if(ud(this.c)||ud(this.K))throw"abort";if(this.g/;"	p	class:Zd
 edgeMode	public/packs-test/hello_react.js	/^  edgeMode: 'edgeMode',$/;"	p	class:ATTRS
 edit	app/controllers/products/build_controller.rb	/^  def edit$/;"	f	class:BuildController
-edit	app/controllers/products/tests_controller.rb	/^  def edit$/;"	f	class:TestsController
 edit	app/controllers/products/tutorial_controller.rb	/^  def edit$/;"	f	class:TutorialController
 edit	app/controllers/products_controller.rb	/^  def edit$/;"	f	class:ProductsController
 ee	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^for(var c={},d=Math.min(a.length+1,b.length),e=0;e<d;e++)if("object"===typeof b[e]){for(var g in/;"	c
@@ -2734,7 +2733,7 @@ findInvalidAncestorForTag	public/packs-test/hello_react.js	/^  var findInvalidAn
 findOwnerStack	public/packs-test/hello_react.js	/^  var findOwnerStack = function (instance) {$/;"	f
 findParent	public/packs-test/hello_react.js	/^function findParent(inst) {$/;"	f
 findPrevElement	public/packs-test/application.js	/^function findPrevElement (children) {$/;"	f
-finish_wizard_path	app/controllers/products/build_controller.rb	/^  def finish_wizard_path(params)$/;"	f
+finish_wizard_path	app/controllers/products/build_controller.rb	/^    def finish_wizard_path(params)$/;"	f
 firstDifferenceIndex	public/packs-test/hello_react.js	/^function firstDifferenceIndex(string1, string2) {$/;"	f
 fixTitle	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:ToolTip
 fixTransition	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:ToolTip
@@ -3357,7 +3356,6 @@ import	app/javascript/vuex-loading/index.js	/^import vLoading from '.\/v-loading
 in	public/packs-test/hello_react.js	/^  'in': 0,$/;"	p	class:ATTRS
 in2	public/packs-test/hello_react.js	/^  in2: 0,$/;"	p	class:ATTRS
 inDevServer	config/webpack/loaders/vue.js	/^const inDevServer = process.argv.find(v => v.includes('webpack-dev-server'))$/;"	C
-inbox	app/controllers/conversations_controller.rb	/^  def inbox$/;"	f	class:ConversationsController
 include	public/packs-test/application.js	/^    include: patternTypes,$/;"	p	class:KeepAlive.props
 includeScroll	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	f
 increment_impressions	app/models/product.rb	/^  def increment_impressions(current_user)$/;"	f	class:Product
@@ -3365,7 +3363,6 @@ indeterminate	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(f
 indeterminate	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	m	class:formCheckbox.watch
 index	app/controllers/conversations_controller.rb	/^  def index$/;"	f	class:ConversationsController
 index	app/controllers/products/images_controller.rb	/^  def index$/;"	f	class:ImagesController
-index	app/controllers/products/tests_controller.rb	/^  def index$/;"	f	class:TestsController
 index	app/controllers/products_controller.rb	/^  def index$/;"	f	class:ProductsController
 index	app/controllers/purchases/conversations_controller.rb	/^  def index$/;"	f	class:ConversationsController
 index	app/controllers/purchases_controller.rb	/^  def index$/;"	f	class:PurchasesController
@@ -4052,7 +4049,6 @@ nd	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^!hc&&(mc
 needsNormalization	public/packs-test/application.js	/^function needsNormalization (el) {$/;"	f
 nestedFlushStartTime	public/packs-test/hello_react.js	/^    nestedFlushStartTime: performanceNow(),$/;"	p	class:pauseCurrentLifeCycleTimer.currentTimer
 new	app/controllers/conversations_controller.rb	/^  def new$/;"	f	class:ConversationsController
-new	app/controllers/products/tests_controller.rb	/^  def new$/;"	f	class:TestsController
 new	app/controllers/products/tutorial_controller.rb	/^  def new$/;"	f	class:TutorialController
 new	app/controllers/products_controller.rb	/^  def new$/;"	f	class:ProductsController
 new	app/controllers/purchases/conversations_controller.rb	/^  def new$/;"	f	class:ConversationsController
@@ -4459,7 +4455,7 @@ processUpdates	public/packs-test/hello_react.js	/^  processUpdates: function (pa
 productId	public/packs-test/application.js	/^            productId: _this.productId,$/;"	p	class:_loop.card
 productId	public/packs-test/application.js	/^        productId: this.productId,$/;"	p	class:card
 product_id	app/javascript/services/image.js	/^  product_id: null$/;"	p	class:import
-product_params	app/controllers/products/build_controller.rb	/^  def product_params(step)$/;"	f	class:BuildController
+product_params	app/controllers/products/build_controller.rb	/^    def product_params(step)$/;"	f	class:BuildController
 product_params	app/controllers/products_controller.rb	/^  def product_params$/;"	f	class:ProductsController
 productionTip	public/packs-test/application.js	/^  productionTip: "test" !== 'production',$/;"	p	class:config
 products	app/models/cart.rb	/^    def products$/;"	F	class:Cart
@@ -4602,7 +4598,6 @@ pseudoElement	public/packs-test/hello_react.js	/^  pseudoElement: null$/;"	p	cla
 pseudoElement	public/packs-test/hello_react.js	/^  pseudoElement: null$/;"	p	class:TransitionEventInterface
 publicPath	config/webpack/configuration.js	/^  publicPath: formatPublicPath(env.ASSET_HOST, settings.public_output_path)$/;"	p	class:output
 publicPath	config/webpack/shared.js	/^    publicPath: output.publicPath$/;"	p	class:module.exports.output
-publish	app/controllers/products_controller.rb	/^  def publish$/;"	f	class:ProductsController
 publish	app/models/product.rb	/^  def publish$/;"	f	class:Product
 publishEventForPlugin	public/packs-test/hello_react.js	/^function publishEventForPlugin(dispatchConfig, pluginModule, eventName) {$/;"	f
 publishRegistrationName	public/packs-test/hello_react.js	/^function publishRegistrationName(registrationName, pluginModule, eventName) {$/;"	f
@@ -4967,7 +4962,6 @@ selection	public/packs-test/hello_react.js	/^      selection = {$/;"	c
 self	public/packs-test/application.js	/^  self: genGuard("$event.target !== $event.currentTarget"),$/;"	p	class:modifierCode
 send	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^pc.prototype.send=function(a){if(!(1>arguments.length)){var b,c;"string"===typeof arguments[0]?(/;"	m	class:pc
 send	public/uploads/tmp/1524439634-39243-0033-9778/default_analytics.js	/^pc.prototype.send=function(a){if(!(1>arguments.length)){var b,c;"string"===typeof arguments[0]?(/;"	m	class:pc
-sent	app/controllers/conversations_controller.rb	/^  def sent$/;"	f	class:ConversationsController
 serialize	public/packs-test/application.js	/^    utils.forEach(params, function serialize(val, key) {$/;"	f
 set	public/packs-test/application.js	/^    configDef.set = function () {$/;"	f	function:configDef
 set	public/packs-test/application.js	/^    dataDef.set = function (newData) {$/;"	f	function:dataDef
@@ -5026,10 +5020,9 @@ set_cart	app/controllers/carts_controller.rb	/^  def set_cart$/;"	f	class:CartsC
 set_conversation	app/controllers/conversations/messages_controller.rb	/^  def set_conversation$/;"	f	class:MessagesController
 set_conversation	app/controllers/purchases/conversations/messages_controller.rb	/^  def set_conversation$/;"	f	class:MessagesController
 set_cover_image	app/controllers/products/images_controller.rb	/^  def set_cover_image$/;"	f	class:ImagesController
-set_product	app/controllers/products/build_controller.rb	/^  def set_product$/;"	f	class:BuildController
+set_product	app/controllers/products/build_controller.rb	/^    def set_product$/;"	f	class:BuildController
 set_product	app/controllers/products/favorites_controller.rb	/^  def set_product$/;"	f	class:FavoritesController
 set_product	app/controllers/products/images_controller.rb	/^  def set_product$/;"	f	class:ImagesController
-set_product	app/controllers/products/tests_controller.rb	/^  def set_product$/;"	f	class:TestsController
 set_product	app/controllers/products/tutorial/steps_controller.rb	/^  def set_product$/;"	f	class:StepsController
 set_product	app/controllers/products/tutorial_controller.rb	/^  def set_product$/;"	f	class:TutorialController
 set_product	app/controllers/products_controller.rb	/^  def set_product$/;"	f	class:ProductsController
@@ -5072,11 +5065,10 @@ show	app/controllers/carts_controller.rb	/^  def show$/;"	f	class:CartsControlle
 show	app/controllers/conversations_controller.rb	/^  def show$/;"	f	class:ConversationsController
 show	app/controllers/orders_controller.rb	/^  def show$/;"	f	class:OrdersController
 show	app/controllers/products/build_controller.rb	/^  def show$/;"	f	class:BuildController
-show	app/controllers/products/tests_controller.rb	/^  def show$/;"	f	class:TestsController
 show	app/controllers/products/tutorial_controller.rb	/^  def show$/;"	f	class:TutorialController
 show	app/controllers/products_controller.rb	/^  def show$/;"	f	class:ProductsController
 show	app/controllers/purchases/conversations_controller.rb	/^  def show$/;"	f	class:ConversationsController
-show	app/controllers/users/stores_controller.rb	/^  def show$/;"	f	class:StoresController
+show	app/controllers/users/store_controller.rb	/^  def show$/;"	f	class:StoreController
 show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
 show	public/packs-test/application.js	/^  show: show$/;"	p	class:platformDirectives
 show	public/packs-test/application.js	/^\/* WEBPACK VAR INJECTION *\/(function(global) {function concat(){return Array.prototype.concat./;"	c	class:alert.props
@@ -5666,7 +5658,6 @@ trapBubbledEvent	public/packs-test/hello_react.js	/^  trapBubbledEvent: function
 trapBubbledEventsLocal	public/packs-test/hello_react.js	/^function trapBubbledEventsLocal() {$/;"	f
 trapCapturedEvent	public/packs-test/hello_react.js	/^  trapCapturedEvent: function (topLevelType, handlerBaseName, element) {$/;"	m	class:ReactEventListener
 trapFocus	app/assets/javascripts/jquery.fancybox.js	/^        trapFocus : true,$/;"	p	class:defaults
-trash	app/controllers/conversations_controller.rb	/^  def trash$/;"	f	class:ConversationsController
 traverse	public/packs-test/application.js	/^function traverse (val) {$/;"	f
 traverseAllChildren	public/packs-test/hello_react.js	/^function traverseAllChildren(children, callback, traverseContext) {$/;"	f
 traverseAllChildrenImpl	public/packs-test/hello_react.js	/^function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext) {$/;"	f
@@ -5687,7 +5678,6 @@ trim	public/packs-test/application.js	/^function trim(str) {$/;"	f
 trix	package.json	/^    "trix": "^0.11.2",$/;"	s	object:dependencies
 trix-vue2	package.json	/^    "trix-vue2": "^1.0.1",$/;"	s	object:dependencies
 tspan	public/packs-test/hello_react.js	/^  tspan: createDOMFactory('tspan')$/;"	p	class:ReactDOMFactories
-tutorial_params	app/controllers/products/tests_controller.rb	/^  def tutorial_params$/;"	f	class:TestsController
 tutorial_params	app/controllers/products/tutorial_controller.rb	/^  def tutorial_params$/;"	f	class:TutorialController
 twoArgumentPooler	public/packs-test/hello_react.js	/^  twoArgumentPooler: twoArgumentPooler,$/;"	p	class:PooledClass
 twoArgumentPooler	public/packs-test/hello_react.js	/^var twoArgumentPooler = function (a1, a2) {$/;"	f
@@ -5989,7 +5979,6 @@ up	public/packs-test/application.js	/^  up: 38,$/;"	p	class:keyCodes
 update	app/controllers/products/build_controller.rb	/^  def update$/;"	f	class:BuildController
 update	app/controllers/products/favorites_controller.rb	/^  def update$/;"	f	class:FavoritesController
 update	app/controllers/products/images_controller.rb	/^  def update$/;"	f	class:ImagesController
-update	app/controllers/products/tests_controller.rb	/^  def update$/;"	f	class:TestsController
 update	app/controllers/products/tutorial/images_controller.rb	/^  def update$/;"	f	class:ImagesController
 update	app/controllers/products/tutorial/steps_controller.rb	/^  def update$/;"	f	class:StepsController
 update	app/controllers/products/tutorial_controller.rb	/^  def update$/;"	f	class:TutorialController
