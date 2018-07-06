@@ -1,14 +1,8 @@
 class TutorialForm < Reform::Form
-
   property :product_id
-
-  collection :steps, populator: -> (collection:, index:, **) do
-    if (item = collection[index])
-      item
-    else
-      collection.insert(index, Step.new)
-    end
-  end do
+  collection :steps, populator: -> (collection:, index:, **) {
+    (item = collection[index]) ? item : collection.insert(index, Step.new)
+  } do
     property :title
     property :body
     validates :title, presence: true
@@ -23,5 +17,4 @@ class TutorialForm < Reform::Form
       property :image
     end
   end
-
 end

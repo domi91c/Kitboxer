@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light ">
-  <div class="container-fluid ">
+  <div class="container">
 
     <%= link_to image_tag("kitboxer_simple_logo.png", width: 110, style: ''), root_path, class: 'navbar-brand' %>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target=".js-collapse" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
         </li>
         <li class="nav-item ml-4 mb-3 mr-2" style="">
           <% if user_signed_in? %>
-            <%= link_to user_store_path(current_user) do %>
+            <%= link_to my_store_path(current_user) do %>
               <i class="material-icons md-24 store nav-icon">
               </i>
             <% end %>

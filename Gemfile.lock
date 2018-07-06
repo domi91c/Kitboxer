@@ -99,6 +99,8 @@ GEM
       popper_js (~> 1.11.1)
       sass (>= 3.4.19)
     builder (3.2.3)
+    bulma-rails (0.7.1)
+      sass (~> 3.2)
     byebug (10.0.2)
     callsite (0.0.11)
     capybara (3.0.3)
@@ -487,6 +489,7 @@ DEPENDENCIES
   binding_of_caller (>= 0.8.0)
   bootsnap
   bootstrap (= 4.0.0.beta)
+  bulma-rails (~> 0.7.1)
   byebug
   capybara
   capybara-webkit

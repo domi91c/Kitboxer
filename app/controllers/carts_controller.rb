@@ -8,6 +8,8 @@ class CartsController < ApplicationController
   def add
     if params[:cart_quantity].to_i > 0
       @cart.add(params[:product_id], params[:cart_quantity])
+    elsif params[:cart_quantity] <= Product.find(params[:product_id]).quantity
+      @cart.add(params[:product_id], Product.find(params[:product_id]).quantity)
     else
       $redis.hdel current_user.cart_name, params[:product_id]
     end
@@ -32,12 +34,12 @@ class CartsController < ApplicationController
 
   private
 
-  def set_cart
-    @cart = Cart[current_user]
-  end
+    def set_cart
+      @cart = Cart[current_user]
+    end
 
-  def cart_params
-    params.require(:cart).permit(:product_id, :cart_quantity)
-  end
+    def cart_params
+      params.require(:cart).permit(:product_id, :cart_quantity)
+    end
 
 end

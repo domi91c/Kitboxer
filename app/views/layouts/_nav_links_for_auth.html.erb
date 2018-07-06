@@ -7,9 +7,9 @@
       <span class="nav-avatar"><%= image_tag 'default_avatar.png' %></span>
     </a>
     <div class="dropdown-menu dropdown-menu-right">
-      <%= link_to "My Profile", user_path(current_user.id), class: 'dropdown-item' %>
+      <%= link_to "My Profile", my_user_path(current_user.id), class: 'dropdown-item' %>
       <%= link_to "My Messages", conversations_path, class: 'dropdown-item' %>
-      <%= link_to "My Store", user_path(current_user.id), class: 'dropdown-item' %>
+      <%= link_to "My Store", my_user_path(current_user.id), class: 'dropdown-item' %>
       <%= link_to "Edit My Account", edit_user_registration_path, class: 'dropdown-item' %>
       <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
     </div>

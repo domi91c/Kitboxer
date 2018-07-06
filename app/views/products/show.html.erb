@@ -1,130 +1,123 @@
-<% if @product.user == current_user %>
-  <% if @product.published %>
-    <% content_for :header do %>
-      <div class="page-header">
-        <div class="container-fluid">
-          <h5>Product Statistics </h5>
-        </div>
-      </div>
-    <% end %>
-  <% else %>
-    <div class="alert alert-primary">This product isn't live yet. Click
-      <strong><%= link_to "here", product_publish_path(@product), method: :post %></strong>
-      to publish it.
-    </div>
-  <% end %>
-<% end %>
-<section class="card">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-md-6">
-        <% if @product.images.any? %>
-          <%= render 'product_carousel', images: @product.images %>
-        <% end %>
-      </div>
-
-      <div class="col-md-5 ml-auto">
-        <div class="display-5" style="margin-bottom:1.5rem;"> <%= @product.title %> </div>
-
-
-        <p class="display-6 text-muted"><%= number_to_currency(@product.price) %>
-        </p>
-        <hr>
-        <p>
-          <%= render 'show_rating', score: @product.reviews_average %>
-          &nbsp; &nbsp;
-          <strong><%= @product.reviews.count %> Reviews</strong>
-          &nbsp; &nbsp;
-          <%= link_to "show all", '#', class: 'js-show-reviews', remote: true %>
-        </p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-          Nemo
-          enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-          eos
-          qui ratione voluptatem sequi nesciunt. </p>
-
-        <div class="product-actions">
-          &nbsp;
-          <%= form_tag add_to_cart_path(@product), method: :put do %>
-            <div class="row">
-              <div class="number-field" style="user-select: none; display: flex; align-items: center">
-                <span class="js-quantity-decrease ml-3 mr-2"><i class="fa fa-minus cart-icon"></i></span>
-                &nbsp;
-                <%= text_field_tag :cart_quantity, nil, class: 'form-control js-quantity-input', style: 'width: 55px; display:inline', id: 'product-count', value: quantity_field_value(@product) %>
-                <span class="js-quantity-increase mx-2"><i class="fa fa-plus cart-icon"></i></span>
-                &nbsp;
-              </div>
-              <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-                <i class="fa fa-shopping-cart"></i> <%= cart_button_string(@product) %> cart
-              <% end %>
-              <%= link_to fa_icon('star', text: @watch_button_text), product_favorite_path(product_id: @product), remote: true, method: :put, class: 'ml-1 btn btn-info watch-button' %>
-            </div>
+<div class="container">
+  <section class="">
+    <div class="">
+      <div class="row">
+        <div class="col-md-6">
+          <% if @product.images.any? %>
+            <%= render 'product_carousel', images: @product.images %>
           <% end %>
         </div>
-        <table class="table table-hover mt-4">
-          <tbody>
-          <tr>
-            <td class="text-right"><strong>Seller</strong></td>
-            <td><%= @product.user.email %></td>
-          </tr>
-          <tr>
-            <td class="text-right"><strong>Added</strong></td>
-            <td><%= @product.created_at.strftime("%B %d, %Y") %></td>
-          </tr>
-          <tr>
-            <td class="text-right"><strong>Views</strong></td>
-            <td><%= view_count @product %></td>
-          </tr>
-          </tbody>
-        </table>
+
+        <div class="col-md-5 ml-auto">
+          <div class="display-5" style="margin-bottom:1.5rem;"> <%= @product.title %> </div>
+
+
+          <p class="display-6 text-muted"><%= number_to_currency(@product.price) %>
+          </p>
+          <hr>
+          <p>
+            <%= render 'show_rating', score: @product.reviews_average %>
+            &nbsp; &nbsp;
+            <strong><%= @product.reviews.count %> Reviews</strong>
+            &nbsp; &nbsp;
+            <%= link_to "show all", '#', class: 'js-show-reviews', remote: true %>
+          </p>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            Nemo
+            enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos
+            qui ratione voluptatem sequi nesciunt. </p>
+
+          <div class="product-actions">
+            &nbsp;
+            <%= form_tag add_to_cart_path(@product), method: :put do %>
+              <div class="row">
+                <div class="number-field" style="user-select: none; display: flex; align-items: center">
+                  <span class="js-quantity-decrease ml-3 mr-2"><i class="fa fa-minus cart-icon"></i></span>
+                  &nbsp;
+                  <%= text_field_tag :cart_quantity, nil, class: 'form-control js-quantity-input', style: 'width: 55px;
+                 display:inline', id: 'product-count', value: quantity_field_value(@product), data:
+                      { product_quantity: @product.quantity } %>
+                  <span class="js-quantity-increase mx-2"><i class="fa fa-plus cart-icon"></i></span>
+                  &nbsp;
+                </div>
+                <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+                  <i class="fa fa-shopping-cart"></i> <%= cart_button_string(@product) %> cart
+                <% end %>
+                <%= link_to fa_icon('star', text: @watch_button_text), product_favorite_path(product_id: @product), remote: true, method: :put, class: 'ml-1 btn btn-info watch-button' %>
+              </div>
+            <% end %>
+          </div>
+          <table class="table table-hover mt-4">
+            <tbody>
+
+            <tr>
+              <td class="text-right"><strong>Seller</strong></td>
+              <td><%= @product.user.email %></td>
+            </tr>
+            <tr>
+              <td class="text-right"><strong>Added</strong></td>
+              <td><%= @product.created_at.strftime("%B %d, %Y") %></td>
+            </tr>
+            <tr>
+              <td class="text-right"><strong>Views</strong></td>
+              <td><%= view_count @product %></td>
+            </tr>
+            <tr>
+              <td class="text-right"><strong>Quantity</strong></td>
+              <td><%= @product.quantity %></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
 
-    </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-tabs page-header-tabs js-product-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#overview" role="tab" aria-controls="home">Description</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#reviews" role="tab" aria-controls="profile">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#shipping" role="tab" aria-controls="messages">Shipping</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tutorial" role="tab" aria-controls="settings">Tutorial</a>
+            </li>
+          </ul>
 
-    <br>
-    <div class="row">
-      <div class="col-md-12">
-        <ul class="nav nav-tabs page-header-tabs js-product-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#overview" role="tab" aria-controls="home">Description</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab" aria-controls="profile">Reviews</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#shipping" role="tab" aria-controls="messages">Shipping</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tutorial" role="tab" aria-controls="settings">Tutorial</a>
-          </li>
-        </ul>
-
-        <div class="tab-content">
-          <div class="tab-pane active" id="overview" role="tabpanel">
-            <div class="card mt-3 pa-4">
-              <div class="card-body">
-                <%= @product.body.html_safe %>
+          <div class="tab-content">
+            <div class="tab-pane active" id="overview" role="tabpanel">
+              <div class="card mt-3 pa-4">
+                <div class="card-body">
+                  <%= @product.body.html_safe %>
+                </div>
               </div>
             </div>
+            <div class="tab-pane js-reviews-pane" id="reviews" role="tabpanel">
+              <div class="card mt-3">
+                <div class="card-body">
+                  <%= render 'reviews' %>
+                </div>
+              </div>
+            </div>
+            <% unless @product.tutorial.nil? %>
+              <div class="tab-pane " id="tutorial" role="tabpanel">
+                <div class=" mt-3">
+                  <%= render 'layouts/sample_tutorial', product: @product %>
+                </div>
+              </div>
+            <% end %>
           </div>
-          <div class="tab-pane js-reviews-pane" id="reviews" role="tabpanel">
-            <div class="card mt-3">
-              <div class="card-body">
-                <%= render 'reviews' %>
-              </div>
-            </div>
-          </div>
-          <% unless @product.tutorial.nil? %>
-            <div class="tab-pane " id="tutorial" role="tabpanel">
-              <div class=" mt-3">
-                <%= render 'layouts/sample_tutorial', product: @product %>
-              </div>
-            </div>
-          <% end %>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 

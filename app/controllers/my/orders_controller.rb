@@ -1,4 +1,4 @@
-class Users::OrdersController < ApplicationController
+class My::OrdersController < ApplicationController
   layout 'users'
   before_action :authenticate_user!
 

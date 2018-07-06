@@ -8,6 +8,8 @@
   <div class="text-center my-5">
     <p class="display-8 mt-2">Nothing in cart.</p>
     <%= link_to "Go Shopping", products_path, class: 'btn btn-lg btn-outline-dark' %>
+    <br>
+    <%= link_to "or go to your Watch List", my_favorites_path(current_user) , class: 'mt-4'%>
   </div>
 <% end %>
 <hr>

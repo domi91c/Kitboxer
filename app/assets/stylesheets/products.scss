@@ -41,8 +41,8 @@
 }
 
 .hero-dropdown-toggle {
-  font-size:       $display4-size;
-  color:           theme-color("primary");
+  font-size: $display4-size;
+  color:     theme-color("primary");
 }
 
 .hero-dropdown-toggle::after {
@@ -52,3 +52,22 @@
 .hero-dropdown-menu {
   font-size: 30px;
 }
+
+.watch-button:active{
+  animation: bounce 2s ease ;
+}
+
+@keyframes bounce {
+  0%, 10%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-15px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}
+

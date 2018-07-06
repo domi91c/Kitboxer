@@ -29,12 +29,12 @@ class OrdersController < ApplicationController
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
-      redirect_to order_path(@user.id)
+      redirect_to my_order_path(@user.id)
     else
       @order = Order.new(user: current_user, stripe_charge_id: charge.id)
     end
     @order.save
-    redirect_to user_path(current_user)
+    redirect_to my_order_path(current_user)
   end
 
   def order_params

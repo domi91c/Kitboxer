@@ -11,7 +11,11 @@
       <span class="ml-1 dropdown-toggle"></span>
     </button>
     <div class="dropdown-menu ">
-      <%= link_to "Contact Seller", new_purchase_conversation_path(purchase), class: 'dropdown-item' %>
+      <% if purchase.notifications.any? %>
+        <%= link_to "Seller Conversations", purchase_conversations_path(purchase), class: 'dropdown-item' %>
+      <% else %>
+        <%= link_to "Contact Seller", new_purchase_conversation_path(purchase), class: 'dropdown-item' %>
+      <% end %>
       <% if purchase.reviewed? %>
         <a class="dropdown-item"
            data-toggle="modal"

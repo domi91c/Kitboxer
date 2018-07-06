@@ -1,4 +1,4 @@
-class Users::ReviewsController < ApplicationController
+class My::ReviewsController < ApplicationController
   layout 'users'
 
   def index

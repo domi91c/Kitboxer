@@ -34,10 +34,9 @@ const store = new Vuex.Store({
   },
   actions: {
     'UPLOAD_IMAGE': function({ commit, dispatch }, { step, image }) {
-      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/images`
+      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/${step.id}/images`
       const formData = new FormData()
       formData.append('image[image]', image)
-      formData.append('image[step_id]', step.id)
       startLoading(dispatch, `upload image ${step.id}`)
       return axios.post(url, formData)
                   .then(res => {
@@ -50,13 +49,12 @@ const store = new Vuex.Store({
                   })
     },
     'CROP_IMAGE': function({ commit, dispatch }, { step, image, cropData }) {
-      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/images/${image.id}`
+      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/${step.id}/images/${image.id}`
       const formData = new FormData()
       formData.append('image[crop_x]', cropData['x'])
       formData.append('image[crop_y]', cropData['y'])
       formData.append('image[crop_width]', cropData['width'])
       formData.append('image[crop_height]', cropData['height'])
-      formData.append('image[step_id]', step.id)
       startLoading(dispatch, `crop image ${image.id}`)
       return axios.patch(url, formData)
                   .then(res => {
@@ -74,7 +72,7 @@ const store = new Vuex.Store({
                   })
     },
     'DELETE_IMAGE': function({ commit }, { step, image }) {
-      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/images/${image.id}`
+      const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/${step.id}/images/${image.id}`
       return axios.delete(url)
                   .then(() => {
                     commit('REMOVE_IMAGE', {
@@ -116,7 +114,7 @@ const store = new Vuex.Store({
                   .then(res => {
                     endLoading(dispatch, `submitting tutorial`)
                     Turbolinks.visit('/products/' + this.state.productId + '/')
-                    
+
                   })
                   .catch(err => {
                     console.log(err)
@@ -176,7 +174,7 @@ const store = new Vuex.Store({
     getStepById: (state, getters) => (id) => {
       return state.tutorial.steps.find(step => step.id === id)
     },
-    appReady: (state) => state.appReady
+    appReady: (state) => state.appReady,
   },
 })
 

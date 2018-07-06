@@ -112,3 +112,5 @@ gem 'mailboxer'
 
 gem 'active_type'
 
+gem "bulma-rails", "~> 0.7.1"
+

@@ -1,4 +1,4 @@
-class Purchases::Conversations::MessagesController < ApplicationController
+class Conversations::MessagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_purchase
   before_action :set_conversation

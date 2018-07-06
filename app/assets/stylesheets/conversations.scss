@@ -16,14 +16,14 @@
   height: 84vh;
 
   &__header {
-    @extend .card-body;
+    @extend .card-header;
     padding-bottom: 5px;
     border-bottom:  $border-width solid $gray-300
   }
 
   &__body {
     @extend .card-body;
-    height:100%;
+    height:     100%;
     overflow-y: scroll;
   }
 
@@ -32,8 +32,7 @@
   }
 
   &__inputGroup {
-    @extend .input-group, .mb-3;
-
+    @extend .input-group;
   }
 
   &__message {
@@ -65,4 +64,13 @@
     border:      none;
   }
 
+  &__fileInputDetails {
+    @extend .mb-3;
+    padding:          8px 12px;
+    display:          block;
+    background-color: $gray-300;
+    width:            100%;
+  }
+
 }
+

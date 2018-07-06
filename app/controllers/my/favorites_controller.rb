@@ -1,4 +1,4 @@
-class Users::FavoritesController < ApplicationController
+class My::FavoritesController < ApplicationController
   layout 'users'
   before_action :authenticate_user!
 

@@ -3,7 +3,7 @@ class Review < ApplicationRecord
   belongs_to :purchase
   has_many :ratings, dependent: :destroy
 
-  accepts_nested_attributes_for :ratings
+  accepts_nested_attributes_for :ratings, allow_destroy: true
 
 
   def ratings_average(context = nil)

@@ -2,6 +2,19 @@
 // All this logic will automatically be available in application.js.
 
 document.addEventListener('turbolinks:load', function() {
+  $('.rating-field').each((i, el) => {
+    let stars = $(el).children()
+    let currentValue = $(el).data('rating')
+    let selectedStars = stars.filter(function() {
+      return $(this).data('value') <= currentValue
+    })
+    stars.removeClass('rating__icon--checked')
+    selectedStars.addClass('rating__icon--checked')
+    $(this)
+        .parent()
+        .find('input').val(currentValue)
+        .val(currentValue)
+  })
   $('.rating-field > .rating__icon').hover(
       function() {
         let stars = $(this).parent().children()

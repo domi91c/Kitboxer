@@ -6,28 +6,32 @@ Rails.application.routes.draw do
       omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :users do
-    resource :store, only: :show, controller: 'users/store'
-    resources :orders, only: :index, controller: 'users/orders'
-    resources :reviews, only: :index, controller: 'users/reviews'
-    resources :favorites, only: :index, controller: 'users/favorites'
+  resources :stores
+  namespace :my do
+    resource :store, only: :show, controller: 'store'
+    resources :users
+    resources :orders, only: :index
+    resources :reviews, only: :index
+    resources :favorites, only: :index
   end
 
   resources :conversations do
-    resources :messages, controller: 'conversations/messages'
+    resources :messages, child: true, module: :conversations
   end
 
-  resources :orders
-  resources :purchases do
-    resource :review, controller: 'purchases/review', only: [:new, :create, :edit, :update]
-    resources :conversations, controller: 'purchases/conversations' do
-      resources :messages, controller: 'purchases/conversations/messages'
+  resources :orders, shallow: true do
+    resources :purchases, controller: 'orders/purchases', shallow: true do
+      resource :review, controller: 'orders/purchases/review', only: [:new, :create, :edit, :update], shallow: true
+      resources :conversations, controller: 'orders/purchases/conversations', shallow: true do
+        resources :messages, controller: 'orders/purchases/conversations/messages', only: [:new, :create]
+      end
     end
   end
   resources :subscriptions
 
   resources :products do
-    resource :publish, controller: 'products/publish'
+    resources :reviews, module: :products
+    resource :publish, module: :products
     resources :build, controller: 'products/build'
     resources :favorites, controller: 'products/favorites', only: [:create, :update]
     resources :images, controller: 'products/images' do
@@ -36,8 +40,9 @@ Rails.application.routes.draw do
       end
     end
     resource :tutorial, controller: 'products/tutorial' do
-      resources :images, controller: 'products/tutorial/images'
-      resources :steps, controller: 'products/tutorial/steps'
+      resources :steps, controller: 'products/tutorial/steps' do
+        resources :images, controller: 'products/tutorial/steps/images'
+      end
     end
   end
 

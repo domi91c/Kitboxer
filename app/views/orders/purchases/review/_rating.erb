@@ -2,7 +2,7 @@
   <div class="form-group col-md-3">
     <%= ff.label ff.object.context %>
     <%= ff.hidden_field :context, value: ff.object.context %>
-    <div class="rating-field">
+    <div class="rating-field" data-rating="<%= ff.object.score %>">
       <%= ff.hidden_field :score %>
       <i class="rating__icon fa fa-star" data-value="1"></i>
       <i class="rating__icon fa fa-star" data-value="2"></i>

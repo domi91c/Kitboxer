@@ -2,15 +2,21 @@
 // all this logic will automatically be available in application.js.
 
 document.addEventListener('turbolinks:load', function() {
+  $('.carousel').carousel({
+    interval: false,
+  })
+
+  let quantityField = $('.js-quantity-input')
+  let productQuantity = quantityField.data('productQuantity')
   $('.js-quantity-decrease').click(function() {
-    var quantityField = $(this).siblings('.js-quantity-input')
     quantityField.val(Math.max(0, Number(quantityField.val()) - 1))
     // $(this).closest('form').submit()
   })
   $('.js-quantity-increase').click(function() {
-    var quantityField = $(this).siblings('.js-quantity-input')
-    quantityField.val(Math.max(0, Number(quantityField.val()) + 1))
-    // $(this).closest('form').submit()
+    if (quantityField.val() < productQuantity) {
+      quantityField.val(Math.max(0, Number(quantityField.val()) + 1))
+      // $(this).closest('form').submit()
+    }
   })
 
   $('.js-show-reviews').click(function() {
