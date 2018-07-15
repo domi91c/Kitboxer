@@ -8,5 +8,6 @@ describe 'Shopping Cart' do
     product = create(:product)
     visit product_path(1)
     click_button "Add to Cart"
+    save_and_open_page
   end
 end
