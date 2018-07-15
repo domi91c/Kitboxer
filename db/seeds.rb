@@ -26,7 +26,7 @@
       email: "user#{i}@gmail.com",
       password: 'password',
       password_confirmation: 'password',
-      )
+  )
   user.confirmed_at = Time.now
   user.save!
 

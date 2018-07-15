@@ -148,8 +148,6 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    devise-guests (0.6.1)
-      devise
     devise_invitable (1.7.4)
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
@@ -498,7 +496,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   devise
-  devise-guests
   devise_invitable
   dotenv-rails
   factory_bot_rails
