@@ -10,11 +10,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= controller_name %> <%= action_name %>" style="" data-environment="<%=
+<body class="<%= controller_name %> <%= action_name %>" style="background: #fafcfe;" data-environment="<%=
   Rails.env %>">
 <%= render 'layouts/navigation' %>
 <%= content_for?(:header) ? yield(:header) : "" %>
-<div role="main" style="min-height: calc(100vh - 70px); margin-top:15px;">
+<div role="main" style="min-height: calc(100vh - 70px); margin-top:30px;">
   <div class="container-fluid">
     <div class="js-flash">
       <%= render 'layouts/messages' %>

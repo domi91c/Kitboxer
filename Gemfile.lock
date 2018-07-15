@@ -99,8 +99,6 @@ GEM
       popper_js (~> 1.11.1)
       sass (>= 3.4.19)
     builder (3.2.3)
-    bulma-rails (0.7.1)
-      sass (~> 3.2)
     byebug (10.0.2)
     callsite (0.0.11)
     capybara (3.0.3)
@@ -150,6 +148,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-guests (0.6.1)
+      devise
     devise_invitable (1.7.4)
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
@@ -383,7 +383,6 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    ripper-tags (0.6.0)
     rmagick (2.16.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
@@ -490,7 +489,6 @@ DEPENDENCIES
   binding_of_caller (>= 0.8.0)
   bootsnap
   bootstrap (= 4.0.0.beta)
-  bulma-rails (~> 0.7.1)
   byebug
   capybara
   capybara-webkit
@@ -500,6 +498,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   devise
+  devise-guests
   devise_invitable
   dotenv-rails
   factory_bot_rails
@@ -538,7 +537,6 @@ DEPENDENCIES
   redis
   reform
   reform-rails
-  ripper-tags
   rmagick
   rspec-rails
   rubocop

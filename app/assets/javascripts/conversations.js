@@ -12,8 +12,15 @@ document.addEventListener('turbolinks:load', function() {
     }, 0)
   }
 
-  $('.conversation__fileInput').on('change', () => {
+  let fileInput = $('.conversation__fileInput')
+  fileInput.on('change', () => {
     $('.conversation__fileInputDetails').show()
+    $('.conversation__fileInputFileName').html(
+        fileInput.val(),
+    )
   })
-
+  $('.conversation__fileInputCancel').on('click', () => {
+    fileInput.val('')
+    $('.conversation__fileInputDetails').hide()
+  })
 })

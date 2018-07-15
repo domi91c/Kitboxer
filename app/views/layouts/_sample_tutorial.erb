@@ -1,6 +1,6 @@
 <% @steps.each_with_index do |step, index| %>
-  <div class="card-body">
-    <div class="card" style="box-shadow: 1px 3px 0px #ECECEC">
+  <div class="col-md-12 mb-4">
+    <div class="card">
       <div class="card-body">
         <h3>Step <%= index + 1 %>: <span class="display-7"><%= step.title %></span></h3>
         <br>
@@ -13,6 +13,9 @@
               <%= render 'products/product_carousel', images: step.images %>
             <% end %>
           </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn-success">Post Comment</button>
         </div>
       </div>
     </div>

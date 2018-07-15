@@ -1,9 +1,9 @@
 module ProductsHelper
   def cart_button_string(product)
     if Cart[current_user].lines[product]
-      str = "Update "
+      str = "Update Cart"
     else
-      str = "Add to "
+      str = "Add to Cart"
     end
     str
   end

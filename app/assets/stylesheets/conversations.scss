@@ -65,10 +65,8 @@
   }
 
   &__fileInputDetails {
-    @extend .mb-3;
+    display:          none;
     padding:          8px 12px;
-    display:          block;
-    background-color: $gray-300;
     width:            100%;
   }
 
