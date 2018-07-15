@@ -24,7 +24,7 @@ class Product < ApplicationRecord
   scope :favorited_by, -> (user) { joins(:favorites).where(favorites: { user: User.find(user.id) }) }
 
   def favorited_by?(user)
-    favorites.where(user: User.find(user.id)).any?
+    favorites.where(user: User.find(user.id)).any? if user_signed_in?
   end
 
   def publish

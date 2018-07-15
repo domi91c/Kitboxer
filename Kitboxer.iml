@@ -182,6 +182,7 @@
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v0.5.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="representable (v3.0.4, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v2.4.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ripper-tags (v0.6.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rmagick (v2.16.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec (v3.7.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.7.1, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />

@@ -2,6 +2,11 @@
   "name": "bstemp",
   "private": true,
   "dependencies": {
+    "@angular/common": "^6.0.7",
+    "@angular/compiler": "^6.0.7",
+    "@angular/core": "^6.0.7",
+    "@angular/platform-browser": "^6.0.7",
+    "@angular/platform-browser-dynamic": "^6.0.7",
     "@fancyapps/fancybox": "^3.1.20",
     "@rails/webpacker": "^3.4.3",
     "axios": "^0.18.0",
@@ -18,6 +23,7 @@
     "coffee-loader": "^0.7.3",
     "coffee-script": "^1.12.6",
     "compression-webpack-plugin": "^1.0.0",
+    "core-js": "^2.5.7",
     "cropperjs": "^1.3.4",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0",
@@ -42,6 +48,7 @@
     "react-image-crop-component": "latest",
     "react-trix": "^0.2.2",
     "resolve-url-loader": "^2.1.0",
+    "rxjs": "^6.2.1",
     "sass-loader": "^6.0.6",
     "scroll-into-view": "^1.9.3",
     "style-loader": "^0.18.2",
@@ -64,7 +71,8 @@
     "vuex-map-fields": "^1.1.6",
     "webpack": "^3.3.0",
     "webpack-manifest-plugin": "^1.1.2",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "ava": "^0.22.0",

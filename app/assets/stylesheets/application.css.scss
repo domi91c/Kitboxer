@@ -16,6 +16,7 @@
 @import "store";
 @import "reviews";
 @import "jquery.fancybox";
+
 div.trix-button-row > span.trix-button-group.trix-button-group--history-tools {
   display: none;
 }
@@ -191,6 +192,7 @@ trix-toolbar .history_tools {
     backface-visibility: #444;
   }
 }
+
 .card-social-media-button {
   font-size: 1.5rem;
   margin:    0 10px 0 10px;
