@@ -40,7 +40,7 @@ group :development do
   gem "letter_opener"
 end
 group :development, :test do
-  gem 'bootsnap', require: false
+  # gem 'bootsnap', require: false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'puts_debuggerer', '~> 0.7.1'
