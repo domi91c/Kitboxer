@@ -1,4 +1,4 @@
 class Store < ApplicationRecord
-  belongs_to :user
   has_many :products
+  belongs_to :user, optional: true
 end

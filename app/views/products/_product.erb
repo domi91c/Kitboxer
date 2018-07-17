@@ -3,16 +3,16 @@
     <div class="product-card card m-1" style="">
       <div class="card-img-top">
         <% if product.images.last %>
-            <%= link_to product_path(product.id) do %>
-                <img src=" <%= product.cover_image.thumb %>" class="product-card-image img-fluid">
-            <% end %>
+          <%= link_to product_path(product.id) do %>
+            <img src=" <%= product.cover_image.thumb %>" class="product-card-image img-fluid">
+          <% end %>
         <% end %>
       </div>
       <div class="product-card-footer card-footer">
         <div class="product-card-title _truncate"><%= product.title %></div>
         <div class="product-card-meta">
           <span class="product-card-price float-right"><%= number_to_currency(product.price) %></span>
-          <span class="product-card-username text-muted _truncate "><%= product.user.email %></span>
+          <span class="product-card-username text-muted _truncate "><%= product.store.user.email %></span>
         </div>
       </div>
     </div>

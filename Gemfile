@@ -28,7 +28,6 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
-  gem 'guard-zeus'
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'binding_of_caller', '>= 0.8.0'
   gem 'hub', :require => nil
@@ -40,7 +39,7 @@ group :development do
   gem "letter_opener"
 end
 group :development, :test do
-  # gem 'bootsnap', require: false
+  gem 'bootsnap', require: false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'puts_debuggerer', '~> 0.7.1'
@@ -58,6 +57,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem "fakeredis"
 end
 gem 'font-awesome-rails'
 
@@ -112,3 +112,5 @@ gem 'mailboxer'
 
 gem 'active_type'
 
+gem 'zeus'
+gem 'spring-commands-rspec'

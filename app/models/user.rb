@@ -1,8 +1,8 @@
 class User < ApplicationRecord
 
   has_one :store
-  has_many :products
   has_many :orders
+  has_many :products, through: :store
   has_many :purchases, through: :orders
   has_many :favorites, dependent: :destroy
   has_many :favorite_products, through: :favorites, source: :product

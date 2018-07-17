@@ -7,16 +7,20 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:search]
-      @products = Product.where(published: true).search(params[:search])
+      # @products = Product.where(published: true)
+      @products = Product.joins(:images).group('products.id').search(params[:search])
     else
-      @products = Product.where(published: true)
+      # @products = Product.where(published: true)
+      @products = Product.joins(:images).group('products.id')
     end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @product.increment_impressions(current_user)
+    if user_signed_in?
+      @product.increment_impressions(current_user)
+    end
     @reviews = @product.reviews
     if @product.tutorial
       @steps = @product.tutorial.steps.order(number: :asc)

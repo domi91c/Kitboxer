@@ -1,6 +1,9 @@
 require 'rspec'
 
 describe 'Shopping Cart' do
+  before(:each) do
+    $redis.flushdb
+  end
 
   it 'should add a #product to the #cart' do
     user = create(:user)
@@ -8,6 +11,6 @@ describe 'Shopping Cart' do
     product = create(:product)
     visit product_path(1)
     click_button "Add to Cart"
-    save_and_open_page
+    expect 
   end
 end

@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :user
+  belongs_to :store
 
   has_many :images, dependent: :destroy
   has_one :tutorial, dependent: :destroy
@@ -17,7 +17,7 @@ class Product < ApplicationRecord
   validates :body, presence: true, if: -> { required_for_step?(:add_description) }
   validates :price, presence: true, numericality: true, if: -> { required_for_step?(:add_description) }
   validates :quantity, presence: true, numericality: { only_integer: true }, if: -> { required_for_step?(:add_description) }
-  validate :has_images, if: -> { required_for_step?(:add_images) }
+  # validate :has_images, if: -> { required_for_step?(:add_images) }
 
   # scope :published?, -> { where(published: true) }
   # scope :unpublished?, -> { where(published: false) }
@@ -70,6 +70,9 @@ class Product < ApplicationRecord
     includes(:images).where.not(:images => { :image => nil })
   end
 
+  def user
+    store.user
+  end
 
   def reviews_average(context = nil)
     if reviews.any?
@@ -84,7 +87,7 @@ class Product < ApplicationRecord
   end
 
   def increment_impressions(current_user)
-    unless user == current_user
+    unless store.user == current_user
       increment!(:impressions)
     end
   end

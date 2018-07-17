@@ -50,6 +50,7 @@
     <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.4.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.5.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v0.8.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.3.1, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap (v4.0.0.beta, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.3, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.16.2, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
@@ -86,6 +87,7 @@
     <orderEntry type="library" scope="PROVIDED" name="factory_bot (v4.8.2, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_bot_rails (v4.8.2, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faker (v1.8.7, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fakeredis (v0.7.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faraday (v0.12.2, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.23, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="font-awesome-rails (v4.7.0.4, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
@@ -98,7 +100,6 @@
     <orderEntry type="library" scope="PROVIDED" name="guard-livereload (v2.5.2, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-rails (v0.8.1, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-rspec (v4.7.3, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="guard-zeus (v2.0.1, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hashie (v3.5.7, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="high_voltage (v3.0.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hiredis (v0.6.1, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
@@ -134,6 +135,7 @@
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.0.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_portile2 (v2.3.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.11.3, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.2.4, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.13.1, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.6.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.0.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />

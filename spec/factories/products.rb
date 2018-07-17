@@ -7,8 +7,6 @@ FactoryBot.define do
     association(:user)
     price 49.99
     quantity 10
-    after :new do |product|
-      create_list :image, 3, product: product
-    end
+    images { build_list :image, 3 }
   end
 end

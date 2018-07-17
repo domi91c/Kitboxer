@@ -8,7 +8,7 @@
 # user = CreateAdminService.new.call
 # puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
-
+#
 # user = User.new(
 #     first_name: 'Dominic',
 #     last_name: 'Nunes',
@@ -18,19 +18,20 @@
 # )
 # user.confirmed_at = Time.now
 # user.save!
-
-100.times do |i|
-  user = User.new(
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      email: "user#{i}@gmail.com",
-      password: 'password',
-      password_confirmation: 'password',
-  )
-  user.confirmed_at = Time.now
-  user.save!
-
-end
+# user.create_store(name: 'Dominic\'s Store')
+#
+# 100.times do |i|
+#   user = User.new(
+#       first_name: Faker::Name.first_name,
+#       last_name: Faker::Name.last_name,
+#       email: "user#{i}@gmail.com",
+#       password: 'password',
+#       password_confirmation: 'password',
+#   )
+#   user.confirmed_at = Time.now
+#   user.save!
+#   user.create_store(name: Faker::Company.name)
+# end
 
 (1...100).each do |i|
   product = Product.new(
@@ -40,7 +41,7 @@ end
       price: rand(100),
       quantity: rand(1...20),
       category: Faker::Commerce.department(1),
-      user_id: rand(100),
+      store_id: rand(100),
   )
   (1...(rand(5))).each do
     product.images.new(
@@ -48,8 +49,8 @@ end
                                    'app', 'assets', 'images', 'kits', "#{rand(20)}.png")),
     )
   end
-  product.save
-  p product.images
+  product.save!
+  p product
 end
 
 Product.all.each do |product|
@@ -67,6 +68,3 @@ Product.all.each do |product|
   end
   tutorial.save
 end
-
-
-

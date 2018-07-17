@@ -7,7 +7,7 @@
                         <img v-show="false" :src="image" alt="">
                         <vue-cropper
                                 ref='cropper'
-                                :aspect-ratio="1/1"
+                                :aspect-ratio="1"
                                 :guides="false"
                                 :minContainerWidth="520"
                                 :minContainerHeight="500"
@@ -32,8 +32,8 @@
 <script>
 
   import VueCropper from 'vue-cropperjs'
-  import {bus} from '../../main.js'
-  import {uploadImage} from '../model.js'
+  import { bus } from '../../main.js'
+  import { uploadImage } from '../model.js'
 
   export default {
     components: {
@@ -67,46 +67,46 @@
         fd.append('crop_data', JSON.stringify(cropData))
         fd.append('avatar', this.currentImage)
         uploadImage(fd).then(x => {
-          this.$emit('submit', x);
+          this.$emit('submit', x)
         }).catch(x => {
-        });
+        })
       },
     },
-  };
+  }
 </script>
 
 
 <style>
     .img-container {
         max-width: 100%;
-        height: 500px;
+        height:    500px;
     }
 
     .file-input {
-        width: 0.1px;
-        height: 0.1px;
-        opacity: 0;
+        width:    0.1px;
+        height:   0.1px;
+        opacity:  0;
         overflow: hidden;
         position: absolute;
-        z-index: -1;
+        z-index:  -1;
     }
 
     .drop-box {
-        position: absolute;
-        border: 2px dashed #666;
+        position:         absolute;
+        border:           2px dashed #666;
         background-color: #ccc;
-        width: 95%;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center
+        width:            95%;
+        height:           500px;
+        display:          flex;
+        flex-direction:   column;
+        justify-content:  center
     }
 
     .loading {
-        width: 95%;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
+        width:           95%;
+        height:          500px;
+        display:         flex;
+        flex-direction:  column;
         justify-content: center
     }
 
@@ -116,8 +116,8 @@
 
     .v-spinner {
         position: absolute;
-        top: 50%;
-        margin: 0 auto;
-        width: 100%;
+        top:      50%;
+        margin:   0 auto;
+        width:    100%;
     }
 </style>
