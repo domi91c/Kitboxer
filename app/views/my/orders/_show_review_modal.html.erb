@@ -1,6 +1,6 @@
 <div class="modal js-show-review-modal">
   <div class="modal-center">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Review for: <%= truncate(purchase.product.title) %></h5>
@@ -9,7 +9,6 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Modal body text goes here.</p>
           <br>
           <% purchase.review.ratings.each do |rating| %>
             <%= rating.context %>
@@ -18,8 +17,8 @@
           <%= purchase.review.summary %>
         </div>
         <div class="modal-footer">
-          <%= link_to "Edit", edit_purchase_review_path(purchase.id) , class: 'btn btn-primary'%>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= link_to "Edit", edit_purchase_review_path(purchase), class: 'btn btn-primary', remote: true %>
+          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

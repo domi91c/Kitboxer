@@ -1,0 +1,11 @@
+<div class="conversation__message
+                <%= receipt.sender == current_user ? 'conversation__message--right' : '' %>">
+  <strong><%= receipt.sender.full_name %></strong>
+  <%= simple_format receipt.body %>
+
+  <% if receipt.attachment? %>
+    <strong>Attachment:</strong>
+    <%= link_to receipt.attachment.file.filename, receipt.attachment.url, target: :blank %>
+  <% end %>
+</div>
+

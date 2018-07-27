@@ -2,6 +2,9 @@
 // All this logic will automatically be available in application.js.
 
 document.addEventListener('turbolinks:load', function() {
+  initRatingFields()
+})
+function initRatingFields() {
   $('.rating-field').each((i, el) => {
     let stars = $(el).children()
     let currentValue = $(el).data('rating')
@@ -45,4 +48,4 @@ document.addEventListener('turbolinks:load', function() {
         .find('input').val(currentValue)
         .val(currentValue)
   })
-})
+}

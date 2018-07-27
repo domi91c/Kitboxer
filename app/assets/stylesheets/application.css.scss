@@ -16,9 +16,13 @@
 @import "store";
 @import "reviews";
 @import "jquery.fancybox";
+@import "purchases";
 
-.page-header-tabs .nav-item .active {
-  background-color: transparent;
+.messages {
+  position: fixed;
+  top:      3px;
+  right:    4px;
+  z-index:  9999;
 }
 
 .card {
@@ -53,8 +57,7 @@ body {
 }
 
 .navbar {
-  padding:          4px;
-  background-color: #fff;
+  padding: 4px;
 }
 
 .dropdown-toggle::after {
@@ -83,8 +86,9 @@ body {
 .nav-icon {
   position:  relative;
   top:       12px;
-  color:     #51646B;
-  font-size: 1.3em;
+  //color:     #51646B;
+  color:     white;
+  font-size: 1.15em;
   .badge {
     background-color: $red;
     color:            $white;
@@ -209,8 +213,6 @@ trix-toolbar .history_tools {
 .page-header {
   background-color: #ffffff;
   box-shadow:       0 1px 3px rgba(0, 0, 0, .1);
-  position:         relative;
-
   .user-info {
     padding-bottom: 20px;
   }
@@ -221,8 +223,9 @@ trix-toolbar .history_tools {
   color:     #868e96;
   .nav-item {
     .active {
-      border-bottom: 3px solid #00D9A8;
-      color:         #00D9A8;
+      border-bottom:    3px solid #00D9A8;
+      color:            #00D9A8;
+      background-color: transparent;
     }
   }
 }

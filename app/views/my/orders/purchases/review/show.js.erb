@@ -1,0 +1,4 @@
+$('.js-purchase-modal-<%= @purchase.id %>').modal()
+$('.js-purchase-modal-content')
+    .html('<%= j (render 'my/orders/purchases/review/show', purchase: @purchase) %>')
+initRatingFields()

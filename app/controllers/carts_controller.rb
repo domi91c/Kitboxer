@@ -29,6 +29,7 @@ class CartsController < ApplicationController
     current_user.favorite(@product)
     respond_to do |format|
       format.js { flash.now[:notice] = "Added to Watch List" }
+      format.html
     end
   end
 

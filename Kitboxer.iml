@@ -179,6 +179,7 @@
     <orderEntry type="library" scope="PROVIDED" name="reform (v2.2.4, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reform-rails (v0.1.7, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v0.5.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="remotipart (v1.4.2, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="representable (v3.0.4, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v2.4.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rmagick (v2.16.0, RVM: ruby-2.5.1 [kitboxer] (1)) [gem]" level="application" />

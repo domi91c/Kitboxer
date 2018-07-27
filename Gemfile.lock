@@ -372,6 +372,7 @@ GEM
       activemodel (>= 3.2)
       reform (>= 2.2.0)
     regexp_parser (0.5.0)
+    remotipart (1.4.2)
     representable (3.0.4)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
@@ -532,6 +533,7 @@ DEPENDENCIES
   redis
   reform
   reform-rails
+  remotipart (~> 1.2)
   rmagick
   rspec-rails
   rubocop

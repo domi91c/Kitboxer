@@ -1,8 +1,4 @@
 class OrdersController < ApplicationController
-  def show
-    @order = Order.find(params[:id])
-  end
-
   def create
     @user = current_user
     @amount = Cart[current_user].total.to_i
@@ -28,13 +24,12 @@ class OrdersController < ApplicationController
       )
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to new_charge_path
-      redirect_to my_order_path(@user.id)
+      redirect_to my_orders_path
     else
-      @order = Order.new(user: current_user, stripe_charge_id: charge.id)
+      @order = Order.new(user: @user, stripe_charge_id: charge.id)
     end
     @order.save
-    redirect_to my_order_path(current_user)
+    redirect_to my_orders_path
   end
 
   def order_params

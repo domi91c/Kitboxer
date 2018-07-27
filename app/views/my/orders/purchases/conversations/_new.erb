@@ -1,0 +1,23 @@
+<%= form_tag purchase_conversations_path(purchase), method: :post do %>
+  <div class="modal-header">
+    <span class="text-center display-6 align-bottom">
+  <%= image_tag purchase.product.cover_thumb.url, style: 'height:100px', class: 'pr-3' %>
+      RE: <%= purchase.product.title.truncate(100) %></span>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <%= label_tag :subject %>
+      <%= select_tag :subject, options_for_select(["Where's My Stuff?", "Cancel Order", "Change Shipping Address", "Other Shipping Question", "Received Wrong Item", "Received Damaged or Defective Item", "Returns Policy", "Other Question"], "Select a subject"), class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :body %>
+      <%= text_area_tag :body, nil, placeholder: "Leave a comment", class: 'form-control' %>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <%= submit_tag "Submit", class: 'btn btn-primary' %>
+    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+  </div>
+<% end %>

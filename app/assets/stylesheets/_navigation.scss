@@ -1,6 +1,6 @@
 .navbar {
-  border-bottom: 1px solid #d9dede;
-
+  //border-bottom:    1px solid #d9dede;
+  background-color: #25292E;
 }
 
 .navbar-brand {
@@ -26,7 +26,7 @@
   color:       #868E96;
   font-weight: 500;
   position:    relative;
-  font-size:   15px;
+  font-size:   1.15em;
 
   &--icon {
     font-size: 12px !important;
@@ -41,22 +41,25 @@
   @extend .nav-item;
   margin:      0 20px !important;
   height:      23px;
-  border-left: 1px solid $gray-300;
+  border-left: 1px solid $gray-700;
 }
 
 .NavSearch {
-  border:        1px solid #CCCCCC;
-  padding-left:  0.75rem;
-  border-radius: 0.15rem;
-  font-size:     1rem;
-  line-height:   1.25;
-  color:         #868E96;
+  //border:        1px solid #CCCCCC;
+  background-color: #404448;
+  padding-left:     0.75rem;
+  border-radius:    0.15rem;
+  font-size:        1rem;
+  line-height:      1rem;
+  //color:         #868E96;
+  color:            white;
   &--icon {
     margin-top: 6px;
   }
   &--field {
-    border:     0;
-    font-style: italic;
+    border:           0;
+    font-style:       italic;
+    background-color: #404448;
   }
 }
 
@@ -73,8 +76,8 @@
 }
 
 .nav-avatar {
-  height:   30px;
-  width:    30px;
+  height: 30px;
+  width:  30px;
 }
 
 .nav-avatar img {

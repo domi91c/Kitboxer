@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   namespace :my do
     resource :store, only: :show, controller: 'store'
     resources :users
-    resources :orders, only: :index
+    resources :orders, only: :index do
+      member do
+        get :show_conversations
+      end
+    end
     resources :reviews, only: :index
     resources :favorites, only: :index
   end
@@ -19,12 +23,11 @@ Rails.application.routes.draw do
     resources :messages, child: true, module: :conversations
   end
 
-  resources :orders, shallow: true do
-    resources :purchases, controller: 'orders/purchases', shallow: true do
-      resource :review, controller: 'orders/purchases/review', only: [:new, :create, :edit, :update], shallow: true
-      resources :conversations, controller: 'orders/purchases/conversations', shallow: true do
-        resources :messages, controller: 'orders/purchases/conversations/messages', only: [:new, :create]
-      end
+  resources :orders
+  resources :purchases, controller: 'my/orders/purchases' do
+    resource :review, controller: 'my/orders/purchases/review', only: [:show,:new, :create, :edit, :update], shallow: true
+    resources :conversations, controller: 'my/orders/purchases/conversations' do
+      resources :messages, controller: 'my/orders/purchases/conversations/messages', only: [:new, :create]
     end
   end
   resources :subscriptions
@@ -55,4 +58,10 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
 
+  resources :dev do
+    collection do
+      get :user1
+      get :user2
+    end
+  end
 end

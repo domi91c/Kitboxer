@@ -1,0 +1,35 @@
+<div class="conversation__header">
+  <h4><%= @conversation.subject %></h4>
+  <button type="button" class="close" data-dismiss="modal">
+    <span><i class="fa-meetup"></i></span>
+  </button>
+  <% unless @conversation.messages.first.notified_object.nil? %>
+    <h5>RE:  <%= link_to @notified_object.product.title, @notified_object.product %></h5>
+  <% end %>
+</div>
+
+<div class="conversation__body">
+  <div class="conversation__loading"></div>
+  <%= render partial: 'my/orders/purchases/conversations/messages/message',
+             collection: @conversation.messages.order(created_at: :asc).last(25),
+             as: :receipt %>
+</div>
+
+<div class="conversation__footer">
+  <%= form_for @message, url: purchase_conversation_messages_path(purchase_id: @purchase.id, conversation_id: @conversation.id, id: @conversation), remote: true do |f| %>
+    <div class="conversation__inputGroup">
+      <%= f.text_area :body, placeholder: 'Type your message here...', class: 'conversation__textArea form-control' %>
+      <div class="input-group-addon">
+        <%= f.file_field :attachment, class: 'conversation__fileInput' %>
+      </div>
+    </div>
+    <div class="conversation__fileInputDetails">
+      <i class="fa fa-file"></i> <span class="conversation__fileInputFileName"></span>
+      <i class="conversation__fileInputCancel fa fa-close"></i>
+    </div>
+    <%= f.submit "Send", class: 'btn btn-success form-control' %>
+  <% end %>
+</div>
+
+
+</div>

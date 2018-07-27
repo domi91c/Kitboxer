@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :user
-  belongs_to :purchase
+  belongs_to :purchase, optional: true
   has_many :ratings, dependent: :destroy
 
   accepts_nested_attributes_for :ratings, allow_destroy: true

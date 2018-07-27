@@ -1,0 +1,14 @@
+<div class="col-md-8 mx-auto">
+  <div class="media">
+    <div class="media-body">
+      <div class="text-center">
+        <%= image_tag @product.cover_thumb.url, style: 'height:100px', class: 'pr-3' %>
+        <span class="display-6 align-bottom">Review for <%= link_to @product.title.truncate(100), @product, class: 'align-bottom' %></span>
+      </div>
+      <hr>
+      <div class="card">
+        <%= render 'form', review: @review %>
+      </div>
+    </div>
+  </div>
+</div>

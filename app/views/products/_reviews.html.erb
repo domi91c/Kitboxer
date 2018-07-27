@@ -1,38 +1,37 @@
-<div class="reviews-header">
-  <div class="row">
-    <div class="col-sm-3 col-xs-6">
-      <h6>Product</h6>
-      <%= render 'show_rating', score: 4 %>
-    </div>
-    <div class="col-sm-3 col-xs-6">
-      <h6>Communication</h6>
-      <%= render 'show_rating', score: 5 %>
-    </div>
-    <div class="col-sm-3 col-xs-6">
-      <h6>Shipping</h6>
-      <%= render 'show_rating', score: 2 %>
-    </div>
-    <div class="col-sm-3 col-xs-6">
-      <h6>Guides</h6>
-      <%= render 'show_rating', score: 4 %>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <div class="mb-3">
+          <h6>Product <strong> 4.2</strong></h6>
+          <%= render 'show_rating', score: 4 %>
+        </div>
+        <div class="mb-3">
+          <h6>Communication</h6>
+          <%= render 'show_rating', score: 5 %>
+        </div>
+        <div class="mb-3">
+          <h6>Shipping</h6>
+          <%= render 'show_rating', score: 2 %>
+        </div>
+        <div class="">
+          <h6>Guides</h6>
+          <%= render 'show_rating', score: 4 %>
+        </div>
+      </div>
     </div>
   </div>
-  <hr>
-</div>
-<ul class="list-unstyled">
-  <li class="row">
+  <div class="col-md-9">
     <% @reviews.each do |review| %>
       <div class="col-lg-6">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="mt-0"><%= review.summary %></h5>
+        <div class="card">
+          <div class="card-body"><h5 class="mt-0"><%= review.summary %></h5>
             <p><%= review.body %></p>
             <div class="float-right rating__show"><%= render 'show_rating', score: review.ratings_average %>
               —  <%= review.user.first_name %></div>
           </div>
         </div>
-        <hr>
       </div>
     <% end %>
-  </li>
-</ul>
+  </div>
+</div>

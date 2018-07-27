@@ -1,11 +1,14 @@
 //= require jquery
 //= require rails-ujs
+//= require jquery.remotipart
 //= require trix
 //= require turbolinks
 //= require popper
 //= require bootstrap-sprockets
+//= require_directory ./bootstrap-overrides
 //= require rails.validations
 //= require stripe
+//= require jquery.fancybox
 //= require products
 //= require carts
 //= require reviews
@@ -14,6 +17,7 @@
 //= require coming_soon
 
 (function($) {
+
   var ready = $.fn.ready
   $.fn.ready = function(fn) {
     if (this.context === undefined) {
@@ -29,6 +33,7 @@
       }, this))
     }
   }
+
 })(jQuery)
 
 document.addEventListener('turbolinks:load', function() {

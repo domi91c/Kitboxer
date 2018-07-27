@@ -14,7 +14,7 @@
                         <div class="btn btn-info" @click.stop="$emit('preview-image', image)">
                             <i class="fa fa-crop"></i>
                         </div>
-                        <div class="btn btn-secondary" @click.stop="deleteImage">
+                        <div class="btn btn-light" @click.stop="deleteImage">
                             <i class="fa fa-trash"></i>
                         </div>
                     </div>

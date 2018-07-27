@@ -114,3 +114,5 @@ gem 'active_type'
 
 gem 'zeus'
 gem 'spring-commands-rspec'
+gem 'remotipart', '~> 1.2'
+

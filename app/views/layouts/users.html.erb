@@ -6,7 +6,7 @@
       <div class="user-info text-center">
         <%= image_tag 'default_avatar.png', width: 100, class: 'rounded-circle' %>
         <br>
-        <h1 class="mt-3">Dominic Nunes</h1>
+        <h1 class="mt-3"><%= current_user.full_name %></h1>
         <div class="card-social-media-buttons d-inline-block mt-3">
           <span><i class="card-social-media-button fa fa-facebook"></i></span>
           <span><i class="card-social-media-button fa fa-twitter"></i></span>

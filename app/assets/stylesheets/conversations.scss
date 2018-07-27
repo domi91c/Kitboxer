@@ -23,8 +23,12 @@
 
   &__body {
     @extend .card-body;
-    height:     100%;
-    overflow-y: scroll;
+    display:         flex;
+    flex-direction:  column;
+    justify-content: space-between;
+    min-width:       40%;
+    height:          100%;
+    overflow-y:      scroll;
   }
 
   &__footer {
@@ -36,9 +40,15 @@
   }
 
   &__message {
-    @extend .alert, .alert-primary;
+    @extend .alert, .alert-secondary;
+    min-width:    40%;
+    max-width:    60%;
+    margin-right: 0;
     &--right {
-      @extend .alert, .alert-info, .text-right;
+      @extend .alert, .alert-success;
+      margin-left: auto;
+      min-width:   40%;
+      max-width:   60%;
     }
   }
 
@@ -65,9 +75,9 @@
   }
 
   &__fileInputDetails {
-    display:          none;
-    padding:          8px 12px;
-    width:            100%;
+    display: none;
+    padding: 8px 12px;
+    width:   100%;
   }
 
 }

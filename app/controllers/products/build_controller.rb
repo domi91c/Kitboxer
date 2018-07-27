@@ -1,5 +1,5 @@
 class Products::BuildController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update,]
+  before_action :set_product, only: [:show, :edit, :update]
   include Wicked::Wizard
   steps *Product.form_steps
 
@@ -12,7 +12,6 @@ class Products::BuildController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -36,7 +35,7 @@ class Products::BuildController < ApplicationController
                              when 'preview'
                                [tutorial_attributes: [:image, :image_id, :user_id]]
                              end
-      params.require(:product).permit(permitted_attributes).merge(form_step: step)
+      params.require(:product).permit(permitted_attributes).merge(form_step: step, store_id: current_user.store.id)
     end
 
     def finish_wizard_path(params)
@@ -58,5 +57,4 @@ class Products::BuildController < ApplicationController
         user_path(current_user)
       end
     end
-
 end

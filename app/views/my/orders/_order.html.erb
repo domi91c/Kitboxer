@@ -1,0 +1,15 @@
+<h4 class="order-date">Ordered March 3rd, 2017:</h4>
+<div class="card">
+  <div class="card-body">
+    <%= render partial: 'my/orders/purchases/purchase', collection: order.purchases, :as => 'purchase' %>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12 text-right display-8">
+        <p>Tax: $10.23</p>
+        <p>Shipping: $12.32</p>
+        <strong>Total: $34.23</strong>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

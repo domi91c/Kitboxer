@@ -5,4 +5,8 @@ class My::OrdersController < ApplicationController
   def index
     @orders = current_user.orders.page params[:page]
   end
+
+  def orders_params
+    params.require(:orders).permit(:purchase_id)
+  end
 end

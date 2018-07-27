@@ -1,0 +1,79 @@
+.overlay {
+  @extend .modal;
+  margin-left: auto;
+  .overlay-dialog {
+    //box-shadow: -20px 0px 20px -15px rgb(216, 216, 216);
+    background: #fff;
+    position:   fixed;
+    right:      0;
+    width:      80%;
+    height:     100%;
+    margin:     0;
+    padding:    0;
+    border:     none;
+    overflow-y: 0;
+    @include transition($modal-transition);
+    transform:  translate(25%, 0);
+    .overlay-overlay.fade & {
+    }
+    .overlay-overlay.show & {
+      transform: translate(0, 0);
+    }
+    body.overlay-open & {
+      transform: translate(25%, 0);
+    }
+  }
+  @media (min-width: 576px) {
+    .overlay-dialog {
+      max-width: 70%;
+      margin:    0;
+      padding:   0;
+    }
+  }
+
+  .overlay-content {
+    position:      absolute;
+    top:           0;
+    right:         0;
+    bottom:        0;
+    left:          1px;
+    border-radius: 0;
+    box-shadow:    none;
+    border:        none;
+    overflow-x:    hidden;
+  }
+
+  .overlay-header {
+    display:         flex;
+    align-items:     flex-end; // so the close btn always stays on the upper right corner
+    justify-content: initial; // Put overlay header elements (title and dismiss) on opposite ends
+    padding:         $modal-header-padding;
+    border-bottom:   $modal-header-border-width solid $modal-header-border-color;
+  }
+
+  .overlay-title {
+    font-weight: 300;
+    font-size:   2em;
+    color:       #fff;
+    line-height: 30px;
+  }
+
+  .overlay-body {
+    position:    absolute;
+    top:         80px;
+    bottom:      60px;
+    width:       100%;
+    font-weight: 300;
+    overflow:    auto;
+  }
+
+  .overlay-footer {
+    position:   absolute;
+    right:      0;
+    bottom:     0;
+    left:       0;
+    height:     60px;
+    padding:    10px;
+    background: #f1f3f5;
+  }
+}

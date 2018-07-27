@@ -1,13 +1,12 @@
 <div class="container">
-  <div class="wizard mt-5 ">
+  <h1>Listing Preview</h1>
+  <div class="wizard ">
     <%= form_for @product, url: wizard_path, method: :put do |form| %>
       <%= form.hidden_field :id %>
       <div class="row">
         <div class="col-md-9">
           <div class="box">
             <div class="card-body clearfix">
-              <h1>Listing Preview</h1>
-              <hr>
               <%= render 'product_preview', product: @product %>
             </div>
           </div>
@@ -27,7 +26,7 @@
               <%= form.submit 'Publish', name: 'submit[publish]', class: 'btn btn-success ml-2 pull-right' %>
               <%= form.submit 'Create Tutorial', name: 'submit[create_tutorial]', class: 'btn btn-primary ml-2 pull-right' %>
               <%= form.submit 'Save draft', name: 'submit[save_draft]', class: 'btn btn-primary ml-2 pull-right' %>
-              <%= form.submit 'Cancel', name: 'submit[cancel]', class: 'btn btn-outline-default ml-2 pull-right' %>
+              <%= form.submit 'Cancel', name: 'submit[cancel]', class: 'btn btn-outline-light ml-2 pull-right' %>
             </div>
           </div>
         </div>

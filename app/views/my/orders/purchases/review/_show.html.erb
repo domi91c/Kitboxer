@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <div class="text-center">
+    <%= image_tag @review.purchase.product.cover_thumb.url, style: 'height:100px', class: 'pr-3' %>
+    <span class="display-6 align-bottom">Review for <%= link_to @review.purchase.product.title.truncate(100), @review.purchase.product, class: 'align-bottom' %></span>
+  </div>
+</div>
+<div class="modal-header">
+  <% @review.ratings.each do |rating| %>
+    <div class="form-group col-md-3">
+      <label class="control-label"><%= rating.context %></label>
+      <br>
+      <%= render 'products/show_rating', score: rating.score %>
+    </div>
+  <% end %>
+</div>
+<div class="modal-body">
+  <h1 class="display-8"><%= @review.summary %></h1>
+  <p><%= @review.body %></p>
+</div>
+<div class="modal-footer clearfix">
+  <%= link_to "Edit", edit_purchase_review_path(@review.purchase), class: 'btn btn-primary ml-2 float-right', remote: true %>
+  <%= link_to "Cancel", :back, class: 'btn btn-light ml-2 float-right' %>
+</div>

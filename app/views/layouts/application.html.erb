@@ -16,9 +16,7 @@
 <%= content_for?(:header) ? yield(:header) : "" %>
 <div role="main" style="min-height: calc(100vh - 70px); margin-top:30px;">
   <div class="container-fluid">
-    <div class="js-flash">
       <%= render 'layouts/messages' %>
-    </div>
     <%= yield %>
   </div>
 </div>

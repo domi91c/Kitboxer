@@ -1,21 +1,3 @@
 <div class="col-md-8 mx-auto">
-  <% @orders.each do |order| %>
-    <h4 class="order-date">Ordered March 3rd, 2017:</h4>
-    <div class="card">
-      <div class="card-body">
-        <% order.purchases.each do |purchase| %>
-          <%= render 'order_purchase', purchase: purchase, product: purchase.product, quantity: purchase.quantity %>
-        <% end %>
-        <hr>
-        <div class="row">
-          <div class="col-sm-12 text-right display-8">
-            <p>Tax: $10.23</p>
-            <p>Shipping: $12.32</p>
-            <strong>Total: $34.23</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-  <% end %>
+  <%= render @orders %>
 </div>
