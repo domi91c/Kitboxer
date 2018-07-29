@@ -17,6 +17,7 @@
 @import "reviews";
 @import "jquery.fancybox";
 @import "purchases";
+@import "purchases/**/*";
 
 .messages {
   position: fixed;
@@ -66,7 +67,7 @@ body {
   border-top:     0;
   display:        inline-block;
   margin-top:     -0.375em;
-  margin-left:    0.3em;
+  margin-left:    0.5em;
   vertical-align: middle;
   content:        "";
   transform:      rotate(-45deg);
@@ -113,8 +114,13 @@ body {
 }
 
 .footer {
-  background-color: #f5f7fa;
+  background-color: #25292E;
+  color:            white;
   padding:          40px 20px 80px;
+
+  a {
+    color: white;
+  }
 }
 
 .img-container {
@@ -211,6 +217,8 @@ trix-toolbar .history_tools {
 }
 
 .page-header {
+  position:         relative;
+  top:              -30px;
   background-color: #ffffff;
   box-shadow:       0 1px 3px rgba(0, 0, 0, .1);
   .user-info {

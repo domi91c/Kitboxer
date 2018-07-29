@@ -10,16 +10,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= controller_name %> <%= action_name %>" style="background: #fafcfe;" data-environment="<%=
+<body class="<%= controller_name %> <%= action_name %>" style="background: #f2f6f9;" data-environment="<%=
   Rails.env %>">
 <%= render 'layouts/navigation' %>
 <%= content_for?(:header) ? yield(:header) : "" %>
-<div role="main" style="min-height: calc(100vh - 70px); margin-top:30px;">
-  <div class="container-fluid">
-      <%= render 'layouts/messages' %>
+<div role="main" style="min-height: calc(100vh - 70px)">
+  <div class="container">
+    <%= render 'layouts/messages' %>
     <%= yield %>
   </div>
 </div>
+<div class="divider mt-5"></div>
 <%= render 'layouts/footer' %>
 <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
 <%= javascript_pack_tag 'application' %>

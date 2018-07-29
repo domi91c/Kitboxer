@@ -1,0 +1,15 @@
+<div class="purchase-conversation__footer">
+  <%= form_for @message, url: purchase_conversation_messages_path(purchase_id: @purchase.id, conversation_id: @conversation.id, id: @conversation), remote: true do |f| %>
+    <div class="purchase-conversation__inputGroup">
+      <%= f.text_area :body, placeholder: 'Type your message here...', class: 'purchase-conversation__textArea form-control' %>
+      <div class="input-group-addon">
+        <%= f.file_field :attachment, class: 'purchase-conversation__fileInput' %>
+      </div>
+    </div>
+    <div class="purchase-conversation__fileInputDetails">
+      <i class="fa fa-file"></i> <span class="purchase-conversation__fileInputFileName"></span>
+      <i class="purchase-conversation__fileInputCancel fa fa-close"></i>
+    </div>
+    <%= f.submit "Send", class: 'btn btn-success form-control' %>
+  <% end %>
+</div>

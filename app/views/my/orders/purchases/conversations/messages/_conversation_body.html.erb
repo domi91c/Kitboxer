@@ -1,0 +1,7 @@
+<div class="purchase-conversation__body">
+  <div class="purchase-conversation__loading"></div>
+  <%= render partial: 'my/orders/purchases/conversations/messages/message',
+             collection: @conversation.messages.order(created_at: :asc).last(25),
+             as: :receipt %>
+</div>
+

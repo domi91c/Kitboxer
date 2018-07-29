@@ -12,7 +12,7 @@ class My::UsersController < ApplicationController
     end
     @products = @user.products.page params[:page]
     @favorite_products = Product.page params[:page]
-    redirect_to my_orders_path(current_user)
+    redirect_to my_orders_path
   end
 
   def user_params

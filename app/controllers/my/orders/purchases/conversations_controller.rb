@@ -9,9 +9,6 @@ module My
           @conversations = current_user.mailbox.conversations
           @conversation = @conversations.first
           @conversation.mark_as_read(current_user)
-          unless @conversation.messages.first.notified_object.nil?
-            @notified_object = @conversation.messages.first.notified_object
-          end
           @message = Mailboxer::Message.new
           respond_to do |format|
             format.js
@@ -20,6 +17,10 @@ module My
 
         def show
           @conversation = current_user.mailbox.conversations.find(params[:id])
+          @message = Mailboxer::Message.new
+          respond_to do |format|
+            format.js
+          end
         end
 
         def new
@@ -33,6 +34,7 @@ module My
           receipt = current_user.send_message(recipient, params[:body], params[:subject])
           receipt.notification.update(notified_object: @purchase)
           redirect_to my_orders_path(current_user), notice: 'Question sent.'
+
         end
 
         def set_purchase

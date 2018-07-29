@@ -27,20 +27,33 @@ function initConversationsOverlay() {
   })
 }
 
-/*$('.conversationList__item--active')
-    .scrollTop($('.conversationList').height())
-$('.conversation__inputGroup.form-control').keypress(function(event) {
-})
+let initPurchaseConversationOverlay = function() {
+  let currentModal = $('.modal.show')
+  let container = currentModal.find($('.js-purchase-conversation-body'))
+  let body = container.find($('.purchase-conversation__body'))
+  body.scrollTop(100000)
 
-if ($('.conversationList__item--active')) {
-  $('.conversationList__item--active')
-  $('.conversationList').animate({
-    scrollTop: $('.conversationList__item--active').offset() - 100,
-  }, 0)
-}*/
+  body.scroll(function() {
+    if ($(this).scrollTop() === 0) {
+      loadPreviousMessages()
+    }
+  })
+
+  var fileInput = $('.purchase-conversation__fileInput')
+  fileInput.on('change', () => {
+    $('.purchase-conversation__fileInputDetails').show()
+    $('.purchase-conversation__fileInputFileName').html(
+        fileInput.val(),
+    )
+  })
+  $('.purchase-conversation__fileInputCancel').on('click', () => {
+    fileInput.val('')
+    $('.purchase-conversation__fileInputDetails').hide()
+  })
+}
 
 function loadPreviousMessages() {
-  $('.conversation__loading').html(
+  $('.purchase-conversation__loading').html(
       '<h1 class="text-center">' +
       '<i class="fa fa-spinner fa-spin"></i>' +
       '</h1>')

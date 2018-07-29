@@ -1,11 +1,5 @@
 <div class="conversation__header">
   <h4><%= @conversation.subject %></h4>
-  <button type="button" class="close" data-dismiss="modal">
-    <span><i class="fa-meetup"></i></span>
-  </button>
-  <% unless @conversation.messages.first.notified_object.nil? %>
-    <h5>RE:  <%= link_to @notified_object.product.title, @notified_object.product %></h5>
-  <% end %>
 </div>
 
 <div class="conversation__body">

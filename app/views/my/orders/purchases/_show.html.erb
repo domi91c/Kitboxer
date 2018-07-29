@@ -1,17 +1,58 @@
 <div class="PurchaseOverlay">
   <div class="modal-header">
     <%= image_tag @product.cover_thumb.url %>
-    <h4><%= @product.title %></h4>
+    <h4><%= truncate(@product.title, length: 100) %></h4>
     <ul class="nav nav-tabs overlay-tabs justify-content-end">
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#details">Details</a>
+        <a class="nav-link active" data-toggle="tab" href="#details-<%= @purchase.id %>">Details</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="profile">Messages</a>
+        <a class="nav-link " data-toggle="tab" href="#test-<%= @purchase.id %>">Test</a>
       </li>
+      <span class="d-none js-purchase-conversations-tab" data-toggle="tab" href="#messages-<%= @purchase.id %>">Messages</span>
+      <% if @conversations.any? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle js-purchase-conversations-dropdown" data-toggle="dropdown">Messages</a>
+          <div class="dropdown-menu">
+            <% @conversations.each do |conversation| %>
+              <%= link_to truncate(conversation.subject, length: 120), purchase_conversation_path(@purchase, conversation), remote: true, class: 'dropdown-item' %>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Ask Another Question", new_purchase_conversation_path(@purchase), remote: true, class: 'dropdown-item' %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Messages", new_purchase_conversation_path(@purchase), class: 'nav-link', remote: true %>
+        </li>
+      <% end %>
     </ul>
   </div>
-  <div class="modal-body">
-    <h4 class="mt-2">Order Details</h4>
+  <div class="tab-content js-purchase-tabs">
+    <div class="tab-pane fade show active" id="details-<%= @purchase.id %>">
+      <div class="modal-body js-purchase-overlay-body">
+        <h4 class="mt-2">Order Details</h4>
+      </div>
+      <div class="modal-footer js-purchase-overlay-footer">
+        <h1>hiiii</h1>
+      </div>
+    </div>
+    <div class="tab-pane fade show " id="test-<%= @purchase.id %>">
+      <div class="modal-body js-purchase-overlay-body">
+        <h4 class="mt-2">Test Tab</h4>
+      </div>
+      <div class="modal-footer js-purchase-overlay-footer">
+        <h1>testttitngg</h1>
+      </div>
+    </div>
+    <div class="tab-pane show fade" id="messages-<%= @purchase.id %>">
+      <div class="modal-body js-purchase-conversation-body">
+        <h4 class="mt-2">Conversation</h4>
+      </div>
+      <div class="js-purchase-conversation-footer">
+      </div>
+    </div>
   </div>
 </div>
+</ul>
+

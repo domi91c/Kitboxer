@@ -3,13 +3,13 @@
 // Make the div behave like a button
 .btn-group,
 .btn-group-vertical {
-  position: relative;
-  display: inline-flex;
+  position:       relative;
+  display:        inline-flex;
   vertical-align: middle; // match .btn alignment given font-size hack above
 
   > .btn {
     position: relative;
-    flex: 0 1 auto;
+    flex:     0 1 auto;
 
     // Bring the hover, focused, and "active" buttons to the front to overlay
     // the borders properly
@@ -34,8 +34,8 @@
 
 // Optional: Group multiple button groups together for a toolbar
 .btn-toolbar {
-  display: flex;
-  flex-wrap: wrap;
+  display:         flex;
+  flex-wrap:       wrap;
   justify-content: flex-start;
 
   .input-group {
@@ -64,9 +64,13 @@
 //
 // Remix the default button sizing classes into new ones for easier manipulation.
 
-.btn-group-sm > .btn { @extend .btn-sm; }
-.btn-group-lg > .btn { @extend .btn-lg; }
+.btn-group-sm > .btn {
+  @extend .btn-sm;
+}
 
+.btn-group-lg > .btn {
+  @extend .btn-lg;
+}
 
 //
 // Split button dropdowns
@@ -74,7 +78,7 @@
 
 .dropdown-toggle-split {
   padding-right: $btn-padding-x * .75;
-  padding-left: $btn-padding-x * .75;
+  padding-left:  $btn-padding-x * .75;
 
   &::after,
   .dropup &::after,
@@ -89,14 +93,13 @@
 
 .btn-sm + .dropdown-toggle-split {
   padding-right: $btn-padding-x-sm * .75;
-  padding-left: $btn-padding-x-sm * .75;
+  padding-left:  $btn-padding-x-sm * .75;
 }
 
 .btn-lg + .dropdown-toggle-split {
   padding-right: $btn-padding-x-lg * .75;
-  padding-left: $btn-padding-x-lg * .75;
+  padding-left:  $btn-padding-x-lg * .75;
 }
-
 
 // The clickable button for toggling the menu
 // Set the same inset shadow as the :active state
@@ -109,14 +112,13 @@
   }
 }
 
-
 //
 // Vertical button groups
 //
 
 .btn-group-vertical {
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction:  column;
+  align-items:     flex-start;
   justify-content: center;
 
   .btn,
@@ -128,7 +130,7 @@
   > .btn + .btn-group,
   > .btn-group + .btn,
   > .btn-group + .btn-group {
-    margin-top: -$btn-border-width;
+    margin-top:  -$btn-border-width;
     margin-left: 0;
   }
 
@@ -143,7 +145,6 @@
     @include border-top-radius(0);
   }
 }
-
 
 // Checkbox and radio options
 //
@@ -164,8 +165,8 @@
 
     input[type="radio"],
     input[type="checkbox"] {
-      position: absolute;
-      clip: rect(0, 0, 0, 0);
+      position:       absolute;
+      clip:           rect(0, 0, 0, 0);
       pointer-events: none;
     }
   }

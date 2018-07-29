@@ -11,6 +11,9 @@
     </div>
 
     <div class="form-group">
+      <%= text_field_tag :subject, nil, class: 'form-control d-none', placeholder: 'Enter a subject' %>
+    </div>
+    <div class="form-group">
       <%= label_tag :body %>
       <%= text_area_tag :body, nil, placeholder: "Leave a comment", class: 'form-control' %>
     </div>

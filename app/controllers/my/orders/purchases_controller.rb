@@ -5,6 +5,11 @@ module My
 
       def show
         @product = @purchase.product
+        @conversations =
+            current_user.mailbox.conversations
+                .includes(:messages)
+                .merge(Mailboxer::Message
+                           .where(notified_object: @purchase))
         respond_to do |format|
           format.js
         end

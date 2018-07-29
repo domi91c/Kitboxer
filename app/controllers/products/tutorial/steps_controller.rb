@@ -1,5 +1,5 @@
 class Products::Tutorial::StepsController < ApplicationController
-  before_action :set_product, only: [:create, :update, :destroy]
+  before_action :set_product, only: [:index, :create, :update, :destroy]
 
   def create
     @step = @product.tutorial.steps.create(step_params)

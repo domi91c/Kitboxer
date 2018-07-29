@@ -20,7 +20,7 @@ module My
           end
 
           def set_conversation
-            @conversation = current_user.mailbox.conversations.find(params[:conversation_id])
+            @conversation = current_user.mailbox.conversations.find(params[:id])
           end
       end
     end

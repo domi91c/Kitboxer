@@ -33,7 +33,6 @@
       }, this))
     }
   }
-
 })(jQuery)
 
 document.addEventListener('turbolinks:load', function() {

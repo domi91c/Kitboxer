@@ -1,8 +1,4 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.store-show {
+.my-store {
   .product-card {
     border: none;
     .product-card-image {
@@ -31,4 +27,123 @@
       background-color: white;
     }
   }
+
 }
+
+.store {
+  .breadcrumb {
+    background: unset;
+    padding: 0;
+
+  }
+  .card {
+    .card-header {
+      color:       #8F99A3;
+      font-size:   1.25rem;
+      font-weight: 400;
+      border:      none;
+    }
+    .list-group {
+      max-height: 250px;
+      overflow-y: scroll;
+    }
+    .card-footer {
+      border: none;
+      a {
+        font-size:   14px;
+        font-weight: 700;
+        color:       #8F99A3;
+      }
+    }
+  }
+}
+
+.menu-label {
+  color:          #8F99A3;
+  font-size:      1em;
+  letter-spacing: .1em;
+  font-weight:    700;
+  text-transform: uppercase;
+}
+
+.menu-list {
+  list-style:   none;
+  padding-left: 0rem;
+}
+
+.menu-list li {
+  padding: .25rem 0;
+}
+
+.menu-list li a {
+  color:       #0F1D38;
+  font-size:   1em;
+  font-weight: 700;
+  padding:     .5em .75em;
+}
+
+.menu-list li a:hover {
+  background-color: transparent;
+  color:            #276cda;
+  text-decoration:  none;
+}
+
+.menu-list a.is-active {
+  background-color: transparent;
+  color:            #276cda;
+  font-weight:      700;
+}
+
+.menu-list li ul {
+  list-style:   none;
+  border-left:  1px solid #dbdbdb;
+  margin:       .75em;
+  padding-left: 1em;
+}
+
+.box {
+  .card-body {
+    padding-bottom: 1.5rem;
+    padding-top:    1.5rem;
+    .card-title {
+      color:       #363636;
+      font-size:   2rem;
+      font-weight: 600;
+      line-height: 1.125;
+    }
+    .card-subtitle {
+      font-weight: 300;
+      color:       #8F99A3;
+    }
+
+  }
+}
+
+.box {
+}
+
+.box .subtitle {
+  font-weight: 300;
+  color:       #8F99A3;
+}
+
+.jumbotron {
+  padding-bottom: 1.5rem;
+  padding-top:    1.5rem;
+  margin-bottom:  1rem;
+}
+
+.jumbotron.welcome.is-info {
+  background: #36D1DC;
+  background: linear-gradient(to right, #5B86E5, #36D1DC);
+  .title, .subtitle {
+    color: hsl(192, 17%, 99%);
+  }
+  .subtitle {
+    font-size:   1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+

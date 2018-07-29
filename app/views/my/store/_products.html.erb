@@ -1,0 +1,8 @@
+<section class="store-products">
+  <div class="card-deck">
+    <% @products.each do |product| %>
+      <%= render 'products/product', product: product %>
+    <% end %>
+  </div>
+  <%= link_to 'New Product', products_path, method: :post %>
+</section>

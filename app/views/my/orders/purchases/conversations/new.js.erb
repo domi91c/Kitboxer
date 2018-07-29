@@ -1,4 +1,15 @@
+$('.modal').modal('hide')
 $('.js-purchase-modal-<%= @purchase.id %>').modal()
 $('.js-purchase-modal-content')
     .html('<%= j (render 'my/orders/purchases/conversations/new', purchase: @purchase) %>')
 initConversationsOverlay()
+
+$('select[name=subject]').change(function() {
+  if ($(this).val() == 'Other Question') {
+    $('input[name=subject],[type=text]').removeClass('d-none')
+    $('input[name=subject],[type=text]').focus()
+  } else {
+    $('input[name=subject],[type=text]').addClass('d-none')
+  }
+})
+

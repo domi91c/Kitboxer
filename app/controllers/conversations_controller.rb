@@ -3,7 +3,6 @@ class ConversationsController < ApplicationController
 
   def index
     @conversations = current_user.mailbox.conversations
-    @serialized_conversations = ActiveModel::SerializableResource.new(@conversations, each_serializer: ConversationSerializer).as_json
     if @conversations.count > 0
       redirect_to conversation_path(@conversations.first.id)
     end
