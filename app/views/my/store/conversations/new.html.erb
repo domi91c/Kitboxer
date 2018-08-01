@@ -13,7 +13,7 @@
         </div>
         <div class="card-body js-messages-body">
           <div class="input-group mb-3">
-            <%= text_field_tag :recipient, nil, placeholder: 'To', class: 'form-control typeahead', data: { provide: 'typeahead', role: 'tagsinput' }, autocomplete: 'off' %>
+            <%= tags_field_tag :recipient, nil, placeholder: 'To', class: 'form-control typeahead', data: { provide: 'typeahead', role: 'tagsinput' }, autocomplete: 'off' %>
             <div class="input-group-append" data-toggle="modal" data-target=".js-recipients-modal">
               <button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="top" title="Search recipients">
                 <i class="fa fa-user"></i></button>
@@ -54,4 +54,4 @@
   </div>
 </div>
 
-<script>[].forEach.call(document.querySelectorAll('input[type="tags"]'), tagsInput);</script>
+<script>[].forEach.call(document.querySelectorAll('input[type="tags"]'), tagsInput)</script>

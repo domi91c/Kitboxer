@@ -1,0 +1,14 @@
+<% content_for :store_header do %>
+  <%= render 'layouts/my_store/header',
+             title: @title,
+             subtitle: @subtitle %>
+<% end %>
+
+<div class="card">
+  <div class="card-header">
+      <%= link_to fa_icon('arrow-left', text: 'Back'), my_store_conversations_path , class: 'btn btn-primary'%>
+  </div>
+  <div class="card-body">
+
+  </div>
+</div>

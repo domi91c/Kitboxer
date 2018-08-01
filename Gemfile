@@ -115,3 +115,5 @@ gem 'active_type'
 gem 'spring-commands-rspec'
 gem 'remotipart', '~> 1.2'
 
+gem "select2-rails"
+

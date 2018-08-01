@@ -2,6 +2,7 @@ module My
   module Store
     class ConversationsController < My::StoreController
       layout "my_store"
+      before_action :set_conversation, only: [:show]
 
       def index
         @title = 'Inbox'
@@ -26,13 +27,20 @@ module My
       end
 
       def show
-
+        @conversation = Mailboxer::Conversation.find(params[:id])
+        @title = "RE: " << @conversation.original_message.subject
+        @subtitle = "From: " << @conversation.last_sender.name
+        @message = Mailboxer::Message.new
       end
 
       def new
         @title = 'Composing Message'
         @subtitle = ''
         @message = Mailboxer::Message.new
+      end
+
+      def set_conversation
+        @conversation = Mailboxer::Conversation.find(params[:id])
       end
     end
   end

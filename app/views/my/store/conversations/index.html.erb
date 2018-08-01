@@ -12,10 +12,10 @@
       </div>
       <div class="card-body js-messages-body">
         <div class="table-responsive">
-          <table class="table">
+          <table class="table is-clickable">
             <tbody>
             <% @conversations.each do |conversation| %>
-              <tr>
+              <tr data-link="<%= my_store_conversation_path(conversation) %>">
                 <th scope="row"><input type="checkbox" class="form-control"></th>
                 <td><%= conversation.last_sender.name %></td>
                 <td><%= conversation.subject %></td>
@@ -29,3 +29,8 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" charset="utf-8">
+  $('tr[data-link]').click(function() {
+    window.location = $(this).data('link')
+  })
+</script>

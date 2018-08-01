@@ -5,6 +5,7 @@
 //= require turbolinks
 //= require popper
 //= require lodash
+//= require select2
 //= require bootstrap-sprockets
 //= require bootstrap-tagsinput
 //= require_directory ./bootstrap-overrides

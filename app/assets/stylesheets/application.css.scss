@@ -20,8 +20,7 @@
 @import "jquery.fancybox";
 @import "purchases";
 @import "purchases/**/*";
-@import "bootstrap-tagsinput";
-@import "bootstrap-tagsinput-typeahead";
+@import "select2-bootstrap";
 
 .messages {
   position: fixed;
@@ -290,4 +289,9 @@ trix-toolbar .history_tools {
 
 .pagination.center ul {
   left: -50%;
+}
+
+.is-clickable {
+  pointer-events: auto;
+  cursor:         pointer;
 }

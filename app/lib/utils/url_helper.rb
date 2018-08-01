@@ -1,4 +1,4 @@
-def tag_field_tag(name, value = nil, options = {})
+def tags_field_tag(name, value = nil, options = {})
   tag :input, { "type" => "tags", "name" => name, "id" => sanitize_to_id(name), "value" => value }.update(options.stringify_keys)
 end
 
