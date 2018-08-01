@@ -473,8 +473,6 @@ GEM
       railties (>= 3.0.7)
     xpath (3.0.0)
       nokogiri (~> 1.8)
-    zeus (0.15.14)
-      method_source (>= 0.6.7)
 
 PLATFORMS
   ruby
@@ -551,7 +549,6 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webpacker!
   wicked
-  zeus
 
 RUBY VERSION
    ruby 2.5.1p57
