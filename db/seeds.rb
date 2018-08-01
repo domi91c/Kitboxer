@@ -1,13 +1,13 @@
-user = User.new(
-    first_name: 'Dominic',
-    last_name: 'Nunes',
-    email: 'dominic.n@me.com',
-    password: 'password',
-    password_confirmation: 'password',
-)
-user.confirmed_at = Time.now
-user.save!
-user.create_store(name: 'Dominic\'s Store')
+# user = User.new(
+#     first_name: 'Dominic',
+#     last_name: 'Nunes',
+#     email: 'dominic.n@me.com',
+#     password: 'password',
+#     password_confirmation: 'password',
+# )
+# user.confirmed_at = Time.now
+# user.save!
+# user.create_store(name: 'Dominic\'s Store')
 
 100.times do |i|
   user = User.new(

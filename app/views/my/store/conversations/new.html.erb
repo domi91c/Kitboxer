@@ -12,7 +12,14 @@
           <%= link_to fa_icon('envelope', text: 'Inbox'), my_store_conversations_path, class: 'btn btn-info' %>
         </div>
         <div class="card-body js-messages-body">
-          <%= text_field_tag :recipient, nil, placeholder: 'To', class: 'form-control typeahead', data: { provide: 'typeahead' }, autocomplete: 'off' %>
+          <div class="input-group mb-3">
+            <%= text_field_tag :recipient, nil, placeholder: 'To', class: 'form-control typeahead', data: { provide: 'typeahead', role: 'tagsinput' }, autocomplete: 'off' %>
+            <div class="input-group-append" data-toggle="modal" data-target=".js-recipients-modal">
+              <button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="top" title="Search recipients">
+                <i class="fa fa-user"></i></button>
+            </div>
+          </div>
+
           <br>
           <%= text_field_tag :subject, nil, placeholder: 'Subject', class: 'form-control' %>
           <br>
@@ -27,3 +34,24 @@
   </div>
 </div>
 
+<div class="modal js-recipients-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>[].forEach.call(document.querySelectorAll('input[type="tags"]'), tagsInput);</script>

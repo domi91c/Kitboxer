@@ -6,6 +6,7 @@
 //= require popper
 //= require lodash
 //= require bootstrap-sprockets
+//= require bootstrap-tagsinput
 //= require_directory ./bootstrap-overrides
 //= require typeahead
 //= require my/store/conversations
@@ -48,5 +49,14 @@ document.addEventListener('turbolinks:load', function() {
       .click(function() {
         this.find('.active').removeClass('active')
       })
+
 })
 
+// Tooltips
+$(function() {
+  $('[data-toggle="tooltip"]').tooltip()
+
+  $("input").tagsinput('items')
+
+
+})
