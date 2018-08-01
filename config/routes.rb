@@ -45,7 +45,9 @@ Rails.application.routes.draw do
     resources :reviews, module: :products
     resource :publish, module: :products
     resources :build, controller: 'products/build'
-    resources :favorites, controller: 'products/favorites', only: [:create, :update]
+    resources :favorites,
+              controller: 'products/favorites',
+              only: [:create, :update]
     resources :images, controller: 'products/images' do
       member do
         patch :set_cover_image
@@ -53,16 +55,20 @@ Rails.application.routes.draw do
     end
     resource :tutorial, controller: 'products/tutorial' do
       resources :steps, controller: 'products/tutorial/steps' do
-        resources :images, controller: 'products/tutorial/steps/images'
+        resources :images,
+                  controller: 'products/tutorial/steps/images'
       end
     end
   end
 
 
   resource :cart, only: [:show] do
-    put 'add/:product_id', to: 'carts#add', as: :add_to
-    get 'remove/:product_id', to: 'carts#remove', as: :remove_from
-    put 'save_for_later/:product_id', to: 'carts#save_for_later', as: :save_for_later
+    put 'add/:product_id',
+        to: 'carts#add', as: :add_to
+    get 'remove/:product_id',
+        to: 'carts#remove', as: :remove_from
+    put 'save_for_later/:product_id',
+        to: 'carts#save_for_later', as: :save_for_later
   end
 
   root to: 'visitors#index'
