@@ -1,0 +1,31 @@
+<% content_for :store_header do %>
+  <%= render 'layouts/my_store/header',
+             title: @title,
+             subtitle: @subtitle %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card js-my-store-messages">
+      <div class="card-header">
+        <%= link_to fa_icon('pencil', text: 'Compose'), new_my_store_conversation_path, class: 'btn btn-success' %>
+      </div>
+      <div class="card-body js-messages-body">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+            <% @conversations.each do |conversation| %>
+              <tr>
+                <th scope="row"><input type="checkbox" class="form-control"></th>
+                <td><%= conversation.last_sender.name %></td>
+                <td><%= conversation.subject %></td>
+                <td><%= time_ago_in_words(conversation.last_message.created_at) %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

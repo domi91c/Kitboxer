@@ -1,0 +1,17 @@
+<div class="my-store container">
+  <div class="row">
+    <div class="col-md-2">
+      <%= render 'layouts/my_store/sidebar' %>
+    </div>
+    <div class="col-md-10">
+      <%= render 'layouts/my_store/breadcrumbs' %>
+      <%= content_for?(:store_header) ? yield(:store_header) : "" %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= parent_layout("application") %>

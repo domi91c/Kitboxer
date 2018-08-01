@@ -1,0 +1,29 @@
+<% content_for :store_header do %>
+  <%= render 'layouts/my_store/header',
+             title: @title,
+             subtitle: @subtitle %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_tag new_my_store_conversation_path do |f| %>
+      <div class="card js-my-store-messages">
+        <div class="card-header">
+          <%= link_to fa_icon('envelope', text: 'Inbox'), my_store_conversations_path, class: 'btn btn-info' %>
+        </div>
+        <div class="card-body js-messages-body">
+          <%= text_field_tag :recipient, nil, placeholder: 'To', class: 'form-control typeahead', data: { provide: 'typeahead' }, autocomplete: 'off' %>
+          <br>
+          <%= text_field_tag :subject, nil, placeholder: 'Subject', class: 'form-control' %>
+          <br>
+          <%= text_area_tag :body, nil, placeholder: 'Body', class: 'form-control' %>
+        </div>
+        <div class="card-footer">
+          <%= submit_tag "Send", class: 'btn btn-primary float-right' %>
+          <button class="btn btn-dark float-right mr-2"><i class="fa fa-image"></i></button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

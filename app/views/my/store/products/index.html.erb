@@ -1,0 +1,7 @@
+<%= content_for(:store_header) do %>
+  <%= render 'layouts/my_store/header',
+             title: "Selling",
+             subtitle: "#{@products.count } Products are live" %>
+<% end %>
+<%= render 'selling' %>
+

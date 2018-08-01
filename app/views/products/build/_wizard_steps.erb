@@ -1,18 +1,18 @@
 <ul class="list-group">
   <%= link_to "1. Description", wizard_path(:add_description),
-              class: "list-group-item list-group-item-action #{current_class?(wizard_path(:add_description))}" %>
+              class: "list-group-item list-group-item-action #{active_class?(wizard_path(:add_description))}" %>
   <% if @product.images.present? %>
     <%= link_to "2. Images", wizard_path(:add_images),
-                class: "list-group-item list-group-item-action #{current_class?(wizard_path(:add_images))}" %>
+                class: "list-group-item list-group-item-action #{active_class?(wizard_path(:add_images))}" %>
   <% else %>
     <%= content_tag :div, "2. Images",
-                    class: "list-group-item #{current_class?(wizard_path(:add_images))}" %>
+                    class: "list-group-item #{active_class?(wizard_path(:add_images))}" %>
   <% end %>
   <% if @product.images.present? %>
     <%= link_to "3. Preview", wizard_path(:preview),
-                class: "list-group-item list-group-item-action #{current_class?(wizard_path(:preview))}" %>
+                class: "list-group-item list-group-item-action #{active_class?(wizard_path(:preview))}" %>
   <% else %>
     <%= content_tag :div, "3. Preview",
-                    class: "list-group-item #{current_class?(wizard_path(:preview))}" %>
+                    class: "list-group-item #{active_class?(wizard_path(:preview))}" %>
   <% end %>
 </ul>

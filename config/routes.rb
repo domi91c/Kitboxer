@@ -6,9 +6,17 @@ Rails.application.routes.draw do
       omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :stores
   namespace :my do
-    resource :store, only: :show, controller: 'store'
+    resource :store, controller: 'store' do
+      resources :products, controller: 'store/products'
+      resources :conversations, controller: 'store/conversations' do
+        collection do
+          get :sent
+          get :trash
+        end
+      end
+      resources :reviews, controller: 'store/reviews'
+    end
     resources :users
     resources :orders, only: :index do
       member do
@@ -19,13 +27,14 @@ Rails.application.routes.draw do
     resources :favorites, only: :index
   end
 
+  resources :stores
   resources :conversations do
     resources :messages, child: true, module: :conversations
   end
 
   resources :orders
   resources :purchases, controller: 'my/orders/purchases' do
-    resource :review, controller: 'my/orders/purchases/review', only: [:show,:new, :create, :edit, :update], shallow: true
+    resource :review, controller: 'my/orders/purchases/review', only: [:show, :new, :create, :edit, :update], shallow: true
     resources :conversations, controller: 'my/orders/purchases/conversations' do
       resources :messages, controller: 'my/orders/purchases/conversations/messages', only: [:new, :create]
     end

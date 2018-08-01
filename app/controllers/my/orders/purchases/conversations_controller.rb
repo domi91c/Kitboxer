@@ -33,8 +33,10 @@ module My
           recipient = @purchase.product.user
           receipt = current_user.send_message(recipient, params[:body], params[:subject])
           receipt.notification.update(notified_object: @purchase)
+          subject = "#{current_user.name} asked a question."
+          body = "#{current_user.name} asked a question regarding #{@purchase.product.title}."
+          recipient.notify(subject, body, @purchase)
           redirect_to my_orders_path(current_user), notice: 'Question sent.'
-
         end
 
         def set_purchase

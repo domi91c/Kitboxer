@@ -1,0 +1,4 @@
+$('.js-my-store-header-title').html('<%= @title %>')
+$('.js-my-store-header-subtitle').html('<%= @subtitle %>')
+$('.js-my-store-messages')
+    .html('<%= j (render 'my/store/conversations/new') %>')

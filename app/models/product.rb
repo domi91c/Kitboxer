@@ -74,7 +74,6 @@ class Product < ApplicationRecord
     store.user
   end
 
-  #@deprecated
   def user
     store.user
   end

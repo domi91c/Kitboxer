@@ -1,46 +1,31 @@
-<div class="my-store container ">
-  <div class="row">
-    <div class="col-md-3">
-      <%= render 'sidebar' %>
-    </div>
-    <div class="col-md-9">
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Library</a></li>
-          <li class="breadcrumb-item active">Data</li>
-        </ol>
-      </nav>
-      <%= render 'jumbotron' %>
-      <%= render 'stats' %>
-      <br>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12">
-              <%= render 'events' %>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <%= render 'search_products' %>
-          <br>
-          <div class="row">
-            <div class="col-md-12">
-              <%= render 'search_customers' %>
-            </div>
-          </div>
-        </div>
+<%= content_for(:store_header) do %>
+  <%= render 'layouts/my_store/header',
+             title: @store.name,
+             subtitle: '23 Products are live' %>
+<% end %>
+<%= render 'stats' %>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'notifications' %>
       </div>
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="display-4">Products</h1>
-          <hr>
-          <%= render 'products' %>
-        </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'search_products' %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'search_customers' %>
       </div>
     </div>
   </div>
 </div>
+<br>
+<br>

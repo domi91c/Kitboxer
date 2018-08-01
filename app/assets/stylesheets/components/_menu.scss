@@ -1,0 +1,44 @@
+.menu {
+  .menu-label {
+    color:          #8F99A3;
+    font-size:      1em;
+    letter-spacing: .1em;
+    font-weight:    700;
+    text-transform: uppercase;
+  }
+
+  .menu-list {
+    list-style:   none;
+    padding-left: 0rem;
+  }
+
+  .menu-list li {
+    padding: .25rem 0;
+  }
+
+  .menu-list li a {
+    color:       #0F1D38;
+    font-size:   1em;
+    font-weight: 700;
+    padding:     .5em .75em;
+  }
+
+  .menu-list li a:hover {
+    background-color: transparent;
+    color:            #276cda;
+    text-decoration:  none;
+  }
+
+  .menu-list a.active {
+    background-color: transparent;
+    color:            #276cda;
+    font-weight:      700;
+  }
+
+  .menu-list li ul {
+    list-style:   none;
+    border-left:  1px solid #dbdbdb;
+    margin:       .75em;
+    padding-left: 1em;
+  }
+}

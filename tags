@@ -10553,7 +10553,7 @@ formatPublicPath	config/webpack/configuration.js	/^function formatPublicPath(hos
 fs	app/assets/javascripts/jquery.fancybox.js	/^				fs  : 1,$/;"	p	class:defaults.youtube.params
 fullScreen	app/assets/javascripts/jquery.fancybox.js	/^            fullScreen : '<button data-fancybox-fullscreen class="fancybox-button fancybox-butto/;"	p	class:defaults.btnTpl
 fullScreen	app/assets/javascripts/jquery.fancybox.js	/^        fullScreen : {$/;"	c	class:defaults
-full_name	app/models/user.rb	/^  def full_name$/;"	f	class:User
+name	app/models/user.rb	/^  def full_name$/;"	f	class:User
 fullscreen	app/assets/javascripts/jquery.fancybox.js	/^				fullscreen    : 1,$/;"	p	class:defaults.vimeo.params
 ga	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^b=!0;break a}}b=!1}b&&(Ba=!0)}Ud()||Ba||!Ed(new Od(1E4))||(J(36),Ba=!0);(O.gaplugins=O.gaplugins/;"	v
 ga	public/uploads/tmp/1524439634-39243-0033-9778/analytics.js	/^e[2].lastIndexOf("\/"))+"\/"+a);c.href=a;d=b(c);return{protocol:(c.protocol||"").toLowerCase(),h/;"	m	class:Z

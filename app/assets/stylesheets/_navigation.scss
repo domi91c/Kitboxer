@@ -50,7 +50,6 @@
   border-radius:    0.15rem;
   font-size:        1rem;
   line-height:      1rem;
-  //color:         #868E96;
   color:            white;
   &--icon {
     margin-top: 6px;
@@ -59,6 +58,10 @@
     border:           0;
     font-style:       italic;
     background-color: #404448;
+    &:focus {
+      background-color: inherit;
+      color:            inherit;
+    }
   }
 }
 

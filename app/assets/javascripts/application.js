@@ -4,8 +4,11 @@
 //= require trix
 //= require turbolinks
 //= require popper
+//= require lodash
 //= require bootstrap-sprockets
 //= require_directory ./bootstrap-overrides
+//= require typeahead
+//= require my/store/conversations
 //= require rails.validations
 //= require stripe
 //= require jquery.fancybox

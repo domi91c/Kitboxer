@@ -1,0 +1,31 @@
+<aside class="menu">
+  <p class="menu-label">
+    Store
+  </p>
+  <ul class="menu-list">
+    <li><%= active_link_to "Dashboard", my_store_path %></li>
+    <li><%= active_link_to "Selling", my_store_products_path %></li>
+    <li><%= active_link_to "Listings", my_store_path %></li>
+    <li><%= active_link_to "Messages", my_store_conversations_path %></li>
+    <li><%= active_link_to "Reviews", my_store_reviews_path %></li>
+  </ul>
+  <p class="menu-label">
+    Messages
+  </p>
+  <ul class="menu-list">
+    <li><%= active_link_to "Inbox", my_store_conversations_path %></li>
+    <li><%= active_link_to "Sent", sent_my_store_conversations_path %></li>
+    <li><%= active_link_to "Trash", trash_my_store_conversations_path %></li>
+    <li><a href="#">Invitations</a></li>
+    <li><a href="#">Authentication</a></li>
+  </ul>
+  <p class="menu-label">
+    Transactions
+  </p>
+  <ul class="menu-list">
+    <li><%= active_link_to "Settings", edit_my_store_path %></li>
+    <li><a href="#">Payments</a></li>
+    <li><a href="#">Transfers</a></li>
+    <li><a href="#">Balance</a></li>
+  </ul>
+</aside>

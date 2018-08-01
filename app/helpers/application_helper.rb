@@ -6,8 +6,8 @@ module ApplicationHelper
     self.output_buffer = ActionView::OutputBuffer.new(output)
   end
 
-  def current_class?(path, className = "active")
-    request.path == path ? className : ''
+  def active_class?(path, class_name = "active")
+    request.path == path ? (' ' + class_name) : ''
   end
 
   def flash_class(level)

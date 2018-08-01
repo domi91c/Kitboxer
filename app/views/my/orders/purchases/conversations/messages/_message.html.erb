@@ -1,6 +1,6 @@
 <div class="purchase-conversation__message
                 <%= receipt.sender == current_user ? 'purchase-conversation__message--right' : '' %>">
-  <strong><%= receipt.sender.full_name %></strong>
+  <strong><%= receipt.sender.name %></strong>
   <%= simple_format receipt.body %>
 
   <% if receipt.attachment? %>

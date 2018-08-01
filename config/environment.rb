@@ -1,5 +1,6 @@
 # Load the Rails application.
 require_relative 'application'
+require_relative '../app/lib/utils/url_helper.rb'
 
 # Initialize the Rails application.
 Rails.application.initialize!

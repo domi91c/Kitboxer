@@ -22,7 +22,7 @@ class User < ApplicationRecord
   acts_as_messageable
 
   def mailboxer_name
-    full_name
+    name
   end
 
   def mailboxer_email(object)
@@ -41,7 +41,7 @@ class User < ApplicationRecord
     # Stripe::Customer.retrieve(stripe_customer_id) if stripe_customer_id
   end
 
-  def full_name
+  def name
     "#{first_name} #{last_name}"
   end
 

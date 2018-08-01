@@ -6,7 +6,7 @@
         <div class="conversationList">
           <% @conversations.each do |conversation| %>
             <%= link_to conversation_path(conversation) do %>
-              <div class="conversationList__item <%= current_class?(conversation_path(conversation), 'conversationList__item--active') %>">
+              <div class="conversationList__item <%= active_class?(conversation_path(conversation), 'conversationList__item--active') %>">
                 <strong><%= conversation.subject %></strong>
                 <% unless conversation.messages.first.notified_object_id.nil? %>
                   <p>RE: <%= conversation.messages.first.notified_object.product.title %></p>

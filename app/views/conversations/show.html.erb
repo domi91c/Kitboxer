@@ -12,7 +12,7 @@
   <% @conversation.messages.each do |receipt| %>
     <div class="conversation__message
                 <%= receipt.sender == current_user ? 'conversation__message--right' : '' %>">
-      <strong><%= receipt.sender.full_name %></strong>
+      <strong><%= receipt.sender.name %></strong>
       <%= simple_format receipt.body %>
 
       <% if receipt.attachment? %>
