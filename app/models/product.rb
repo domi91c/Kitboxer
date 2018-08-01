@@ -17,7 +17,7 @@ class Product < ApplicationRecord
   validates :body, presence: true, if: -> { required_for_step?(:add_description) }
   validates :price, presence: true, numericality: true, if: -> { required_for_step?(:add_description) }
   validates :quantity, presence: true, numericality: { only_integer: true }, if: -> { required_for_step?(:add_description) }
-  validate :has_images, if: -> { required_for_step?(:add_images) }
+  # validate :has_images, if: -> { required_for_step?(:add_images) }
 
   # scope :published?, -> { where(published: true) }
   # scope :unpublished?, -> { where(published: false) }
