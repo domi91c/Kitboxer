@@ -3,7 +3,6 @@ module Products
     before_action :set_purchase, only: [:new, :edit, :create, :update, :destroy]
 
     def new
-      binding.pry
       @review = @purchase.build_review
       @product = @purchase.product
       @product_rating = @review.ratings.build(context: "Product")

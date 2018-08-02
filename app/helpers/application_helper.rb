@@ -43,7 +43,6 @@ module ApplicationHelper
       route.defaults[:controller]
     end.uniq
 
-    binding.pry
     controller.class.name.deconstantize.underscore.gsub('/', '-')
   end
 end
