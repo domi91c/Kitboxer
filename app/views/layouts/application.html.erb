@@ -10,7 +10,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= controller_name %> <%= action_name %>" style="background: #f2f6f9;" data-environment="<%=
+<body class="<%= controller_path %> <%= action_name %>" style="background: #f2f6f9;" data-environment="<%=
   Rails.env %>">
 <%= render 'layouts/navigation' %>
 <%= content_for?(:header) ? yield(:header) : "" %>

@@ -38,5 +38,13 @@ module ApplicationHelper
     end
   end
 
+  def controller_path
+    controllers = Rails.application.routes.routes.map do |route|
+      route.defaults[:controller]
+    end.uniq
+
+    binding.pry
+    controller.class.name.deconstantize.underscore.gsub('/', '-')
+  end
 end
 
