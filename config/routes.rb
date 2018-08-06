@@ -14,6 +14,7 @@ Rails.application.routes.draw do
           get :sent
           get :trash
         end
+        resources :messages, controller: 'store/conversations/messages'
       end
       resources :reviews, controller: 'store/reviews'
     end

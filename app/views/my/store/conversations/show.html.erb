@@ -1,14 +1,86 @@
-<% content_for :store_header do %>
-  <%= render 'layouts/my_store/header',
-             title: @title,
-             subtitle: @subtitle %>
-<% end %>
-
 <div class="card">
   <div class="card-header">
-      <%= link_to fa_icon('arrow-left', text: 'Back'), my_store_conversations_path , class: 'btn btn-primary'%>
+    <h1>RE: <%= @conversation.subject %></h1>
+    <h2>Dan Rogers</h2>
+    <hr>
+    <%= link_to fa_icon('arrow-left', text: 'Back'), my_store_conversations_path, class: 'btn btn-primary' %>
+    <%= link_to fa_icon('reply', text: 'Reply'), my_store_conversations_path, data: { toggle: 'modal', target: '.js-conversation-reply-modal' }, class: 'btn btn-success' %>
   </div>
   <div class="card-body">
+    <ul class="list-unstyled">
+      <% @messages.each do |message| %>
+        <li class="media">
+          <div class="media-body">
+            <p><%= message.body %></p>
+            <h5 class="mt-0 mb-1 text-right">-- <%= message.sender.name %></h5>
+          </div>
+        </li>
+        <% unless message == @messages.last %>
+          <hr>
+        <% end %>
+      <% end %>
+    </ul>
 
+  </div>
+  <div class="card-footer">
+
+
+    <%= form_for @message, url: my_store_conversation_messages_path(conversation_id: @conversation.id) do |f| %>
+      <div class="">
+        <%= f.trix_editor :body, placeholder: 'Type your message here...' %>
+        <div class="input-group-addon">
+          <%= f.file_field :attachment, class: 'conversation__fileInput' %>
+        </div>
+      </div>
+      <div class="conversation__fileInputDetails">
+        <i class="fa fa-file"></i> <span class="conversation__fileInputFileName"></span>
+        <i class="conversation__fileInputCancel fa fa-close"></i>
+      </div>
+      <%= f.submit "Send", class: 'btn btn-success form-control' %>
+    <% end %>
+
+  </div>
+</div>
+
+
+<div class="modal-overlay js-conversation-reply-overlay">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal js-conversation-reply-modal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <%= form_tag new_my_store_conversation_path do |f| %>
+        <div class="modal-header">
+          <h5 class="modal-title">RE: <%= @conversation.subject %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= text_area_tag :body, nil, placeholder: 'Body', class: 'form-control', rows: 8 %>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-dark float-right mr-2"><i class="fa fa-image"></i></button>
+          <%= submit_tag "Send", class: 'btn btn-primary float-right' %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

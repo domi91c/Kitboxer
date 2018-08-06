@@ -21,6 +21,7 @@
 @import "purchases";
 @import "purchases/**/*";
 @import "select2-bootstrap";
+@import "tags-field";
 
 .messages {
   position: fixed;
@@ -154,11 +155,6 @@ body {
     border-bottom-left-radius:  5px !important;
     border-bottom-right-radius: 5px !important;
   }
-}
-
-.img-carousel-indicators {
-  display:    inline;
-  margin-top: 40px;
 }
 
 .img-carousel-indicator {

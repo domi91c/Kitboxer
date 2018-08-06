@@ -1,0 +1,12 @@
+.tags-field {
+  .form-control {
+    .tag {
+      position:         absolute;
+      top:              0;
+      left:             0;
+      height:           inherit - 5px;
+      border: 1px solid black;
+      background-color: #00D9A8;
+    }
+  }
+}

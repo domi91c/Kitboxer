@@ -1,0 +1,9 @@
+<div class="col-md-6">
+  <div class="card mb-2">
+    <div class="card-body"><h5 class="mt-0"><%= review.summary %></h5>
+      <p><%= review.body %></p>
+      <div class="float-right rating__show"><%= render 'show_rating', score: review.ratings_average %>
+        —  <%= review.user.first_name %></div>
+    </div>
+  </div>
+</div>

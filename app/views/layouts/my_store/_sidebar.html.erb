@@ -8,6 +8,12 @@
     <li><%= active_link_to "Listings", my_store_path %></li>
     <li><%= active_link_to "Messages", my_store_conversations_path %></li>
     <li><%= active_link_to "Reviews", my_store_reviews_path %></li>
+    <li><%= active_link_to "Sales", my_store_orders_path %>
+      <ul>
+        <li><%= active_link_to "Unshipped", my_store_reviews_path %></li>
+        <li><%= active_link_to "Archived", my_store_reviews_path %></li>
+      </ul>
+    </li>
   </ul>
   <p class="menu-label">
     Messages

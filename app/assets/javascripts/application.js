@@ -7,7 +7,6 @@
 //= require lodash
 //= require select2
 //= require bootstrap-sprockets
-//= require bootstrap-tagsinput
 //= require_directory ./bootstrap-overrides
 //= require typeahead
 //= require my/store/conversations
@@ -20,6 +19,7 @@
 //= require users
 //= require conversations
 //= require coming_soon
+//= require tags-field
 
 (function($) {
 
@@ -56,7 +56,4 @@ document.addEventListener('turbolinks:load', function() {
 // Tooltips
 $(function() {
   $('[data-toggle="tooltip"]').tooltip()
-
-  $('input').tagsinput('items')
-
 })

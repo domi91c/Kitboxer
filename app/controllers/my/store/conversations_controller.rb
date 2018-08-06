@@ -28,6 +28,10 @@ module My
 
       def show
         @conversation = Mailboxer::Conversation.find(params[:id])
+        @messages = @conversation.messages.order(created_at: :asc)
+        unless @messages.first.notified_object.nil?
+          @notified_object = @messages.first.notified_object
+        end
         @title = "RE: " << @conversation.original_message.subject
         @subtitle = "From: " << @conversation.last_sender.name
         @message = Mailboxer::Message.new

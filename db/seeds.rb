@@ -22,7 +22,7 @@
 #   user.create_store(name: Faker::Company.name)
 # end
 
-(1...100).each do |i|
+(1...50).each do |i|
   product = Product.new(
       title: Faker::Commerce.product_name,
       tagline: Faker::HarryPotter.quote,
@@ -30,7 +30,7 @@
       price: rand(100),
       quantity: rand(1...20),
       category: Faker::Commerce.department(1),
-      store_id: rand(100),
+      store_id: User.find_by_email('dominic.n@me.com').store.id,
   )
   (1...(rand(5))).each do
     product.images.new(
