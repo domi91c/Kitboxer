@@ -13,7 +13,7 @@ class CartsController < ApplicationController
     else
       $redis.hdel current_user.cart_name, params[:product_id]
     end
-    redirect_to cart_path(current_user)
+    flash[:notice] = "Added product to cart."
   end
 
   def remove
@@ -42,5 +42,4 @@ class CartsController < ApplicationController
     def cart_params
       params.require(:cart).permit(:product_id, :cart_quantity)
     end
-
 end

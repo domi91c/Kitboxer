@@ -25,8 +25,8 @@ class Order < ApplicationRecord
 
   private
 
-  def empty_cart
-    Cart[user].empty
-  end
+    def empty_cart
+      Cart[user].empty
+    end
 end
 

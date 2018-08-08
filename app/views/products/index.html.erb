@@ -1,66 +1,56 @@
 <% content_for :header do %>
   <div class="page-header">
-    <br>
-    <br>
     <div class="container-fluid">
-
       <div class="user-info text-center">
-
-        <div class="">
-          <div class="container-fluid">
-            <div class="display-5 hero-dropdown dropdown mt-3">
-              Search <span class="hero-dropdown-toggle dropdown-toggle" data-toggle="dropdown">Arduino</span> Kits:
-              <div class="hero-dropdown-menu dropdown-menu">
-                <div class="dropdown-item">All</div>
-                <div class="dropdown-item">Raspberry Pi</div>
-                <div class="dropdown-item">Beagle Bone</div>
-                <div class="dropdown-item">Guitar Pedals</div>
-                <div class="dropdown-item">Musical Instruments</div>
-                <div class="dropdown-item">Hacking</div>
-                <div class="dropdown-item">Programming</div>
-              </div>
+        <div class="container-fluid">
+          <div class="display-5 hero-dropdown dropdown mt-3">
+            Search <span class="hero-dropdown-toggle dropdown-toggle" data-toggle="dropdown">Arduino</span> Kits:
+            <div class="hero-dropdown-menu dropdown-menu">
+              <div class="dropdown-item">All</div>
+              <div class="dropdown-item">Raspberry Pi</div>
+              <div class="dropdown-item">Beagle Bone</div>
+              <div class="dropdown-item">Guitar Pedals</div>
+              <div class="dropdown-item">Musical Instruments</div>
+              <div class="dropdown-item">Hacking</div>
+              <div class="dropdown-item">Programming</div>
             </div>
-            <br>
           </div>
+          <br>
         </div>
-        <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-          <div class="col-md-5 input-group input-group-lg mx-auto">
-            <%= text_field_tag :search, params[:search], placeholder: "Search...", class: 'form-control' %>
-            <%= submit_tag "Go", class: 'input-group-addon' %>
-          </div>
-        <% end %>
-
       </div>
-      <ul class="nav nav-tabs page-header-tabs justify-content-end" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#orders" role="tab" aria-controls="home">New</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#reviews" role="tab" aria-controls="profile">Deals</a>
-        </li>
-        <li class="nav-item float-right">
-          <div class="dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#shipping" role="tab" aria-controls="messages">Sort By
-              <span class="dropdown-toggle ml-2"></span>
-              <div class="dropdown-menu">
-                <div class="dropdown-item">Reviews</div>
-                <div class="dropdown-item">Distance</div>
-                <div class="dropdown-item">Price/Shipping Lowest</div>
-                <div class="dropdown-item">Price/Shipping Highest</div>
-              </div>
-            </a>
-          </div>
-        </li>
-      </ul>
+      <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+        <div class="col-md-5 input-group input-group-lg mx-auto">
+          <%= text_field_tag :search, params[:search], placeholder: "Search...", class: 'form-control' %>
+          <%= submit_tag "Go", class: 'input-group-addon' %>
+        </div>
+      <% end %>
     </div>
+    <ul class="nav nav-tabs page-header-tabs justify-content-end" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#orders" role="tab" aria-controls="home">New</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#reviews" role="tab" aria-controls="profile">Deals</a>
+      </li>
+      <li class="nav-item float-right">
+        <div class="dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#shipping" role="tab" aria-controls="messages">Sort By
+            <span class="dropdown-toggle ml-2"></span>
+            <div class="dropdown-menu">
+              <div class="dropdown-item">Reviews</div>
+              <div class="dropdown-item">Distance</div>
+              <div class="dropdown-item">Price/Shipping Lowest</div>
+              <div class="dropdown-item">Price/Shipping Highest</div>
+            </div>
+          </a>
+        </div>
+      </li>
+    </ul>
   </div>
 <% end %>
 
-<div class="product-index container mt-5">
-  <section>
-    <div class="card-deck">
-      <%= render @products %>
-    </div>
-  </section>
+<div class="product-index mt-5">
+  <div class="card-deck">
+    <%= render @products %>
+  </div>
 </div>
-<%= link_to 'New Product', products_path, method: :post %>

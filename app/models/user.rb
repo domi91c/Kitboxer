@@ -2,6 +2,7 @@ class User < ApplicationRecord
 
   has_one :store
   has_many :orders
+  has_many :split_orders
   has_many :products, through: :store
   has_many :purchases, through: :orders
   has_many :favorites, dependent: :destroy

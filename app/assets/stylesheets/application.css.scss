@@ -182,21 +182,15 @@ trix-toolbar .history_tools {
 .product-carousel {
   .item-image {
     position:       relative;
-    //top: 0;
-    //width: 100%;
     padding-bottom: 90%;
   }
 
   .item-image img {
     position:         absolute;
-    //top: 0;
-    //bottom: 0;
-    //left: 0;
-    //right: 0;
     height:           100%;
     width:            100%;
     object-fit:       contain;
-    background-color: #282834;
+    background-color: #25292E;
   }
 }
 
@@ -219,10 +213,11 @@ trix-toolbar .history_tools {
 .page-header {
   position:         relative;
   top:              -20px;
+  padding-top: 15px;
   background-color: #ffffff;
   box-shadow:       0 1px 3px rgba(0, 0, 0, .1);
   .user-info {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 }
 

@@ -38,12 +38,13 @@ module ApplicationHelper
     end
   end
 
-  def controller_path
+  def controller_path_and_name
     controllers = Rails.application.routes.routes.map do |route|
       route.defaults[:controller]
     end.uniq
-
-    controller.class.name.deconstantize.underscore.gsub('/', '-')
+    path = controller.class.name.deconstantize.underscore.gsub('/', '-')
+    name = "#{"-" unless path.blank?}#{controller_name}"
+    path << name
   end
 end
 

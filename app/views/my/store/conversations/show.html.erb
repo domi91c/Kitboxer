@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
-    <h1>RE: <%= @conversation.subject %></h1>
-    <h2>Dan Rogers</h2>
+    <h4>RE: <%= @conversation.subject %></h4>
+    <h5>Dan Rogers</h5>
     <hr>
     <%= link_to fa_icon('arrow-left', text: 'Back'), my_store_conversations_path, class: 'btn btn-primary' %>
     <%= link_to fa_icon('reply', text: 'Reply'), my_store_conversations_path, data: { toggle: 'modal', target: '.js-conversation-reply-modal' }, class: 'btn btn-success' %>

@@ -1,31 +1,29 @@
-<div class="container-fluid">
-  <div class="row">
-    <aside class="col-sm-3">
-      <h5><strong>My Messages</strong></h5>
-      <div class="conversationListCard">
-        <div class="conversationList">
-          <% @conversations.each do |conversation| %>
-            <%= link_to conversation_path(conversation) do %>
-              <div class="conversationList__item <%= active_class?(conversation_path(conversation), 'conversationList__item--active') %>">
-                <strong><%= conversation.subject %></strong>
-                <% unless conversation.messages.first.notified_object_id.nil? %>
-                  <p>RE: <%= conversation.messages.first.notified_object.product.title %></p>
-                <% end %>
-                <p><%= truncate(conversation.messages.last.body, length: 100) %></p>
-              </div>
-            <% end %>
+<div class="row">
+  <aside class="col-sm-3">
+    <h5><strong>My Messages</strong></h5>
+    <div class="conversationListCard">
+      <div class="conversationList">
+        <% @conversations.each do |conversation| %>
+          <%= link_to conversation_path(conversation) do %>
+            <div class="conversationList__item <%= active_class?(conversation_path(conversation), 'conversationList__item--active') %>">
+              <strong><%= conversation.subject %></strong>
+              <% unless conversation.messages.first.notified_object_id.nil? %>
+                <p>RE: <%= conversation.messages.first.notified_object.product.title %></p>
+              <% end %>
+              <p><%= truncate(conversation.messages.last.body, length: 100) %></p>
+            </div>
           <% end %>
-        </div>
+        <% end %>
       </div>
-    </aside>
-
-    <div class="col-sm-9">
-      <h5>&nbsp;</h5>
-      <div class="conversation">
-        <%= yield %>
-      </div>
-
     </div>
+  </aside>
+
+  <div class="col-sm-9">
+    <h5>&nbsp;</h5>
+    <div class="conversation">
+      <%= yield %>
+    </div>
+
   </div>
-  <%= parent_layout("application") %>
 </div>
+<%= parent_layout("application") %>

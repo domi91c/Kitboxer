@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :my do
     resource :store, controller: 'store' do
       resources :products, controller: 'store/products'
+      resources :orders, controller: 'store/orders'
       resources :conversations, controller: 'store/conversations' do
         collection do
           get :sent

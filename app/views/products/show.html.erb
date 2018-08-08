@@ -1,7 +1,6 @@
     <div class="row">
       <div class="col-md-7">
-
-        <div class="card">
+        <div class="box">
           <div class="card-body">
             <% if @product.images.any? %>
               <%= render 'product_carousel', images: @product.images %>
@@ -10,7 +9,7 @@
       </div>
 
           <div class="col-md-5  ml-auto">
-            <div class="card">
+            <div class="box">
               <div class="card-body">
             <div class="display-5" style="margin-bottom:1.5rem;"> <%= @product.title %> </div>
 
@@ -59,7 +58,7 @@
 
               <tr>
                 <td class="text-right"><strong>Seller</strong></td>
-                <td><%= @product.store.user.email %></td>
+                <td><%= link_to @product.store.name, @product.store %></td>
               </tr>
               <tr>
                 <td class="text-right"><strong>Added</strong></td>
@@ -101,7 +100,7 @@
 
         <div class="tab-content">
           <div class="tab-pane active" id="overview" role="tabpanel">
-            <div class="card mt-3 pa-4">
+            <div class="box mt-3 pa-4">
               <div class="card-body">
                 <%= @product.body.html_safe %>
               </div>
