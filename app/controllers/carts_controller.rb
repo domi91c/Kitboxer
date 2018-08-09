@@ -9,13 +9,13 @@ class CartsController < ApplicationController
     quantity = params[:cart_quantity].to_i
     if quantity > 0
       @cart.add(params[:product_id], params[:cart_quantity])
-    elsif quantity <= Product.find(params[:product_id]).quantity
+    elsif quantity >= Product.find(params[:product_id]).quantity
       @cart.add(params[:product_id], Product.find(params[:product_id]).quantity)
     else
       $redis.hdel current_user.cart_name, params[:product_id]
     end
     respond_to do |format|
-      format.js { flash[:notice] = "Added product to cart." }
+      format.js { flash.now[:notice] = "Added product to cart." }
     end
   end
 
