@@ -1,0 +1,5 @@
+<% if current_user.cart_count > 0 %>
+  $('.js-cart-count').replaceWith(<%= current_user.cart_count %>)
+<% end %>
+$(".js-flash").replaceWith('<%= j render "layouts/messages" %>');
+

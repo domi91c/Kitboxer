@@ -20,7 +20,7 @@
           <% if user_signed_in? %>
             <%= link_to cart_path do %>
               <i class="fa fa-shopping-cart nav-icon">
-                <span class="badge"><%= current_user.cart_count if current_user.cart_count > 0 %></span>
+                <span class="badge js-cart-badge"><%= current_user.cart_count if current_user.cart_count > 0 %></span>
               </i>
             <% end %>
           <% end %>

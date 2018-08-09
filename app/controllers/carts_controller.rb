@@ -14,7 +14,9 @@ class CartsController < ApplicationController
     else
       $redis.hdel current_user.cart_name, params[:product_id]
     end
-    flash[:notice] = "Added product to cart."
+    respond_to do |format|
+      format.js { flash[:notice] = "Added product to cart." }
+    end
   end
 
   def remove

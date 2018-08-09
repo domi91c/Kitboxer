@@ -16,7 +16,6 @@
 //= require products
 //= require carts
 //= require reviews
-//= require users
 //= require conversations
 //= require coming_soon
 //= require tags-field
