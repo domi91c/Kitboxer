@@ -30,8 +30,8 @@ class Cart
       $redis.mapped_hmset @cart_name, { product => quantity }
     end
 
-    def remove(product)
-      $redis.hdel @cart_name, product.id
+    def remove(product_id)
+      $redis.hdel @cart_name, product_id
     end
 
     def empty

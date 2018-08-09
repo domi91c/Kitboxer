@@ -1,5 +1,8 @@
 <% if current_user.cart_count > 0 %>
-  $('.js-cart-count').replaceWith(<%= current_user.cart_count %>)
+$('.js-cart-badge').show()
+$('.js-cart-badge').html(<%= current_user.cart_count %>)
+<% else %>
+$('.js-cart-badge').hide()
 <% end %>
 $(".js-flash").replaceWith('<%= j render "layouts/messages" %>');
 

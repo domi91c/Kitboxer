@@ -9,25 +9,25 @@ class CartsController < ApplicationController
     quantity = params[:cart_quantity].to_i
     if quantity > 0
       @cart.add(params[:product_id], params[:cart_quantity])
-    elsif quantity >= Product.find(params[:product_id]).quantity
-      @cart.add(params[:product_id], Product.find(params[:product_id]).quantity)
+      notice = "Added product to cart."
     else
-      $redis.hdel current_user.cart_name, params[:product_id]
+      @cart.remove(params[:product_id])
+      notice = "Removed product from cart."
     end
     respond_to do |format|
-      format.js { flash.now[:notice] = "Added product to cart." }
+      format.js { flash.now[:notice] = notice }
     end
   end
 
   def remove
-    $redis.hdel current_user.cart_name, params[:product_id]
+    @cart.remove params[:product_id]
     redirect_to cart_path(current_user)
   end
 
   def save_for_later
     @product = Product.find(params[:product_id])
-    Cart[current_user].remove(@product)
-    @cart_data = Cart[current_user].lines
+    @cart.remove(@product.id)
+    @cart_data = @cart.lines
     current_user.favorite(@product)
     respond_to do |format|
       format.js { flash.now[:notice] = "Added to Watch List" }
