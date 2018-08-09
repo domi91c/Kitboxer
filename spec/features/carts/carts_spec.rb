@@ -11,6 +11,6 @@ describe 'Shopping Cart' do
     product = create(:product)
     visit product_path(1)
     click_button "Add to Cart"
-    expect 
+    expect Cart[current_user].products.count.to eq(1)
   end
 end

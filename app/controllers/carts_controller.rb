@@ -6,9 +6,10 @@ class CartsController < ApplicationController
   end
 
   def add
-    if params[:cart_quantity].to_i > 0
+    quantity = params[:cart_quantity].to_i
+    if quantity > 0
       @cart.add(params[:product_id], params[:cart_quantity])
-    elsif params[:cart_quantity] <= Product.find(params[:product_id]).quantity
+    elsif quantity <= Product.find(params[:product_id]).quantity
       @cart.add(params[:product_id], Product.find(params[:product_id]).quantity)
     else
       $redis.hdel current_user.cart_name, params[:product_id]
@@ -19,7 +20,6 @@ class CartsController < ApplicationController
   def remove
     $redis.hdel current_user.cart_name, params[:product_id]
     redirect_to cart_path(current_user)
-    # render json: current_user.cart_count, status: 200
   end
 
   def save_for_later

@@ -6,11 +6,11 @@
     <li><%= active_link_to "Dashboard", my_store_path %></li>
     <li><%= active_link_to "Selling", my_store_products_path %></li>
     <li><%= active_link_to "Listings", my_store_path %></li>
-    <li><%= active_link_to "Messages", my_store_conversations_path %></li>
     <li><%= active_link_to "Reviews", my_store_reviews_path %></li>
-    <li><%= active_link_to "Sales", '#' %>
+    <li><%= active_link_to "Products", '#' %>
       <ul>
-        <li><%= active_link_to "Orders", my_store_orders_path %></li>
+        <li><%= active_link_to "New", products_path, method: :post %></li>
+        <li><%= active_link_to "Drafts", products_path, method: :post %></li>
         <li><%= active_link_to "Archived", my_store_reviews_path %></li>
       </ul>
     </li>
