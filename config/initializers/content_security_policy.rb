@@ -12,8 +12,8 @@ Rails.application.config.content_security_policy do |policy|
   # p.report_uri "/csp-violation-report-endpoint"
 
   # standard until this moment
+  policy.script_src :self, :https, :unsafe_eval, :unsafe_inline
   if Rails.env.development? || Rails.env.test?
-    policy.script_src :self, :https, :unsafe_eval, :unsafe_inline
     policy.connect_src :self, :https, 'http://localhost:3035', 'ws://localhost:3035', 'ws://127.0.0.1:35729/livereload'
   end
 end
