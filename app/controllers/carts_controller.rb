@@ -16,7 +16,6 @@ class CartsController < ApplicationController
     end
     respond_to do |format|
       format.js { flash.now[:notice] = notice }
-      format.html { flash.now[:notice] = notice }
     end
   end
 
