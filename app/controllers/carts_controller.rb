@@ -29,10 +29,7 @@ class CartsController < ApplicationController
     @cart.remove(@product.id)
     @cart_data = @cart.lines
     current_user.favorite(@product)
-    respond_to do |format|
-      format.js { flash.now[:notice] = "Added to Watch List" }
-      format.html
-    end
+    redirect_to cart_path(current_user), flash.now[:notice] = "Moved product to Watch List."
   end
 
   private

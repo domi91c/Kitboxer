@@ -22,7 +22,7 @@
       &nbsp;
       <%= link_to "Remove from cart", remove_from_cart_path(product), class: 'remove-link' %>
       |
-      <%= link_to "Save for later", save_for_later_cart_path(product.id), class: 'remove-link', method: :put, remote: true %>
+      <%= link_to "Save for later", save_for_later_cart_path(product.id), class: 'remove-link', method: :put %>
     <% end %>
 
     <span class="ml-2  float-right display-8"> <%= quantity %>
