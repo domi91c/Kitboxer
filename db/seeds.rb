@@ -32,7 +32,7 @@
       category: Faker::Commerce.department(1),
       store_id: User.find_by_email('blur606@gmail.com').store.id,
   )
-  (1...(rand(5))).each do
+  (1..(rand(3..5))).each do
     product.images.new(
         image: File.open(File.join(Rails.root,
                                    'app', 'assets', 'images', 'kits', "#{rand(20)}.png")),
