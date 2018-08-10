@@ -86,6 +86,7 @@ pickle-email-*.html
 /public/packs-test
 /node_modules
 
+
 # custom
 /public/uploads/*
 
