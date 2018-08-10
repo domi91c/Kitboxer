@@ -9,7 +9,6 @@ document.addEventListener('turbolinks:load', function() {
     var style = {
       base: {
         color: '#393F58',
-        lineHeight: '24px',
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
         fontSmoothing: 'antialiased',
         fontSize: '16px',

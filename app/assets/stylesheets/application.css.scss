@@ -66,8 +66,7 @@ body {
 }
 
 .dropdown-toggle::after {
-  border:         1px solid white;
-  //border:         1px solid #00D9A8;
+  border:         1px solid #CCCCCC;
   border-right:   0;
   border-top:     0;
   display:        inline-block;
@@ -79,6 +78,23 @@ body {
   width:          0.5em;
   height:         0.5em;
   top:            50%;
+}
+
+.navbar-dark {
+  .dropdown-toggle::after {
+    border:         1px solid white;
+    border-right:   0;
+    border-top:     0;
+    display:        inline-block;
+    margin-top:     -0.375em;
+    margin-left:    0.5em;
+    vertical-align: middle;
+    content:        "";
+    transform:      rotate(-45deg);
+    width:          0.5em;
+    height:         0.5em;
+    top:            50%;
+  }
 }
 
 .dropdown-menu {
@@ -213,7 +229,7 @@ trix-toolbar .history_tools {
 .page-header {
   position:         relative;
   top:              -20px;
-  padding-top: 15px;
+  padding-top:      15px;
   background-color: #ffffff;
   box-shadow:       0 1px 3px rgba(0, 0, 0, .1);
   .user-info {
@@ -290,6 +306,6 @@ trix-toolbar .history_tools {
 
 .btn-outline-light {
   &:hover {
-    color: $black ;
+    color: $black;
   }
 }
