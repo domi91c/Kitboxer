@@ -7,8 +7,19 @@ dist: trusty
 language: ruby
 rvm:
 - 2.5.1
+cache:
+  directories:
+  - vendor/bundle
+  - node_modules
 script:
-- bundle exec rails db:migrate RAILS_ENV=test
+- bundle exec rails webpacker:compile
+- bundle exec rake db:schema:load
 - bundle exec rspec
 services:
 - redis-server
+deploy:
+  provider: heroku
+  api_key: "$HEROKU_AUTH_TOKEN"
+  app: kitboxer
+  run:
+  - rake db:migrate
