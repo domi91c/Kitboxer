@@ -6,7 +6,7 @@
                  size="xl"
                  lazy
                  ok-title="Crop"
-                 @ok="submitCropData()"
+                 @ok="submitCropData"
                  v-model="modalVisible"
         >
             <img v-show="false" :src="image.image.url" alt="" class="hello">

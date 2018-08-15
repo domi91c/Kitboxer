@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   has_many :purchases
+
   has_many :reviews, through: :purchases
 
   validates :title, presence: true, if: -> { required_for_step?(:add_description) }

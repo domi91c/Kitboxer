@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy, :publish]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
 
 
@@ -7,10 +7,8 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:search]
-      # @products = Product.where(published: true)
-      @products = Product.joins(:images).group('products.id').search(params[:search]).first(40)
+      @products = Product.joins(:images).group(products: :id).search(params[:search]).first(40)
     else
-      # @products = Product.where(published: true)
       @products = Product.joins(:images).group('products.id').first(40)
     end
   end

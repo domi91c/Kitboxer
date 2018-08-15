@@ -22,7 +22,7 @@
   &__header {
     @extend .card-header;
     padding-bottom: 5px;
-    border-bottom: $border-width solid $gray-300
+    border-bottom: $border-width solid $gray-300;
   }
 
   &__body {
