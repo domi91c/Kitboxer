@@ -1,7 +1,7 @@
 .conversationListCard {
   @extend .card;
-  padding:    0;
-  height:     80vh;
+  padding: 0;
+  height: 80vh;
   overflow-y: scroll;
   .conversationList {
 
@@ -22,17 +22,17 @@
   &__header {
     @extend .card-header;
     padding-bottom: 5px;
-    border-bottom:  $border-width solid $gray-300
+    border-bottom: $border-width solid $gray-300
   }
 
   &__body {
     @extend .card-body;
-    display:         flex;
-    flex-direction:  column;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    min-width:       40%;
-    height:          100%;
-    overflow-y:      scroll;
+    min-width: 40%;
+    height: 100%;
+    overflow-y: scroll;
   }
 
   &__footer {
@@ -46,14 +46,14 @@
 
   &__message {
     @extend .alert, .alert-secondary;
-    min-width:    40%;
-    max-width:    60%;
+    min-width: 40%;
+    max-width: 60%;
     margin-right: 0;
     &--right {
       @extend .alert, .alert-success;
       margin-left: auto;
-      min-width:   40%;
-      max-width:   60%;
+      min-width: 40%;
+      max-width: 60%;
     }
   }
 
@@ -62,27 +62,27 @@
   }
 
   &__fileInput {
-    height:         0.1px;
-    width:          0.1px;
-    outline:        none;
-    display:        inline-block;
-    padding-right:  17px;
+    height: 0.1px;
+    width: 0.1px;
+    outline: none;
+    display: inline-block;
+    padding-right: 17px;
     padding-bottom: 21px;
     vertical-align: center;
-    border:         0;
+    border: 0;
   }
 
   &__fileInput:before {
     font-family: FontAwesome;
-    content:     "\f030";
-    position:    relative;
-    border:      none;
+    content: "\f030";
+    position: relative;
+    border: none;
   }
 
   &__fileInputDetails {
     display: none;
     padding: 8px 12px;
-    width:   100%;
+    width: 100%;
   }
 
 }

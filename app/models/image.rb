@@ -11,7 +11,8 @@ class Image < ApplicationRecord
 
   def crop_image
     cropped_image = MiniMagick::Image.open(self.image.url)
+    binding.pry
     crop_params = "#{crop_width}x #{crop_height}+ #{crop_x}+ #{crop_y}"
-    update(image: cropped_image.crop(crop_params))
+    update(image: image.crop(crop_params))
   end
 end

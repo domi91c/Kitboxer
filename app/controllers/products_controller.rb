@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy, :publish]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
 
 
   # GET /products
@@ -8,10 +8,10 @@ class ProductsController < ApplicationController
   def index
     if params[:search]
       # @products = Product.where(published: true)
-      @products = Product.joins(:images).group('products.id').search(params[:search])
+      @products = Product.joins(:images).group('products.id').search(params[:search]).first(40)
     else
       # @products = Product.where(published: true)
-      @products = Product.joins(:images).group('products.id')
+      @products = Product.joins(:images).group('products.id').first(40)
     end
   end
 
