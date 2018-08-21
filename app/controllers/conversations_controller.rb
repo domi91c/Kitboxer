@@ -23,12 +23,6 @@ class ConversationsController < ApplicationController
   #   render action: :index
   # end
 
-  def create
-    redirect_to do |format|
-      format.html {notice: ''}
-    end
-  end
-
   def show
     @conversations = current_user.mailbox.conversations
     @conversation = current_user.mailbox.conversations.find(params[:id])
