@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :store_user_location!, if: :storable_location?
-
   protect_from_forgery prepend: true
   before_action :better_errors_hack, if: -> { Rails.env.development? }
+
+  # @return [User]
+  def current_user
+    super
+  end
 
   protected
 
