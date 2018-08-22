@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :index do
-    name "MyString"
-    user nil
+  factory :store do
+    name "Creatron"
+    association(:user)
   end
 end

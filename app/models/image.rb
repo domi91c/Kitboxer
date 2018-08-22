@@ -1,5 +1,6 @@
 class Image < ApplicationRecord
   attr_accessor :crop_x, :crop_y, :crop_width, :crop_height
+  belongs_to :imageable, polymorphic: true
   belongs_to :product, optional: true
   belongs_to :step, optional: true
   mount_uploader :image, ImageUploader

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_07_143941) do
+ActiveRecord::Schema.define(version: 2018_08_22_064551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(version: 2018_08_07_143941) do
     t.integer "product_id"
     t.boolean "cover_image"
     t.integer "step_id"
+    t.integer "imageable_id"
+    t.string "imageable_type"
+    t.string "images"
   end
 
   create_table "kits", id: :serial, force: :cascade do |t|
