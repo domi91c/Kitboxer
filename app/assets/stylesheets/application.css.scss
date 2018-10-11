@@ -25,14 +25,14 @@
 
 .messages {
   position: fixed;
-  top:      60px;
-  right:    4px;
-  z-index:  9999;
+  top: 60px;
+  right: 4px;
+  z-index: 9999;
 }
 
 .card {
   //box-shadow: 0 6px 8px rgba(102, 119, 136, .03), 0 1px 2px rgba(102, 119, 136, .3);
-  box-shadow: 0 7px 14px 0 rgba(59,65,94,.1), 0 3px 6px 0 rgba(0,0,0,.07);
+  //box-shadow: 0 7px 14px 0 rgba(59,65,94,.1), 0 3px 6px 0 rgba(0,0,0,.07);
 }
 
 div.trix-button-row > span.trix-button-group.trix-button-group--history-tools {
@@ -41,7 +41,7 @@ div.trix-button-row > span.trix-button-group.trix-button-group--history-tools {
 
 body {
   font-weight: normal;
-  color:       #2c3e50;
+  color: #2c3e50;
 }
 
 .table .table--is-vcentered .table th, .table td {
@@ -67,34 +67,34 @@ body {
 }
 
 .dropdown-toggle::after {
-  border:         1px solid #CCCCCC;
-  border-right:   0;
-  border-top:     0;
-  display:        inline-block;
-  margin-top:     -0.375em;
-  margin-left:    0.5em;
+  border: 1px solid #CCCCCC;
+  border-right: 0;
+  border-top: 0;
+  display: inline-block;
+  margin-top: -0.375em;
+  margin-left: 0.5em;
   vertical-align: middle;
-  content:        "";
-  transform:      rotate(-45deg);
-  width:          0.5em;
-  height:         0.5em;
-  top:            50%;
+  content: "";
+  transform: rotate(-45deg);
+  width: 0.5em;
+  height: 0.5em;
+  top: 50%;
 }
 
 .navbar-dark {
   .dropdown-toggle::after {
-    border:         1px solid white;
-    border-right:   0;
-    border-top:     0;
-    display:        inline-block;
-    margin-top:     -0.375em;
-    margin-left:    0.5em;
+    border: 1px solid white;
+    border-right: 0;
+    border-top: 0;
+    display: inline-block;
+    margin-top: -0.375em;
+    margin-left: 0.5em;
     vertical-align: middle;
-    content:        "";
-    transform:      rotate(-45deg);
-    width:          0.5em;
-    height:         0.5em;
-    top:            50%;
+    content: "";
+    transform: rotate(-45deg);
+    width: 0.5em;
+    height: 0.5em;
+    top: 50%;
   }
 }
 
@@ -107,23 +107,23 @@ body {
 }
 
 .nav-icon {
-  position:  relative;
-  top:       12px;
+  position: relative;
+  top: 12px;
   //color:     #51646B;
-  color:     white;
+  color: white;
   font-size: 1.15em;
   .badge {
     background-color: $purple;
-    color:            $white;
-    height:           16px;
-    width:            16px;
-    border-radius:    100%;
-    position:         absolute;
-    top:              -7px;
-    left:             12px;
-    font-size:        12px;
-    opacity:          .8;
-    font-family:      Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: $white;
+    height: 16px;
+    width: 16px;
+    border-radius: 100%;
+    position: absolute;
+    top: -7px;
+    left: 12px;
+    font-size: 12px;
+    opacity: .8;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   }
 }
 
@@ -132,13 +132,13 @@ body {
 
 .section {
   background-color: #fff;
-  padding:          40px 20px;
+  padding: 40px 20px;
 }
 
 .footer {
   background-color: #25292E;
-  color:            white;
-  padding:          40px 20px 80px;
+  color: white;
+  padding: 40px 20px 80px;
 
   a {
     color: white;
@@ -146,20 +146,20 @@ body {
 }
 
 .img-container {
-  height:           300px;
-  width:            100%;
-  object-fit:       cover;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
   background-color: theme-color("info");
 }
 
 .bs-reset {
   padding: 0;
-  margin:  0;
+  margin: 0;
 }
 
 .wizard-progress {
   .nav-item a {
-    border-bottom-left-radius:  0;
+    border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 }
@@ -168,20 +168,20 @@ body {
 
   .box {
     @extend .card;
-    border-radius:              0 !important;
-    border-bottom-left-radius:  5px !important;
+    border-radius: 0 !important;
+    border-bottom-left-radius: 5px !important;
     border-bottom-right-radius: 5px !important;
   }
 }
 
 .img-carousel-indicator {
   display: inline-block;
-  border:  3px solid $gray-600;
+  border: 3px solid $gray-600;
 }
 
 .img-carousel-indicator:hover {
   display: inline-block;
-  border:  3px solid $teal;
+  border: 3px solid $teal;
 }
 
 .field_with_errors {
@@ -198,15 +198,15 @@ trix-toolbar .history_tools {
 
 .product-carousel {
   .item-image {
-    position:       relative;
+    position: relative;
     padding-bottom: 90%;
   }
 
   .item-image img {
-    position:         absolute;
-    height:           100%;
-    width:            100%;
-    object-fit:       contain;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
     background-color: #25292E;
   }
 }
@@ -216,23 +216,23 @@ trix-toolbar .history_tools {
   }
 
   .item-image img {
-    height:              100%;
-    object-fit:          contain;
+    height: 100%;
+    object-fit: contain;
     backface-visibility: #444;
   }
 }
 
 .card-social-media-button {
   font-size: 1.5rem;
-  margin:    0 10px 0 10px;
+  margin: 0 10px 0 10px;
 }
 
 .page-header {
-  position:         relative;
-  top:              -20px;
-  padding-top:      15px;
+  position: relative;
+  top: -20px;
+  padding-top: 15px;
   background-color: #ffffff;
-  box-shadow:       0 1px 3px rgba(0, 0, 0, .1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
   .user-info {
     padding-bottom: 10px;
   }
@@ -240,11 +240,11 @@ trix-toolbar .history_tools {
 
 .page-header-tabs {
   font-size: 1.2rem;
-  color:     #868e96;
+  color: #868e96;
   .nav-item {
     .active {
-      border-bottom:    3px solid #00D9A8;
-      color:            #00D9A8;
+      border-bottom: 3px solid #00D9A8;
+      color: #00D9A8;
       background-color: transparent;
     }
   }
@@ -252,7 +252,7 @@ trix-toolbar .history_tools {
 
 .cost-list {
   .active {
-    background:   $gray-500;
+    background: $gray-500;
     border-color: $gray-500;
   }
 }
@@ -262,7 +262,7 @@ trix-toolbar .history_tools {
 }
 
 .quantity-input {
-  width:   45px;
+  width: 45px;
   display: inline-block
 }
 
@@ -280,15 +280,15 @@ trix-toolbar .history_tools {
 }
 
 .fixed-center {
-  position:  fixed;
-  top:       50%;
-  left:      50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .pagination.center,
 .pagination.center ul {
-  float:    left;
+  float: left;
   position: relative;
 }
 
@@ -302,7 +302,7 @@ trix-toolbar .history_tools {
 
 .is-clickable {
   pointer-events: auto;
-  cursor:         pointer;
+  cursor: pointer;
 }
 
 .btn-outline-light {

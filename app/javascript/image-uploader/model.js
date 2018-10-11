@@ -10,11 +10,6 @@ if (window.environment === 'development') {
   BASE_URL = 'https://www.kitboxer.com'
 }
 
-function loadImages(productId) {
-  const url = `${BASE_URL}/products/${productId}/images`
-  return axios.get(url).then(x => x.request.response).catch(error => error);
-}
-
 function uploadImage(imageData, onProgress) {
   var formData = new FormData();
   formData.append('image[image]', imageData.file);
@@ -56,5 +51,5 @@ function cropImage(imageData) {
               .catch(error => error);
 }
 
-export { loadImages, uploadImage, removeImage, setCoverImage, cropImage };
+export { uploadImage, removeImage, setCoverImage, cropImage }
 

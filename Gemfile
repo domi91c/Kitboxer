@@ -79,7 +79,7 @@ gem 'client_side_validations'
 gem 'redis'
 gem 'hiredis'
 
-gem 'trix'
+gem 'trix-rails', require: 'trix'
 
 gem 'omniauth-stripe-connect'
 

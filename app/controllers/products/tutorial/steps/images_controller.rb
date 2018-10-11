@@ -12,9 +12,6 @@ module Products
         def update
           @image = Image.find(params[:id])
           if @image.update(image_params)
-            if image_params[:crop_x]
-              @image.crop_image
-            end
             render json: { image: @image }, status: :created
           else
             render json: @image.errors, status: :unprocessable_entity

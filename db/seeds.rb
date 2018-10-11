@@ -9,28 +9,28 @@
 # user.save!
 # user.create_store(name: 'Dominic\'s Store')
 
-# 100.times do |i|
-#   user = User.new(
-#       first_name: Faker::Name.first_name,
-#       last_name: Faker::Name.last_name,
-#       email: "user#{i}@gmail.com",
-#       password: 'password',
-#       password_confirmation: 'password',
-#   )
-#   user.confirmed_at = Time.now
-#   user.save!
-#   user.create_store(name: Faker::Company.name)
-# end
+100.times do |i|
+  user = User.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: "user#{i}@gmail.com",
+    password: 'password',
+    password_confirmation: 'password',
+  )
+  user.confirmed_at = Time.now
+  user.save!
+  user.create_store(name: Faker::Company.name)
+end
 
 (1...300).each do |i|
   product = Product.new(
-      title: Faker::Commerce.product_name,
-      tagline: Faker::HarryPotter.quote,
-      body: Faker::Hipster.paragraph(2, true),
-      price: rand(100),
-      quantity: rand(1...20),
-      category: Faker::Commerce.department(1),
-      store_id: rand(1..10),
+    title: Faker::Commerce.product_name,
+    tagline: Faker::HarryPotter.quote,
+    body: Faker::Hipster.paragraph(2, true),
+    price: rand(100),
+    quantity: rand(1...20),
+    category: Faker::Commerce.department(1),
+    store_id: rand(1..10),
   )
   (1..(rand(3..5))).each do
     product.images.new(
