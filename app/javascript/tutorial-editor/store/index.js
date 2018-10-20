@@ -4,7 +4,7 @@ import axios from 'axios'
 import { createActionHelpers } from '../../vuex-loading'
 
 const { startLoading, endLoading } = createActionHelpers({
-  moduleName: 'loading',
+  moduleName: 'loading'
 })
 
 var BASE_URL = ''
@@ -15,11 +15,11 @@ if (window.environment === 'development') {
 }
 
 this.http = axios.create({
-  baseURL: BASE_URL,
+  baseURL: BASE_URL
 })
 
 this.http.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector(
-    'meta[name="csrf-token"]').getAttribute('content')
+  'meta[name="csrf-token"]').getAttribute('content')
 
 Vue.use(Vuex)
 
@@ -29,24 +29,22 @@ const store = new Vuex.Store({
     tutorial: {
       errors: {},
       product_id: 0,
-      steps: [{}],
-    },
+      steps: [{}]
+    }
   },
   actions: {
     'UPLOAD_IMAGE': function({ commit, dispatch }, { step, image }) {
       const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/${step.id}/images`
       const formData = new FormData()
-      formData.append('image[image]', image)
+      formData.append('image[attachment]', image)
       startLoading(dispatch, `upload image ${step.id}`)
-      return axios.post(url, formData)
-                  .then(res => {
-                    endLoading(dispatch, `upload image ${step.id}`)
-                    commit('ADD_IMAGE', { step: step, image: res.data })
-                  })
-                  .catch(err => {
-                    endLoading(dispatch, `upload image ${step.id}`)
-                    console.log(err)
-                  })
+      return axios.post(url, formData).then(res => {
+        endLoading(dispatch, `upload image ${step.id}`)
+        commit('ADD_IMAGE', { step: step, image: res.data })
+      }).catch(err => {
+        endLoading(dispatch, `upload image ${step.id}`)
+        console.log(err)
+      })
     },
     'CROP_IMAGE': function({ commit, dispatch }, { step, image, cropData }) {
       const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/${step.id}/images/${image.id}`
@@ -56,32 +54,28 @@ const store = new Vuex.Store({
       formData.append('image[crop_width]', cropData['width'])
       formData.append('image[crop_height]', cropData['height'])
       startLoading(dispatch, `crop image ${image.id}`)
-      return axios.patch(url, formData)
-                  .then(res => {
-                    endLoading(dispatch, `crop image ${image.id}`)
-                    commit('UPDATE_IMAGE',
-                        {
-                          step: step,
-                          oldImage: image,
-                          newImage: res.data.image,
-                        })
-                  })
-                  .catch(err => {
-                    endLoading(dispatch, `crop image ${image.id}`)
-                    console.log(err)
-                  })
+      return axios.patch(url, formData).then(res => {
+        endLoading(dispatch, `crop image ${image.id}`)
+        commit('UPDATE_IMAGE',
+          {
+            step: step,
+            oldImage: image,
+            newImage: res.data.image
+          })
+      }).catch(err => {
+        endLoading(dispatch, `crop image ${image.id}`)
+        console.log(err)
+      })
     },
     'DELETE_IMAGE': function({ commit }, { step, image }) {
       const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/${step.id}/images/${image.id}`
-      return axios.delete(url)
-                  .then(() => {
-                    commit('REMOVE_IMAGE', {
-                      step: step, image: image,
-                    })
-                  })
-                  .catch(err => {
-                    console.log(err)
-                  })
+      return axios.delete(url).then(() => {
+        commit('REMOVE_IMAGE', {
+          step: step, image: image
+        })
+      }).catch(err => {
+        console.log(err)
+      })
     },
     addStep({ commit }) {
       const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/`
@@ -90,36 +84,30 @@ const store = new Vuex.Store({
           body: '',
           title: '',
           number: this.state.tutorial.steps[this.state.tutorial.steps.length -
-          1].number + 1,
-        },
-      })
-                  .then(res => {
-                    commit('ADD_STEP', res.data)
-                  })
-                  .catch(err => console.log(err))
+          1].number + 1
+        }
+      }).then(res => {
+        commit('ADD_STEP', res.data)
+      }).catch(err => console.log(err))
     },
     deleteStep({ commit }, step) {
       // if (this.state.tutorial.steps.length <= 1) return
       const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial/steps/${step.id}`
-      return axios.delete(url)
-                  .then(res => {
-                    commit('REMOVE_STEP', step)
-                  })
-                  .catch(err => console.log())
+      return axios.delete(url).then(res => {
+        commit('REMOVE_STEP', step)
+      }).catch(err => console.log())
     },
     submitTutorial({ commit, dispatch }) {
       const url = `${BASE_URL}/products/${this.state.tutorial.product_id}/tutorial`
       startLoading(dispatch, `submitting tutorial`)
-      return axios.patch(url, { tutorial: this.state.tutorial })
-                  .then(res => {
-                    endLoading(dispatch, `submitting tutorial`)
-                    Turbolinks.visit('/products/' + this.state.productId + '/')
+      return axios.patch(url, { tutorial: this.state.tutorial }).then(res => {
+        endLoading(dispatch, `submitting tutorial`)
+        Turbolinks.visit('/products/' + this.state.productId + '/')
 
-                  })
-                  .catch(err => {
-                    console.log(err)
-                  })
-    },
+      }).catch(err => {
+        console.log(err)
+      })
+    }
   },
   mutations: {
     'APP_READY': (state) => {
@@ -160,7 +148,7 @@ const store = new Vuex.Store({
     'REMOVE_STEP': (state, step) => {
       let stepIdx = state.tutorial.steps.indexOf(step)
       state.tutorial.steps.splice(stepIdx, 1)
-    },
+    }
   },
 
   getters: {
@@ -169,13 +157,15 @@ const store = new Vuex.Store({
     tutorial: state => state.tutorial,
     steps: state => {
       return state.tutorial.steps.sort(
-          (a, b) => { return a.number - b.number})
+        (a, b) => {
+          return a.number - b.number
+        })
     },
     getStepById: (state, getters) => (id) => {
       return state.tutorial.steps.find(step => step.id === id)
     },
-    appReady: (state) => state.appReady,
-  },
+    appReady: (state) => state.appReady
+  }
 })
 
 export default store

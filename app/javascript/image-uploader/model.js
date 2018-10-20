@@ -12,8 +12,7 @@ if (window.environment === 'development') {
 
 function uploadImage(imageData, onProgress) {
   var formData = new FormData();
-  formData.append('image[image]', imageData.file);
-  formData.append('image[product_id]', imageData.productId);
+  formData.append('image[attachment]', imageData.file);
   const url = `${BASE_URL}/products/${imageData.productId}/images`;
   let config = {
     onUploadProgress(progressEvent) {

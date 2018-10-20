@@ -2,7 +2,7 @@ module Products
   module Tutorial
     module Steps
       class ImagesController < ApplicationController
-        before_action :set_step, only: [:create]
+        before_action :set_step, only: [:create, :update]
 
         def create
           @image = @step.images.create(image_params)
@@ -10,8 +10,9 @@ module Products
         end
 
         def update
-          @image = Image.find(params[:id])
+          @image = @step.images.find(params[:id])
           if @image.update(image_params)
+            @image.set_urls
             render json: { image: @image }, status: :created
           else
             render json: @image.errors, status: :unprocessable_entity
@@ -19,16 +20,16 @@ module Products
         end
 
         def destroy
-          Image.destroy(params[:id])
+          @step.images.find(params[:id]).destroy
           render json: {}, status: 200
         end
 
         def set_step
-          @step = Step.find(params[:step_id])
+          @step = Product.find(params[:product_id]).tutorial.steps.find(params[:step_id])
         end
 
         def image_params
-          params.require(:image).permit(:image, :crop_x, :crop_y, :crop_width, :crop_height)
+          params.require(:image).permit(:attachment, :crop_x, :crop_y, :crop_width, :crop_height)
         end
       end
     end

@@ -18,6 +18,7 @@ class Products::ImagesController < ApplicationController
   def update
     @image = Image.find(params[:id])
     if @image.update(image_params)
+      @image.set_urls
       render json: { image: @image }, status: :created
     else
       render json: @image.errors, status: :unprocessable_entity
@@ -47,7 +48,7 @@ class Products::ImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit(:image, :product_id, :crop_x, :crop_y, :crop_width, :crop_height)
+    params.require(:image).permit(:attachment, :crop_x, :crop_y, :crop_width, :crop_height)
   end
 
 end

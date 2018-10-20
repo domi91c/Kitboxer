@@ -223,6 +223,9 @@ GEM
     hub (1.12.4)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.7.1)
+      mini_magick (~> 4.0)
+      ruby-vips (>= 2.0.13, < 3)
     interception (0.5)
     jaro_winkler (1.5.1)
     jmespath (1.4.0)
@@ -418,6 +421,8 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.10.0)
+    ruby-vips (2.0.13)
+      ffi (~> 1.9)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
     sass (3.6.0)
@@ -517,6 +522,7 @@ DEPENDENCIES
   high_voltage
   hiredis
   hub
+  image_processing (~> 1.0)
   jquery-rails
   kaminari
   launchy
@@ -563,7 +569,7 @@ DEPENDENCIES
   wicked
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.6.0p-1
 
 BUNDLED WITH
-   1.16.2
+   1.16.6

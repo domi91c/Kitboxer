@@ -39,7 +39,7 @@
     },
     watch: {
       modalVisible() {
-        this.$refs.cropper.replace(this.image.image.url)
+        this.$refs.cropper.replace(this.image.originalUrl)
       },
     },
     methods: {

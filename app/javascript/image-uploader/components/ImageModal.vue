@@ -5,7 +5,7 @@
              id="image-modal"
              size="xl"
              @ok="finishCrop">
-      <img v-show="false" :src="image.url" alt="">
+      <img v-show="false" :src="image.originalUrl" alt="">
       <vue-cropper
         ref='cropper'
         :aspect-ratio="10/9"
@@ -29,7 +29,7 @@ export default {
     VueCropper
   },
   updated() {
-    this.$refs.cropper.replace(this.image.url)
+    this.$refs.cropper.replace(this.image.originalUrl)
   },
   props: ['image'],
   methods: {

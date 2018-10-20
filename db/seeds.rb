@@ -1,25 +1,27 @@
-# user = User.new(
-#     first_name: 'Dominic',
-#     last_name: 'Nunes',
-#     email: 'dominic.n@me.com',
-#     password: 'password',
-#     password_confirmation: 'password',
-# )
-# user.confirmed_at = Time.now
-# user.save!
-# user.create_store(name: 'Dominic\'s Store')
+store = Store.create(name: 'Dtronics')
+user = User.new(
+    first_name: 'Dominic',
+    last_name: 'Nunes',
+    email: 'dominic.n@me.com',
+    password: 'password',
+    password_confirmation: 'password',
+)
+user.confirmed_at = Time.now
+user.save!
+store.update(user_id: user.id)
 
-100.times do |i|
+(2...100).each do |i|
+  store = Store.create(name: Faker::Company.name)
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: "user#{i}@gmail.com",
+    email: "user#{i + 1}@mail.com",
     password: 'password',
     password_confirmation: 'password',
   )
   user.confirmed_at = Time.now
   user.save!
-  user.create_store(name: Faker::Company.name)
+  store.update(user_id: user.id)
 end
 
 (1...300).each do |i|
@@ -33,10 +35,11 @@ end
     store_id: rand(1..10),
   )
   (1..(rand(3..5))).each do
-    product.images.new(
-        image: File.open(File.join(Rails.root,
-                                   'app', 'assets', 'images', 'kits', "#{rand(20)}.png")),
-    )
+    image = product.images.new
+    filename = "#{rand(20)}.png"
+    attachment = File.open(File.join(Rails.root,
+                                                    'app', 'assets', 'images', 'kits', filename))
+    image.attachment.attach(io: attachment, filename: filename)
   end
   product.save!
   p product
@@ -51,8 +54,12 @@ Product.all.each do |product|
     step.number = index + 1
     step.title = Faker::Hipster.sentence
     step.body = Faker::Hipster.paragraph(1, true)
-    step.images << Image.new(image: File.open(File.join(Rails.root,
-                                                        'app', 'assets', 'images', 'kits', "#{rand(20)}.png")))
+
+    image = step.images.new
+    filename = "#{rand(20)}.png"
+    attachment = File.open(File.join(Rails.root,
+                                     'app', 'assets', 'images', 'kits', filename))
+    image.attachment.attach(io: attachment, filename: filename)
     step.save!
   end
   tutorial.save

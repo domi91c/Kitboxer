@@ -45,9 +45,8 @@ export default {
       let card = {
         productId: this.productId,
         progress: 100,
-        url: image.cropped ?
-          this.image.image.cropped.url :
-          this.image.image.default.url,
+        originalUrl: image.original_url,
+        url: image.url,
         coverImage: image.cover_image,
         id: image.id,
         cropped: image.cropped
@@ -65,13 +64,16 @@ export default {
             formData: {},
             progress: 0,
             url: '',
+            processedUrl: '',
             coverImage: false,
             cropped: false
           }
           this.imageCards.push(card)
           uploadImage(card, this.onProgress).then((x) => {
             let respParsed = JSON.parse(x)
-            card.url = respParsed.image.image.default.url
+            card.url = respParsed.image.url
+            card.originalUrl = respParsed.image.original_url
+            card.processedUrl = respParsed.image.processed_url
             card.id = respParsed.image.id
           })
         }
@@ -92,8 +94,9 @@ export default {
         let respParsed = JSON.parse(x)
         console.log(x)
         let index = this.imageCards.indexOf(this.currentImage)
-        this.imageCards[index].url = `${respParsed.image.image.cropped.url}?a=${Math.random()}`
-        this.imageCards[index].cropped = respParsed.image.cropped
+        this.imageCards[index].url = respParsed.image.url
+        this.imageCards[index].processedUrl = respParsed.image.processed_url
+        this.imageCards[index].cropped = true
       }).catch((x) => {
       })
     },

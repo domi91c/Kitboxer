@@ -56,11 +56,11 @@ class Product < ApplicationRecord
   end
 
   def cover_image
-    (ci = images.where(cover_image: true).first) ? ci.image : images.first.image
+    (ci = images.find_by(cover_image: true)) ? ci.image : images.first.image
   end
 
   def cover_thumb
-    cover_image.thumb
+    cover_image.variant(resize_to_fill: "100x100")
   end
 
   def self.search(search)

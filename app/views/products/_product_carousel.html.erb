@@ -4,9 +4,9 @@
   <div class="carousel carousel-<%= carousel_id %>" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
       <% images.each do |image| %>
-        <a href="<%= image.image.url %>"
+        <a href="<%= image.url %>"
            class="carousel-item item-image <%= 'active' if image == images.first %>" data-target="#carouselModal<%= image.id %>" data-toggle="modal" data-fancybox="carousel">
-          <img class="d-block img-fluid " src="<%= image.image.url %>">
+          <img class="d-block img-fluid " src="<%= image.url %>">
         </a>
       <% end %>
     </div>
@@ -26,7 +26,7 @@
     <div class="img-carousel-indicators">
       <% images.each_with_index do |image, index| %>
         <a data-target=".carousel-<%= carousel_id %>" data-slide-to="<%= index %>" class="img-carousel-indicator mb-3 img-fluid <%= 'active' if image == images.first %>">
-          <%= image_tag image.image.url,
+          <%= image_tag image.url,
                         class: "img-container",
                         style: 'height: 50px; width: 60px' %>
         </a>

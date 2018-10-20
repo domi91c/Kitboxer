@@ -1,3 +1,4 @@
+Rails.application.routes.default_url_options[:host] = "localhost:3002"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -50,7 +51,7 @@ Rails.application.configure do
   config.assets.debug = true
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { host: 'localhost:3009' }
+  config.action_mailer.default_url_options = { host: 'localhost:3002' }
   config.action_mailer.delivery_method = :smtp
   # config.action_mailer.delivery_method = :letter_opener
 
@@ -77,6 +78,16 @@ Rails.application.configure do
       resource '*', :headers => :any, :methods => [:get, :post, :options]
     end
   end
+
+
 end
 
+
+module ActiveStorage
+  # Representation of a single attachment to a model.
+  class Attached::One < Attached
+    delegate :filename, to: :attachment, allow_nil: true # ADD THIS LINE
+    delegate_missing_to :attachment
+  end
+end
 

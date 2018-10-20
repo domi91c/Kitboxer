@@ -7,11 +7,11 @@ import VueLoading from '../vuex-loading'
 import HideBeforeLoad from '../shared/hide-before-load.js'
 import store from './store'
 
+Vue.use(HideBeforeLoad)
 Vue.use(TurbolinksAdapter)
 Vue.use(BootstrapVue)
 Vue.use(VeeValidate);
 Vue.use(VueLoading)
-Vue.use(HideBeforeLoad)
 
 
 document.addEventListener('turbolinks:load', () => {
