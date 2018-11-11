@@ -3,7 +3,7 @@ class Store < ApplicationRecord
   has_many :purchases
   has_many :orders, through: :purchases
   has_many :images, as: :imageable
-  belongs_to :user, optional: true
+  belongs_to :user
 
   validates :name, presence: true
 end

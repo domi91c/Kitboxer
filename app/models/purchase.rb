@@ -14,7 +14,6 @@ class Purchase < ApplicationRecord
     product.user.notify(subject, body, self)
   end
 
-
   def reviewed?
     !review.nil?
   end

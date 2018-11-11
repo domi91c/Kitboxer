@@ -27,7 +27,7 @@ example_id                                       | status  | run_time        |
 ./spec/models/order_spec.rb[1:1]                 | pending | 0.00001 seconds |
 ./spec/models/product_spec.rb[1:1]               | pending | 0.00001 seconds |
 ./spec/models/product_spec.rb[1:2:1]             | passed  | 0.01152 seconds |
-./spec/models/purchase_spec.rb[1:1]              | pending | 0.00001 seconds |
+./spec/models/purchase_spec.rb[1:1]              | pending | 0.00002 seconds |
 ./spec/models/rating_spec.rb[1:1]                | pending | 0.00002 seconds |
 ./spec/models/review_spec.rb[1:1]                | pending | 0.00002 seconds |
 ./spec/models/step_spec.rb[1:1]                  | pending | 0.00001 seconds |

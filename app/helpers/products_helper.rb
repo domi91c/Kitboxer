@@ -26,4 +26,8 @@ module ProductsHelper
   def view_count(product)
     product.impressions ||= 0
   end
+
+  def cover_image(product)
+    product.images.last.processed_url
+  end
 end

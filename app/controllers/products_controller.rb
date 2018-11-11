@@ -7,9 +7,9 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:search]
-      @products = Product.joins(:images).group(products: :id).search(params[:search]).first(40)
+      @products = Product.joins(:images).group(products: :id).search(params[:search]).last(40)
     else
-      @products = Product.joins(:images).group('products.id').first(40)
+      @products = Product.joins(:images).group('products.id').last(40)
     end
   end
 

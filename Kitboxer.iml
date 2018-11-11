@@ -108,7 +108,7 @@
     <orderEntry type="library" scope="PROVIDED" name="hiredis (v0.6.1, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="http_parser.rb (v0.6.0, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hub (v1.12.4, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.1.0, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.1.1, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="image_processing (v1.7.1, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="interception (v0.5, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.4.0, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
@@ -124,9 +124,9 @@
     <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.3, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="letter_opener (v1.6.0, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.1.5, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="loofah (v2.2.2, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="loofah (v2.2.3, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.0.13, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.0, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.1, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mailboxer (v0.15.1, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v0.3.3, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="material_icons (v2.2.1, RVM: ruby-2.6.0-preview2 [kitboxer]) [gem]" level="application" />

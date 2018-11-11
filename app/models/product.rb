@@ -56,11 +56,11 @@ class Product < ApplicationRecord
   end
 
   def cover_image
-    (ci = images.find_by(cover_image: true)) ? ci.image : images.first.image
+    (ci = images.find_by(cover_image: true)) ? ci.image.processed_url : images.first.processed_url
   end
 
   def cover_thumb
-    cover_image.variant(resize_to_fill: "100x100")
+    cover_image
   end
 
   def self.search(search)
@@ -81,10 +81,7 @@ class Product < ApplicationRecord
 
   def reviews_average(context = nil)
     if reviews.any?
-      sum = 0
-      reviews.each do |review|
-        sum += review.ratings_average(context)
-      end
+      sum = reviews.sum {|review| review.ratings_average(context)}
       sum / reviews.count
     else
       0

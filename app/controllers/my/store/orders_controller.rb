@@ -4,7 +4,6 @@ module My
       layout "my_store"
       def index
         @orders = Purchase.joins(:orders)
-        binding.pry
       end
     end
   end

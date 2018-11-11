@@ -1,6 +1,6 @@
 <div class="PurchaseOverlay">
   <div class="modal-header">
-    <%= image_tag @product.cover_thumb.url %>
+    <%= image_tag cover_image @product %>
     <h4><%= truncate(@product.title, length: 100) %></h4>
     <ul class="nav nav-tabs overlay-tabs justify-content-end">
       <li class="nav-item">

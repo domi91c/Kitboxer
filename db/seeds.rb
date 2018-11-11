@@ -23,7 +23,7 @@ store.update(user_id: user.id)
   user.save!
   store.update(user_id: user.id)
 end
-
+Product.destroy_all
 (1...300).each do |i|
   product = Product.new(
     title: Faker::Commerce.product_name,

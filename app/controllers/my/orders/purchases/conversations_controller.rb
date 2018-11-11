@@ -8,7 +8,7 @@ module My
           @purchase = Purchase.find(params[:purchase_id])
           @conversations = current_user.mailbox.conversations
           @conversation = @conversations.first
-          @conversation.mark_as_read(current_user)
+          @conversation.mark_as_read(current_user) unless @conversation.nil?
           @message = Mailboxer::Message.new
           respond_to do |format|
             format.js
@@ -31,7 +31,8 @@ module My
 
         def create
           recipient = @purchase.product.user
-          receipt = current_user.send_message(recipient, params[:body], params[:subject])
+          subject = params[:optional_subject].present? ? params[:optional_subject] : params[:subject]
+          receipt = current_user.send_message(recipient, params[:body], subject)
           receipt.notification.update(notified_object: @purchase)
           subject = "#{current_user.name} asked a question."
           body = "#{current_user.name} asked a question regarding #{@purchase.product.title}."

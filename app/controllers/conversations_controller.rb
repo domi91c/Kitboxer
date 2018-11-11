@@ -26,7 +26,7 @@ class ConversationsController < ApplicationController
   def show
     @conversations = current_user.mailbox.conversations
     @conversation = current_user.mailbox.conversations.find(params[:id])
-    @conversation.mark_as_read(current_user)
+    @conversation.mark_as_read(current_user) unless @conversation.nil?
     @messages = @conversation.messages.order(created_at: :asc)
     unless @conversation.messages.first.notified_object.nil?
       @notified_object = @conversation.messages.first.notified_object

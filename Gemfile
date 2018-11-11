@@ -39,6 +39,7 @@ group :development do
   gem "letter_opener"
 end
 group :development, :test do
+  gem 'faker'
   gem 'bootsnap', require: false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
@@ -51,7 +52,6 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'rubocop'
   gem 'dotenv-rails'
-
 end
 group :test do
   gem 'database_cleaner'
@@ -59,22 +59,18 @@ group :test do
   gem 'selenium-webdriver'
   gem "fakeredis"
 end
-gem 'font-awesome-rails'
 
+gem 'font-awesome-rails'
 
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'rmagick'
 
-
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
-
 
 gem 'wicked'
 
-
 gem 'client_side_validations'
-
 
 gem 'redis'
 gem 'hiredis'
@@ -82,40 +78,19 @@ gem 'hiredis'
 gem 'trix-rails', require: 'trix'
 
 gem 'omniauth-stripe-connect'
-
 gem 'stripe'
 
-
 gem 'validates_email_format_of'
-
-gem 'faker'
-
-
 gem 'material_icons'
-
 gem 'rack-cors', github: 'cyu/rack-cors'
-
 gem 'active_model_serializers', '~> 0.10.0'
-
-
 gem 'carrierwave-aws'
-
-
 gem 'reform'
 gem 'reform-rails'
-
 gem 'kaminari'
-
-
 gem 'mailboxer'
-
-
 gem 'active_type'
-
 gem 'remotipart', '~> 1.2'
-
 gem "select2-rails"
-
 gem "jquery-rails"
-
 gem "image_processing", "~> 1.0"

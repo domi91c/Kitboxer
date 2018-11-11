@@ -6,7 +6,7 @@ module My
       def show
         @product = @purchase.product
         @conversations =
-            current_user.mailbox.conversations
+            current_user.mailbox.sentbox
                 .includes(:messages)
                 .merge(Mailboxer::Message
                            .where(notified_object: @purchase))

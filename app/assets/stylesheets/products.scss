@@ -5,31 +5,39 @@
 .product-index {
   .product-index-hero {
   }
+
   .product-card {
     border: none;
+
     .product-card-image {
     }
+
     .product-card-footer {
-      padding:          5px;
+      padding: 5px;
+
       .product-card-title {
         font-size: .9rem;
       }
+
       .product-card-meta {
-        display:     flex;
+        display: flex;
         white-space: nowrap;
+
         .product-card-username {
-          font-size:   12px;
+          font-size: 12px;
           white-space: nowrap;
-          order:       1;
+          order: 1;
         }
+
         .product-card-price {
-          font-size:   12px;
+          font-size: 12px;
           font-weight: bold;
           white-space: nowrap;
           margin-left: auto;
-          order:       2;
+          order: 2;
         }
       }
+
       background-color: white;
     }
   }
@@ -37,12 +45,12 @@
 
 .img-carousel-indicator .active {
   display: inline-block;
-  border:  3px solid $green;
+  border: 3px solid $green;
 }
 
 .hero-dropdown-toggle {
   font-size: $display4-size;
-  color:     theme-color("primary");
+  color: theme-color("primary");
 }
 
 .hero-dropdown-toggle::after {
@@ -53,8 +61,8 @@
   font-size: 30px;
 }
 
-.watch-button:active{
-  animation: bounce 2s ease ;
+.watch-button:active {
+  animation: bounce 2s ease;
 }
 
 @keyframes bounce {
