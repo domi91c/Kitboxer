@@ -2,30 +2,17 @@
   <div class="modal-header">
     <%= image_tag cover_image @product %>
     <h4><%= truncate(@product.title, length: 100) %></h4>
+    <h5><%= truncate(@product.seller.name, length: 100) %></h5>
     <ul class="nav nav-tabs overlay-tabs justify-content-end">
       <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#details-<%= @purchase.id %>">Details</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#test-<%= @purchase.id %>">Test</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " data-toggle="tab" href="#test-<%= @purchase.id %>">Test</a>
+        <a class="nav-link messaging-link" id="lalala" data-toggle="tab" href="#conversation-<%= @purchase.id %>">Conversation</a>
       </li>
-      <span class="d-none js-purchase-conversations-tab" data-toggle="tab" href="#messages-<%= @purchase.id %>">Messages</span>
-      <% if @conversations.any? %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle js-purchase-conversations-dropdown" data-toggle="dropdown">Messages</a>
-          <div class="dropdown-menu">
-            <% @conversations.each do |conversation| %>
-              <%= link_to truncate(conversation.subject, length: 120), purchase_conversation_path(@purchase, conversation), remote: true, class: 'dropdown-item' %>
-            <% end %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "Ask Another Question", new_purchase_conversation_path(@purchase), remote: true, class: 'dropdown-item' %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Messages", new_purchase_conversation_path(@purchase), class: 'nav-link', remote: true %>
-        </li>
-      <% end %>
     </ul>
   </div>
   <div class="tab-content js-purchase-tabs">
@@ -43,9 +30,14 @@
       <div class="modal-footer js-purchase-overlay-footer">
       </div>
     </div>
-    <div class="tab-pane show fade" id="messages-<%= @purchase.id %>">
+    <div class="tab-pane show fade" id="conversation-<%= @purchase.id %>">
       <div class="modal-body js-purchase-conversation-body">
-        <h4 class="mt-2">Conversation</h4>
+        <%= content_tag :div,
+                        class: 'v-messaging',
+                        data: {
+                            conversations: @conversations,
+                        }.to_json do %>
+        <% end %>
       </div>
       <div class="js-purchase-conversation-footer">
       </div>

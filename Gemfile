@@ -28,7 +28,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
-  gem 'guard-livereload', '~> 2.5', require: false
+  # gem 'guard-livereload', '~> 2.5', require: false
   gem 'binding_of_caller', '>= 0.8.0'
   gem 'hub', :require => nil
   gem 'rails_layout'
@@ -66,7 +66,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'rmagick'
 
-gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+gem 'webpacker'
 
 gem 'wicked'
 

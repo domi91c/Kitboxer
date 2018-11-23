@@ -1,15 +1,16 @@
+$('.js-purchase-overlay-10').modal()
+$('.js-purchase-overlay-modal-content').html('<%= j (render 'my/orders/purchases/show') %>')
 var currentModal = $('.modal.show')
-
 currentModal.find($('.js-purchase-conversations-tab').tab('show'))
 
-var bodyContainer = currentModal.find($('.js-purchase-conversation-body'))
-console.log(bodyContainer)
-bodyContainer.html('<%= j (render 'my/orders/purchases/conversations/messages/conversation_body') %>')
-currentModal.find($('.js-purchase-conversations-dropdown')).addClass('active')
-currentModal.find($('.js-purchase-conversations-dropdown')).dropdown('toggle')
-currentModal.find($('.js-purchase-conversation-footer')).
-  html('<%= j (render 'my/orders/purchases/conversations/conversation_footer') %>')
+//var bodyContainer = currentModal.find($('.js-purchase-conversation-body'))
+//console.log(bodyContainer)
+//bodyContainer.html('<%#= j (render 'my/orders/purchases/conversations/messages/conversation_body') %>')
+//currentModal.find($('.js-purchase-conversations-dropdown')).addClass('active')
+//currentModal.find($('.js-purchase-conversations-dropdown')).dropdown('toggle')
+//currentModal.find($('.js-purchase-conversation-footer')).
+//  html('<%#= j (render 'my/orders/purchases/conversations/conversation_footer') %>')
 
-initPurchaseConversationOverlay()
+//initPurchaseConversationOverlay()
 
 

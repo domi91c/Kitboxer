@@ -16,8 +16,8 @@ module My
         end
 
         def show
-          @conversation = current_user.mailbox.conversations.find(params[:id])
-          @message = Mailboxer::Message.new
+          # @conversation = current_user.mailbox.conversations.find(params[:id])
+          # @message = Mailboxer::Message.new
           respond_to do |format|
             format.js
           end

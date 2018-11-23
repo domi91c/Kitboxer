@@ -5,6 +5,7 @@ module My
 
     def index
       @orders = current_user.orders.page params[:page]
+      @conversations = Mailboxer::Conversation.all
     end
 
     def orders_params

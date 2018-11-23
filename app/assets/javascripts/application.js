@@ -2,7 +2,6 @@
 //= require rails-ujs
 //= require jquery.remotipart
 //= require trix
-//= require turbolinks
 //= require popper
 //= require lodash
 //= require select2
