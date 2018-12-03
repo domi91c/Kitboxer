@@ -6,8 +6,8 @@
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Kitboxer" %>">
   <meta name="turbolinks-cache-control" content="no-cache">
 
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller_path_and_name %> <%= action_name %>" style="background: #f2f6f9;" data-environment="<%=
