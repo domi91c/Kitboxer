@@ -8,4 +8,8 @@ class DevController < ApplicationController
     sign_in(User.find(102))
     redirect_to my_orders_path
   end
+
+  def launch_messages_modal
+
+  end
 end

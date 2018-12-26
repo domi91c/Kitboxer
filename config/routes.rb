@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
+  namespace :v1 do
+    resources :products
+  end
   namespace :my do
     resource :store, controller: 'store' do
       resources :products, controller: 'store/products'
@@ -79,6 +82,7 @@ Rails.application.routes.draw do
     collection do
       get :user1
       get :user2
+      get :launch_messages_modal
     end
   end
 end

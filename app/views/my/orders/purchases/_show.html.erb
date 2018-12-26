@@ -5,20 +5,21 @@
     <h5><%= truncate(@product.seller.name, length: 100) %></h5>
     <ul class="nav nav-tabs overlay-tabs justify-content-end">
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#details-<%= @purchase.id %>">Details</a>
-        </li>
+        <a class="nav-link active" id="test-details-tab" data-toggle="tab" href="#details-<%= @purchase.id %>">Details</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#test-<%= @purchase.id %>">Test</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link messaging-link" id="lalala" data-toggle="tab" href="#conversation-<%= @purchase.id %>">Conversation</a>
+        <a class="nav-link messaging-link" id="test-conversations-tab" data-toggle="tab" href="#conversation-<%= @purchase.id %>">Conversation</a>
       </li>
     </ul>
   </div>
   <div class="tab-content js-purchase-tabs">
     <div class="tab-pane fade show active" id="details-<%= @purchase.id %>">
       <div class="modal-body js-purchase-overlay-body">
-        <h4 class="mt-2">Order Details</h4>
+        <%= content_tag :div, class: 'v-messaging', data: { conversations: @conversations, }.to_json do %>
+        <% end %>
       </div>
       <div class="modal-footer js-purchase-overlay-footer">
       </div>

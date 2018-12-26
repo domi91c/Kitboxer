@@ -1,6 +1,30 @@
 {
   "dependencies": {
-    "@rails/webpacker": "3.5"
+    "@angular/common": "^7.1.1",
+    "@angular/compiler": "^7.1.1",
+    "@angular/core": "^7.1.1",
+    "@angular/platform-browser": "^7.1.1",
+    "@angular/platform-browser-dynamic": "^7.1.1",
+    "@nuxtjs/toast": "^3.0.1",
+    "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "core-js": "^2.5.7",
+    "cropperjs": "^1.4.3",
+    "jquery": "^3.3.1",
+    "rxjs": "^6.3.3",
+    "scroll-into-view": "^1.9.3",
+    "ts-loader": "3.5.0",
+    "typescript": "^3.2.1",
+    "vee-validate": "^2.1.4",
+    "vue": "^2.5.17",
+    "vue-cropperjs": "^3.0.0",
+    "vue-loader": "14.2.2",
+    "vue-spinner": "^1.0.3",
+    "vue-template-compiler": "^2.5.17",
+    "vue-turbolinks": "^2.0.3",
+    "vuex": "^3.0.1",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

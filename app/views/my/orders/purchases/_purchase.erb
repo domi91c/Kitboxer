@@ -7,8 +7,8 @@
         <span class="badge badge-success">Shipped March 9th</span>
       <% end %>
     </h4>
-    <%= link_to 'Message Seller', purchase_conversation_path(purchase, Mailboxer::Conversation.first.id), remote: true, data: {toggle: ''} %>
-    <button class="btn btn-outline-default btn-sm" data-toggle="dropdown">Actions
+    <%= link_to 'Message Seller', purchase_conversation_path(purchase, Mailboxer::Conversation.first.id), remote: true, data: { toggle: '' } %>
+    <button class="btn btn-outline-default btn-sm " id="test-actions" data-toggle="dropdown">Actions
       <span class="ml-1 dropdown-toggle"></span>
     </button>
     <div class="dropdown-menu ">
@@ -20,7 +20,7 @@
       <a class="dropdown-item" href="#">Request Refund</a>
       <%= link_to "Contact Seller", purchase_conversations_path(purchase), class: 'dropdown-item', remote: true %>
       <%= link_to "Ask Question", new_purchase_conversation_path(purchase), class: 'dropdown-item', remote: true %>
-      <%= link_to "Details", purchase_path(purchase), class: 'dropdown-item', remote: true %>
+      <%= link_to "Details", purchase_path(purchase), class: 'dropdown-item test-details', id: 'test-details', remote: true %>
     </div>
     <span class="ml-2 display-8 float-right"><%= purchase.quantity %>
       x <%= number_to_currency(purchase.product.price) %></span>
@@ -48,3 +48,4 @@
     </div>
   </div>
 </div>
+<%= link_to 'Test', launch_messages_modal_dev_index_path, id: 'launch-messages-modal', remote: true %>
